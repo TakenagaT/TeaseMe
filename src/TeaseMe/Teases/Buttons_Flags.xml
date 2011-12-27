@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Tease scriptVersion="v0.1">
+  <Title>Buttons</Title>
+  <Description>A sample tease showing the use of buttons and (variable) flags.</Description>
+  <Pages>
+    <Page id="start">
+      <Text>Welcome to this tease.</Text>
+      
+      <!-- 
+      Buttons are placed from right to left, so the first button mentioned will be the most right one on the screen. 
+      The most right one will get the default focus, so the user can use the spacebar to press it, too.
+      -->
+      
+      <!-- target is the id of the page you want to go to. -->
+      <Button target="page2">Second</Button>
+      
+      <!-- When this button is pressed a flag named 'have_item' will be set and after that, page '3' will be shown. -->
+      <Button target="3" set="have_item">Third (setting have_item)</Button>
+      
+      <Button target="3">Third (without setting have_item)</Button>
+    </Page>
+    <Page id="page2">
+      <Text>Second page.</Text>
+      <Button target="3">Third</Button>
+    </Page>
+    <Page id="3">
+      <Text>Third page with conditional buttons.</Text>
+      
+      <!--
+      When this button is pressed a flag named 'start' will be unset. After that, page 'start' will be shown.
+      It's necessary to unset the start flag first or else you cannot navigate to that page. 
+      
+      ATTENTION: After a page is shown, a flag with the id of the page will automatically be set.
+      -->
+      <Button target="start" unset="start">Back to start</Button>
+      
+      <!-- This button is only visible if the user visited page2 before. -->
+      <Button target="end" if-set="page2">So you saw the second page</Button>
+      
+      <!-- This button is only visible if the flag 'have_item' is set (by pressing on the button on the start page). -->
+      <Button target="end" if-set="have_item">I have the item</Button>
+      
+      <!-- This button is only visible if the flag 'have_item' is NOT set. -->
+      <Button target="end" if-not-set="have_item">Too bad, no item...</Button>
+    </Page>
+    <Page id="end">
+      <Text>The end.</Text>
+    </Page>
+  </Pages>
+</Tease>

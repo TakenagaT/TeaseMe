@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Tease scriptVersion="v0.1">
+  <!-- scriptVersion is required and should be set to v0.1 for this version of the application. -->
+  
+  <!-- Title of the tease, will be displayed at the top of the screen. -->
+  <Title>Sample1</Title>
+  
+  <!-- Short description of the tease. -->
+  <Description>A short description of the tease; in a next version of the application it will probably be used to browse a library.</Description>
+  
+  <!-- URL of the tease online; when you press the globe button in the application, this url will be opened. -->
+  <Url>http://url/to/the/tease</Url>
+
+  <!-- Optional author information. -->
+  <Author>
+    <!-- Name of the author, will be displayed at the top of the screen. -->
+    <Name>Takenaga</Name>
+    
+    <!-- URL of the author (for example the profile page of milovana.com) -->
+    <Url>http://url/to/the/author</Url>
+  </Author>
+  
+  <!-- The pages in this tease. -->
+  <Pages>
+    <!-- The tease will start with the page with id="start" -->
+    <Page id="start">
+      
+      <!-- Text displayed on the right side of the screen, formatting is not possible yet in this version. -->
+      <Text>Welcome to this tease. Did you know you can enter debug mode by pressing Ctrl+Shift+D ?</Text>
+
+      <Button target="2">Next</Button>
+    </Page>
+
+    <Page id="2">
+      <Text>tick-tick-tick</Text>
+
+      <!-- Play a tick sound every second.
+      If you want a random number of beats per minute use the format bpm="(120..180)", somewhere between 120 and 180 bpm.-->
+      <Metronome bpm="60" />
+
+      <Button target="3">Next</Button>
+    </Page>
+
+    <Page id="3">
+      <Text>Go to a random page...</Text>
+      
+      <!-- Go to a random page (select random one of page10, page11, page12, page13, page14).
+      Pages alrady seen (flag with id of page set) will be skipped.
+      -->
+      <Button target="page(10..14)">Random (10..14)</Button>
+    </Page>
+
+    <Page id="page10">
+      <Text>10</Text>
+      <Button target="3" unset="3">Back</Button>
+    </Page>
+    
+    <Page id="page11">
+      <Text>11</Text>
+      <Button target="3" unset="3">Back</Button>
+    </Page>
+    
+    <!-- This page will only be shown if page13 is shown before. -->
+    <!-- The if-set and if-not-set attributes can be placed on a Page, Button and Delay. -->
+    <!-- The set and unset attributes can be placed on a Button and Delay. -->
+    <Page id="page12" if-set="page13">
+      <Text>12</Text>
+      <Button target="3" unset="3">Back</Button>
+    </Page>
+    
+    <!-- This page will only be shown if page14 is never shown (or unset). -->
+    <Page id="page13" if-not-set="page14">
+      <Text>13</Text>
+      <Button target="3" unset="3">Back</Button>
+    </Page>
+    
+    <Page id="page14">
+      <Text>14</Text>
+      <Button target="3" unset="3">Back</Button>
+    </Page>
+  </Pages>
+</Tease>
