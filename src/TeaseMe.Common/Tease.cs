@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
-namespace TeaseMe
+namespace TeaseMe.Common
 {
     [TypeConverter(typeof(ExpandableObjectConverter))]
     [XmlRoot(ElementName = "Tease")]

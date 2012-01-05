@@ -5,7 +5,7 @@ using System.ComponentModel.Design;
 using System.Drawing.Design;
 using System.Xml.Serialization;
 
-namespace TeaseMe
+namespace TeaseMe.Common
 {
     [TypeConverter(typeof(ExpandableObjectConverter))]
     public class TeasePage

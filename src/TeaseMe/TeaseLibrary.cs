@@ -3,6 +3,7 @@ using System.Configuration;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using TeaseMe.Common;
 
 namespace TeaseMe
 {

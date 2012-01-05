@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Xml.Serialization;
 
-namespace TeaseMe
+namespace TeaseMe.Common
 {
     [TypeConverter(typeof(ExpandableObjectConverter))]
     public class TeaseAction

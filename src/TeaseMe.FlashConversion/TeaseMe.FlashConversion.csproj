@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{56712A78-1FE1-4EB0-8383-DB0166E6F18F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TeaseMe.FlashConversion</RootNamespace>
+    <AssemblyName>TeaseMe.FlashConversion</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\lib\antlr\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FlashTeaseScriptParser.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FlashTeaseScript.g</DependentUpon>
+    </Compile>
+    <Compile Include="FlashTeaseScriptLexer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FlashTeaseScript.g</DependentUpon>
+    </Compile>
+    <None Include="FlashTeaseScript.tokens">
+      <DependentUpon>FlashTeaseScript.g</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Antlr3 Include="FlashTeaseScript.g">
+      <OutputFiles>FlashTeaseScriptLexer.cs;FlashTeaseScriptParser.cs;FlashTeaseScript.tokens</OutputFiles>
+    </Antlr3>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TeaseMe.Common\TeaseMe.Common.csproj">
+      <Project>{0D53B48A-52FB-4350-92C6-84C824EF808A}</Project>
+      <Name>TeaseMe.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="flashtease-sample.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="GenerateAntlrCode" Inputs="@(Antlr3)" Outputs="%(Antlr3.OutputFiles)">
+    <Exec Command="..\..\lib\antlr\antlr3.exe -message-format vs2005 @(Antlr3)" Outputs="%(Antlr3.OutputFiles)" />
+  </Target>
+  <PropertyGroup>
+    <BuildDependsOn>GenerateAntlrCode;$(BuildDependsOn)</BuildDependsOn>
+  </PropertyGroup>
+</Project>

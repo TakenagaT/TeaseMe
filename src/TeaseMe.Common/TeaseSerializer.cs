@@ -3,7 +3,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace TeaseMe
+namespace TeaseMe.Common
 {
     public class TeaseSerializer
     {

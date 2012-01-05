@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.Devices;
+using TeaseMe.Common;
 
 namespace TeaseMe
 {

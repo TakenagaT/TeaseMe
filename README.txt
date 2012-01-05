@@ -66,6 +66,13 @@ For more online teases visit http://www.milovana.com/
 
 
 Update History
+
+-------------------------
+v0.0.7 (by Takenaga)
+- support for setting/unsetting multiple flags.
+- most right button has focus, so you can use spacebar to press instead of mouse (actually already in 0.0.6 but never mentioned)
+
+
 -------------------------
 v0.0.6 (by Takenaga)
 - converted to C# 
@@ -74,6 +81,7 @@ v0.0.6 (by Takenaga)
 - teases in the old 0.0.5 format can be opened and saved in the new format.
 - debug mode (Ctrl+Shift+D) to see more details of the tease you are creating.
 - more than 5 buttons are supported now (but who needs so many?)
+- add audio to images.
 - some layout tweaks.
 
 

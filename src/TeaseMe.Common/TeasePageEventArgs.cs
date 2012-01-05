@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TeaseMe
+namespace TeaseMe.Common
 {
     public class TeasePageEventArgs : EventArgs
     {
