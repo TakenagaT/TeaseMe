@@ -11,10 +11,10 @@ namespace TeaseMe
         public string Target { get; set; }
 
         [XmlAttribute("set")]
-        public string SetFlag { get; set; }
+        public string SetFlags { get; set; }
 
         [XmlAttribute("unset")]
-        public string UnsetFlag { get; set; }
+        public string UnsetFlags { get; set; }
 
         [XmlAttribute("if-set")]
         public string IfSetCondition { get; set; }

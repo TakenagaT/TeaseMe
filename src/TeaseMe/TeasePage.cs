@@ -35,6 +35,13 @@ namespace TeaseMe
         [XmlElement("Button")]
         public List<TeaseButton> ButtonList { get; set; }
 
+        
+        [XmlAttribute("set")]
+        public string SetFlags { get; set; }
+
+        [XmlAttribute("unset")]
+        public string UnsetFlags { get; set; }
+
         [XmlAttribute("if-set")]
         public string IfSetCondition { get; set; }
 

@@ -113,17 +113,19 @@ namespace TeaseMe
         }
 
 
-        public void SetFlag(string flagName)
+        public void SetFlags(string flagNames)
         {
-            if (!Flags.Contains(flagName))
+            var flags = flagNames.Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries);
+            foreach (var flagName in flags.Where(flagName => !Flags.Contains(flagName)))
             {
                 Flags.Add(flagName);
             }
         }
 
-        public void UnsetFlag(string flagName)
+        public void UnsetFlags(string flagNames)
         {
-            if (Flags.Contains(flagName))
+            var flags = flagNames.Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries);
+            foreach (var flagName in flags.Where(flagName => Flags.Contains(flagName)))
             {
                 Flags.Remove(flagName);
             }
@@ -164,17 +166,26 @@ namespace TeaseMe
         public void ExecuteTeaseAction(TeaseAction action)
         {
             // By default, the current page flag will be set when navigating away.
-            SetFlag(currentPage.Id);
+            SetFlags(currentPage.Id);
+
+            if (!String.IsNullOrEmpty(currentPage.SetFlags))
+            {
+                SetFlags(currentPage.SetFlags);
+            }
+            if (!String.IsNullOrEmpty(currentPage.UnsetFlags))
+            {
+                UnsetFlags(currentPage.UnsetFlags);
+            }
 
             if (action != null)
             {
-                if (!String.IsNullOrEmpty(action.SetFlag))
+                if (!String.IsNullOrEmpty(action.SetFlags))
                 {
-                    SetFlag(action.SetFlag);
+                    SetFlags(action.SetFlags);
                 }
-                if (!String.IsNullOrEmpty(action.UnsetFlag))
+                if (!String.IsNullOrEmpty(action.UnsetFlags))
                 {
-                    UnsetFlag(action.UnsetFlag);
+                    UnsetFlags(action.UnsetFlags);
                 }
 
                 var target = GetTarget(action);

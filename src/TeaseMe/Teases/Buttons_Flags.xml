@@ -14,7 +14,10 @@
       <!-- target is the id of the page you want to go to. -->
       <Button target="page2">Second</Button>
       
-      <!-- When this button is pressed a flag named 'have_item' will be set and after that, page '3' will be shown. -->
+      <!-- 
+      When this button is pressed a flag named 'have_item' will be set and after that, page '3' will be shown. 
+      Multiple flags allowed for set/unset: comma separated list, like set="a,b,c".
+      -->
       <Button target="3" set="have_item">Third (setting have_item)</Button>
       
       <Button target="3">Third (without setting have_item)</Button>
@@ -22,6 +25,7 @@
     <Page id="page2">
       <Text>Second page.</Text>
       <Button target="3">Third</Button>
+      <Button target="4">Fourth</Button>
     </Page>
     <Page id="3">
       <Text>Third page with conditional buttons.</Text>
@@ -43,6 +47,23 @@
       <!-- This button is only visible if the flag 'have_item' is NOT set. -->
       <Button target="end" if-not-set="have_item">Too bad, no item...</Button>
     </Page>
+    
+    <!-- 
+    The set/unset attributes on a Page element are used for flag manipulation (without using delay or buttons).
+    The flags are set/unset after the page is shown, just before navigating to the next page.
+    
+    Multiple flags allowed for set/unset: comma separated list, like set="a,b,c".
+          
+    ATTENTION: After a page is shown, a flag with the id of the page will automatically be set (even if it's not in the set attribute).
+    After that, the set-attributes are evaluated and finally the unset-attributes.
+    By placing the id of the page in the unset-attribute, the page stays available for navigation.
+    -->
+    <Page id="4" set="a,b,c" unset="d,4">
+      <Text>Fourth page</Text>
+      
+      <Button target="end">End</Button>
+    </Page>
+    
     <Page id="end">
       <Text>The end.</Text>
     </Page>
