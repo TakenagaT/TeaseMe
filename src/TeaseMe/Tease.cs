@@ -12,6 +12,8 @@ namespace TeaseMe
     [XmlRoot(ElementName = "Tease")]
     public class Tease
     {
+        public const string CurrentScriptVersion = "v0.1";
+
 
         [XmlAttribute("scriptVersion")]
         public string ScriptVersion { get; set; }
@@ -92,7 +94,7 @@ namespace TeaseMe
 
         public Tease()
         {
-            ScriptVersion = TeaseForm.ApplicationVersion;
+            ScriptVersion = CurrentScriptVersion;
             Author = new Author();
             Pages = new List<TeasePage>();
             Flags = new List<string>();

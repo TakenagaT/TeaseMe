@@ -5,16 +5,12 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.Devices;
-using TeaseMe.FlashTeases;
 
 namespace TeaseMe
 {
     public partial class TeaseForm : Form
     {
         private readonly Audio audio = new Audio();
-
-        public const string ApplicationTitle = "TeaseMe";
-        public const string ApplicationVersion = "v0.1";
 
         static readonly  string DefaultUrl = ConfigurationManager.AppSettings["DefaultUrl"];
 
@@ -39,7 +35,7 @@ namespace TeaseMe
 
         private void TeaseForm_Load(object sender, EventArgs e)
         {
-            Text = ApplicationTitle + " " + ApplicationVersion;
+            Text = AboutForm.AssemblyTitle + " " + AboutForm.AssemblyVersion;
 
             teaseLibrary = new TeaseLibrary(ApplicationDirectory);
 
@@ -286,11 +282,6 @@ namespace TeaseMe
             {
                 SetCurrentTease(teaseLibrary.LoadTease(OpenScript.FileName));
             }
-        }
-
-        private void ImportButton_Click(object sender, EventArgs e)
-        {
-            new ImportForm().Show();
         }
 
         private void AboutButton_Click(object sender, EventArgs e)
