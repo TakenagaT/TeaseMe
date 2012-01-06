@@ -17,6 +17,10 @@ namespace TeaseMe.Common
         [Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
         public string Text { get; set; }
 
+        [XmlElement("OriginalText")]
+        [Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
+        public string OriginalText { get; set; }
+
         [XmlElement("Image")]
         public TeaseMedia Image { get; set; }
 
