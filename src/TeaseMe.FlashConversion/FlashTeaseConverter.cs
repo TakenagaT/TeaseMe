@@ -50,7 +50,7 @@ namespace TeaseMe.FlashConversion
 
         private TeasePage CreatePage(string line)
         {
-            var result = new TeasePage();
+            var result = new TeasePage { Comments = line };
             try
             {
                 var stream = new ANTLRStringStream(line);
@@ -62,43 +62,51 @@ namespace TeaseMe.FlashConversion
                 if (teaseReturn.Tree != null)
                 {
                     var pageNode = teaseReturn.Tree;
-
-                    var idNode = pageNode.GetFirstChildWithType(FlashTeaseScriptLexer.ID) as CommonTree;
-                    if (idNode != null)
+                    if (pageNode.Type != FlashTeaseScriptLexer.PAGE)
                     {
-                        result.Id = GetPageId(idNode);
+                        pageNode = pageNode.GetFirstChildWithType(FlashTeaseScriptLexer.PAGE) as CommonTree;
                     }
 
-                    var propertiesNode = pageNode.GetFirstChildWithType(FlashTeaseScriptLexer.PROPERTIES) as CommonTree;
-                    if (propertiesNode != null)
+                    if (pageNode != null && pageNode.Type == FlashTeaseScriptLexer.PAGE)
                     {
-                        result.OriginalText = GetText(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.TEXT) as CommonTree);
-                        result.Text = StripOriginalText(result.OriginalText);
+                        var idNode = pageNode.GetFirstChildWithType(FlashTeaseScriptLexer.ID) as CommonTree;
+                        if (idNode != null)
+                        {
+                            result.Id = GetPageId(idNode);
+                        }
 
-                        result.Image = GetImage(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.PIC) as CommonTree);
-                        result.Audio = GetAudio(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.SOUND) as CommonTree);
+                        var propertiesNode = pageNode.GetFirstChildWithType(FlashTeaseScriptLexer.PROPERTIES) as CommonTree;
+                        if (propertiesNode != null)
+                        {
+                            result.Text = StripOriginalText(GetText(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.TEXT) as CommonTree));
 
-                        result.ButtonList.AddRange(GetButtons(propertiesNode));
+                            result.Image = GetImage(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.PIC) as CommonTree);
+                            result.Audio = GetAudio(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.SOUND) as CommonTree);
 
-                        result.Delay = GetDelay(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.DELAY) as CommonTree);
+                            result.ButtonList.AddRange(GetButtons(propertiesNode));
 
-                        // TODO set/unset
+                            result.Delay = GetDelay(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.DELAY) as CommonTree);
+
+                            result.SetFlags = GetFlags(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.SET) as CommonTree);
+                            result.UnsetFlags = GetFlags(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.UNSET) as CommonTree);
+                        }
                     }
                 }
 
                 if (parser.HasError)
                 {
-                    result.Text = String.Format("ERROR while converting line {0}\n: ParserError: {1}.\n{2}", line, parser.ErrorMessage, result.Text);
+                    result.Errors = "Unable to correctly convert this page. Please correct by hand.";
                 }
             }
-            catch (Exception err)
+            catch (Exception)
             {
-                result.Text = String.Format("ERROR while converting line {0}\n: [{1}] {2}.\n{3}", line, err.GetType(), err.Message, result.Text);
+                result.Errors = "Unable to correctly convert this page. Please correct by hand.";
             }
 
             if (String.IsNullOrEmpty(result.Id))
             {
                 result.Id = Guid.NewGuid().ToString();
+                result.Errors = String.Format("This page had no id, so one is generated. {0}", result.Errors);
             }
 
             return result;
@@ -181,6 +189,22 @@ namespace TeaseMe.FlashConversion
             
             return result;
         }
+
+
+
+        private string GetFlags(CommonTree node)
+        {
+            if (node == null)
+            {
+                return null;
+            }
+            var flagList = new List<string>();
+
+            flagList.AddRange(node.Children.Where(x => x.Type == FlashTeaseScriptLexer.ID).Select(x => GetPageId(x as CommonTree)));
+
+            return (flagList.Count > 0) ? String.Join(",", flagList.ToArray()) : null;
+        }
+
 
         // TODO Add Formatting.
         private string StripOriginalText(string originalText)

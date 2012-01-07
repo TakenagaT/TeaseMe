@@ -1,5 +1,7 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text;
+using System.Web;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -52,6 +54,20 @@ namespace TeaseMe.Common
                             {
                                 pageNode.AppendChild(buttonNode);
                             }
+                        }
+
+                        var commentsNode = pageNode.SelectSingleNode("Comments");
+                        if (commentsNode != null)
+                        {
+                            pageNode.RemoveChild(commentsNode);
+                            pageNode.InsertBefore(xmldoc.CreateComment(String.Format(" {0} ", HttpUtility.HtmlDecode(commentsNode.InnerXml))), pageNode.FirstChild);
+                        }
+
+                        var errorsNode = pageNode.SelectSingleNode("Errors");
+                        if (errorsNode != null)
+                        {
+                            pageNode.RemoveChild(errorsNode);
+                            pageNode.InsertBefore(errorsNode, pageNode.FirstChild);
                         }
                     }
                 }

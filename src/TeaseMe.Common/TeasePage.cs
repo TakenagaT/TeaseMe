@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Drawing.Design;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace TeaseMe.Common
@@ -16,10 +17,6 @@ namespace TeaseMe.Common
         [XmlElement("Text")]
         [Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
         public string Text { get; set; }
-
-        [XmlElement("OriginalText")]
-        [Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
-        public string OriginalText { get; set; }
 
         [XmlElement("Image")]
         public TeaseMedia Image { get; set; }
@@ -38,7 +35,6 @@ namespace TeaseMe.Common
 
         [XmlElement("Button")]
         public List<TeaseButton> ButtonList { get; set; }
-
         
         [XmlAttribute("set")]
         public string SetFlags { get; set; }
@@ -52,6 +48,11 @@ namespace TeaseMe.Common
         [XmlAttribute("if-not-set")]
         public string IfNotSetCondition { get; set; }
 
+        [XmlElement("Comments")]
+        public string Comments { get; set; }
+
+        [XmlElement("Errors")]
+        public string Errors { get; set; }
 
         public TeasePage()
         {
