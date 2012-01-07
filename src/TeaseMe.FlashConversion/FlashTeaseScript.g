@@ -97,7 +97,7 @@ textDef
 	;
 
 actionDef
-	:	actionPrefix! (actionMult | actionVert | actionPic | actionSound | actionGo | actionYn | actionDelay | actionButtons | actionUnset | actionSet)
+	:	actionPrefix! (actionMult | actionVert | actionPic | actionSound | actionGo | actionYn | actionDelay | actionButtons | actionUnset | actionSet)?
 	;
 
 actionMult
@@ -206,7 +206,7 @@ rangeDef
 	;
 
 pageRef
-	:	pageId '#'	
+	:	pageId '#'?	
 		-> ^(ID pageId)
 	;
 

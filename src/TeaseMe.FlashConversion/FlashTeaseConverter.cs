@@ -19,7 +19,7 @@ namespace TeaseMe.FlashConversion
                 Id = teaseId,
                 Title = teaseTitle,
                 Url = "http://www.milovana.com/webteases/showflash.php?id=" + teaseId,
-                MediaDirectory = teaseId,
+                MediaDirectory = String.Format("http://www.milovana.com/media/get.php?folder={0}/{1}&name=", authorId, teaseId), //teaseId,
                 Author = new Author
                 {
                     Id = authorId, 
@@ -47,44 +47,48 @@ namespace TeaseMe.FlashConversion
                 var parser = new FlashTeaseScriptParser(tokens);
 
                 IAstRuleReturnScope<CommonTree> teaseReturn = parser.tease();
-                if (!parser.HasError)
+                if (teaseReturn.Tree != null)
                 {
-                    var pageNode = teaseReturn.Tree.GetFirstChildWithType(FlashTeaseScriptLexer.PAGE) as CommonTree;
+                    var pageNode = teaseReturn.Tree;
 
-                    if (pageNode != null)
+                    var idNode = pageNode.GetFirstChildWithType(FlashTeaseScriptLexer.ID) as CommonTree;
+                    if (idNode != null)
                     {
-                        var idNode = pageNode.GetFirstChildWithType(FlashTeaseScriptLexer.ID) as CommonTree;
-                        if (idNode != null)
-                        {
-                            result.Id = GetPageId(idNode);
-                        }
-
-                        var propertiesNode = pageNode.GetFirstChildWithType(FlashTeaseScriptLexer.PROPERTIES) as CommonTree;
-                        if (propertiesNode != null)
-                        {
-                            result.OriginalText = GetText(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.TEXT) as CommonTree);
-                            result.Text = StripOriginalText(result.OriginalText);
-
-                            result.Image = GetImage(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.PIC) as CommonTree);
-                            result.Audio = GetAudio(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.SOUND) as CommonTree);
-
-                            result.ButtonList.AddRange(GetButtons(propertiesNode));
-
-                            result.Delay = GetDelay(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.DELAY) as CommonTree);
-
-                            // TODO set/unset
-                        }
+                        result.Id = GetPageId(idNode);
                     }
-                    else
+
+                    var propertiesNode = pageNode.GetFirstChildWithType(FlashTeaseScriptLexer.PROPERTIES) as CommonTree;
+                    if (propertiesNode != null)
                     {
-                        result.Text = String.Format("ERROR while converting line {0}\n: ParserError: {1}.", line, parser.ErrorMessage);
+                        result.OriginalText = GetText(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.TEXT) as CommonTree);
+                        result.Text = StripOriginalText(result.OriginalText);
+
+                        result.Image = GetImage(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.PIC) as CommonTree);
+                        result.Audio = GetAudio(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.SOUND) as CommonTree);
+
+                        result.ButtonList.AddRange(GetButtons(propertiesNode));
+
+                        result.Delay = GetDelay(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.DELAY) as CommonTree);
+
+                        // TODO set/unset
                     }
+                }
+
+                if (parser.HasError)
+                {
+                    result.Text = String.Format("ERROR while converting line {0}\n: ParserError: {1}.\n{2}", line, parser.ErrorMessage, result.Text);
                 }
             }
             catch (Exception err)
             {
-                result.Text = String.Format("ERROR while converting line {0}\n: [{1}] {2}.", line, err.GetType(), err.Message);
+                result.Text = String.Format("ERROR while converting line {0}\n: [{1}] {2}.\n{3}", line, err.GetType(), err.Message, result.Text);
             }
+
+            if (String.IsNullOrEmpty(result.Id))
+            {
+                result.Id = Guid.NewGuid().ToString();
+            }
+
             return result;
         }
 

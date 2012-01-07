@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using TeaseMe.Common;
+using TeaseMe.FlashConversion;
 
 namespace TeaseMe.FlashTeases
 {
@@ -35,27 +36,27 @@ namespace TeaseMe.FlashTeases
 
                 FlashTeaseScriptTextBox.Lines = scriptLines;
 
-                var mediaFiles = new List<string>();
-                foreach (var line in scriptLines)
-                {
-                    var media = GetFunction(line, "media:pic");  // media:pic(id:"sc1.jpg")
-                    if (!String.IsNullOrEmpty(media))
-                    {
-                        var imgName = GetSubStringBetweenMatchingChars(media, media.IndexOf('"'), '"', '"');
-                        if (!imgName.Contains("*"))
-                        {
-                            mediaFiles.Add(imgName);
-                            DownloadProgressTextBox.AppendText(imgName + Environment.NewLine);
+                //var mediaFiles = new List<string>();
+                //foreach (var line in scriptLines)
+                //{
+                //    var media = GetFunction(line, "media:pic");  // media:pic(id:"sc1.jpg")
+                //    if (!String.IsNullOrEmpty(media))
+                //    {
+                //        var imgName = GetSubStringBetweenMatchingChars(media, media.IndexOf('"'), '"', '"');
+                //        if (!imgName.Contains("*"))
+                //        {
+                //            mediaFiles.Add(imgName);
+                //            DownloadProgressTextBox.AppendText(imgName + Environment.NewLine);
 
-                            //if (!File.Exists(imgName))
-                            //{
-                            //    webClient.DownloadFile(String.Format("http://www.milovana.com/media/get.php?folder={0}/{1}&name={2}", authorId, id, imgName), imgName);
-                            //}
-                        }
-                    }
+                //            //if (!File.Exists(imgName))
+                //            //{
+                //            //    webClient.DownloadFile(String.Format("http://www.milovana.com/media/get.php?folder={0}/{1}&name={2}", authorId, id, imgName), imgName);
+                //            //}
+                //        }
+                //    }
 
-                    // TODO download audio files.
-                }
+                //    // TODO download audio files.
+                //}
                 
             }
         }
@@ -73,7 +74,7 @@ namespace TeaseMe.FlashTeases
         {
             try
             {
-                var newTease = new FlashTeaseConverter().ConvertToTease(TeaseIdTextBox.Text, TeaseTitleTextBox.Text, AuthorIdTextBox.Text, AuthorNameTextBox.Text, FlashTeaseScriptTextBox.Lines);
+                var newTease = new FlashTeaseConverter().Convert(TeaseIdTextBox.Text, TeaseTitleTextBox.Text, AuthorIdTextBox.Text, AuthorNameTextBox.Text, FlashTeaseScriptTextBox.Lines);
                 PreviewNewScriptTextBox.Text = new TeaseSerializer().ConvertToXmlString(newTease);
             }
             catch (Exception err)
@@ -92,53 +93,6 @@ namespace TeaseMe.FlashTeases
                 MessageBox.Show("File is saved.");
             }
         }
-
-
-
-
-        static string GetFunction(string text, string functionName)
-        {
-            if (text.Contains(functionName))
-            {
-                return String.Format("{0}({1})", functionName, GetSubStringBetweenMatchingChars(text, text.IndexOf(functionName) + functionName.Length, '(', ')'));
-            }
-            return null;
-        }
-
-        static string GetSubStringBetweenMatchingChars(string text, int indexOfOpeningChar, char openingChar, char closingChar)
-        {
-            int level = 0;
-
-            var result = new StringBuilder();
-            for(int i = indexOfOpeningChar+1; i < text.Length - 1; i++)
-            {
-                if (text[i] == closingChar)
-                {
-                    if (level > 0)
-                    {
-                        result.Append(text[i]);
-                    }
-                    level--;
-                }
-                else if (text[i] == openingChar)
-                {
-                    level++;
-                    result.Append(text[i]);
-                }
-                else
-                {
-                    result.Append(text[i]);
-                }
-
-                if (level < 0)
-                {
-                    break;
-                }
-            }
-
-            return result.ToString();
-        }
-
 
         
     }

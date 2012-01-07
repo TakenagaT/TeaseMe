@@ -6,6 +6,7 @@ using System.IO;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.Devices;
 using TeaseMe.Common;
+using TeaseMe.FlashTeases;
 
 namespace TeaseMe
 {
@@ -122,22 +123,28 @@ namespace TeaseMe
                 string fileName = currentTease.GetFileName(currentTease.CurrentPage.Image);
                 if (!String.IsNullOrEmpty(fileName))
                 {
-                    PictureBox1.Image = Image.FromFile(fileName);
+                    PictureBox1.ImageLocation = fileName;
                     PictureBox1.Visible = true;
                 }
             }
 
             // Audio and Metronome cannot be combined in the same page.
+            MediaPlayer.Visible = false;
+            MediaPlayer.URL = null;
             if (currentTease.CurrentPage.Audio != null && currentTease.CurrentPage.Metronome == null)
             {
                 string fileName = currentTease.GetFileName(currentTease.CurrentPage.Audio);
                 if (!String.IsNullOrEmpty(fileName))
                 {
-                    audio.Play(fileName);    
+                    MediaPlayer.uiMode = "none";
+                    MediaPlayer.stretchToFit = true;
+                    MediaPlayer.enableContextMenu = false;
+                    MediaPlayer.Ctlenabled = false;
+                    MediaPlayer.URL = fileName;
                 }
             }
 
-            MediaPlayer.Visible = false;
+
             if (currentTease.CurrentPage.Video != null)
             {
                 string fileName = currentTease.GetFileName(currentTease.CurrentPage.Video);
@@ -311,6 +318,11 @@ namespace TeaseMe
         private void PagesComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             currentTease.NavigateToPage(PagesComboBox.SelectedItem.ToString());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new ImportForm().Show();
         }
 
 

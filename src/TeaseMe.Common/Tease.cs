@@ -50,7 +50,7 @@ namespace TeaseMe.Common
             {
                 if (!String.IsNullOrEmpty(MediaDirectory))
                 {
-                    return new DirectoryInfo(MediaDirectory).FullName;
+                    return MediaDirectory.StartsWith("http://") ? MediaDirectory : new DirectoryInfo(MediaDirectory).FullName;
                 }
                 if (!String.IsNullOrEmpty(ScriptDirectory))
                 {
@@ -139,6 +139,10 @@ namespace TeaseMe.Common
 
         public string GetFileName(TeaseMedia media)
         {
+            if (FullMediaDirectoryPath.StartsWith("http://"))
+            {
+                return FullMediaDirectoryPath + media.Id;
+            }
             var matchingFiles = new DirectoryInfo(FullMediaDirectoryPath).GetFiles(media.Id);
             if (matchingFiles.Count() > 0)
             {

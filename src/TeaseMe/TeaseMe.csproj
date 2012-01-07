@@ -58,7 +58,6 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FlashTeases_NotFinished\FlashTeaseConverter.cs" />
     <Compile Include="OldScriptConverter.cs" />
     <Compile Include="TeaseLibrary.cs" />
     <Compile Include="FlashTeases_NotFinished\ImportForm.cs">
@@ -164,6 +163,10 @@
     <ProjectReference Include="..\TeaseMe.Common\TeaseMe.Common.csproj">
       <Project>{0D53B48A-52FB-4350-92C6-84C824EF808A}</Project>
       <Name>TeaseMe.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TeaseMe.FlashConversion\TeaseMe.FlashConversion.csproj">
+      <Project>{56712A78-1FE1-4EB0-8383-DB0166E6F18F}</Project>
+      <Name>TeaseMe.FlashConversion</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

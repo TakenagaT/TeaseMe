@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.3.1.7705 FlashTeaseScript.g 2012-01-05 11:15:31
+// $ANTLR 3.3.1.7705 FlashTeaseScript.g 2012-01-07 13:59:21
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -839,7 +839,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 	partial void LeaveRule_actionDef();
 
 	// $ANTLR start "actionDef"
-	// FlashTeaseScript.g:99:1: actionDef : actionPrefix ( actionMult | actionVert | actionPic | actionSound | actionGo | actionYn | actionDelay | actionButtons | actionUnset | actionSet ) ;
+	// FlashTeaseScript.g:99:1: actionDef : actionPrefix ( actionMult | actionVert | actionPic | actionSound | actionGo | actionYn | actionDelay | actionButtons | actionUnset | actionSet )? ;
 	[GrammarRule("actionDef")]
 	private FlashTeaseScriptParser.actionDef_return actionDef()
 	{
@@ -868,9 +868,9 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		DebugLocation(99, 1);
 		try
 		{
-			// FlashTeaseScript.g:100:2: ( actionPrefix ( actionMult | actionVert | actionPic | actionSound | actionGo | actionYn | actionDelay | actionButtons | actionUnset | actionSet ) )
+			// FlashTeaseScript.g:100:2: ( actionPrefix ( actionMult | actionVert | actionPic | actionSound | actionGo | actionYn | actionDelay | actionButtons | actionUnset | actionSet )? )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:100:4: actionPrefix ( actionMult | actionVert | actionPic | actionSound | actionGo | actionYn | actionDelay | actionButtons | actionUnset | actionSet )
+			// FlashTeaseScript.g:100:4: actionPrefix ( actionMult | actionVert | actionPic | actionSound | actionGo | actionYn | actionDelay | actionButtons | actionUnset | actionSet )?
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
@@ -880,8 +880,8 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			PopFollow();
 
 			DebugLocation(100, 18);
-			// FlashTeaseScript.g:100:18: ( actionMult | actionVert | actionPic | actionSound | actionGo | actionYn | actionDelay | actionButtons | actionUnset | actionSet )
-			int alt5=10;
+			// FlashTeaseScript.g:100:18: ( actionMult | actionVert | actionPic | actionSound | actionGo | actionYn | actionDelay | actionButtons | actionUnset | actionSet )?
+			int alt5=11;
 			try { DebugEnterSubRule(5);
 			try { DebugEnterDecision(5, false);
 			switch (input.LA(1))
@@ -936,12 +936,6 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 				alt5 = 10;
 				}
 				break;
-			default:
-				{
-					NoViableAltException nvae = new NoViableAltException("", 5, 0, input);
-					DebugRecognitionException(nvae);
-					throw nvae;
-				}
 			}
 
 			} finally { DebugExitDecision(5); }
@@ -1157,11 +1151,11 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			// FlashTeaseScript.g:104:4: 'mult(' actionDef ( ',' actionDef )* ')'
 			{
 			DebugLocation(104, 4);
-			string_literal24=(CommonToken)Match(input,52,Follow._52_in_actionMult364);  
+			string_literal24=(CommonToken)Match(input,52,Follow._52_in_actionMult365);  
 			stream_52.Add(string_literal24);
 
 			DebugLocation(104, 12);
-			PushFollow(Follow._actionDef_in_actionMult366);
+			PushFollow(Follow._actionDef_in_actionMult367);
 			actionDef25=actionDef();
 			PopFollow();
 
@@ -1189,11 +1183,11 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 					// FlashTeaseScript.g:104:23: ',' actionDef
 					{
 					DebugLocation(104, 23);
-					char_literal26=(CommonToken)Match(input,39,Follow._39_in_actionMult369);  
+					char_literal26=(CommonToken)Match(input,39,Follow._39_in_actionMult370);  
 					stream_39.Add(char_literal26);
 
 					DebugLocation(104, 27);
-					PushFollow(Follow._actionDef_in_actionMult371);
+					PushFollow(Follow._actionDef_in_actionMult372);
 					actionDef27=actionDef();
 					PopFollow();
 
@@ -1213,7 +1207,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(6); }
 
 			DebugLocation(104, 39);
-			char_literal28=(CommonToken)Match(input,38,Follow._38_in_actionMult375);  
+			char_literal28=(CommonToken)Match(input,38,Follow._38_in_actionMult376);  
 			stream_38.Add(char_literal28);
 
 
@@ -1325,11 +1319,11 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			// FlashTeaseScript.g:109:4: 'vert(' actionDef ( ',' actionDef )* ')'
 			{
 			DebugLocation(109, 4);
-			string_literal29=(CommonToken)Match(input,66,Follow._66_in_actionVert394);  
+			string_literal29=(CommonToken)Match(input,66,Follow._66_in_actionVert395);  
 			stream_66.Add(string_literal29);
 
 			DebugLocation(109, 12);
-			PushFollow(Follow._actionDef_in_actionVert396);
+			PushFollow(Follow._actionDef_in_actionVert397);
 			actionDef30=actionDef();
 			PopFollow();
 
@@ -1357,11 +1351,11 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 					// FlashTeaseScript.g:109:23: ',' actionDef
 					{
 					DebugLocation(109, 23);
-					char_literal31=(CommonToken)Match(input,39,Follow._39_in_actionVert399);  
+					char_literal31=(CommonToken)Match(input,39,Follow._39_in_actionVert400);  
 					stream_39.Add(char_literal31);
 
 					DebugLocation(109, 27);
-					PushFollow(Follow._actionDef_in_actionVert401);
+					PushFollow(Follow._actionDef_in_actionVert402);
 					actionDef32=actionDef();
 					PopFollow();
 
@@ -1381,7 +1375,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(7); }
 
 			DebugLocation(109, 39);
-			char_literal33=(CommonToken)Match(input,38,Follow._38_in_actionVert405);  
+			char_literal33=(CommonToken)Match(input,38,Follow._38_in_actionVert406);  
 			stream_38.Add(char_literal33);
 
 
@@ -1539,7 +1533,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(114, 4);
-				string_literal34=(CommonToken)Match(input,43,Follow._43_in_actionPrefix424); 
+				string_literal34=(CommonToken)Match(input,43,Follow._43_in_actionPrefix425); 
 				string_literal34_tree = (CommonTree)adaptor.Create(string_literal34);
 				adaptor.AddChild(root_0, string_literal34_tree);
 
@@ -1553,7 +1547,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(115, 4);
-				string_literal35=(CommonToken)Match(input,50,Follow._50_in_actionPrefix429); 
+				string_literal35=(CommonToken)Match(input,50,Follow._50_in_actionPrefix430); 
 				string_literal35_tree = (CommonTree)adaptor.Create(string_literal35);
 				adaptor.AddChild(root_0, string_literal35_tree);
 
@@ -1567,7 +1561,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(116, 4);
-				string_literal36=(CommonToken)Match(input,49,Follow._49_in_actionPrefix434); 
+				string_literal36=(CommonToken)Match(input,49,Follow._49_in_actionPrefix435); 
 				string_literal36_tree = (CommonTree)adaptor.Create(string_literal36);
 				adaptor.AddChild(root_0, string_literal36_tree);
 
@@ -1581,7 +1575,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(117, 4);
-				string_literal37=(CommonToken)Match(input,51,Follow._51_in_actionPrefix439); 
+				string_literal37=(CommonToken)Match(input,51,Follow._51_in_actionPrefix440); 
 				string_literal37_tree = (CommonTree)adaptor.Create(string_literal37);
 				adaptor.AddChild(root_0, string_literal37_tree);
 
@@ -1595,7 +1589,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(118, 4);
-				char_literal38=(CommonToken)Match(input,46,Follow._46_in_actionPrefix444); 
+				char_literal38=(CommonToken)Match(input,46,Follow._46_in_actionPrefix445); 
 				char_literal38_tree = (CommonTree)adaptor.Create(char_literal38);
 				adaptor.AddChild(root_0, char_literal38_tree);
 
@@ -1655,7 +1649,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(8); }
 
 				DebugLocation(118, 46);
-				char_literal40=(CommonToken)Match(input,41,Follow._41_in_actionPrefix465); 
+				char_literal40=(CommonToken)Match(input,41,Follow._41_in_actionPrefix466); 
 				char_literal40_tree = (CommonTree)adaptor.Create(char_literal40);
 				adaptor.AddChild(root_0, char_literal40_tree);
 
@@ -1735,15 +1729,15 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			// FlashTeaseScript.g:122:4: 'pic(id:' STRING ')'
 			{
 			DebugLocation(122, 4);
-			string_literal41=(CommonToken)Match(input,55,Follow._55_in_actionPic476);  
+			string_literal41=(CommonToken)Match(input,55,Follow._55_in_actionPic477);  
 			stream_55.Add(string_literal41);
 
 			DebugLocation(122, 14);
-			STRING42=(CommonToken)Match(input,STRING,Follow._STRING_in_actionPic478);  
+			STRING42=(CommonToken)Match(input,STRING,Follow._STRING_in_actionPic479);  
 			stream_STRING.Add(STRING42);
 
 			DebugLocation(122, 21);
-			char_literal43=(CommonToken)Match(input,38,Follow._38_in_actionPic480);  
+			char_literal43=(CommonToken)Match(input,38,Follow._38_in_actionPic481);  
 			stream_38.Add(char_literal43);
 
 
@@ -1853,15 +1847,15 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			// FlashTeaseScript.g:127:4: 'sound(id:' STRING ')'
 			{
 			DebugLocation(127, 4);
-			string_literal44=(CommonToken)Match(input,58,Follow._58_in_actionSound502);  
+			string_literal44=(CommonToken)Match(input,58,Follow._58_in_actionSound503);  
 			stream_58.Add(string_literal44);
 
 			DebugLocation(127, 16);
-			STRING45=(CommonToken)Match(input,STRING,Follow._STRING_in_actionSound504);  
+			STRING45=(CommonToken)Match(input,STRING,Follow._STRING_in_actionSound505);  
 			stream_STRING.Add(STRING45);
 
 			DebugLocation(127, 23);
-			char_literal46=(CommonToken)Match(input,38,Follow._38_in_actionSound506);  
+			char_literal46=(CommonToken)Match(input,38,Follow._38_in_actionSound507);  
 			stream_38.Add(char_literal46);
 
 
@@ -1969,17 +1963,17 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			// FlashTeaseScript.g:132:4: 'go(' targetDef ')'
 			{
 			DebugLocation(132, 4);
-			string_literal47=(CommonToken)Match(input,48,Follow._48_in_actionGo527);  
+			string_literal47=(CommonToken)Match(input,48,Follow._48_in_actionGo528);  
 			stream_48.Add(string_literal47);
 
 			DebugLocation(132, 10);
-			PushFollow(Follow._targetDef_in_actionGo529);
+			PushFollow(Follow._targetDef_in_actionGo530);
 			targetDef48=targetDef();
 			PopFollow();
 
 			stream_targetDef.Add(targetDef48.Tree);
 			DebugLocation(132, 20);
-			char_literal49=(CommonToken)Match(input,38,Follow._38_in_actionGo531);  
+			char_literal49=(CommonToken)Match(input,38,Follow._38_in_actionGo532);  
 			stream_38.Add(char_literal49);
 
 
@@ -2097,35 +2091,35 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			// FlashTeaseScript.g:137:4: 'yn(' 'yes:' pageRef ',' 'no:' pageRef ')'
 			{
 			DebugLocation(137, 4);
-			string_literal50=(CommonToken)Match(input,68,Follow._68_in_actionYn552);  
+			string_literal50=(CommonToken)Match(input,68,Follow._68_in_actionYn553);  
 			stream_68.Add(string_literal50);
 
 			DebugLocation(137, 10);
-			string_literal51=(CommonToken)Match(input,67,Follow._67_in_actionYn554);  
+			string_literal51=(CommonToken)Match(input,67,Follow._67_in_actionYn555);  
 			stream_67.Add(string_literal51);
 
 			DebugLocation(137, 17);
-			PushFollow(Follow._pageRef_in_actionYn556);
+			PushFollow(Follow._pageRef_in_actionYn557);
 			pageRef52=pageRef();
 			PopFollow();
 
 			stream_pageRef.Add(pageRef52.Tree);
 			DebugLocation(137, 25);
-			char_literal53=(CommonToken)Match(input,39,Follow._39_in_actionYn558);  
+			char_literal53=(CommonToken)Match(input,39,Follow._39_in_actionYn559);  
 			stream_39.Add(char_literal53);
 
 			DebugLocation(137, 30);
-			string_literal54=(CommonToken)Match(input,53,Follow._53_in_actionYn561);  
+			string_literal54=(CommonToken)Match(input,53,Follow._53_in_actionYn562);  
 			stream_53.Add(string_literal54);
 
 			DebugLocation(137, 36);
-			PushFollow(Follow._pageRef_in_actionYn563);
+			PushFollow(Follow._pageRef_in_actionYn564);
 			pageRef55=pageRef();
 			PopFollow();
 
 			stream_pageRef.Add(pageRef55.Tree);
 			DebugLocation(137, 44);
-			char_literal56=(CommonToken)Match(input,38,Follow._38_in_actionYn565);  
+			char_literal56=(CommonToken)Match(input,38,Follow._38_in_actionYn566);  
 			stream_38.Add(char_literal56);
 
 
@@ -2264,11 +2258,11 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			// FlashTeaseScript.g:142:4: 'delay(' timeDef ( ',' targetDef )? ( ',' styleDef )? ')'
 			{
 			DebugLocation(142, 4);
-			string_literal57=(CommonToken)Match(input,45,Follow._45_in_actionDelay596);  
+			string_literal57=(CommonToken)Match(input,45,Follow._45_in_actionDelay597);  
 			stream_45.Add(string_literal57);
 
 			DebugLocation(142, 13);
-			PushFollow(Follow._timeDef_in_actionDelay598);
+			PushFollow(Follow._timeDef_in_actionDelay599);
 			timeDef58=timeDef();
 			PopFollow();
 
@@ -2297,11 +2291,11 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 				// FlashTeaseScript.g:142:22: ',' targetDef
 				{
 				DebugLocation(142, 22);
-				char_literal59=(CommonToken)Match(input,39,Follow._39_in_actionDelay601);  
+				char_literal59=(CommonToken)Match(input,39,Follow._39_in_actionDelay602);  
 				stream_39.Add(char_literal59);
 
 				DebugLocation(142, 26);
-				PushFollow(Follow._targetDef_in_actionDelay603);
+				PushFollow(Follow._targetDef_in_actionDelay604);
 				targetDef60=targetDef();
 				PopFollow();
 
@@ -2332,11 +2326,11 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 				// FlashTeaseScript.g:142:39: ',' styleDef
 				{
 				DebugLocation(142, 39);
-				char_literal61=(CommonToken)Match(input,39,Follow._39_in_actionDelay608);  
+				char_literal61=(CommonToken)Match(input,39,Follow._39_in_actionDelay609);  
 				stream_39.Add(char_literal61);
 
 				DebugLocation(142, 43);
-				PushFollow(Follow._styleDef_in_actionDelay610);
+				PushFollow(Follow._styleDef_in_actionDelay611);
 				styleDef62=styleDef();
 				PopFollow();
 
@@ -2349,7 +2343,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(11); }
 
 			DebugLocation(142, 54);
-			char_literal63=(CommonToken)Match(input,38,Follow._38_in_actionDelay614);  
+			char_literal63=(CommonToken)Match(input,38,Follow._38_in_actionDelay615);  
 			stream_38.Add(char_literal63);
 
 
@@ -2498,17 +2492,17 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			// FlashTeaseScript.g:147:4: 'buttons(' buttonSeq ')'
 			{
 			DebugLocation(147, 4);
-			string_literal64=(CommonToken)Match(input,44,Follow._44_in_actionButtons653);  
+			string_literal64=(CommonToken)Match(input,44,Follow._44_in_actionButtons654);  
 			stream_44.Add(string_literal64);
 
 			DebugLocation(147, 15);
-			PushFollow(Follow._buttonSeq_in_actionButtons655);
+			PushFollow(Follow._buttonSeq_in_actionButtons656);
 			buttonSeq65=buttonSeq();
 			PopFollow();
 
 			stream_buttonSeq.Add(buttonSeq65.Tree);
 			DebugLocation(147, 25);
-			char_literal66=(CommonToken)Match(input,38,Follow._38_in_actionButtons657);  
+			char_literal66=(CommonToken)Match(input,38,Follow._38_in_actionButtons658);  
 			stream_38.Add(char_literal66);
 
 
@@ -2614,7 +2608,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			// FlashTeaseScript.g:152:4: buttonDef ( ',' buttonDef )*
 			{
 			DebugLocation(152, 4);
-			PushFollow(Follow._buttonDef_in_buttonSeq678);
+			PushFollow(Follow._buttonDef_in_buttonSeq679);
 			buttonDef67=buttonDef();
 			PopFollow();
 
@@ -2642,11 +2636,11 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 					// FlashTeaseScript.g:152:15: ',' buttonDef
 					{
 					DebugLocation(152, 15);
-					char_literal68=(CommonToken)Match(input,39,Follow._39_in_buttonSeq681);  
+					char_literal68=(CommonToken)Match(input,39,Follow._39_in_buttonSeq682);  
 					stream_39.Add(char_literal68);
 
 					DebugLocation(152, 19);
-					PushFollow(Follow._buttonDef_in_buttonSeq683);
+					PushFollow(Follow._buttonDef_in_buttonSeq684);
 					buttonDef69=buttonDef();
 					PopFollow();
 
@@ -2783,37 +2777,37 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			// FlashTeaseScript.g:157:4: 'target' INTEGER ':' pageRef ',cap' INTEGER ':' STRING
 			{
 			DebugLocation(157, 4);
-			string_literal70=(CommonToken)Match(input,60,Follow._60_in_buttonDef703);  
+			string_literal70=(CommonToken)Match(input,60,Follow._60_in_buttonDef704);  
 			stream_60.Add(string_literal70);
 
 			DebugLocation(157, 13);
-			INTEGER71=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_buttonDef705);  
+			INTEGER71=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_buttonDef706);  
 			stream_INTEGER.Add(INTEGER71);
 
 			DebugLocation(157, 21);
-			char_literal72=(CommonToken)Match(input,41,Follow._41_in_buttonDef707);  
+			char_literal72=(CommonToken)Match(input,41,Follow._41_in_buttonDef708);  
 			stream_41.Add(char_literal72);
 
 			DebugLocation(157, 25);
-			PushFollow(Follow._pageRef_in_buttonDef709);
+			PushFollow(Follow._pageRef_in_buttonDef710);
 			pageRef73=pageRef();
 			PopFollow();
 
 			stream_pageRef.Add(pageRef73.Tree);
 			DebugLocation(157, 33);
-			string_literal74=(CommonToken)Match(input,40,Follow._40_in_buttonDef711);  
+			string_literal74=(CommonToken)Match(input,40,Follow._40_in_buttonDef712);  
 			stream_40.Add(string_literal74);
 
 			DebugLocation(157, 40);
-			INTEGER75=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_buttonDef713);  
+			INTEGER75=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_buttonDef714);  
 			stream_INTEGER.Add(INTEGER75);
 
 			DebugLocation(157, 48);
-			char_literal76=(CommonToken)Match(input,41,Follow._41_in_buttonDef715);  
+			char_literal76=(CommonToken)Match(input,41,Follow._41_in_buttonDef716);  
 			stream_41.Add(char_literal76);
 
 			DebugLocation(157, 52);
-			STRING77=(CommonToken)Match(input,STRING,Follow._STRING_in_buttonDef717);  
+			STRING77=(CommonToken)Match(input,STRING,Follow._STRING_in_buttonDef718);  
 			stream_STRING.Add(STRING77);
 
 
@@ -2943,17 +2937,17 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			// FlashTeaseScript.g:162:4: 'unset(' actionList ')'
 			{
 			DebugLocation(162, 4);
-			string_literal78=(CommonToken)Match(input,65,Follow._65_in_actionUnset748);  
+			string_literal78=(CommonToken)Match(input,65,Follow._65_in_actionUnset749);  
 			stream_65.Add(string_literal78);
 
 			DebugLocation(162, 13);
-			PushFollow(Follow._actionList_in_actionUnset750);
+			PushFollow(Follow._actionList_in_actionUnset751);
 			actionList79=actionList();
 			PopFollow();
 
 			stream_actionList.Add(actionList79.Tree);
 			DebugLocation(162, 24);
-			char_literal80=(CommonToken)Match(input,38,Follow._38_in_actionUnset752);  
+			char_literal80=(CommonToken)Match(input,38,Follow._38_in_actionUnset753);  
 			stream_38.Add(char_literal80);
 
 
@@ -3061,17 +3055,17 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			// FlashTeaseScript.g:167:4: 'set(' actionList ')'
 			{
 			DebugLocation(167, 4);
-			string_literal81=(CommonToken)Match(input,57,Follow._57_in_actionSet775);  
+			string_literal81=(CommonToken)Match(input,57,Follow._57_in_actionSet776);  
 			stream_57.Add(string_literal81);
 
 			DebugLocation(167, 11);
-			PushFollow(Follow._actionList_in_actionSet777);
+			PushFollow(Follow._actionList_in_actionSet778);
 			actionList82=actionList();
 			PopFollow();
 
 			stream_actionList.Add(actionList82.Tree);
 			DebugLocation(167, 22);
-			char_literal83=(CommonToken)Match(input,38,Follow._38_in_actionSet779);  
+			char_literal83=(CommonToken)Match(input,38,Follow._38_in_actionSet780);  
 			stream_38.Add(char_literal83);
 
 
@@ -3177,7 +3171,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			// FlashTeaseScript.g:172:4: actionApply ( ',' actionApply )*
 			{
 			DebugLocation(172, 4);
-			PushFollow(Follow._actionApply_in_actionList802);
+			PushFollow(Follow._actionApply_in_actionList803);
 			actionApply84=actionApply();
 			PopFollow();
 
@@ -3205,11 +3199,11 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 					// FlashTeaseScript.g:172:17: ',' actionApply
 					{
 					DebugLocation(172, 17);
-					char_literal85=(CommonToken)Match(input,39,Follow._39_in_actionList805);  
+					char_literal85=(CommonToken)Match(input,39,Follow._39_in_actionList806);  
 					stream_39.Add(char_literal85);
 
 					DebugLocation(172, 21);
-					PushFollow(Follow._actionApply_in_actionList807);
+					PushFollow(Follow._actionApply_in_actionList808);
 					actionApply86=actionApply();
 					PopFollow();
 
@@ -3332,14 +3326,14 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(177, 12);
-			PushFollow(Follow._actionId_in_actionApply828);
+			PushFollow(Follow._actionId_in_actionApply829);
 			actionId87=actionId();
 			PopFollow();
 
 			DebugLocation(177, 17);
-			char_literal88=(CommonToken)Match(input,41,Follow._41_in_actionApply831); 
+			char_literal88=(CommonToken)Match(input,41,Follow._41_in_actionApply832); 
 			DebugLocation(177, 19);
-			PushFollow(Follow._pageRef_in_actionApply834);
+			PushFollow(Follow._pageRef_in_actionApply835);
 			pageRef89=pageRef();
 			PopFollow();
 
@@ -3415,12 +3409,12 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(181, 4);
-			string_literal90=(CommonToken)Match(input,42,Follow._42_in_actionId845); 
+			string_literal90=(CommonToken)Match(input,42,Follow._42_in_actionId846); 
 			string_literal90_tree = (CommonTree)adaptor.Create(string_literal90);
 			adaptor.AddChild(root_0, string_literal90_tree);
 
 			DebugLocation(181, 13);
-			INTEGER91=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_actionId847); 
+			INTEGER91=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_actionId848); 
 			INTEGER91_tree = (CommonTree)adaptor.Create(INTEGER91);
 			adaptor.AddChild(root_0, INTEGER91_tree);
 
@@ -3495,7 +3489,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(185, 13);
-			string_literal92=(CommonToken)Match(input,61,Follow._61_in_targetDef858); 
+			string_literal92=(CommonToken)Match(input,61,Follow._61_in_targetDef859); 
 			DebugLocation(185, 15);
 			// FlashTeaseScript.g:185:15: ( pageRef | rangeDef )
 			int alt14=2;
@@ -3525,7 +3519,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 				// FlashTeaseScript.g:185:17: pageRef
 				{
 				DebugLocation(185, 17);
-				PushFollow(Follow._pageRef_in_targetDef863);
+				PushFollow(Follow._pageRef_in_targetDef864);
 				pageRef93=pageRef();
 				PopFollow();
 
@@ -3538,7 +3532,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 				// FlashTeaseScript.g:185:27: rangeDef
 				{
 				DebugLocation(185, 27);
-				PushFollow(Follow._rangeDef_in_targetDef867);
+				PushFollow(Follow._rangeDef_in_targetDef868);
 				rangeDef94=rangeDef();
 				PopFollow();
 
@@ -3623,9 +3617,9 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(189, 11);
-			string_literal95=(CommonToken)Match(input,63,Follow._63_in_timeDef880); 
+			string_literal95=(CommonToken)Match(input,63,Follow._63_in_timeDef881); 
 			DebugLocation(189, 13);
-			INTEGER96=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_timeDef883); 
+			INTEGER96=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_timeDef884); 
 			INTEGER96_tree = (CommonTree)adaptor.Create(INTEGER96);
 			adaptor.AddChild(root_0, INTEGER96_tree);
 
@@ -3715,7 +3709,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(196, 12);
-			string_literal98=(CommonToken)Match(input,59,Follow._59_in_styleDef917); 
+			string_literal98=(CommonToken)Match(input,59,Follow._59_in_styleDef918); 
 			DebugLocation(196, 14);
 			set99=(CommonToken)input.LT(1);
 			if (input.LA(1)==HIDDEN||input.LA(1)==NORMAL||input.LA(1)==SECRET)
@@ -3816,31 +3810,31 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			// FlashTeaseScript.g:204:4: 'range(' 'from:' INTEGER ',' 'to:' INTEGER ')'
 			{
 			DebugLocation(204, 4);
-			string_literal100=(CommonToken)Match(input,56,Follow._56_in_rangeDef963);  
+			string_literal100=(CommonToken)Match(input,56,Follow._56_in_rangeDef964);  
 			stream_56.Add(string_literal100);
 
 			DebugLocation(204, 13);
-			string_literal101=(CommonToken)Match(input,47,Follow._47_in_rangeDef965);  
+			string_literal101=(CommonToken)Match(input,47,Follow._47_in_rangeDef966);  
 			stream_47.Add(string_literal101);
 
 			DebugLocation(204, 21);
-			INTEGER102=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_rangeDef967);  
+			INTEGER102=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_rangeDef968);  
 			stream_INTEGER.Add(INTEGER102);
 
 			DebugLocation(204, 29);
-			char_literal103=(CommonToken)Match(input,39,Follow._39_in_rangeDef969);  
+			char_literal103=(CommonToken)Match(input,39,Follow._39_in_rangeDef970);  
 			stream_39.Add(char_literal103);
 
 			DebugLocation(204, 33);
-			string_literal104=(CommonToken)Match(input,64,Follow._64_in_rangeDef971);  
+			string_literal104=(CommonToken)Match(input,64,Follow._64_in_rangeDef972);  
 			stream_64.Add(string_literal104);
 
 			DebugLocation(204, 39);
-			INTEGER105=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_rangeDef973);  
+			INTEGER105=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_rangeDef974);  
 			stream_INTEGER.Add(INTEGER105);
 
 			DebugLocation(204, 47);
-			char_literal106=(CommonToken)Match(input,38,Follow._38_in_rangeDef975);  
+			char_literal106=(CommonToken)Match(input,38,Follow._38_in_rangeDef976);  
 			stream_38.Add(char_literal106);
 
 
@@ -3940,7 +3934,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 	partial void LeaveRule_pageRef();
 
 	// $ANTLR start "pageRef"
-	// FlashTeaseScript.g:208:1: pageRef : pageId '#' -> ^( ID pageId ) ;
+	// FlashTeaseScript.g:208:1: pageRef : pageId ( '#' )? -> ^( ID pageId ) ;
 	[GrammarRule("pageRef")]
 	private FlashTeaseScriptParser.pageRef_return pageRef()
 	{
@@ -3962,19 +3956,44 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		DebugLocation(208, 1);
 		try
 		{
-			// FlashTeaseScript.g:209:2: ( pageId '#' -> ^( ID pageId ) )
+			// FlashTeaseScript.g:209:2: ( pageId ( '#' )? -> ^( ID pageId ) )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:209:4: pageId '#'
+			// FlashTeaseScript.g:209:4: pageId ( '#' )?
 			{
 			DebugLocation(209, 4);
-			PushFollow(Follow._pageId_in_pageRef1007);
+			PushFollow(Follow._pageId_in_pageRef1008);
 			pageId107=pageId();
 			PopFollow();
 
 			stream_pageId.Add(pageId107.Tree);
 			DebugLocation(209, 11);
-			char_literal108=(CommonToken)Match(input,37,Follow._37_in_pageRef1009);  
-			stream_37.Add(char_literal108);
+			// FlashTeaseScript.g:209:11: ( '#' )?
+			int alt15=2;
+			try { DebugEnterSubRule(15);
+			try { DebugEnterDecision(15, false);
+			int LA15_0 = input.LA(1);
+
+			if ((LA15_0==37))
+			{
+				alt15 = 1;
+			}
+			} finally { DebugExitDecision(15); }
+			switch (alt15)
+			{
+			case 1:
+				DebugEnterAlt(1);
+				// FlashTeaseScript.g:209:11: '#'
+				{
+				DebugLocation(209, 11);
+				char_literal108=(CommonToken)Match(input,37,Follow._37_in_pageRef1010);  
+				stream_37.Add(char_literal108);
+
+
+				}
+				break;
+
+			}
+			} finally { DebugExitSubRule(15); }
 
 
 
@@ -4079,22 +4098,22 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 
 			DebugLocation(214, 4);
 			// FlashTeaseScript.g:214:4: ( INTEGER | LETTERS )+
-			int cnt15=0;
-			try { DebugEnterSubRule(15);
+			int cnt16=0;
+			try { DebugEnterSubRule(16);
 			while (true)
 			{
-				int alt15=2;
-				try { DebugEnterDecision(15, false);
-				int LA15_0 = input.LA(1);
+				int alt16=2;
+				try { DebugEnterDecision(16, false);
+				int LA16_0 = input.LA(1);
 
-				if (((LA15_0>=INTEGER && LA15_0<=LETTERS)))
+				if (((LA16_0>=INTEGER && LA16_0<=LETTERS)))
 				{
-					alt15 = 1;
+					alt16 = 1;
 				}
 
 
-				} finally { DebugExitDecision(15); }
-				switch (alt15)
+				} finally { DebugExitDecision(16); }
+				switch (alt16)
 				{
 				case 1:
 					DebugEnterAlt(1);
@@ -4120,19 +4139,19 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 					break;
 
 				default:
-					if (cnt15 >= 1)
-						goto loop15;
+					if (cnt16 >= 1)
+						goto loop16;
 
-					EarlyExitException eee15 = new EarlyExitException( 15, input );
-					DebugRecognitionException(eee15);
-					throw eee15;
+					EarlyExitException eee16 = new EarlyExitException( 16, input );
+					DebugRecognitionException(eee16);
+					throw eee16;
 				}
-				cnt15++;
+				cnt16++;
 			}
-			loop15:
+			loop16:
 				;
 
-			} finally { DebugExitSubRule(15); }
+			} finally { DebugExitSubRule(16); }
 
 
 			}
@@ -4180,7 +4199,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		public static readonly BitSet _actionDef_in_pageProp287 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _62_in_textDef298 = new BitSet(new ulong[]{0x8000000UL});
 		public static readonly BitSet _STRING_in_textDef301 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _actionPrefix_in_actionDef312 = new BitSet(new ulong[]{0x691300000000000UL,0x16UL});
+		public static readonly BitSet _actionPrefix_in_actionDef312 = new BitSet(new ulong[]{0x691300000000002UL,0x16UL});
 		public static readonly BitSet _actionMult_in_actionDef316 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _actionVert_in_actionDef320 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _actionPic_in_actionDef324 = new BitSet(new ulong[]{0x2UL});
@@ -4191,92 +4210,92 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		public static readonly BitSet _actionButtons_in_actionDef344 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _actionUnset_in_actionDef348 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _actionSet_in_actionDef352 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _52_in_actionMult364 = new BitSet(new ulong[]{0x400E480000000000UL});
-		public static readonly BitSet _actionDef_in_actionMult366 = new BitSet(new ulong[]{0xC000000000UL});
-		public static readonly BitSet _39_in_actionMult369 = new BitSet(new ulong[]{0x400E480000000000UL});
-		public static readonly BitSet _actionDef_in_actionMult371 = new BitSet(new ulong[]{0xC000000000UL});
-		public static readonly BitSet _38_in_actionMult375 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _66_in_actionVert394 = new BitSet(new ulong[]{0x400E480000000000UL});
-		public static readonly BitSet _actionDef_in_actionVert396 = new BitSet(new ulong[]{0xC000000000UL});
-		public static readonly BitSet _39_in_actionVert399 = new BitSet(new ulong[]{0x400E480000000000UL});
-		public static readonly BitSet _actionDef_in_actionVert401 = new BitSet(new ulong[]{0xC000000000UL});
-		public static readonly BitSet _38_in_actionVert405 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _43_in_actionPrefix424 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _50_in_actionPrefix429 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _49_in_actionPrefix434 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _51_in_actionPrefix439 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _46_in_actionPrefix444 = new BitSet(new ulong[]{0xFFFFFFFFFFFFFFF0UL,0x1FUL});
-		public static readonly BitSet _set_in_actionPrefix458 = new BitSet(new ulong[]{0xFFFFFFFFFFFFFFF0UL,0x1FUL});
-		public static readonly BitSet _41_in_actionPrefix465 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _55_in_actionPic476 = new BitSet(new ulong[]{0x8000000UL});
-		public static readonly BitSet _STRING_in_actionPic478 = new BitSet(new ulong[]{0x4000000000UL});
-		public static readonly BitSet _38_in_actionPic480 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _58_in_actionSound502 = new BitSet(new ulong[]{0x8000000UL});
-		public static readonly BitSet _STRING_in_actionSound504 = new BitSet(new ulong[]{0x4000000000UL});
-		public static readonly BitSet _38_in_actionSound506 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _48_in_actionGo527 = new BitSet(new ulong[]{0x2000000000000000UL});
-		public static readonly BitSet _targetDef_in_actionGo529 = new BitSet(new ulong[]{0x4000000000UL});
-		public static readonly BitSet _38_in_actionGo531 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _68_in_actionYn552 = new BitSet(new ulong[]{0x0UL,0x8UL});
-		public static readonly BitSet _67_in_actionYn554 = new BitSet(new ulong[]{0x8000006000UL});
-		public static readonly BitSet _pageRef_in_actionYn556 = new BitSet(new ulong[]{0x8000000000UL});
-		public static readonly BitSet _39_in_actionYn558 = new BitSet(new ulong[]{0x20000000000000UL});
-		public static readonly BitSet _53_in_actionYn561 = new BitSet(new ulong[]{0x4000006000UL});
-		public static readonly BitSet _pageRef_in_actionYn563 = new BitSet(new ulong[]{0x4000000000UL});
-		public static readonly BitSet _38_in_actionYn565 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _45_in_actionDelay596 = new BitSet(new ulong[]{0x8000000000000000UL});
-		public static readonly BitSet _timeDef_in_actionDelay598 = new BitSet(new ulong[]{0xC000000000UL});
-		public static readonly BitSet _39_in_actionDelay601 = new BitSet(new ulong[]{0x2000000000000000UL});
-		public static readonly BitSet _targetDef_in_actionDelay603 = new BitSet(new ulong[]{0xC000000000UL});
-		public static readonly BitSet _39_in_actionDelay608 = new BitSet(new ulong[]{0x800000000000000UL});
-		public static readonly BitSet _styleDef_in_actionDelay610 = new BitSet(new ulong[]{0x4000000000UL});
-		public static readonly BitSet _38_in_actionDelay614 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _44_in_actionButtons653 = new BitSet(new ulong[]{0x1000000000000000UL});
-		public static readonly BitSet _buttonSeq_in_actionButtons655 = new BitSet(new ulong[]{0x4000000000UL});
-		public static readonly BitSet _38_in_actionButtons657 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _buttonDef_in_buttonSeq678 = new BitSet(new ulong[]{0x8000000002UL});
-		public static readonly BitSet _39_in_buttonSeq681 = new BitSet(new ulong[]{0x1000000000000000UL});
-		public static readonly BitSet _buttonDef_in_buttonSeq683 = new BitSet(new ulong[]{0x8000000002UL});
-		public static readonly BitSet _60_in_buttonDef703 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INTEGER_in_buttonDef705 = new BitSet(new ulong[]{0x20000000000UL});
-		public static readonly BitSet _41_in_buttonDef707 = new BitSet(new ulong[]{0x10000006000UL});
-		public static readonly BitSet _pageRef_in_buttonDef709 = new BitSet(new ulong[]{0x10000000000UL});
-		public static readonly BitSet _40_in_buttonDef711 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INTEGER_in_buttonDef713 = new BitSet(new ulong[]{0x20000000000UL});
-		public static readonly BitSet _41_in_buttonDef715 = new BitSet(new ulong[]{0x8000000UL});
-		public static readonly BitSet _STRING_in_buttonDef717 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _65_in_actionUnset748 = new BitSet(new ulong[]{0x40000000000UL});
-		public static readonly BitSet _actionList_in_actionUnset750 = new BitSet(new ulong[]{0x4000000000UL});
-		public static readonly BitSet _38_in_actionUnset752 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _57_in_actionSet775 = new BitSet(new ulong[]{0x40000000000UL});
-		public static readonly BitSet _actionList_in_actionSet777 = new BitSet(new ulong[]{0x4000000000UL});
-		public static readonly BitSet _38_in_actionSet779 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _actionApply_in_actionList802 = new BitSet(new ulong[]{0x8000000002UL});
-		public static readonly BitSet _39_in_actionList805 = new BitSet(new ulong[]{0x40000000000UL});
-		public static readonly BitSet _actionApply_in_actionList807 = new BitSet(new ulong[]{0x8000000002UL});
-		public static readonly BitSet _actionId_in_actionApply828 = new BitSet(new ulong[]{0x20000000000UL});
-		public static readonly BitSet _41_in_actionApply831 = new BitSet(new ulong[]{0x6000UL});
-		public static readonly BitSet _pageRef_in_actionApply834 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _42_in_actionId845 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INTEGER_in_actionId847 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _61_in_targetDef858 = new BitSet(new ulong[]{0x100000000006000UL});
-		public static readonly BitSet _pageRef_in_targetDef863 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _rangeDef_in_targetDef867 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _63_in_timeDef880 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INTEGER_in_timeDef883 = new BitSet(new ulong[]{0x808000UL});
-		public static readonly BitSet _set_in_timeDef885 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _59_in_styleDef917 = new BitSet(new ulong[]{0x1040800UL});
-		public static readonly BitSet _set_in_styleDef920 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _56_in_rangeDef963 = new BitSet(new ulong[]{0x800000000000UL});
-		public static readonly BitSet _47_in_rangeDef965 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INTEGER_in_rangeDef967 = new BitSet(new ulong[]{0x8000000000UL});
-		public static readonly BitSet _39_in_rangeDef969 = new BitSet(new ulong[]{0x0UL,0x1UL});
-		public static readonly BitSet _64_in_rangeDef971 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INTEGER_in_rangeDef973 = new BitSet(new ulong[]{0x4000000000UL});
-		public static readonly BitSet _38_in_rangeDef975 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _pageId_in_pageRef1007 = new BitSet(new ulong[]{0x2000000000UL});
-		public static readonly BitSet _37_in_pageRef1009 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _set_in_pageId1031 = new BitSet(new ulong[]{0x6002UL});
+		public static readonly BitSet _52_in_actionMult365 = new BitSet(new ulong[]{0x400E480000000000UL});
+		public static readonly BitSet _actionDef_in_actionMult367 = new BitSet(new ulong[]{0xC000000000UL});
+		public static readonly BitSet _39_in_actionMult370 = new BitSet(new ulong[]{0x400E480000000000UL});
+		public static readonly BitSet _actionDef_in_actionMult372 = new BitSet(new ulong[]{0xC000000000UL});
+		public static readonly BitSet _38_in_actionMult376 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _66_in_actionVert395 = new BitSet(new ulong[]{0x400E480000000000UL});
+		public static readonly BitSet _actionDef_in_actionVert397 = new BitSet(new ulong[]{0xC000000000UL});
+		public static readonly BitSet _39_in_actionVert400 = new BitSet(new ulong[]{0x400E480000000000UL});
+		public static readonly BitSet _actionDef_in_actionVert402 = new BitSet(new ulong[]{0xC000000000UL});
+		public static readonly BitSet _38_in_actionVert406 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _43_in_actionPrefix425 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _50_in_actionPrefix430 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _49_in_actionPrefix435 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _51_in_actionPrefix440 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _46_in_actionPrefix445 = new BitSet(new ulong[]{0xFFFFFFFFFFFFFFF0UL,0x1FUL});
+		public static readonly BitSet _set_in_actionPrefix459 = new BitSet(new ulong[]{0xFFFFFFFFFFFFFFF0UL,0x1FUL});
+		public static readonly BitSet _41_in_actionPrefix466 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _55_in_actionPic477 = new BitSet(new ulong[]{0x8000000UL});
+		public static readonly BitSet _STRING_in_actionPic479 = new BitSet(new ulong[]{0x4000000000UL});
+		public static readonly BitSet _38_in_actionPic481 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _58_in_actionSound503 = new BitSet(new ulong[]{0x8000000UL});
+		public static readonly BitSet _STRING_in_actionSound505 = new BitSet(new ulong[]{0x4000000000UL});
+		public static readonly BitSet _38_in_actionSound507 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _48_in_actionGo528 = new BitSet(new ulong[]{0x2000000000000000UL});
+		public static readonly BitSet _targetDef_in_actionGo530 = new BitSet(new ulong[]{0x4000000000UL});
+		public static readonly BitSet _38_in_actionGo532 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _68_in_actionYn553 = new BitSet(new ulong[]{0x0UL,0x8UL});
+		public static readonly BitSet _67_in_actionYn555 = new BitSet(new ulong[]{0x8000006000UL});
+		public static readonly BitSet _pageRef_in_actionYn557 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _39_in_actionYn559 = new BitSet(new ulong[]{0x20000000000000UL});
+		public static readonly BitSet _53_in_actionYn562 = new BitSet(new ulong[]{0x4000006000UL});
+		public static readonly BitSet _pageRef_in_actionYn564 = new BitSet(new ulong[]{0x4000000000UL});
+		public static readonly BitSet _38_in_actionYn566 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _45_in_actionDelay597 = new BitSet(new ulong[]{0x8000000000000000UL});
+		public static readonly BitSet _timeDef_in_actionDelay599 = new BitSet(new ulong[]{0xC000000000UL});
+		public static readonly BitSet _39_in_actionDelay602 = new BitSet(new ulong[]{0x2000000000000000UL});
+		public static readonly BitSet _targetDef_in_actionDelay604 = new BitSet(new ulong[]{0xC000000000UL});
+		public static readonly BitSet _39_in_actionDelay609 = new BitSet(new ulong[]{0x800000000000000UL});
+		public static readonly BitSet _styleDef_in_actionDelay611 = new BitSet(new ulong[]{0x4000000000UL});
+		public static readonly BitSet _38_in_actionDelay615 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _44_in_actionButtons654 = new BitSet(new ulong[]{0x1000000000000000UL});
+		public static readonly BitSet _buttonSeq_in_actionButtons656 = new BitSet(new ulong[]{0x4000000000UL});
+		public static readonly BitSet _38_in_actionButtons658 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _buttonDef_in_buttonSeq679 = new BitSet(new ulong[]{0x8000000002UL});
+		public static readonly BitSet _39_in_buttonSeq682 = new BitSet(new ulong[]{0x1000000000000000UL});
+		public static readonly BitSet _buttonDef_in_buttonSeq684 = new BitSet(new ulong[]{0x8000000002UL});
+		public static readonly BitSet _60_in_buttonDef704 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INTEGER_in_buttonDef706 = new BitSet(new ulong[]{0x20000000000UL});
+		public static readonly BitSet _41_in_buttonDef708 = new BitSet(new ulong[]{0x10000006000UL});
+		public static readonly BitSet _pageRef_in_buttonDef710 = new BitSet(new ulong[]{0x10000000000UL});
+		public static readonly BitSet _40_in_buttonDef712 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INTEGER_in_buttonDef714 = new BitSet(new ulong[]{0x20000000000UL});
+		public static readonly BitSet _41_in_buttonDef716 = new BitSet(new ulong[]{0x8000000UL});
+		public static readonly BitSet _STRING_in_buttonDef718 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _65_in_actionUnset749 = new BitSet(new ulong[]{0x40000000000UL});
+		public static readonly BitSet _actionList_in_actionUnset751 = new BitSet(new ulong[]{0x4000000000UL});
+		public static readonly BitSet _38_in_actionUnset753 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _57_in_actionSet776 = new BitSet(new ulong[]{0x40000000000UL});
+		public static readonly BitSet _actionList_in_actionSet778 = new BitSet(new ulong[]{0x4000000000UL});
+		public static readonly BitSet _38_in_actionSet780 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _actionApply_in_actionList803 = new BitSet(new ulong[]{0x8000000002UL});
+		public static readonly BitSet _39_in_actionList806 = new BitSet(new ulong[]{0x40000000000UL});
+		public static readonly BitSet _actionApply_in_actionList808 = new BitSet(new ulong[]{0x8000000002UL});
+		public static readonly BitSet _actionId_in_actionApply829 = new BitSet(new ulong[]{0x20000000000UL});
+		public static readonly BitSet _41_in_actionApply832 = new BitSet(new ulong[]{0x6000UL});
+		public static readonly BitSet _pageRef_in_actionApply835 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _42_in_actionId846 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INTEGER_in_actionId848 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _61_in_targetDef859 = new BitSet(new ulong[]{0x100000000006000UL});
+		public static readonly BitSet _pageRef_in_targetDef864 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _rangeDef_in_targetDef868 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _63_in_timeDef881 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INTEGER_in_timeDef884 = new BitSet(new ulong[]{0x808000UL});
+		public static readonly BitSet _set_in_timeDef886 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _59_in_styleDef918 = new BitSet(new ulong[]{0x1040800UL});
+		public static readonly BitSet _set_in_styleDef921 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _56_in_rangeDef964 = new BitSet(new ulong[]{0x800000000000UL});
+		public static readonly BitSet _47_in_rangeDef966 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INTEGER_in_rangeDef968 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _39_in_rangeDef970 = new BitSet(new ulong[]{0x0UL,0x1UL});
+		public static readonly BitSet _64_in_rangeDef972 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INTEGER_in_rangeDef974 = new BitSet(new ulong[]{0x4000000000UL});
+		public static readonly BitSet _38_in_rangeDef976 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _pageId_in_pageRef1008 = new BitSet(new ulong[]{0x2000000002UL});
+		public static readonly BitSet _37_in_pageRef1010 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _set_in_pageId1033 = new BitSet(new ulong[]{0x6002UL});
 
 	}
 	#endregion Follow sets
