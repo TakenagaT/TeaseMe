@@ -74,7 +74,7 @@ namespace TeaseMe.FlashTeases
         {
             try
             {
-                var newTease = new FlashTeaseConverter().Convert(TeaseIdTextBox.Text, TeaseTitleTextBox.Text, AuthorIdTextBox.Text, AuthorNameTextBox.Text, FlashTeaseScriptTextBox.Lines);
+                var newTease = new FlashTeaseConverter().Convert(TeaseIdTextBox.Text, TeaseTitleTextBox.Text, AuthorIdTextBox.Text, AuthorNameTextBox.Text, FlashTeaseScriptTextBox.Lines, true);
                 PreviewNewScriptTextBox.Text = new TeaseSerializer().ConvertToXmlString(newTease);
             }
             catch (Exception err)

@@ -139,6 +139,10 @@ namespace TeaseMe.Common
 
         public string GetFileName(TeaseMedia media)
         {
+            if (media.Id.StartsWith("http://"))
+            {
+                return media.Id;
+            }
             if (FullMediaDirectoryPath.StartsWith("http://"))
             {
                 return FullMediaDirectoryPath + media.Id;
@@ -244,7 +248,7 @@ namespace TeaseMe.Common
             }
             if (possibilities.Count == 0)
             {
-                throw new ArgumentException(String.Format("No page available for target '{0}'.", action.Target));
+                throw new ArgumentException(String.Format("Page '{0}' does not exist or is already marked as seen.\n\nFor the author of this tease:\nUse the set/unset commands to to correct this situation.", action.Target));
             }
             return possibilities[random.Next(possibilities.Count)];
         }
