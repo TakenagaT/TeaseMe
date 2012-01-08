@@ -42,21 +42,21 @@ namespace TeaseMe
             this.CountdownTimer = new System.Windows.Forms.Timer(this.components);
             this.MediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.MetronomeTimer = new System.Windows.Forms.Timer(this.components);
-            this.OnlineButton = new System.Windows.Forms.Button();
-            this.OpenButton = new System.Windows.Forms.Button();
             this.AuthorNameLabel = new System.Windows.Forms.Label();
             this.TeaseTitleLabel = new System.Windows.Forms.Label();
             this.ToolTips = new System.Windows.Forms.ToolTip(this.components);
             this.HorizontalSplitContainer = new System.Windows.Forms.SplitContainer();
             this.VerticalSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.TextPanel = new System.Windows.Forms.Panel();
-            this.TeaseTextBox = new System.Windows.Forms.RichTextBox();
             this.DebugPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.PagesComboBox = new System.Windows.Forms.ComboBox();
             this.PagePropertyGrid = new System.Windows.Forms.PropertyGrid();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TeaseTextWebBrowser = new System.Windows.Forms.WebBrowser();
+            this.PictureBox1 = new System.Windows.Forms.PictureBox();
+            this.OpenButton = new System.Windows.Forms.Button();
+            this.OnlineButton = new System.Windows.Forms.Button();
             this.CountdownPanel.SuspendLayout();
             this.ButtonPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer)).BeginInit();
@@ -66,10 +66,10 @@ namespace TeaseMe
             this.VerticalSplitContainer.Panel1.SuspendLayout();
             this.VerticalSplitContainer.Panel2.SuspendLayout();
             this.VerticalSplitContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.TextPanel.SuspendLayout();
             this.DebugPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // CountdownPanel
@@ -127,16 +127,18 @@ namespace TeaseMe
             // 
             // ButtonPanel
             // 
+            this.ButtonPanel.AutoSize = true;
+            this.ButtonPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ButtonPanel.BackColor = System.Drawing.Color.Black;
             this.ButtonPanel.Controls.Add(this.SampleButton);
             this.ButtonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ButtonPanel.Location = new System.Drawing.Point(392, 0);
+            this.ButtonPanel.Location = new System.Drawing.Point(250, 0);
             this.ButtonPanel.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonPanel.MinimumSize = new System.Drawing.Size(0, 50);
             this.ButtonPanel.Name = "ButtonPanel";
             this.ButtonPanel.Padding = new System.Windows.Forms.Padding(3);
             this.ButtonPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ButtonPanel.Size = new System.Drawing.Size(684, 58);
+            this.ButtonPanel.Size = new System.Drawing.Size(826, 58);
             this.ButtonPanel.TabIndex = 7;
             // 
             // SampleButton
@@ -144,7 +146,7 @@ namespace TeaseMe
             this.SampleButton.BackColor = System.Drawing.Color.White;
             this.SampleButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.SampleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SampleButton.Location = new System.Drawing.Point(565, 6);
+            this.SampleButton.Location = new System.Drawing.Point(707, 6);
             this.SampleButton.MaximumSize = new System.Drawing.Size(500, 35);
             this.SampleButton.MinimumSize = new System.Drawing.Size(110, 35);
             this.SampleButton.Name = "SampleButton";
@@ -174,30 +176,6 @@ namespace TeaseMe
             // 
             this.MetronomeTimer.Interval = 200;
             this.MetronomeTimer.Tick += new System.EventHandler(this.MetronomeTick);
-            // 
-            // OnlineButton
-            // 
-            this.OnlineButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.OnlineButton.Image = global::TeaseMe.Properties.Resources.online_48;
-            this.OnlineButton.Location = new System.Drawing.Point(65, -1);
-            this.OnlineButton.Name = "OnlineButton";
-            this.OnlineButton.Size = new System.Drawing.Size(56, 56);
-            this.OnlineButton.TabIndex = 51;
-            this.ToolTips.SetToolTip(this.OnlineButton, "Tease online");
-            this.OnlineButton.UseVisualStyleBackColor = true;
-            this.OnlineButton.Click += new System.EventHandler(this.OnlineButton_Click);
-            // 
-            // OpenButton
-            // 
-            this.OpenButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.OpenButton.Image = global::TeaseMe.Properties.Resources.open_48;
-            this.OpenButton.Location = new System.Drawing.Point(3, -1);
-            this.OpenButton.Name = "OpenButton";
-            this.OpenButton.Size = new System.Drawing.Size(56, 56);
-            this.OpenButton.TabIndex = 47;
-            this.ToolTips.SetToolTip(this.OpenButton, "Open a tease");
-            this.OpenButton.UseVisualStyleBackColor = true;
-            this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
             // 
             // AuthorNameLabel
             // 
@@ -266,41 +244,15 @@ namespace TeaseMe
             this.VerticalSplitContainer.SplitterWidth = 1;
             this.VerticalSplitContainer.TabIndex = 0;
             // 
-            // PictureBox1
-            // 
-            this.PictureBox1.BackColor = System.Drawing.Color.Black;
-            this.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new System.Drawing.Size(635, 613);
-            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox1.TabIndex = 0;
-            this.PictureBox1.TabStop = false;
-            // 
             // TextPanel
             // 
-            this.TextPanel.Controls.Add(this.TeaseTextBox);
+            this.TextPanel.Controls.Add(this.TeaseTextWebBrowser);
             this.TextPanel.Controls.Add(this.CountdownPanel);
             this.TextPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextPanel.Location = new System.Drawing.Point(0, 256);
             this.TextPanel.Name = "TextPanel";
             this.TextPanel.Size = new System.Drawing.Size(440, 357);
             this.TextPanel.TabIndex = 2;
-            // 
-            // TeaseTextBox
-            // 
-            this.TeaseTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TeaseTextBox.BackColor = System.Drawing.Color.Black;
-            this.TeaseTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TeaseTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TeaseTextBox.ForeColor = System.Drawing.Color.Gainsboro;
-            this.TeaseTextBox.Location = new System.Drawing.Point(17, 18);
-            this.TeaseTextBox.Name = "TeaseTextBox";
-            this.TeaseTextBox.Size = new System.Drawing.Size(410, 248);
-            this.TeaseTextBox.TabIndex = 0;
-            this.TeaseTextBox.Text = "[TeaseText]";
             // 
             // DebugPanel
             // 
@@ -352,6 +304,7 @@ namespace TeaseMe
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Controls.Add(this.AuthorNameLabel);
             this.panel1.Controls.Add(this.OpenButton);
@@ -360,8 +313,58 @@ namespace TeaseMe
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(392, 58);
+            this.panel1.Size = new System.Drawing.Size(250, 58);
             this.panel1.TabIndex = 1;
+            // 
+            // TeaseTextWebBrowser
+            // 
+            this.TeaseTextWebBrowser.AllowWebBrowserDrop = false;
+            this.TeaseTextWebBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TeaseTextWebBrowser.IsWebBrowserContextMenuEnabled = false;
+            this.TeaseTextWebBrowser.Location = new System.Drawing.Point(0, 0);
+            this.TeaseTextWebBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.TeaseTextWebBrowser.Name = "TeaseTextWebBrowser";
+            this.TeaseTextWebBrowser.ScriptErrorsSuppressed = true;
+            this.TeaseTextWebBrowser.ScrollBarsEnabled = false;
+            this.TeaseTextWebBrowser.Size = new System.Drawing.Size(440, 282);
+            this.TeaseTextWebBrowser.TabIndex = 46;
+            this.TeaseTextWebBrowser.TabStop = false;
+            this.TeaseTextWebBrowser.WebBrowserShortcutsEnabled = false;
+            // 
+            // PictureBox1
+            // 
+            this.PictureBox1.BackColor = System.Drawing.Color.Black;
+            this.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.PictureBox1.Name = "PictureBox1";
+            this.PictureBox1.Size = new System.Drawing.Size(635, 613);
+            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox1.TabIndex = 0;
+            this.PictureBox1.TabStop = false;
+            // 
+            // OpenButton
+            // 
+            this.OpenButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.OpenButton.Image = global::TeaseMe.Properties.Resources.open_48;
+            this.OpenButton.Location = new System.Drawing.Point(3, -1);
+            this.OpenButton.Name = "OpenButton";
+            this.OpenButton.Size = new System.Drawing.Size(56, 56);
+            this.OpenButton.TabIndex = 47;
+            this.ToolTips.SetToolTip(this.OpenButton, "Open a tease");
+            this.OpenButton.UseVisualStyleBackColor = true;
+            this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
+            // 
+            // OnlineButton
+            // 
+            this.OnlineButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.OnlineButton.Image = global::TeaseMe.Properties.Resources.online_48;
+            this.OnlineButton.Location = new System.Drawing.Point(65, -1);
+            this.OnlineButton.Name = "OnlineButton";
+            this.OnlineButton.Size = new System.Drawing.Size(56, 56);
+            this.OnlineButton.TabIndex = 51;
+            this.ToolTips.SetToolTip(this.OnlineButton, "Tease online");
+            this.OnlineButton.UseVisualStyleBackColor = true;
+            this.OnlineButton.Click += new System.EventHandler(this.OnlineButton_Click);
             // 
             // TeaseForm
             // 
@@ -380,16 +383,17 @@ namespace TeaseMe
             ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer)).EndInit();
             this.HorizontalSplitContainer.Panel1.ResumeLayout(false);
             this.HorizontalSplitContainer.Panel2.ResumeLayout(false);
+            this.HorizontalSplitContainer.Panel2.PerformLayout();
             this.HorizontalSplitContainer.ResumeLayout(false);
             this.VerticalSplitContainer.Panel1.ResumeLayout(false);
             this.VerticalSplitContainer.Panel2.ResumeLayout(false);
             this.VerticalSplitContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.TextPanel.ResumeLayout(false);
             this.DebugPanel.ResumeLayout(false);
             this.DebugPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -417,9 +421,9 @@ namespace TeaseMe
         private ComboBox PagesComboBox;
         private PropertyGrid PagePropertyGrid;
         private Panel TextPanel;
-        private RichTextBox TeaseTextBox;
         private Label label1;
         private Panel panel1;
+        private WebBrowser TeaseTextWebBrowser;
 
     }
 }

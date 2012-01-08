@@ -32,7 +32,7 @@
     </Page>
 
     <Page id="2">
-      <Text>tick-tick-tick|another paragraph</Text>
+      <Text><p>You can use html in your instructions</p><p>another paragraph</p><p>and even <a href="http://google.com" target="_blank">hyperlinks</a> as long as you specify target = "_blank".</p></Text>
 
       <!-- Play a tick sound every second.
       If you want a random number of beats per minute use the format bpm="(120..180)", somewhere between 120 and 180 bpm.-->

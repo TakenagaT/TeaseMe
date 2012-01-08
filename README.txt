@@ -70,7 +70,7 @@ Update History
 -------------------------
 v0.0.7 (by Takenaga)
 - milovana flashtease download (via open tease button).
-- support for paragraphs in text by using the '|' character.
+- formatted instructions (use html tags).
 - changed layout to allow bigger images.
 - support for setting/unsetting multiple flags.
 - most right button has focus, so you can use spacebar to press instead of mouse (actually already in 0.0.6 but never mentioned).

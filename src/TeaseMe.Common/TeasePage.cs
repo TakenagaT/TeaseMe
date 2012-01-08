@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Drawing.Design;
-using System.Xml;
 using System.Xml.Serialization;
 
 namespace TeaseMe.Common
@@ -16,7 +15,7 @@ namespace TeaseMe.Common
 
         [XmlElement("Text")]
         [Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
-        public string Text { get; set; }
+        public HtmlText Text { get; set; }
 
         [XmlElement("Image")]
         public TeaseMedia Image { get; set; }

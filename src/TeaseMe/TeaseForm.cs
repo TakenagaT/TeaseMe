@@ -5,7 +5,9 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
+using System.Xml;
 using Microsoft.VisualBasic.Devices;
 using TeaseMe.Common;
 
@@ -19,6 +21,9 @@ namespace TeaseMe
 
         static readonly  string MetronomeAudio = ConfigurationManager.AppSettings["MetronomeAudio"];
 
+        static readonly string HtmlTextTemplate = File.ReadAllText(@"Resources\HtmlTextTemplate.html");
+
+
         private Tease currentTease;
 
         private TeaseLibrary teaseLibrary;
@@ -29,6 +34,7 @@ namespace TeaseMe
         {
             get { return new FileInfo(Application.ExecutablePath).DirectoryName; }
         }
+
 
         public TeaseForm()
         {
@@ -104,18 +110,24 @@ namespace TeaseMe
             PagesComboBox.SelectedItem = currentTease.CurrentPage.Id;
             PagePropertyGrid.SelectedObject = currentTease.CurrentPage;
 
-            SetText();
+            SetText(currentTease.CurrentPage.Text);
             SetMedia();
             SetButtons();
             SetDelay();
             SetMetronome();
         }
 
-        private void SetText()
+        private void SetText(string text)
         {
-            // HACK to keep some space between the paragraphs.
-            TeaseTextBox.Lines = currentTease.CurrentPage.Text.Replace("|", "||").Split('|');
+            // The extra steps are necessary because of strange/wrong behaviour of the webbrowser control.
+            TeaseTextWebBrowser.Navigate("about:blank");
+            if (TeaseTextWebBrowser.Document != null)
+            {
+                TeaseTextWebBrowser.Document.Write(String.Empty);
+            }
+            TeaseTextWebBrowser.DocumentText = HtmlTextTemplate.Replace("[TEXT]", text);
         }
+
 
         private void SetMedia()
         {

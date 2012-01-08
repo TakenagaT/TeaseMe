@@ -174,7 +174,15 @@ namespace TeaseMe
                         }
                     }
 
-                    MessageBox.Show("Download completed. Select the tease from the list and press start.");
+                    if (SelectedTease.Pages.Exists(page => !String.IsNullOrEmpty(page.Errors)))
+                    {
+                        MessageBox.Show("Download completed.\n\nTry to correct the errors in the script using a text editor.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Download completed. \n\nSelect the tease from the list and press start.");
+                    }
+                    
 
                     string teaseXml = new TeaseSerializer().ConvertToXmlString(SelectedTease);
                     File.WriteAllText(saveFile.FullName, teaseXml);

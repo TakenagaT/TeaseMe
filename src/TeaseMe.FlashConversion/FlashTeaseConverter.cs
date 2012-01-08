@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Web;
 using System.Xml;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
@@ -65,7 +66,7 @@ namespace TeaseMe.FlashConversion
                         var propertiesNode = pageNode.GetFirstChildWithType(FlashTeaseScriptLexer.PROPERTIES) as CommonTree;
                         if (propertiesNode != null)
                         {
-                            result.Text = StripOriginalText(GetText(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.TEXT) as CommonTree));
+                            result.Text = GetText(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.TEXT) as CommonTree);
 
                             result.Image = GetImage(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.PIC) as CommonTree);
                             result.Audio = GetAudio(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.SOUND) as CommonTree);
@@ -192,33 +193,6 @@ namespace TeaseMe.FlashConversion
             return (flagList.Count > 0) ? String.Join(",", flagList.ToArray()) : null;
         }
 
-
-        private string StripOriginalText(string originalText)
-        {
-            var result = new StringBuilder();
-
-            if (!String.IsNullOrEmpty(originalText))
-            {
-                // HACK to strip the text formatting (for now).
-                var xmldoc = new XmlDocument();
-                xmldoc.LoadXml("<dummyroot>" + originalText + "</dummyroot>");
-                
-                var pNodes = xmldoc.SelectNodes("//P");
-                if (pNodes != null)
-                {
-                    foreach (XmlElement element in pNodes)
-                    {
-                        result.Append(element.InnerText).Append("|");
-                    }
-                }
-                else
-                {
-                    result.Append(xmldoc.InnerText);
-                }
-            }
-            return String.IsNullOrEmpty(result.ToString().Trim()) ? null : result.ToString().Trim();
-        }
-
         private string GetPageId(CommonTree node)
         {
             if (node.Type == FlashTeaseScriptLexer.RANGE)
@@ -237,7 +211,40 @@ namespace TeaseMe.FlashConversion
 
         private string GetText(CommonTree textNode)
         {
-            return (textNode != null) ? textNode.GetChild(0).Text.Trim('\'', '"') : null;
+            if (textNode == null)
+            {
+                return null;
+            }
+            string originalText = textNode.GetChild(0).Text.Trim('\'', '"');
+
+            var result = new StringBuilder();
+
+            if (!String.IsNullOrEmpty(originalText))
+            {
+                try
+                {
+                    var xmldoc = new XmlDocument();
+                    xmldoc.LoadXml("<dummy>" + originalText + "</dummy>");
+                    var pNodes = xmldoc.SelectNodes("//P");
+                    if (pNodes != null)
+                    {
+                        foreach (XmlElement element in pNodes)
+                        {
+                            result.AppendFormat("<p>{0}</p>", HttpUtility.HtmlEncode(element.InnerText));
+                        }
+                    }
+                    else
+                    {
+                        result.Append(xmldoc.InnerText);
+                    }
+                }
+                catch (Exception)
+                {
+                    return originalText;                  
+                }
+            }
+
+            return (result.Length == 0) ? null : result.ToString();
         }
     }
 }
