@@ -36,6 +36,9 @@ namespace TeaseMe.Common
         [XmlElement("MediaDirectory")]
         public string MediaDirectory { get; set; }
 
+        [XmlElement("Settings")]
+        public TeaseSettings Settings { get; set; }
+
         [XmlArrayItem("Page")]
         public List<TeasePage> Pages { get; set; }
 
@@ -98,6 +101,7 @@ namespace TeaseMe.Common
             Author = new Author();
             Pages = new List<TeasePage>();
             Flags = new List<string>();
+            Settings = new TeaseSettings();
         }
 
         public void Start()
@@ -173,8 +177,10 @@ namespace TeaseMe.Common
 
         public void ExecuteTeaseAction(TeaseAction action)
         {
-            // By default, the current page flag will be set when navigating away.
-            SetFlags(currentPage.Id);
+            if (Settings.AutoSetPageWhenSeen)
+            {
+                SetFlags(currentPage.Id);
+            }
 
             if (!String.IsNullOrEmpty(currentPage.SetFlags))
             {

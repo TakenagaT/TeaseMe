@@ -2,6 +2,16 @@
 <Tease scriptVersion="v0.1">
   <Title>Buttons</Title>
   <Description>A sample tease showing the use of buttons and (variable) flags.</Description>
+
+  <!-- Optional element. -->
+  <Settings>
+    <!--
+    Set this to true if you want your page to be marked as seen as soon as it is shown to the user. 
+    If you set this to false or omit it, you can go back to the pages you have already seen.
+    -->
+    <AutoSetPageWhenSeen>True</AutoSetPageWhenSeen>
+  </Settings>
+  
   <Pages>
     <Page id="start">
       <Text>Welcome to this tease.</Text>
