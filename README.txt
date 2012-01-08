@@ -1,5 +1,5 @@
 
-TeaseMe v0.0.6 (Dezember 2011)
+TeaseMe v0.0.7 (January 2011)
 
 TeaseMe is a small non commercial private "fun program" for adults 
 by Takenaga and d3vi0n
