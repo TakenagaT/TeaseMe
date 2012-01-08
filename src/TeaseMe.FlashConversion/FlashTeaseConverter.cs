@@ -193,7 +193,6 @@ namespace TeaseMe.FlashConversion
         }
 
 
-        // TODO Add Formatting.
         private string StripOriginalText(string originalText)
         {
             var result = new StringBuilder();
@@ -201,19 +200,20 @@ namespace TeaseMe.FlashConversion
             if (!String.IsNullOrEmpty(originalText))
             {
                 // HACK to strip the text formatting (for now).
-                var xml = "<dummyroot>" + originalText + "</dummyroot>";
-                using (var sr = new StringReader(xml))
+                var xmldoc = new XmlDocument();
+                xmldoc.LoadXml("<dummyroot>" + originalText + "</dummyroot>");
+                
+                var pNodes = xmldoc.SelectNodes("//P");
+                if (pNodes != null)
                 {
-                    using (var reader = new XmlTextReader(sr))
+                    foreach (XmlElement element in pNodes)
                     {
-                        while (reader.Read())
-                        {
-                            if (reader.NodeType == XmlNodeType.Text)
-                            {
-                                result.Append(reader.ReadContentAsString()).Append(" ");
-                            }
-                        }
+                        result.Append(element.InnerText).Append("||");
                     }
+                }
+                else
+                {
+                    result.Append(xmldoc.InnerText);
                 }
             }
             return String.IsNullOrEmpty(result.ToString().Trim()) ? null : result.ToString().Trim();

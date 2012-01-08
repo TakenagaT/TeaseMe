@@ -111,7 +111,7 @@ namespace TeaseMe
 
         private void SetText()
         {
-            TeaseTextBox.Text = currentTease.CurrentPage.Text;
+            TeaseTextBox.Lines = currentTease.CurrentPage.Text.Split('|');
         }
 
         private void SetMedia()

@@ -17,7 +17,6 @@ namespace TeaseMe
         public OpenForm(TeaseLibrary teaseLibrary)
         {
             InitializeComponent();
-            DownloadStatusLabel.Text = String.Empty;
             this.teaseLibrary = teaseLibrary;
             TeaseFolderTextBox.Text = teaseLibrary.TeasesFolder;
 
@@ -38,10 +37,22 @@ namespace TeaseMe
             if (DialogResult.OK == OpenScriptDialog.ShowDialog())
             {
                 SelectedTease = teaseLibrary.LoadTease(OpenScriptDialog.FileName);
+                DialogResult = DialogResult.OK;
+                Close();
             }
         }
 
         private void StartButton_Click(object sender, EventArgs e)
+        {
+            if (TeaseListView.SelectedItems.Count > 0)
+            {
+                SelectedTease = teaseLibrary.LoadTease(Path.Combine(teaseLibrary.TeasesFolder, TeaseListView.SelectedItems[0].Text + ".xml"));
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+        }
+
+        private void TeaseListView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (TeaseListView.SelectedItems.Count > 0)
             {
@@ -56,7 +67,6 @@ namespace TeaseMe
             Cursor = Cursors.WaitCursor;
             try
             {
-                DownloadStatusLabel.Text = String.Empty;
                 using (var webClient = new WebClient())
                 {
                     string xhtml = webClient.DownloadString("http://www.milovana.com/webteases/showflash.php?id=" + TeaseIdTextBox.Text);
@@ -107,7 +117,6 @@ namespace TeaseMe
 
                     using (var webClient = new WebClient())
                     {
-                        DownloadStatusLabel.Text = String.Empty;
                         foreach (var page in SelectedTease.Pages)
                         {
                             if (page.Image != null)
@@ -125,7 +134,6 @@ namespace TeaseMe
                                     string fileName = Path.Combine(downloadDirectory, page.Image.Id);
                                     if (!File.Exists(fileName))
                                     {
-                                        DownloadStatusLabel.Text = "Downloading " + page.Image.Id;
                                         if (!Directory.Exists(downloadDirectory))
                                         {
                                             Directory.CreateDirectory(downloadDirectory);
@@ -151,7 +159,6 @@ namespace TeaseMe
                                     string fileName = Path.Combine(downloadDirectory, page.Audio.Id);
                                     if (!File.Exists(fileName))
                                     {
-                                        DownloadStatusLabel.Text = "Downloading " + page.Audio.Id;
                                         if (!Directory.Exists(downloadDirectory))
                                         {
                                             Directory.CreateDirectory(downloadDirectory);
@@ -167,7 +174,7 @@ namespace TeaseMe
                         }
                     }
 
-                    DownloadStatusLabel.Text = "Download completed. Select the tease from the list and press start.";
+                    MessageBox.Show("Download completed. Select the tease from the list and press start.");
 
                     string teaseXml = new TeaseSerializer().ConvertToXmlString(SelectedTease);
                     File.WriteAllText(saveFile.FullName, teaseXml);
@@ -192,6 +199,8 @@ namespace TeaseMe
                 ConverionErrorTextBox.Visible = SelectedTease.Pages.Exists(page => !String.IsNullOrEmpty(page.Errors));
             }
         }
+
+
 
     }
 }

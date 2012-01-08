@@ -36,7 +36,8 @@
             this.LoadButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.DownloadStatusLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.ConverionErrorTextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.DownloadImagesCheckBox = new System.Windows.Forms.CheckBox();
@@ -48,8 +49,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.SaveNewScriptDialog = new System.Windows.Forms.SaveFileDialog();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.OpenScriptDialog = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -86,6 +85,7 @@
             this.TeaseListView.TabIndex = 2;
             this.TeaseListView.UseCompatibleStateImageBehavior = false;
             this.TeaseListView.View = System.Windows.Forms.View.List;
+            this.TeaseListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TeaseListView_MouseDoubleClick);
             // 
             // StartButton
             // 
@@ -139,7 +139,6 @@
             // 
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.DownloadStatusLabel);
             this.groupBox3.Controls.Add(this.ConverionErrorTextBox);
             this.groupBox3.Controls.Add(this.SaveButton);
             this.groupBox3.Controls.Add(this.DownloadImagesCheckBox);
@@ -159,14 +158,23 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Download tease";
             // 
-            // DownloadStatusLabel
+            // label3
             // 
-            this.DownloadStatusLabel.AutoSize = true;
-            this.DownloadStatusLabel.Location = new System.Drawing.Point(6, 240);
-            this.DownloadStatusLabel.Name = "DownloadStatusLabel";
-            this.DownloadStatusLabel.Size = new System.Drawing.Size(117, 13);
-            this.DownloadStatusLabel.TabIndex = 37;
-            this.DownloadStatusLabel.Text = "[DownloadStatusLabel]";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(79, 216);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(334, 13);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "maybe in a next version it will be more smooth with progressbar etc. :-)";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(79, 199);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(387, 13);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "When this checkbox is checked, the program seems to hang while downloading,";
             // 
             // ConverionErrorTextBox
             // 
@@ -277,24 +285,6 @@
             this.SaveNewScriptDialog.DefaultExt = "xml";
             this.SaveNewScriptDialog.Filter = "Teases|*.xml|All files|*.*";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(79, 199);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(387, 13);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "When this checkbox is checked, the program seems to hang while downloading,";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(79, 216);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(334, 13);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "maybe in a next version it will be more smooth with progressbar etc. :-)";
-            // 
             // OpenScriptDialog
             // 
             this.OpenScriptDialog.FileName = "Select your tease";
@@ -342,7 +332,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox ConverionErrorTextBox;
         private System.Windows.Forms.SaveFileDialog SaveNewScriptDialog;
-        private System.Windows.Forms.Label DownloadStatusLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         internal System.Windows.Forms.OpenFileDialog OpenScriptDialog;
