@@ -39,7 +39,6 @@ namespace TeaseMe
             this.SecondsLabel = new System.Windows.Forms.Label();
             this.ButtonPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SampleButton = new System.Windows.Forms.Button();
-            this.OpenScript = new System.Windows.Forms.OpenFileDialog();
             this.CountdownTimer = new System.Windows.Forms.Timer(this.components);
             this.MediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.MetronomeTimer = new System.Windows.Forms.Timer(this.components);
@@ -59,7 +58,6 @@ namespace TeaseMe
             this.label1 = new System.Windows.Forms.Label();
             this.PagesComboBox = new System.Windows.Forms.ComboBox();
             this.PagePropertyGrid = new System.Windows.Forms.PropertyGrid();
-            this.button1 = new System.Windows.Forms.Button();
             this.CountdownPanel.SuspendLayout();
             this.ButtonPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer)).BeginInit();
@@ -158,11 +156,6 @@ namespace TeaseMe
             this.SampleButton.UseVisualStyleBackColor = false;
             this.SampleButton.Visible = false;
             // 
-            // OpenScript
-            // 
-            this.OpenScript.FileName = "Select your tease";
-            this.OpenScript.Filter = "Tease Me Script|*.xml";
-            // 
             // CountdownTimer
             // 
             this.CountdownTimer.Interval = 1000;
@@ -187,7 +180,6 @@ namespace TeaseMe
             // 
             this.TopPanel.BackColor = System.Drawing.Color.Transparent;
             this.TopPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TopPanel.Controls.Add(this.button1);
             this.TopPanel.Controls.Add(this.OnlineButton);
             this.TopPanel.Controls.Add(this.AboutButton);
             this.TopPanel.Controls.Add(this.OpenButton);
@@ -383,18 +375,6 @@ namespace TeaseMe
             this.PagePropertyGrid.TabIndex = 1;
             this.PagePropertyGrid.ToolbarVisible = false;
             // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Image = global::TeaseMe.Properties.Resources.open_48;
-            this.button1.Location = new System.Drawing.Point(565, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 56);
-            this.button1.TabIndex = 52;
-            this.ToolTips.SetToolTip(this.button1, "Open a tease");
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // TeaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,7 +413,6 @@ namespace TeaseMe
         internal System.Windows.Forms.Label MinutesLabel;
         internal System.Windows.Forms.Label TimeLeftLabel;
         internal System.Windows.Forms.FlowLayoutPanel ButtonPanel;
-        internal System.Windows.Forms.OpenFileDialog OpenScript;
         internal System.Windows.Forms.Timer CountdownTimer;
         internal System.Windows.Forms.PictureBox PictureBox1;
         internal System.Windows.Forms.Timer MetronomeTimer;
@@ -455,7 +434,6 @@ namespace TeaseMe
         private Panel TextPanel;
         private RichTextBox TeaseTextBox;
         private Label label1;
-        private Button button1;
 
     }
 }

@@ -6,7 +6,6 @@ using System.IO;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.Devices;
 using TeaseMe.Common;
-using TeaseMe.FlashTeases;
 
 namespace TeaseMe
 {
@@ -285,10 +284,12 @@ namespace TeaseMe
 
         private void OpenButton_Click(object sender, EventArgs e)
         {
-            OpenScript.InitialDirectory = teaseLibrary.TeasesFolder;
-            if (DialogResult.OK == OpenScript.ShowDialog())
+            using (var popup = new OpenForm(teaseLibrary))
             {
-                SetCurrentTease(teaseLibrary.LoadTease(OpenScript.FileName));
+                if (DialogResult.OK == popup.ShowDialog())
+                {
+                    SetCurrentTease(popup.SelectedTease);
+                }
             }
         }
 
@@ -319,17 +320,6 @@ namespace TeaseMe
         {
             currentTease.NavigateToPage(PagesComboBox.SelectedItem.ToString());
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new ImportForm().Show();
-        }
-
-
-
-
-
-
 
     }
 }

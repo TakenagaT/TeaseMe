@@ -59,13 +59,13 @@
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OldScriptConverter.cs" />
-    <Compile Include="TeaseLibrary.cs" />
-    <Compile Include="FlashTeases_NotFinished\ImportForm.cs">
+    <Compile Include="OpenForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FlashTeases_NotFinished\ImportForm.Designer.cs">
-      <DependentUpon>ImportForm.cs</DependentUpon>
+    <Compile Include="OpenForm.Designer.cs">
+      <DependentUpon>OpenForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeaseLibrary.cs" />
     <Compile Include="TeaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,8 +77,8 @@
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FlashTeases_NotFinished\ImportForm.resx">
-      <DependentUpon>ImportForm.cs</DependentUpon>
+    <EmbeddedResource Include="OpenForm.resx">
+      <DependentUpon>OpenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeaseForm.resx">
       <DependentUpon>TeaseForm.cs</DependentUpon>

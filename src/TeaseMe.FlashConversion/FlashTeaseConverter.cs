@@ -12,14 +12,13 @@ namespace TeaseMe.FlashConversion
 {
     public class FlashTeaseConverter
     {
-        public Tease Convert(string teaseId, string teaseTitle, string authorId, string authorName, string[] scriptLines, bool useOnlineImages)
+        public Tease Convert(string teaseId, string teaseTitle, string authorId, string authorName, string[] scriptLines)
         {
             var result = new Tease
             {
                 Id = teaseId,
                 Title = teaseTitle,
                 Url = "http://www.milovana.com/webteases/showflash.php?id=" + teaseId,
-                MediaDirectory = teaseId,
                 Author = new Author
                 {
                     Id = authorId, 
@@ -30,19 +29,7 @@ namespace TeaseMe.FlashConversion
 
             foreach (var line in scriptLines)
             {
-                var page = CreatePage(line);
-                if (useOnlineImages)
-                {
-                    if (page.Image != null)
-                    {
-                        page.Image.Id = String.Format("http://www.milovana.com/media/get.php?folder={0}/{1}&name={2}", authorId, teaseId, page.Image.Id);
-                    }
-                    if (page.Audio != null)
-                    {
-                        page.Audio.Id = String.Format("http://www.milovana.com/media/get.php?folder={0}/{1}&name={2}", authorId, teaseId, page.Audio.Id);
-                    }
-                }
-                result.Pages.Add(page);
+                result.Pages.Add(CreatePage(line));
             }
             
             return result;
