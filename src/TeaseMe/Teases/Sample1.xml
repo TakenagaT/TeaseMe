@@ -32,7 +32,7 @@
     </Page>
 
     <Page id="2">
-      <Text>tick-tick-tick</Text>
+      <Text>tick-tick-tick|another paragraph</Text>
 
       <!-- Play a tick sound every second.
       If you want a random number of beats per minute use the format bpm="(120..180)", somewhere between 120 and 180 bpm.-->

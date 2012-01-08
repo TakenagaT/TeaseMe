@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.Devices;
 using TeaseMe.Common;
@@ -111,7 +113,8 @@ namespace TeaseMe
 
         private void SetText()
         {
-            TeaseTextBox.Lines = currentTease.CurrentPage.Text.Split('|');
+            // HACK to keep some space between the paragraphs.
+            TeaseTextBox.Lines = currentTease.CurrentPage.Text.Replace("|", "||").Split('|');
         }
 
         private void SetMedia()

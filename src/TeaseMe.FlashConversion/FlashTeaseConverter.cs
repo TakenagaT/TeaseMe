@@ -208,7 +208,7 @@ namespace TeaseMe.FlashConversion
                 {
                     foreach (XmlElement element in pNodes)
                     {
-                        result.Append(element.InnerText).Append("||");
+                        result.Append(element.InnerText).Append("|");
                     }
                 }
                 else
