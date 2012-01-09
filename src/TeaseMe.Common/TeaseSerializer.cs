@@ -60,7 +60,9 @@ namespace TeaseMe.Common
                         if (commentsNode != null)
                         {
                             pageNode.RemoveChild(commentsNode);
-                            pageNode.InsertBefore(xmldoc.CreateComment(String.Format(" {0} ", HttpUtility.HtmlDecode(commentsNode.InnerXml))), pageNode.FirstChild);
+
+                            // The replacement of -- is needed for the serializer to function correctly, an XML comment cannot contain --.
+                            pageNode.InsertBefore(xmldoc.CreateComment(String.Format(" {0} ", HttpUtility.HtmlDecode(commentsNode.InnerXml).Replace("--","- - "))), pageNode.FirstChild);
                         }
 
                         var errorsNode = pageNode.SelectSingleNode("Errors");
