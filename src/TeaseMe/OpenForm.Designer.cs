@@ -50,6 +50,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.SaveNewScriptDialog = new System.Windows.Forms.SaveFileDialog();
             this.OpenScriptDialog = new System.Windows.Forms.OpenFileDialog();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -137,6 +138,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.ConverionErrorTextBox);
@@ -290,6 +292,15 @@
             this.OpenScriptDialog.FileName = "Select your tease";
             this.OpenScriptDialog.Filter = "Tease Me Script|*.xml";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(79, 235);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(309, 13);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "A messagebox will appear as soon as the download is complete.";
+            // 
             // OpenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,5 +346,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         internal System.Windows.Forms.OpenFileDialog OpenScriptDialog;
+        private System.Windows.Forms.Label label4;
     }
 }
