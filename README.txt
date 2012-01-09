@@ -26,54 +26,43 @@ Teases are added into the "/teases/"-folder
 see the samples for help on creating own teases
 
 
+You can create your own teases with xml-Scripts and (new:) import flashteases from milovana.com.
+
 Features
 ---------------
+- play offline and enjoy short loadtimes
 - sizable window with large imageframe
-- enjoy the short loadtimes
-- add media and instructions to your tease
-- use movies or images as media
-- sort your tease into pages
-- add buttons for navigation
-- change buttontext and targetpage of buttons
-- add a countdown (hidden, secret or visible) 
-- activate and configure a metronome 
-- randomize targetpages, countdown length, metronomespeed
-- set, unset, if-set, if-not-set attributes on Page, Button and Delay for conditional manipulation
-- play 7 sample teases and learn how it works
-- see "SamplePage.xml" for help on creating own teases
-- activate debug mode (Ctrl+Shift+D) for better testing 
-
-
-Sample Teases 
--------------------------
-There are 7 Teases included:
-
-(1) "The Naughty Neighbour 1" (by MissLusciousLisa)
-(2) "The Naughty Neighbour 2" (by MissLusciousLisa)
-(3) "The Naughty Neighbour 3" (by MissLusciousLisa)
-(4) "Stroke For Kayden" (by d3vi0n)
-(5) "Tease Club" (by d3vi0n)
-(6) "Meet Chayse Evans" (by d3vi0n)
-(7) "The Bermuda Triangle Pt. 1" (by Incubo)
-
-If you enjoy them please rate the online teases
-
-MissLusciousLisa: http://www.milovana.com/webteases/#author=14016
-d3vi0n: http://www.milovana.com/webteases/#author=14016
-Incubo: http://www.milovana.com/webteases/#author=4993
+- create your own offline teases
+- sort your tease into pages and add instructions
+- (new:) support for html in instructiontext (including hyperlinks)
+- use pictures, video with high resolution and audio as media
+- (new:) support for online images, video, audio (use full url incl. http:// as id)
+- combine a picture and a audio file on the same page
+- use custom buttons and delays (hidden, secret, visible) for navigation
+- add custom metronome to pages
+- randomize navigation target, delay length and metronome bpm
+- conditional manipulation with set/unset and if-set/if-not-set attributes
+- (new:) support for set/unset multiple flags
+- debug mode (Ctrl+Shift+D) for better testing
+- (new:) import milovana flashteases
+- (new:) play a detailed tutorial (sample.xml) and learn how it works
 
 For more online teases visit http://www.milovana.com/
 
 
 Update History
+(January 8, 2012)
+--------------------
 
--------------------------
-v0.0.7 (by Takenaga)
-- milovana flashtease download (via open tease button).
-- formatted instructions (use html tags).
-- changed layout to allow bigger images.
-- support for setting/unsetting multiple flags.
-- most right button has focus, so you can use spacebar to press instead of mouse (actually already in 0.0.6 but never mentioned).
+(new:) v0.0.7 (by Takenaga)
+- import milovana flashteases
+- support for html in instructiontext (including hyperlinks)
+- new detailed tutorial (sample.xml) for new players and creators replaces old samples
+- support for set/unset multiple flags
+- support for online images/video/audio (use full url incl. http:// as id)
+- layout changed to support bigger images
+- download splitted into basic version (with tutorial) and optional teasepack
+- removed the about box again (the button just used space) 
 
 
 -------------------------
