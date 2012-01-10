@@ -1,11 +1,6 @@
 
-TeaseMe v0.0.7 (January 2011)
+TeaseMe v0.0.9 (January 2012)
 
-TeaseMe is a small non commercial private "fun program" for adults 
-by Takenaga and d3vi0n
-
-Original thread:
-http://www.milovana.com/forum/viewtopic.php?f=2&t=6993
 
 
 Requirements
@@ -16,17 +11,10 @@ Download it here: http://www.microsoft.com
 
 Description
 -------------------------
-A tease is basicly a slideshow with instructions and text.
+TeaseMe is a small non commercial private "fun program" for adults by Takenaga and d3vi0n. You can create your own teases, play teases or import flashteases from milovana.com. Teases are added into the "/teases"-folder of TeaseMe. You'll need Microsoft .NET Framework to run the program. Teases (xml-Script and folder with media) are added into the "/teases"-folder of TeaseMe
 
-TeaseMe gives you the possibility to create and play offline teases 
-similar to the teases at http://www.milovana.com. 
-All you need are images or movies and a script (as xml-file)
-Teases are added into the "/teases/"-folder
+HINT: xml-Scripts from TeaseMe v0.0.7 or v0.0.8 are compatible!
 
-see the samples for help on creating own teases
-
-
-You can create your own teases with xml-Scripts and (new:) import flashteases from milovana.com.
 
 Features
 ---------------
@@ -34,47 +22,68 @@ Features
 - sizable window with large imageframe
 - create your own offline teases
 - sort your tease into pages and add instructions
-- (new:) support for html in instructiontext (including hyperlinks)
+- support for html in instructiontext (including hyperlinks)
 - use pictures, video with high resolution and audio as media
-- (new:) support for online images, video, audio (use full url incl. http:// as id)
+- support for online images, video, audio (use full url incl. http:// as id)
 - combine a picture and a audio file on the same page
 - use custom buttons and delays (hidden, secret, visible) for navigation
 - add custom metronome to pages
 - randomize navigation target, delay length and metronome bpm
 - conditional manipulation with set/unset and if-set/if-not-set attributes
-- (new:) support for set/unset multiple flags
+- support for set/unset multiple flags
 - debug mode (Ctrl+Shift+D) for better testing
-- (new:) import milovana flashteases
-- (new:) play a detailed tutorial (sample.xml) and learn how it works
+- play a detailed tutorial (tutorial.xml) and learn how it works
+- import milovana flashteases
+- download more optional teases at official thread
+
+
+Optional Sample Teases  
+----------------------
+A detailed tutorial tease is included into the main archive.
+
+There are different types of teases available for optional download.
+- Imports of online teases
+- Teases only available for TeaseMe: [E]
+- Remakes with larger or more pictures and/or minor changes: [HD]
+
+Please don't forget to rate the online teases!
 
 For more online teases visit http://www.milovana.com/
 
+For more TeaseMe teases visit original thread:
+http://www.milovana.com/forum/viewtopic.php?f=2&t=6993
+
 
 Update History
-(January 8, 2012)
---------------------
+-------------------------
+v0.0.9 (by d3vi0n)
+- Hotfix: Fixed an Error in Randomizer    
 
-(new:) v0.0.7 (by Takenaga)
-- import milovana flashteases
+v0.0.8 (by Takenaga and d3vi0n)
+- Hotfix: Fixed an Error in Importer (flashteases with "--" in instructions)
+- Usability: Changed HTML-Template (font-family: Verdana, font-size:12, color:#dcdcdc)
+- Usability: Changed position and font for Title and Author in Mainwindow
+- New optional Script Elements "Settings" and "AutoSetPageWhenSeen"
+- Added some explanations about AutoSetPageWhenSeen into Tutorial
+
+v0.0.7 (by Takenaga and d3vi0n)
+- import milovana flashteases 
 - support for html in instructiontext (including hyperlinks)
-- new detailed tutorial (sample.xml) for new players and creators replaces old samples
+- new detailed tutorial (sample.xml) for new players and creators replaces old samples 
 - support for set/unset multiple flags
 - support for online images/video/audio (use full url incl. http:// as id)
 - layout changed to support bigger images
-- download splitted into basic version (with tutorial) and optional teasepack
-- removed the about box again (the button just used space) 
+- download splitted into basic version (with tutorial) and optional teasepack 
+- removed the about box again (the button just used space)
 
-
--------------------------
 v0.0.6 (by Takenaga)
 - converted to C# 
-- new XML-fomat, much easier to type and read.
-- set, unset, if-set, if-not-set attributes on Page, Button and Delay for conditional manipulation.
-- teases in the old 0.0.5 format can be opened and saved in the new format.
-- debug mode (Ctrl+Shift+D) to see more details of the tease you are creating.
+- new XML-fomat, much easier to type and read
+- set, unset, if-set, if-not-set attributes on Page, Button and Delay for conditional manipulation
+- teases in the old 0.0.5 format can be opened and saved in the new format
+- debug mode (Ctrl+Shift+D) to see more details of the tease you are creating
 - more than 5 buttons are supported now (but who needs so many?)
-- add audio to images.
-- some layout tweaks.
+- some layout tweaks
 
 
 v0.0.5 (by d3vi0n)

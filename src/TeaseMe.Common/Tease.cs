@@ -235,7 +235,7 @@ namespace TeaseMe.Common
             {
                 int min = Convert.ToInt32(match.Groups["min"].Value);
                 int max = Convert.ToInt32(match.Groups["max"].Value);
-                for (var i = min; i < max; i++)
+                for (var i = min; i <= max; i++)
                 {
                     string pageId = String.Format("{0}{1}{2}", match.Groups["pre"].Value, i, match.Groups["post"].Value);
                     if (Pages.Exists(p => p.Id.Equals(pageId)) && AllowedToShowPage(pageId))
