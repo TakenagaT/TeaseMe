@@ -203,7 +203,12 @@ namespace TeaseMe.FlashConversion
                 {
                     var fromText = String.Concat(fromNode.Children.Select(child => child.Text).ToArray());
                     var toText = String.Concat(toNode.Children.Select(child => child.Text).ToArray());
-                    return String.Format("({0}..{1})", fromText, toText);
+
+                    var prefix = node.GetFirstChildWithType(FlashTeaseScriptLexer.PREFIX) as CommonTree;
+                    
+                    string prefixText = (prefix != null) ? prefix.GetChild(0).Text.Trim('\'', '"') : null;
+
+                    return String.Format("{0}({1}..{2})", prefixText, fromText, toText);
                 }
             }
             return String.Concat(node.Children.Select(child => child.Text).ToArray());

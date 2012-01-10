@@ -32,6 +32,7 @@ tokens {
 	RANGE;
 	FROM;
 	TO;
+	PREFIX;
 	MULT;
 	UNSET;
 	SET;
@@ -201,8 +202,8 @@ HIDDEN	: 'hidden';
 SECRET	: 'secret';
 
 rangeDef
-	:	'range(' 'from:' INTEGER ',' 'to:' INTEGER ')'
-		-> ^(RANGE ^(FROM INTEGER) ^(TO INTEGER))	
+	:	'range(' 'from:' INTEGER ',' 'to:' INTEGER (',' ':'? STRING )? ')'
+		-> ^(RANGE ^(FROM INTEGER) ^(TO INTEGER) ^(PREFIX STRING))	
 	;
 
 pageRef

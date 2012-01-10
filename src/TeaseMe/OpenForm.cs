@@ -142,9 +142,9 @@ namespace TeaseMe
                                         {
                                             webClient.DownloadFile(url, fileName);
                                         }
-                                        catch (WebException err)
+                                        catch (WebException)
                                         {
-                                            page.Errors = String.Format("Error while downloading file '{0}': {1}. {2}", url, err.Message, page.Errors);
+                                            page.Errors = String.Format("Error while downloading file '{0}'. {1}.", url, page.Errors);
                                         }
                                     }
                                 }
@@ -175,7 +175,7 @@ namespace TeaseMe
                                         {
                                             webClient.DownloadFile(url, fileName);
                                         }
-                                        catch (WebException err)
+                                        catch (WebException)
                                         {
                                             page.Errors = String.Format("Error while downloading file '{0}'. {1}", url, page.Errors);
                                         }
