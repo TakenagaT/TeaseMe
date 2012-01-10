@@ -124,21 +124,28 @@ namespace TeaseMe
                                 string url = String.Format("http://www.milovana.com/media/get.php?folder={0}/{1}&name={2}", SelectedTease.Author.Id, SelectedTease.Id, page.Image.Id);
                                 if (DownloadImagesCheckBox.Checked)
                                 {
+                                    string imageName = page.Image.Id;
                                     if (page.Image.Id.Contains("*"))
                                     {
                                         page.Errors = String.Format("Warning: random images are not fully supported, the conversion picked a random one and gave it a name. {0}", page.Errors);
-                                        page.Image.Id = page.Image.Id.Replace("*", Guid.NewGuid().ToString());
-
+                                        imageName = page.Image.Id.Replace("*", Guid.NewGuid().ToString());
                                     }
 
-                                    string fileName = Path.Combine(downloadDirectory, page.Image.Id);
+                                    string fileName = Path.Combine(downloadDirectory, imageName);
                                     if (!File.Exists(fileName))
                                     {
                                         if (!Directory.Exists(downloadDirectory))
                                         {
                                             Directory.CreateDirectory(downloadDirectory);
                                         }
-                                        webClient.DownloadFile(url, fileName);
+                                        try 
+                                        {
+                                            webClient.DownloadFile(url, fileName);
+                                        }
+                                        catch (WebException err)
+                                        {
+                                            page.Errors = String.Format("Error while downloading file '{0}': {1}. {2}", url, err.Message, page.Errors);
+                                        }
                                     }
                                 }
                                 else
@@ -151,19 +158,27 @@ namespace TeaseMe
                                 string url = String.Format("http://www.milovana.com/media/get.php?folder={0}/{1}&name={2}", SelectedTease.Author.Id, SelectedTease.Id, page.Audio.Id);
                                 if (DownloadImagesCheckBox.Checked)
                                 {
+                                    string audioName = page.Audio.Id;
                                     if (page.Audio.Id.Contains("*"))
                                     {
                                         page.Errors = String.Format("Warning: random audio is not fully supported, the conversion picked a random one and gave it a name. {0}", page.Errors);
-                                        page.Audio.Id = page.Audio.Id.Replace("*", Guid.NewGuid().ToString());
+                                        audioName = page.Audio.Id.Replace("*", Guid.NewGuid().ToString());
                                     }
-                                    string fileName = Path.Combine(downloadDirectory, page.Audio.Id);
+                                    string fileName = Path.Combine(downloadDirectory, audioName);
                                     if (!File.Exists(fileName))
                                     {
                                         if (!Directory.Exists(downloadDirectory))
                                         {
                                             Directory.CreateDirectory(downloadDirectory);
                                         }
-                                        webClient.DownloadFile(url, fileName);
+                                        try 
+                                        {
+                                            webClient.DownloadFile(url, fileName);
+                                        }
+                                        catch (WebException err)
+                                        {
+                                            page.Errors = String.Format("Error while downloading file '{0}'. {1}", url, page.Errors);
+                                        }
                                     }
                                 }
                                 else
