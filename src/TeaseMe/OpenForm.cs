@@ -127,7 +127,6 @@ namespace TeaseMe
                                     string imageName = page.Image.Id;
                                     if (page.Image.Id.Contains("*"))
                                     {
-                                        page.Errors = String.Format("Warning: random images are not fully supported, the conversion picked a random one and gave it a name. {0}", page.Errors);
                                         imageName = page.Image.Id.Replace("*", Guid.NewGuid().ToString());
                                     }
 
@@ -161,7 +160,6 @@ namespace TeaseMe
                                     string audioName = page.Audio.Id;
                                     if (page.Audio.Id.Contains("*"))
                                     {
-                                        page.Errors = String.Format("Warning: random audio is not fully supported, the conversion picked a random one and gave it a name. {0}", page.Errors);
                                         audioName = page.Audio.Id.Replace("*", Guid.NewGuid().ToString());
                                     }
                                     string fileName = Path.Combine(downloadDirectory, audioName);
