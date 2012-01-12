@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.3.1.7705 FlashTeaseScript.g 2012-01-11 00:11:54
+// $ANTLR 3.3.1.7705 FlashTeaseScript.g 2012-01-13 00:47:32
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -1461,7 +1461,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = STRING;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:220:2: ( '\"' ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )* '\"' | '\\'' ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )* '\\'' )
+			// FlashTeaseScript.g:223:2: ( '\"' ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )* '\"' | '\\'' ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )* '\\'' )
 			int alt3=2;
 			try { DebugEnterDecision(3, false);
 			int LA3_0 = input.LA(1);
@@ -1485,12 +1485,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// FlashTeaseScript.g:220:4: '\"' ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )* '\"'
+				// FlashTeaseScript.g:223:4: '\"' ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )* '\"'
 				{
-				DebugLocation(220, 4);
+				DebugLocation(223, 4);
 				Match('\"'); 
-				DebugLocation(220, 8);
-				// FlashTeaseScript.g:220:8: ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )*
+				DebugLocation(223, 8);
+				// FlashTeaseScript.g:223:8: ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )*
 				try { DebugEnterSubRule(1);
 				while (true)
 				{
@@ -1513,9 +1513,9 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// FlashTeaseScript.g:220:37: ~ ( '\"' | '\\n' | '\\r' )
+						// FlashTeaseScript.g:223:37: ~ ( '\"' | '\\n' | '\\r' )
 						{
-						DebugLocation(220, 37);
+						DebugLocation(223, 37);
 						input.Consume();
 
 
@@ -1532,19 +1532,19 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 
 				} finally { DebugExitSubRule(1); }
 
-				DebugLocation(220, 56);
+				DebugLocation(223, 56);
 				Match('\"'); 
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// FlashTeaseScript.g:221:4: '\\'' ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )* '\\''
+				// FlashTeaseScript.g:224:4: '\\'' ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )* '\\''
 				{
-				DebugLocation(221, 4);
+				DebugLocation(224, 4);
 				Match('\''); 
-				DebugLocation(221, 9);
-				// FlashTeaseScript.g:221:9: ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )*
+				DebugLocation(224, 9);
+				// FlashTeaseScript.g:224:9: ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )*
 				try { DebugEnterSubRule(2);
 				while (true)
 				{
@@ -1567,9 +1567,9 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// FlashTeaseScript.g:221:38: ~ ( '\\'' | '\\n' | '\\r' )
+						// FlashTeaseScript.g:224:38: ~ ( '\\'' | '\\n' | '\\r' )
 						{
-						DebugLocation(221, 38);
+						DebugLocation(224, 38);
 						input.Consume();
 
 
@@ -1586,7 +1586,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 
 				} finally { DebugExitSubRule(2); }
 
-				DebugLocation(221, 58);
+				DebugLocation(224, 58);
 				Match('\''); 
 
 				}
@@ -1619,12 +1619,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = INTEGER;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:226:2: ( ( '0' .. '9' )+ )
+			// FlashTeaseScript.g:229:2: ( ( '0' .. '9' )+ )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:226:4: ( '0' .. '9' )+
+			// FlashTeaseScript.g:229:4: ( '0' .. '9' )+
 			{
-			DebugLocation(226, 4);
-			// FlashTeaseScript.g:226:4: ( '0' .. '9' )+
+			DebugLocation(229, 4);
+			// FlashTeaseScript.g:229:4: ( '0' .. '9' )+
 			int cnt4=0;
 			try { DebugEnterSubRule(4);
 			while (true)
@@ -1646,7 +1646,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 					DebugEnterAlt(1);
 					// FlashTeaseScript.g:
 					{
-					DebugLocation(226, 4);
+					DebugLocation(229, 4);
 					input.Consume();
 
 
@@ -1697,12 +1697,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = LETTERS;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:230:2: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
+			// FlashTeaseScript.g:233:2: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:230:4: ( 'a' .. 'z' | 'A' .. 'Z' )+
+			// FlashTeaseScript.g:233:4: ( 'a' .. 'z' | 'A' .. 'Z' )+
 			{
-			DebugLocation(230, 4);
-			// FlashTeaseScript.g:230:4: ( 'a' .. 'z' | 'A' .. 'Z' )+
+			DebugLocation(233, 4);
+			// FlashTeaseScript.g:233:4: ( 'a' .. 'z' | 'A' .. 'Z' )+
 			int cnt5=0;
 			try { DebugEnterSubRule(5);
 			while (true)
@@ -1724,7 +1724,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 					DebugEnterAlt(1);
 					// FlashTeaseScript.g:
 					{
-					DebugLocation(230, 4);
+					DebugLocation(233, 4);
 					input.Consume();
 
 
@@ -1775,11 +1775,11 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = WS;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:234:2: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
+			// FlashTeaseScript.g:237:2: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:234:4: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+			// FlashTeaseScript.g:237:4: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
 			{
-			DebugLocation(234, 4);
+			DebugLocation(237, 4);
 			if ((input.LA(1)>='\t' && input.LA(1)<='\n')||(input.LA(1)>='\f' && input.LA(1)<='\r')||input.LA(1)==' ')
 			{
 				input.Consume();
@@ -1792,7 +1792,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 				Recover(mse);
 				throw mse;}
 
-			DebugLocation(234, 34);
+			DebugLocation(237, 34);
 			 Skip(); 
 
 			}
