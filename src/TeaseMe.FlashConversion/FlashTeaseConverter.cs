@@ -231,7 +231,7 @@ namespace TeaseMe.FlashConversion
                     var xmldoc = new XmlDocument();
                     xmldoc.LoadXml("<dummy>" + originalText + "</dummy>");
                     var pNodes = xmldoc.SelectNodes("//P");
-                    if (pNodes != null)
+                    if (pNodes != null && pNodes.Count > 0)
                     {
                         foreach (XmlElement element in pNodes)
                         {
@@ -240,12 +240,12 @@ namespace TeaseMe.FlashConversion
                     }
                     else
                     {
-                        result.Append(xmldoc.InnerText);
+                        result.Append(HttpUtility.HtmlEncode(xmldoc.InnerText));
                     }
                 }
                 catch (Exception)
                 {
-                    return originalText;                  
+                    return HttpUtility.HtmlEncode(originalText);                  
                 }
             }
 

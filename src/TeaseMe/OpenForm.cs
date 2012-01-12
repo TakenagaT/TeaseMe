@@ -110,34 +110,36 @@ namespace TeaseMe
                 {
                     var saveFile = new FileInfo(SaveNewScriptDialog.FileName);
 
-                    SelectedTease.MediaDirectory = saveFile.Name.BeforeLast(saveFile.Extension);
-
-                    string downloadDirectory = Path.Combine(saveFile.DirectoryName, SelectedTease.MediaDirectory);
-
-
-                    using (var webClient = new WebClient())
+                    if (!DownloadImagesCheckBox.Checked)
                     {
-                        foreach (var page in SelectedTease.Pages)
+                        SelectedTease.MediaDirectory = String.Format("http://www.milovana.com/media/get.php?folder={0}/{1}&name=", SelectedTease.Author.Id, SelectedTease.Id);
+                    }
+                    else
+                    {
+                        SelectedTease.MediaDirectory = saveFile.Name.BeforeLast(saveFile.Extension);
+
+                        string downloadDirectory = Path.Combine(saveFile.DirectoryName, SelectedTease.MediaDirectory);
+                        if (!Directory.Exists(downloadDirectory))
                         {
-                            if (page.Image != null)
+                            Directory.CreateDirectory(downloadDirectory);
+                        }
+
+                        using (var webClient = new WebClient())
+                        {
+                            foreach (var page in SelectedTease.Pages)
                             {
-                                string url = String.Format("http://www.milovana.com/media/get.php?folder={0}/{1}&name={2}", SelectedTease.Author.Id, SelectedTease.Id, page.Image.Id);
-                                if (DownloadImagesCheckBox.Checked)
+                                if (page.Image != null)
                                 {
                                     string imageName = page.Image.Id;
                                     if (page.Image.Id.Contains("*"))
                                     {
                                         imageName = page.Image.Id.Replace("*", Guid.NewGuid().ToString());
                                     }
-
                                     string fileName = Path.Combine(downloadDirectory, imageName);
                                     if (!File.Exists(fileName))
                                     {
-                                        if (!Directory.Exists(downloadDirectory))
-                                        {
-                                            Directory.CreateDirectory(downloadDirectory);
-                                        }
-                                        try 
+                                        string url = String.Format("http://www.milovana.com/media/get.php?folder={0}/{1}&name={2}", SelectedTease.Author.Id, SelectedTease.Id, page.Image.Id);
+                                        try
                                         {
                                             webClient.DownloadFile(url, fileName);
                                         }
@@ -147,15 +149,8 @@ namespace TeaseMe
                                         }
                                     }
                                 }
-                                else
-                                {
-                                    page.Image.Id = url;
-                                }
-                            }
-                            if (page.Audio != null)
-                            {
-                                string url = String.Format("http://www.milovana.com/media/get.php?folder={0}/{1}&name={2}", SelectedTease.Author.Id, SelectedTease.Id, page.Audio.Id);
-                                if (DownloadImagesCheckBox.Checked)
+
+                                if (page.Audio != null)
                                 {
                                     string audioName = page.Audio.Id;
                                     if (page.Audio.Id.Contains("*"))
@@ -165,11 +160,8 @@ namespace TeaseMe
                                     string fileName = Path.Combine(downloadDirectory, audioName);
                                     if (!File.Exists(fileName))
                                     {
-                                        if (!Directory.Exists(downloadDirectory))
-                                        {
-                                            Directory.CreateDirectory(downloadDirectory);
-                                        }
-                                        try 
+                                        string url = String.Format("http://www.milovana.com/media/get.php?folder={0}/{1}&name={2}", SelectedTease.Author.Id, SelectedTease.Id, page.Audio.Id);
+                                        try
                                         {
                                             webClient.DownloadFile(url, fileName);
                                         }
@@ -178,10 +170,6 @@ namespace TeaseMe
                                             page.Errors = String.Format("Error while downloading file '{0}'. {1}", url, page.Errors);
                                         }
                                     }
-                                }
-                                else
-                                {
-                                    page.Audio.Id = url;
                                 }
                             }
                         }
@@ -195,7 +183,7 @@ namespace TeaseMe
                     {
                         MessageBox.Show("Download completed. \n\nSelect the tease from the list and press start.");
                     }
-                    
+
 
                     string teaseXml = new TeaseSerializer().ConvertToXmlString(SelectedTease);
                     File.WriteAllText(saveFile.FullName, teaseXml);
