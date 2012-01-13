@@ -9,36 +9,36 @@ options {
 
 
 tokens {
-	PAGE;
-	ID;
-	PROPERTIES;
-	TEXT;
 	ACTION;
-	PIC;
-	SOUND;
-	TARGET;
-	GO;
-	YN;
-	DELAY;
-	YES;
-	NO;
-	TIME;
-	SEC;
-	MIN;
-	STYLE;
-	NORMAL;
-	HIDDEN;
-	SECRET;
-	RANGE;
-	FROM;
-	TO;
-	PREFIX;
-	MULT;
-	UNSET;
-	SET;
-	CAP;
-	BUTTONS;
 	BUTTON;
+	BUTTONS;
+	CAP;
+	DELAY;
+	FROM;
+	GO;
+	HIDDEN;
+	ID;
+	MIN;
+	MULT;
+	NO;
+	NORMAL;
+	PAGE;
+	PIC;
+	PREFIX;
+	PROPERTIES;
+	RANGE;
+	SEC;
+	SECRET;
+	SET;
+	SOUND;
+	STYLE;
+	TARGET;
+	TEXT;
+	TIME;
+	TO;
+	UNSET;
+	YES;
+	YN;
 }
 
 @lexer::namespace{TeaseMe.FlashConversion}
@@ -94,7 +94,7 @@ pageProp
 	;
 
 textDef
-	:	'text:'! STRING
+	:	'text:'! QUOTED_STRING
 	;
 
 actionDef
@@ -120,13 +120,13 @@ actionPrefix
 	;
 
 actionPic
-	:	'pic(id:' STRING ')'
-		-> ^(PIC STRING) 
+	:	'pic(id:' QUOTED_STRING ')'
+		-> ^(PIC QUOTED_STRING) 
 	;
 
 actionSound
-	:	'sound(id:' STRING ')'
-		-> ^(SOUND STRING)
+	:	'sound(id:' QUOTED_STRING ')'
+		-> ^(SOUND QUOTED_STRING)
 	;
 
 actionGo
@@ -155,8 +155,8 @@ buttonSeq
 	;
 
 buttonDef
-	:	'target' INTEGER ':' pageRef ',cap' INTEGER ':' STRING
-		-> ^(BUTTON ^(TARGET pageRef) ^(CAP STRING))
+	:	'target' INTEGER ':' pageRef ',cap' INTEGER ':' QUOTED_STRING
+		-> ^(BUTTON ^(TARGET pageRef) ^(CAP QUOTED_STRING))
 	;
 
 actionUnset
@@ -187,7 +187,7 @@ targetDef
 	;
 
 timeDef
-	:	'time:'! INTEGER (SEC|MIN)
+	:	'time:'! INTEGER (SEC|MIN)?
 	;
 
 SEC		: 'sec';
@@ -204,8 +204,8 @@ SECRET	: 'secret';
 rangeDef
 	:	'range(' 'from:' INTEGER ',' 'to:' INTEGER ')'
 		-> ^(RANGE ^(FROM INTEGER) ^(TO INTEGER))	
-	|	'range(' 'from:' INTEGER ',' 'to:' INTEGER ',' ':'? STRING ')'
-		-> ^(RANGE ^(FROM INTEGER) ^(TO INTEGER) ^(PREFIX STRING))	
+	|	'range(' 'from:' INTEGER ',' 'to:' INTEGER ',' ':'? QUOTED_STRING ')'
+		-> ^(RANGE ^(FROM INTEGER) ^(TO INTEGER) ^(PREFIX QUOTED_STRING))	
 	;
 
 
@@ -219,7 +219,7 @@ pageId
 	;
 
 
-STRING
+QUOTED_STRING
 	:	'"' ( options {greedy=false;} :  ~('"'|'\n'|'\r'))* '"'
 	|	'\'' ( options {greedy=false;} :  ~('\''|'\n'|'\r'))* '\''
 	;

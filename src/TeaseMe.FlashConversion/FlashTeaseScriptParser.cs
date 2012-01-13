@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.3.1.7705 FlashTeaseScript.g 2012-01-13 00:47:31
+// $ANTLR 3.3.1.7705 FlashTeaseScript.g 2012-01-13 01:45:23
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -34,7 +34,7 @@ namespace TeaseMe.FlashConversion
 public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 {
 	internal static readonly string[] tokenNames = new string[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ACTION", "BUTTON", "BUTTONS", "CAP", "DELAY", "FROM", "GO", "HIDDEN", "ID", "INTEGER", "LETTERS", "MIN", "MULT", "NO", "NORMAL", "PAGE", "PIC", "PREFIX", "PROPERTIES", "RANGE", "SEC", "SECRET", "SET", "SOUND", "STRING", "STYLE", "TARGET", "TEXT", "TIME", "TO", "UNSET", "WS", "YES", "YN", "'#'", "')'", "','", "',cap'", "':'", "'action'", "'action:'", "'buttons('", "'delay('", "'e'", "'from:'", "'go('", "'hidden:'", "'instruc:'", "'media:'", "'mult('", "'no:'", "'page('", "'pic(id:'", "'range('", "'set('", "'sound(id:'", "'style:'", "'target'", "'target:'", "'text:'", "'time:'", "'to:'", "'unset('", "'vert('", "'yes:'", "'yn('"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ACTION", "BUTTON", "BUTTONS", "CAP", "DELAY", "FROM", "GO", "HIDDEN", "ID", "INTEGER", "LETTERS", "MIN", "MULT", "NO", "NORMAL", "PAGE", "PIC", "PREFIX", "PROPERTIES", "QUOTED_STRING", "RANGE", "SEC", "SECRET", "SET", "SOUND", "STYLE", "TARGET", "TEXT", "TIME", "TO", "UNSET", "WS", "YES", "YN", "'#'", "')'", "','", "',cap'", "':'", "'action'", "'action:'", "'buttons('", "'delay('", "'e'", "'from:'", "'go('", "'hidden:'", "'instruc:'", "'media:'", "'mult('", "'no:'", "'page('", "'pic(id:'", "'range('", "'set('", "'sound(id:'", "'style:'", "'target'", "'target:'", "'text:'", "'time:'", "'to:'", "'unset('", "'vert('", "'yes:'", "'yn('"
 	};
 	public const int EOF=-1;
 	public const int ACTION=4;
@@ -56,12 +56,12 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 	public const int PIC=20;
 	public const int PREFIX=21;
 	public const int PROPERTIES=22;
-	public const int RANGE=23;
-	public const int SEC=24;
-	public const int SECRET=25;
-	public const int SET=26;
-	public const int SOUND=27;
-	public const int STRING=28;
+	public const int QUOTED_STRING=23;
+	public const int RANGE=24;
+	public const int SEC=25;
+	public const int SECRET=26;
+	public const int SET=27;
+	public const int SOUND=28;
 	public const int STYLE=29;
 	public const int TARGET=30;
 	public const int TEXT=31;
@@ -763,7 +763,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 	partial void LeaveRule_textDef();
 
 	// $ANTLR start "textDef"
-	// FlashTeaseScript.g:96:1: textDef : 'text:' STRING ;
+	// FlashTeaseScript.g:96:1: textDef : 'text:' QUOTED_STRING ;
 	[GrammarRule("textDef")]
 	private FlashTeaseScriptParser.textDef_return textDef()
 	{
@@ -776,27 +776,27 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		CommonTree root_0 = default(CommonTree);
 
 		CommonToken string_literal11 = default(CommonToken);
-		CommonToken STRING12 = default(CommonToken);
+		CommonToken QUOTED_STRING12 = default(CommonToken);
 
 		CommonTree string_literal11_tree = default(CommonTree);
-		CommonTree STRING12_tree = default(CommonTree);
+		CommonTree QUOTED_STRING12_tree = default(CommonTree);
 
 		try { DebugEnterRule(GrammarFileName, "textDef");
 		DebugLocation(96, 1);
 		try
 		{
-			// FlashTeaseScript.g:97:2: ( 'text:' STRING )
+			// FlashTeaseScript.g:97:2: ( 'text:' QUOTED_STRING )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:97:4: 'text:' STRING
+			// FlashTeaseScript.g:97:4: 'text:' QUOTED_STRING
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(97, 11);
 			string_literal11=(CommonToken)Match(input,63,Follow._63_in_textDef302); 
 			DebugLocation(97, 13);
-			STRING12=(CommonToken)Match(input,STRING,Follow._STRING_in_textDef305); 
-			STRING12_tree = (CommonTree)adaptor.Create(STRING12);
-			adaptor.AddChild(root_0, STRING12_tree);
+			QUOTED_STRING12=(CommonToken)Match(input,QUOTED_STRING,Follow._QUOTED_STRING_in_textDef305); 
+			QUOTED_STRING12_tree = (CommonTree)adaptor.Create(QUOTED_STRING12);
+			adaptor.AddChild(root_0, QUOTED_STRING12_tree);
 
 
 			}
@@ -1698,7 +1698,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 	partial void LeaveRule_actionPic();
 
 	// $ANTLR start "actionPic"
-	// FlashTeaseScript.g:122:1: actionPic : 'pic(id:' STRING ')' -> ^( PIC STRING ) ;
+	// FlashTeaseScript.g:122:1: actionPic : 'pic(id:' QUOTED_STRING ')' -> ^( PIC QUOTED_STRING ) ;
 	[GrammarRule("actionPic")]
 	private FlashTeaseScriptParser.actionPic_return actionPic()
 	{
@@ -1711,33 +1711,33 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		CommonTree root_0 = default(CommonTree);
 
 		CommonToken string_literal41 = default(CommonToken);
-		CommonToken STRING42 = default(CommonToken);
+		CommonToken QUOTED_STRING42 = default(CommonToken);
 		CommonToken char_literal43 = default(CommonToken);
 
 		CommonTree string_literal41_tree = default(CommonTree);
-		CommonTree STRING42_tree = default(CommonTree);
+		CommonTree QUOTED_STRING42_tree = default(CommonTree);
 		CommonTree char_literal43_tree = default(CommonTree);
 		RewriteRuleITokenStream stream_56=new RewriteRuleITokenStream(adaptor,"token 56");
-		RewriteRuleITokenStream stream_STRING=new RewriteRuleITokenStream(adaptor,"token STRING");
+		RewriteRuleITokenStream stream_QUOTED_STRING=new RewriteRuleITokenStream(adaptor,"token QUOTED_STRING");
 		RewriteRuleITokenStream stream_39=new RewriteRuleITokenStream(adaptor,"token 39");
 
 		try { DebugEnterRule(GrammarFileName, "actionPic");
 		DebugLocation(122, 1);
 		try
 		{
-			// FlashTeaseScript.g:123:2: ( 'pic(id:' STRING ')' -> ^( PIC STRING ) )
+			// FlashTeaseScript.g:123:2: ( 'pic(id:' QUOTED_STRING ')' -> ^( PIC QUOTED_STRING ) )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:123:4: 'pic(id:' STRING ')'
+			// FlashTeaseScript.g:123:4: 'pic(id:' QUOTED_STRING ')'
 			{
 			DebugLocation(123, 4);
 			string_literal41=(CommonToken)Match(input,56,Follow._56_in_actionPic481);  
 			stream_56.Add(string_literal41);
 
 			DebugLocation(123, 14);
-			STRING42=(CommonToken)Match(input,STRING,Follow._STRING_in_actionPic483);  
-			stream_STRING.Add(STRING42);
+			QUOTED_STRING42=(CommonToken)Match(input,QUOTED_STRING,Follow._QUOTED_STRING_in_actionPic483);  
+			stream_QUOTED_STRING.Add(QUOTED_STRING42);
 
-			DebugLocation(123, 21);
+			DebugLocation(123, 28);
 			char_literal43=(CommonToken)Match(input,39,Follow._39_in_actionPic485);  
 			stream_39.Add(char_literal43);
 
@@ -1745,7 +1745,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: STRING
+			// elements: QUOTED_STRING
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -1755,17 +1755,17 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 124:3: -> ^( PIC STRING )
+			// 124:3: -> ^( PIC QUOTED_STRING )
 			{
 				DebugLocation(124, 6);
-				// FlashTeaseScript.g:124:6: ^( PIC STRING )
+				// FlashTeaseScript.g:124:6: ^( PIC QUOTED_STRING )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
 				DebugLocation(124, 8);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(PIC, "PIC"), root_1);
 
 				DebugLocation(124, 12);
-				adaptor.AddChild(root_1, stream_STRING.NextNode());
+				adaptor.AddChild(root_1, stream_QUOTED_STRING.NextNode());
 
 				adaptor.AddChild(root_0, root_1);
 				}
@@ -1816,7 +1816,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 	partial void LeaveRule_actionSound();
 
 	// $ANTLR start "actionSound"
-	// FlashTeaseScript.g:127:1: actionSound : 'sound(id:' STRING ')' -> ^( SOUND STRING ) ;
+	// FlashTeaseScript.g:127:1: actionSound : 'sound(id:' QUOTED_STRING ')' -> ^( SOUND QUOTED_STRING ) ;
 	[GrammarRule("actionSound")]
 	private FlashTeaseScriptParser.actionSound_return actionSound()
 	{
@@ -1829,33 +1829,33 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		CommonTree root_0 = default(CommonTree);
 
 		CommonToken string_literal44 = default(CommonToken);
-		CommonToken STRING45 = default(CommonToken);
+		CommonToken QUOTED_STRING45 = default(CommonToken);
 		CommonToken char_literal46 = default(CommonToken);
 
 		CommonTree string_literal44_tree = default(CommonTree);
-		CommonTree STRING45_tree = default(CommonTree);
+		CommonTree QUOTED_STRING45_tree = default(CommonTree);
 		CommonTree char_literal46_tree = default(CommonTree);
 		RewriteRuleITokenStream stream_59=new RewriteRuleITokenStream(adaptor,"token 59");
-		RewriteRuleITokenStream stream_STRING=new RewriteRuleITokenStream(adaptor,"token STRING");
+		RewriteRuleITokenStream stream_QUOTED_STRING=new RewriteRuleITokenStream(adaptor,"token QUOTED_STRING");
 		RewriteRuleITokenStream stream_39=new RewriteRuleITokenStream(adaptor,"token 39");
 
 		try { DebugEnterRule(GrammarFileName, "actionSound");
 		DebugLocation(127, 1);
 		try
 		{
-			// FlashTeaseScript.g:128:2: ( 'sound(id:' STRING ')' -> ^( SOUND STRING ) )
+			// FlashTeaseScript.g:128:2: ( 'sound(id:' QUOTED_STRING ')' -> ^( SOUND QUOTED_STRING ) )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:128:4: 'sound(id:' STRING ')'
+			// FlashTeaseScript.g:128:4: 'sound(id:' QUOTED_STRING ')'
 			{
 			DebugLocation(128, 4);
 			string_literal44=(CommonToken)Match(input,59,Follow._59_in_actionSound507);  
 			stream_59.Add(string_literal44);
 
 			DebugLocation(128, 16);
-			STRING45=(CommonToken)Match(input,STRING,Follow._STRING_in_actionSound509);  
-			stream_STRING.Add(STRING45);
+			QUOTED_STRING45=(CommonToken)Match(input,QUOTED_STRING,Follow._QUOTED_STRING_in_actionSound509);  
+			stream_QUOTED_STRING.Add(QUOTED_STRING45);
 
-			DebugLocation(128, 23);
+			DebugLocation(128, 30);
 			char_literal46=(CommonToken)Match(input,39,Follow._39_in_actionSound511);  
 			stream_39.Add(char_literal46);
 
@@ -1863,7 +1863,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: STRING
+			// elements: QUOTED_STRING
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -1873,17 +1873,17 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 129:3: -> ^( SOUND STRING )
+			// 129:3: -> ^( SOUND QUOTED_STRING )
 			{
 				DebugLocation(129, 6);
-				// FlashTeaseScript.g:129:6: ^( SOUND STRING )
+				// FlashTeaseScript.g:129:6: ^( SOUND QUOTED_STRING )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
 				DebugLocation(129, 8);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(SOUND, "SOUND"), root_1);
 
 				DebugLocation(129, 14);
-				adaptor.AddChild(root_1, stream_STRING.NextNode());
+				adaptor.AddChild(root_1, stream_QUOTED_STRING.NextNode());
 
 				adaptor.AddChild(root_0, root_1);
 				}
@@ -2735,7 +2735,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 	partial void LeaveRule_buttonDef();
 
 	// $ANTLR start "buttonDef"
-	// FlashTeaseScript.g:157:1: buttonDef : 'target' INTEGER ':' pageRef ',cap' INTEGER ':' STRING -> ^( BUTTON ^( TARGET pageRef ) ^( CAP STRING ) ) ;
+	// FlashTeaseScript.g:157:1: buttonDef : 'target' INTEGER ':' pageRef ',cap' INTEGER ':' QUOTED_STRING -> ^( BUTTON ^( TARGET pageRef ) ^( CAP QUOTED_STRING ) ) ;
 	[GrammarRule("buttonDef")]
 	private FlashTeaseScriptParser.buttonDef_return buttonDef()
 	{
@@ -2753,7 +2753,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		CommonToken string_literal74 = default(CommonToken);
 		CommonToken INTEGER75 = default(CommonToken);
 		CommonToken char_literal76 = default(CommonToken);
-		CommonToken STRING77 = default(CommonToken);
+		CommonToken QUOTED_STRING77 = default(CommonToken);
 		FlashTeaseScriptParser.pageRef_return pageRef73 = default(FlashTeaseScriptParser.pageRef_return);
 
 		CommonTree string_literal70_tree = default(CommonTree);
@@ -2762,20 +2762,20 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		CommonTree string_literal74_tree = default(CommonTree);
 		CommonTree INTEGER75_tree = default(CommonTree);
 		CommonTree char_literal76_tree = default(CommonTree);
-		CommonTree STRING77_tree = default(CommonTree);
+		CommonTree QUOTED_STRING77_tree = default(CommonTree);
 		RewriteRuleITokenStream stream_61=new RewriteRuleITokenStream(adaptor,"token 61");
 		RewriteRuleITokenStream stream_INTEGER=new RewriteRuleITokenStream(adaptor,"token INTEGER");
 		RewriteRuleITokenStream stream_42=new RewriteRuleITokenStream(adaptor,"token 42");
 		RewriteRuleITokenStream stream_41=new RewriteRuleITokenStream(adaptor,"token 41");
-		RewriteRuleITokenStream stream_STRING=new RewriteRuleITokenStream(adaptor,"token STRING");
+		RewriteRuleITokenStream stream_QUOTED_STRING=new RewriteRuleITokenStream(adaptor,"token QUOTED_STRING");
 		RewriteRuleSubtreeStream stream_pageRef=new RewriteRuleSubtreeStream(adaptor,"rule pageRef");
 		try { DebugEnterRule(GrammarFileName, "buttonDef");
 		DebugLocation(157, 1);
 		try
 		{
-			// FlashTeaseScript.g:158:2: ( 'target' INTEGER ':' pageRef ',cap' INTEGER ':' STRING -> ^( BUTTON ^( TARGET pageRef ) ^( CAP STRING ) ) )
+			// FlashTeaseScript.g:158:2: ( 'target' INTEGER ':' pageRef ',cap' INTEGER ':' QUOTED_STRING -> ^( BUTTON ^( TARGET pageRef ) ^( CAP QUOTED_STRING ) ) )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:158:4: 'target' INTEGER ':' pageRef ',cap' INTEGER ':' STRING
+			// FlashTeaseScript.g:158:4: 'target' INTEGER ':' pageRef ',cap' INTEGER ':' QUOTED_STRING
 			{
 			DebugLocation(158, 4);
 			string_literal70=(CommonToken)Match(input,61,Follow._61_in_buttonDef708);  
@@ -2808,14 +2808,14 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			stream_42.Add(char_literal76);
 
 			DebugLocation(158, 52);
-			STRING77=(CommonToken)Match(input,STRING,Follow._STRING_in_buttonDef722);  
-			stream_STRING.Add(STRING77);
+			QUOTED_STRING77=(CommonToken)Match(input,QUOTED_STRING,Follow._QUOTED_STRING_in_buttonDef722);  
+			stream_QUOTED_STRING.Add(QUOTED_STRING77);
 
 
 
 			{
 			// AST REWRITE
-			// elements: pageRef, STRING
+			// elements: pageRef, QUOTED_STRING
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -2825,10 +2825,10 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 159:3: -> ^( BUTTON ^( TARGET pageRef ) ^( CAP STRING ) )
+			// 159:3: -> ^( BUTTON ^( TARGET pageRef ) ^( CAP QUOTED_STRING ) )
 			{
 				DebugLocation(159, 6);
-				// FlashTeaseScript.g:159:6: ^( BUTTON ^( TARGET pageRef ) ^( CAP STRING ) )
+				// FlashTeaseScript.g:159:6: ^( BUTTON ^( TARGET pageRef ) ^( CAP QUOTED_STRING ) )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
 				DebugLocation(159, 8);
@@ -2847,14 +2847,14 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 				adaptor.AddChild(root_1, root_2);
 				}
 				DebugLocation(159, 33);
-				// FlashTeaseScript.g:159:33: ^( CAP STRING )
+				// FlashTeaseScript.g:159:33: ^( CAP QUOTED_STRING )
 				{
 				CommonTree root_2 = (CommonTree)adaptor.Nil();
 				DebugLocation(159, 35);
 				root_2 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(CAP, "CAP"), root_2);
 
 				DebugLocation(159, 39);
-				adaptor.AddChild(root_2, stream_STRING.NextNode());
+				adaptor.AddChild(root_2, stream_QUOTED_STRING.NextNode());
 
 				adaptor.AddChild(root_1, root_2);
 				}
@@ -3587,7 +3587,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 	partial void LeaveRule_timeDef();
 
 	// $ANTLR start "timeDef"
-	// FlashTeaseScript.g:189:1: timeDef : 'time:' INTEGER ( SEC | MIN ) ;
+	// FlashTeaseScript.g:189:1: timeDef : 'time:' INTEGER ( SEC | MIN )? ;
 	[GrammarRule("timeDef")]
 	private FlashTeaseScriptParser.timeDef_return timeDef()
 	{
@@ -3611,9 +3611,9 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		DebugLocation(189, 1);
 		try
 		{
-			// FlashTeaseScript.g:190:2: ( 'time:' INTEGER ( SEC | MIN ) )
+			// FlashTeaseScript.g:190:2: ( 'time:' INTEGER ( SEC | MIN )? )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:190:4: 'time:' INTEGER ( SEC | MIN )
+			// FlashTeaseScript.g:190:4: 'time:' INTEGER ( SEC | MIN )?
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
@@ -3625,19 +3625,44 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			adaptor.AddChild(root_0, INTEGER96_tree);
 
 			DebugLocation(190, 21);
-			set97=(CommonToken)input.LT(1);
-			if (input.LA(1)==MIN||input.LA(1)==SEC)
+			// FlashTeaseScript.g:190:21: ( SEC | MIN )?
+			int alt15=2;
+			try { DebugEnterSubRule(15);
+			try { DebugEnterDecision(15, false);
+			int LA15_0 = input.LA(1);
+
+			if ((LA15_0==MIN||LA15_0==SEC))
 			{
-				input.Consume();
-				adaptor.AddChild(root_0, (CommonTree)adaptor.Create(set97));
-				state.errorRecovery=false;
+				alt15 = 1;
 			}
-			else
+			} finally { DebugExitDecision(15); }
+			switch (alt15)
 			{
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				DebugRecognitionException(mse);
-				throw mse;
+			case 1:
+				DebugEnterAlt(1);
+				// FlashTeaseScript.g:
+				{
+				DebugLocation(190, 21);
+				set97=(CommonToken)input.LT(1);
+				if (input.LA(1)==MIN||input.LA(1)==SEC)
+				{
+					input.Consume();
+					adaptor.AddChild(root_0, (CommonTree)adaptor.Create(set97));
+					state.errorRecovery=false;
+				}
+				else
+				{
+					MismatchedSetException mse = new MismatchedSetException(null,input);
+					DebugRecognitionException(mse);
+					throw mse;
+				}
+
+
+				}
+				break;
+
 			}
+			} finally { DebugExitSubRule(15); }
 
 
 			}
@@ -3710,7 +3735,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(197, 12);
-			string_literal98=(CommonToken)Match(input,60,Follow._60_in_styleDef922); 
+			string_literal98=(CommonToken)Match(input,60,Follow._60_in_styleDef923); 
 			DebugLocation(197, 14);
 			set99=(CommonToken)input.LT(1);
 			if (input.LA(1)==HIDDEN||input.LA(1)==NORMAL||input.LA(1)==SECRET)
@@ -3768,7 +3793,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 	partial void LeaveRule_rangeDef();
 
 	// $ANTLR start "rangeDef"
-	// FlashTeaseScript.g:204:1: rangeDef : ( 'range(' 'from:' INTEGER ',' 'to:' INTEGER ')' -> ^( RANGE ^( FROM INTEGER ) ^( TO INTEGER ) ) | 'range(' 'from:' INTEGER ',' 'to:' INTEGER ',' ( ':' )? STRING ')' -> ^( RANGE ^( FROM INTEGER ) ^( TO INTEGER ) ^( PREFIX STRING ) ) );
+	// FlashTeaseScript.g:204:1: rangeDef : ( 'range(' 'from:' INTEGER ',' 'to:' INTEGER ')' -> ^( RANGE ^( FROM INTEGER ) ^( TO INTEGER ) ) | 'range(' 'from:' INTEGER ',' 'to:' INTEGER ',' ( ':' )? QUOTED_STRING ')' -> ^( RANGE ^( FROM INTEGER ) ^( TO INTEGER ) ^( PREFIX QUOTED_STRING ) ) );
 	[GrammarRule("rangeDef")]
 	private FlashTeaseScriptParser.rangeDef_return rangeDef()
 	{
@@ -3795,7 +3820,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		CommonToken INTEGER112 = default(CommonToken);
 		CommonToken char_literal113 = default(CommonToken);
 		CommonToken char_literal114 = default(CommonToken);
-		CommonToken STRING115 = default(CommonToken);
+		CommonToken QUOTED_STRING115 = default(CommonToken);
 		CommonToken char_literal116 = default(CommonToken);
 
 		CommonTree string_literal100_tree = default(CommonTree);
@@ -3813,7 +3838,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		CommonTree INTEGER112_tree = default(CommonTree);
 		CommonTree char_literal113_tree = default(CommonTree);
 		CommonTree char_literal114_tree = default(CommonTree);
-		CommonTree STRING115_tree = default(CommonTree);
+		CommonTree QUOTED_STRING115_tree = default(CommonTree);
 		CommonTree char_literal116_tree = default(CommonTree);
 		RewriteRuleITokenStream stream_57=new RewriteRuleITokenStream(adaptor,"token 57");
 		RewriteRuleITokenStream stream_48=new RewriteRuleITokenStream(adaptor,"token 48");
@@ -3822,130 +3847,130 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		RewriteRuleITokenStream stream_65=new RewriteRuleITokenStream(adaptor,"token 65");
 		RewriteRuleITokenStream stream_39=new RewriteRuleITokenStream(adaptor,"token 39");
 		RewriteRuleITokenStream stream_42=new RewriteRuleITokenStream(adaptor,"token 42");
-		RewriteRuleITokenStream stream_STRING=new RewriteRuleITokenStream(adaptor,"token STRING");
+		RewriteRuleITokenStream stream_QUOTED_STRING=new RewriteRuleITokenStream(adaptor,"token QUOTED_STRING");
 
 		try { DebugEnterRule(GrammarFileName, "rangeDef");
 		DebugLocation(204, 1);
 		try
 		{
-			// FlashTeaseScript.g:205:2: ( 'range(' 'from:' INTEGER ',' 'to:' INTEGER ')' -> ^( RANGE ^( FROM INTEGER ) ^( TO INTEGER ) ) | 'range(' 'from:' INTEGER ',' 'to:' INTEGER ',' ( ':' )? STRING ')' -> ^( RANGE ^( FROM INTEGER ) ^( TO INTEGER ) ^( PREFIX STRING ) ) )
-			int alt16=2;
-			try { DebugEnterDecision(16, false);
-			int LA16_0 = input.LA(1);
+			// FlashTeaseScript.g:205:2: ( 'range(' 'from:' INTEGER ',' 'to:' INTEGER ')' -> ^( RANGE ^( FROM INTEGER ) ^( TO INTEGER ) ) | 'range(' 'from:' INTEGER ',' 'to:' INTEGER ',' ( ':' )? QUOTED_STRING ')' -> ^( RANGE ^( FROM INTEGER ) ^( TO INTEGER ) ^( PREFIX QUOTED_STRING ) ) )
+			int alt17=2;
+			try { DebugEnterDecision(17, false);
+			int LA17_0 = input.LA(1);
 
-			if ((LA16_0==57))
+			if ((LA17_0==57))
 			{
-				int LA16_1 = input.LA(2);
+				int LA17_1 = input.LA(2);
 
-				if ((LA16_1==48))
+				if ((LA17_1==48))
 				{
-					int LA16_2 = input.LA(3);
+					int LA17_2 = input.LA(3);
 
-					if ((LA16_2==INTEGER))
+					if ((LA17_2==INTEGER))
 					{
-						int LA16_3 = input.LA(4);
+						int LA17_3 = input.LA(4);
 
-						if ((LA16_3==40))
+						if ((LA17_3==40))
 						{
-							int LA16_4 = input.LA(5);
+							int LA17_4 = input.LA(5);
 
-							if ((LA16_4==65))
+							if ((LA17_4==65))
 							{
-								int LA16_5 = input.LA(6);
+								int LA17_5 = input.LA(6);
 
-								if ((LA16_5==INTEGER))
+								if ((LA17_5==INTEGER))
 								{
-									int LA16_6 = input.LA(7);
+									int LA17_6 = input.LA(7);
 
-									if ((LA16_6==39))
+									if ((LA17_6==39))
 									{
-										alt16 = 1;
+										alt17 = 1;
 									}
-									else if ((LA16_6==40))
+									else if ((LA17_6==40))
 									{
-										alt16 = 2;
+										alt17 = 2;
 									}
 									else
 									{
-										NoViableAltException nvae = new NoViableAltException("", 16, 6, input);
+										NoViableAltException nvae = new NoViableAltException("", 17, 6, input);
 										DebugRecognitionException(nvae);
 										throw nvae;
 									}
 								}
 								else
 								{
-									NoViableAltException nvae = new NoViableAltException("", 16, 5, input);
+									NoViableAltException nvae = new NoViableAltException("", 17, 5, input);
 									DebugRecognitionException(nvae);
 									throw nvae;
 								}
 							}
 							else
 							{
-								NoViableAltException nvae = new NoViableAltException("", 16, 4, input);
+								NoViableAltException nvae = new NoViableAltException("", 17, 4, input);
 								DebugRecognitionException(nvae);
 								throw nvae;
 							}
 						}
 						else
 						{
-							NoViableAltException nvae = new NoViableAltException("", 16, 3, input);
+							NoViableAltException nvae = new NoViableAltException("", 17, 3, input);
 							DebugRecognitionException(nvae);
 							throw nvae;
 						}
 					}
 					else
 					{
-						NoViableAltException nvae = new NoViableAltException("", 16, 2, input);
+						NoViableAltException nvae = new NoViableAltException("", 17, 2, input);
 						DebugRecognitionException(nvae);
 						throw nvae;
 					}
 				}
 				else
 				{
-					NoViableAltException nvae = new NoViableAltException("", 16, 1, input);
+					NoViableAltException nvae = new NoViableAltException("", 17, 1, input);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 			}
 			else
 			{
-				NoViableAltException nvae = new NoViableAltException("", 16, 0, input);
+				NoViableAltException nvae = new NoViableAltException("", 17, 0, input);
 				DebugRecognitionException(nvae);
 				throw nvae;
 			}
-			} finally { DebugExitDecision(16); }
-			switch (alt16)
+			} finally { DebugExitDecision(17); }
+			switch (alt17)
 			{
 			case 1:
 				DebugEnterAlt(1);
 				// FlashTeaseScript.g:205:4: 'range(' 'from:' INTEGER ',' 'to:' INTEGER ')'
 				{
 				DebugLocation(205, 4);
-				string_literal100=(CommonToken)Match(input,57,Follow._57_in_rangeDef968);  
+				string_literal100=(CommonToken)Match(input,57,Follow._57_in_rangeDef969);  
 				stream_57.Add(string_literal100);
 
 				DebugLocation(205, 13);
-				string_literal101=(CommonToken)Match(input,48,Follow._48_in_rangeDef970);  
+				string_literal101=(CommonToken)Match(input,48,Follow._48_in_rangeDef971);  
 				stream_48.Add(string_literal101);
 
 				DebugLocation(205, 21);
-				INTEGER102=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_rangeDef972);  
+				INTEGER102=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_rangeDef973);  
 				stream_INTEGER.Add(INTEGER102);
 
 				DebugLocation(205, 29);
-				char_literal103=(CommonToken)Match(input,40,Follow._40_in_rangeDef974);  
+				char_literal103=(CommonToken)Match(input,40,Follow._40_in_rangeDef975);  
 				stream_40.Add(char_literal103);
 
 				DebugLocation(205, 33);
-				string_literal104=(CommonToken)Match(input,65,Follow._65_in_rangeDef976);  
+				string_literal104=(CommonToken)Match(input,65,Follow._65_in_rangeDef977);  
 				stream_65.Add(string_literal104);
 
 				DebugLocation(205, 39);
-				INTEGER105=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_rangeDef978);  
+				INTEGER105=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_rangeDef979);  
 				stream_INTEGER.Add(INTEGER105);
 
 				DebugLocation(205, 47);
-				char_literal106=(CommonToken)Match(input,39,Follow._39_in_rangeDef980);  
+				char_literal106=(CommonToken)Match(input,39,Follow._39_in_rangeDef981);  
 				stream_39.Add(char_literal106);
 
 
@@ -4008,56 +4033,56 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// FlashTeaseScript.g:207:4: 'range(' 'from:' INTEGER ',' 'to:' INTEGER ',' ( ':' )? STRING ')'
+				// FlashTeaseScript.g:207:4: 'range(' 'from:' INTEGER ',' 'to:' INTEGER ',' ( ':' )? QUOTED_STRING ')'
 				{
 				DebugLocation(207, 4);
-				string_literal107=(CommonToken)Match(input,57,Follow._57_in_rangeDef1006);  
+				string_literal107=(CommonToken)Match(input,57,Follow._57_in_rangeDef1007);  
 				stream_57.Add(string_literal107);
 
 				DebugLocation(207, 13);
-				string_literal108=(CommonToken)Match(input,48,Follow._48_in_rangeDef1008);  
+				string_literal108=(CommonToken)Match(input,48,Follow._48_in_rangeDef1009);  
 				stream_48.Add(string_literal108);
 
 				DebugLocation(207, 21);
-				INTEGER109=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_rangeDef1010);  
+				INTEGER109=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_rangeDef1011);  
 				stream_INTEGER.Add(INTEGER109);
 
 				DebugLocation(207, 29);
-				char_literal110=(CommonToken)Match(input,40,Follow._40_in_rangeDef1012);  
+				char_literal110=(CommonToken)Match(input,40,Follow._40_in_rangeDef1013);  
 				stream_40.Add(char_literal110);
 
 				DebugLocation(207, 33);
-				string_literal111=(CommonToken)Match(input,65,Follow._65_in_rangeDef1014);  
+				string_literal111=(CommonToken)Match(input,65,Follow._65_in_rangeDef1015);  
 				stream_65.Add(string_literal111);
 
 				DebugLocation(207, 39);
-				INTEGER112=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_rangeDef1016);  
+				INTEGER112=(CommonToken)Match(input,INTEGER,Follow._INTEGER_in_rangeDef1017);  
 				stream_INTEGER.Add(INTEGER112);
 
 				DebugLocation(207, 47);
-				char_literal113=(CommonToken)Match(input,40,Follow._40_in_rangeDef1018);  
+				char_literal113=(CommonToken)Match(input,40,Follow._40_in_rangeDef1019);  
 				stream_40.Add(char_literal113);
 
 				DebugLocation(207, 51);
 				// FlashTeaseScript.g:207:51: ( ':' )?
-				int alt15=2;
-				try { DebugEnterSubRule(15);
-				try { DebugEnterDecision(15, false);
-				int LA15_0 = input.LA(1);
+				int alt16=2;
+				try { DebugEnterSubRule(16);
+				try { DebugEnterDecision(16, false);
+				int LA16_0 = input.LA(1);
 
-				if ((LA15_0==42))
+				if ((LA16_0==42))
 				{
-					alt15 = 1;
+					alt16 = 1;
 				}
-				} finally { DebugExitDecision(15); }
-				switch (alt15)
+				} finally { DebugExitDecision(16); }
+				switch (alt16)
 				{
 				case 1:
 					DebugEnterAlt(1);
 					// FlashTeaseScript.g:207:51: ':'
 					{
 					DebugLocation(207, 51);
-					char_literal114=(CommonToken)Match(input,42,Follow._42_in_rangeDef1020);  
+					char_literal114=(CommonToken)Match(input,42,Follow._42_in_rangeDef1021);  
 					stream_42.Add(char_literal114);
 
 
@@ -4065,21 +4090,21 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 					break;
 
 				}
-				} finally { DebugExitSubRule(15); }
+				} finally { DebugExitSubRule(16); }
 
 				DebugLocation(207, 56);
-				STRING115=(CommonToken)Match(input,STRING,Follow._STRING_in_rangeDef1023);  
-				stream_STRING.Add(STRING115);
+				QUOTED_STRING115=(CommonToken)Match(input,QUOTED_STRING,Follow._QUOTED_STRING_in_rangeDef1024);  
+				stream_QUOTED_STRING.Add(QUOTED_STRING115);
 
-				DebugLocation(207, 63);
-				char_literal116=(CommonToken)Match(input,39,Follow._39_in_rangeDef1025);  
+				DebugLocation(207, 70);
+				char_literal116=(CommonToken)Match(input,39,Follow._39_in_rangeDef1026);  
 				stream_39.Add(char_literal116);
 
 
 
 				{
 				// AST REWRITE
-				// elements: INTEGER, INTEGER, STRING
+				// elements: INTEGER, INTEGER, QUOTED_STRING
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -4089,10 +4114,10 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 208:3: -> ^( RANGE ^( FROM INTEGER ) ^( TO INTEGER ) ^( PREFIX STRING ) )
+				// 208:3: -> ^( RANGE ^( FROM INTEGER ) ^( TO INTEGER ) ^( PREFIX QUOTED_STRING ) )
 				{
 					DebugLocation(208, 6);
-					// FlashTeaseScript.g:208:6: ^( RANGE ^( FROM INTEGER ) ^( TO INTEGER ) ^( PREFIX STRING ) )
+					// FlashTeaseScript.g:208:6: ^( RANGE ^( FROM INTEGER ) ^( TO INTEGER ) ^( PREFIX QUOTED_STRING ) )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
 					DebugLocation(208, 8);
@@ -4123,14 +4148,14 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 					adaptor.AddChild(root_1, root_2);
 					}
 					DebugLocation(208, 44);
-					// FlashTeaseScript.g:208:44: ^( PREFIX STRING )
+					// FlashTeaseScript.g:208:44: ^( PREFIX QUOTED_STRING )
 					{
 					CommonTree root_2 = (CommonTree)adaptor.Nil();
 					DebugLocation(208, 46);
 					root_2 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(PREFIX, "PREFIX"), root_2);
 
 					DebugLocation(208, 53);
-					adaptor.AddChild(root_2, stream_STRING.NextNode());
+					adaptor.AddChild(root_2, stream_QUOTED_STRING.NextNode());
 
 					adaptor.AddChild(root_1, root_2);
 					}
@@ -4213,31 +4238,31 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 			// FlashTeaseScript.g:213:4: pageId ( '#' )?
 			{
 			DebugLocation(213, 4);
-			PushFollow(Follow._pageId_in_pageRef1064);
+			PushFollow(Follow._pageId_in_pageRef1065);
 			pageId117=pageId();
 			PopFollow();
 
 			stream_pageId.Add(pageId117.Tree);
 			DebugLocation(213, 11);
 			// FlashTeaseScript.g:213:11: ( '#' )?
-			int alt17=2;
-			try { DebugEnterSubRule(17);
-			try { DebugEnterDecision(17, false);
-			int LA17_0 = input.LA(1);
+			int alt18=2;
+			try { DebugEnterSubRule(18);
+			try { DebugEnterDecision(18, false);
+			int LA18_0 = input.LA(1);
 
-			if ((LA17_0==38))
+			if ((LA18_0==38))
 			{
-				alt17 = 1;
+				alt18 = 1;
 			}
-			} finally { DebugExitDecision(17); }
-			switch (alt17)
+			} finally { DebugExitDecision(18); }
+			switch (alt18)
 			{
 			case 1:
 				DebugEnterAlt(1);
 				// FlashTeaseScript.g:213:11: '#'
 				{
 				DebugLocation(213, 11);
-				char_literal118=(CommonToken)Match(input,38,Follow._38_in_pageRef1066);  
+				char_literal118=(CommonToken)Match(input,38,Follow._38_in_pageRef1067);  
 				stream_38.Add(char_literal118);
 
 
@@ -4245,7 +4270,7 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 				break;
 
 			}
-			} finally { DebugExitSubRule(17); }
+			} finally { DebugExitSubRule(18); }
 
 
 
@@ -4350,22 +4375,22 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 
 			DebugLocation(218, 4);
 			// FlashTeaseScript.g:218:4: ( INTEGER | LETTERS )+
-			int cnt18=0;
-			try { DebugEnterSubRule(18);
+			int cnt19=0;
+			try { DebugEnterSubRule(19);
 			while (true)
 			{
-				int alt18=2;
-				try { DebugEnterDecision(18, false);
-				int LA18_0 = input.LA(1);
+				int alt19=2;
+				try { DebugEnterDecision(19, false);
+				int LA19_0 = input.LA(1);
 
-				if (((LA18_0>=INTEGER && LA18_0<=LETTERS)))
+				if (((LA19_0>=INTEGER && LA19_0<=LETTERS)))
 				{
-					alt18 = 1;
+					alt19 = 1;
 				}
 
 
-				} finally { DebugExitDecision(18); }
-				switch (alt18)
+				} finally { DebugExitDecision(19); }
+				switch (alt19)
 				{
 				case 1:
 					DebugEnterAlt(1);
@@ -4391,19 +4416,19 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 					break;
 
 				default:
-					if (cnt18 >= 1)
-						goto loop18;
+					if (cnt19 >= 1)
+						goto loop19;
 
-					EarlyExitException eee18 = new EarlyExitException( 18, input );
-					DebugRecognitionException(eee18);
-					throw eee18;
+					EarlyExitException eee19 = new EarlyExitException( 19, input );
+					DebugRecognitionException(eee19);
+					throw eee19;
 				}
-				cnt18++;
+				cnt19++;
 			}
-			loop18:
+			loop19:
 				;
 
-			} finally { DebugExitSubRule(18); }
+			} finally { DebugExitSubRule(19); }
 
 
 			}
@@ -4449,8 +4474,8 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		public static readonly BitSet _pageProp_in_pageProperties254 = new BitSet(new ulong[]{0x10000000002UL});
 		public static readonly BitSet _textDef_in_pageProp275 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _actionDef_in_pageProp291 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _63_in_textDef302 = new BitSet(new ulong[]{0x10000000UL});
-		public static readonly BitSet _STRING_in_textDef305 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _63_in_textDef302 = new BitSet(new ulong[]{0x800000UL});
+		public static readonly BitSet _QUOTED_STRING_in_textDef305 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _actionPrefix_in_actionDef316 = new BitSet(new ulong[]{0xD22600000000002UL,0x2CUL});
 		public static readonly BitSet _actionMult_in_actionDef320 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _actionVert_in_actionDef324 = new BitSet(new ulong[]{0x2UL});
@@ -4479,11 +4504,11 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		public static readonly BitSet _47_in_actionPrefix449 = new BitSet(new ulong[]{0xFFFFFFFFFFFFFFF0UL,0x3FUL});
 		public static readonly BitSet _set_in_actionPrefix463 = new BitSet(new ulong[]{0xFFFFFFFFFFFFFFF0UL,0x3FUL});
 		public static readonly BitSet _42_in_actionPrefix470 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _56_in_actionPic481 = new BitSet(new ulong[]{0x10000000UL});
-		public static readonly BitSet _STRING_in_actionPic483 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _56_in_actionPic481 = new BitSet(new ulong[]{0x800000UL});
+		public static readonly BitSet _QUOTED_STRING_in_actionPic483 = new BitSet(new ulong[]{0x8000000000UL});
 		public static readonly BitSet _39_in_actionPic485 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _59_in_actionSound507 = new BitSet(new ulong[]{0x10000000UL});
-		public static readonly BitSet _STRING_in_actionSound509 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _59_in_actionSound507 = new BitSet(new ulong[]{0x800000UL});
+		public static readonly BitSet _QUOTED_STRING_in_actionSound509 = new BitSet(new ulong[]{0x8000000000UL});
 		public static readonly BitSet _39_in_actionSound511 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _49_in_actionGo532 = new BitSet(new ulong[]{0x4000000000000000UL});
 		public static readonly BitSet _targetDef_in_actionGo534 = new BitSet(new ulong[]{0x8000000000UL});
@@ -4514,8 +4539,8 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		public static readonly BitSet _pageRef_in_buttonDef714 = new BitSet(new ulong[]{0x20000000000UL});
 		public static readonly BitSet _41_in_buttonDef716 = new BitSet(new ulong[]{0x2000UL});
 		public static readonly BitSet _INTEGER_in_buttonDef718 = new BitSet(new ulong[]{0x40000000000UL});
-		public static readonly BitSet _42_in_buttonDef720 = new BitSet(new ulong[]{0x10000000UL});
-		public static readonly BitSet _STRING_in_buttonDef722 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _42_in_buttonDef720 = new BitSet(new ulong[]{0x800000UL});
+		public static readonly BitSet _QUOTED_STRING_in_buttonDef722 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _66_in_actionUnset753 = new BitSet(new ulong[]{0x80000000000UL});
 		public static readonly BitSet _actionList_in_actionUnset755 = new BitSet(new ulong[]{0x8000000000UL});
 		public static readonly BitSet _39_in_actionUnset757 = new BitSet(new ulong[]{0x2UL});
@@ -4534,30 +4559,30 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 		public static readonly BitSet _pageRef_in_targetDef868 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _rangeDef_in_targetDef872 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _64_in_timeDef885 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INTEGER_in_timeDef888 = new BitSet(new ulong[]{0x1008000UL});
+		public static readonly BitSet _INTEGER_in_timeDef888 = new BitSet(new ulong[]{0x2008002UL});
 		public static readonly BitSet _set_in_timeDef890 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _60_in_styleDef922 = new BitSet(new ulong[]{0x2040800UL});
-		public static readonly BitSet _set_in_styleDef925 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _57_in_rangeDef968 = new BitSet(new ulong[]{0x1000000000000UL});
-		public static readonly BitSet _48_in_rangeDef970 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INTEGER_in_rangeDef972 = new BitSet(new ulong[]{0x10000000000UL});
-		public static readonly BitSet _40_in_rangeDef974 = new BitSet(new ulong[]{0x0UL,0x2UL});
-		public static readonly BitSet _65_in_rangeDef976 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INTEGER_in_rangeDef978 = new BitSet(new ulong[]{0x8000000000UL});
-		public static readonly BitSet _39_in_rangeDef980 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _57_in_rangeDef1006 = new BitSet(new ulong[]{0x1000000000000UL});
-		public static readonly BitSet _48_in_rangeDef1008 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INTEGER_in_rangeDef1010 = new BitSet(new ulong[]{0x10000000000UL});
-		public static readonly BitSet _40_in_rangeDef1012 = new BitSet(new ulong[]{0x0UL,0x2UL});
-		public static readonly BitSet _65_in_rangeDef1014 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INTEGER_in_rangeDef1016 = new BitSet(new ulong[]{0x10000000000UL});
-		public static readonly BitSet _40_in_rangeDef1018 = new BitSet(new ulong[]{0x40010000000UL});
-		public static readonly BitSet _42_in_rangeDef1020 = new BitSet(new ulong[]{0x10000000UL});
-		public static readonly BitSet _STRING_in_rangeDef1023 = new BitSet(new ulong[]{0x8000000000UL});
-		public static readonly BitSet _39_in_rangeDef1025 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _pageId_in_pageRef1064 = new BitSet(new ulong[]{0x4000000002UL});
-		public static readonly BitSet _38_in_pageRef1066 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _set_in_pageId1089 = new BitSet(new ulong[]{0x6002UL});
+		public static readonly BitSet _60_in_styleDef923 = new BitSet(new ulong[]{0x4040800UL});
+		public static readonly BitSet _set_in_styleDef926 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _57_in_rangeDef969 = new BitSet(new ulong[]{0x1000000000000UL});
+		public static readonly BitSet _48_in_rangeDef971 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INTEGER_in_rangeDef973 = new BitSet(new ulong[]{0x10000000000UL});
+		public static readonly BitSet _40_in_rangeDef975 = new BitSet(new ulong[]{0x0UL,0x2UL});
+		public static readonly BitSet _65_in_rangeDef977 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INTEGER_in_rangeDef979 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _39_in_rangeDef981 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _57_in_rangeDef1007 = new BitSet(new ulong[]{0x1000000000000UL});
+		public static readonly BitSet _48_in_rangeDef1009 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INTEGER_in_rangeDef1011 = new BitSet(new ulong[]{0x10000000000UL});
+		public static readonly BitSet _40_in_rangeDef1013 = new BitSet(new ulong[]{0x0UL,0x2UL});
+		public static readonly BitSet _65_in_rangeDef1015 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INTEGER_in_rangeDef1017 = new BitSet(new ulong[]{0x10000000000UL});
+		public static readonly BitSet _40_in_rangeDef1019 = new BitSet(new ulong[]{0x40000800000UL});
+		public static readonly BitSet _42_in_rangeDef1021 = new BitSet(new ulong[]{0x800000UL});
+		public static readonly BitSet _QUOTED_STRING_in_rangeDef1024 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _39_in_rangeDef1026 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _pageId_in_pageRef1065 = new BitSet(new ulong[]{0x4000000002UL});
+		public static readonly BitSet _38_in_pageRef1067 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _set_in_pageId1090 = new BitSet(new ulong[]{0x6002UL});
 
 	}
 	#endregion Follow sets

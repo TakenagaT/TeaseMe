@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.3.1.7705 FlashTeaseScript.g 2012-01-13 00:47:32
+// $ANTLR 3.3.1.7705 FlashTeaseScript.g 2012-01-13 01:45:23
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -45,12 +45,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	public const int PIC=20;
 	public const int PREFIX=21;
 	public const int PROPERTIES=22;
-	public const int RANGE=23;
-	public const int SEC=24;
-	public const int SECRET=25;
-	public const int SET=26;
-	public const int SOUND=27;
-	public const int STRING=28;
+	public const int QUOTED_STRING=23;
+	public const int RANGE=24;
+	public const int SEC=25;
+	public const int SECRET=26;
+	public const int SET=27;
+	public const int SOUND=28;
 	public const int STYLE=29;
 	public const int TARGET=30;
 	public const int TEXT=31;
@@ -1447,19 +1447,19 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	}
 	// $ANTLR end "SECRET"
 
-	partial void EnterRule_STRING();
-	partial void LeaveRule_STRING();
+	partial void EnterRule_QUOTED_STRING();
+	partial void LeaveRule_QUOTED_STRING();
 
-	// $ANTLR start "STRING"
-	[GrammarRule("STRING")]
-	private void mSTRING()
+	// $ANTLR start "QUOTED_STRING"
+	[GrammarRule("QUOTED_STRING")]
+	private void mQUOTED_STRING()
 	{
-		EnterRule_STRING();
-		EnterRule("STRING", 38);
-		TraceIn("STRING", 38);
+		EnterRule_QUOTED_STRING();
+		EnterRule("QUOTED_STRING", 38);
+		TraceIn("QUOTED_STRING", 38);
 		try
 		{
-			int _type = STRING;
+			int _type = QUOTED_STRING;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:223:2: ( '\"' ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )* '\"' | '\\'' ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )* '\\'' )
 			int alt3=2;
@@ -1598,12 +1598,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("STRING", 38);
-			LeaveRule("STRING", 38);
-			LeaveRule_STRING();
+			TraceOut("QUOTED_STRING", 38);
+			LeaveRule("QUOTED_STRING", 38);
+			LeaveRule_QUOTED_STRING();
 		}
 	}
-	// $ANTLR end "STRING"
+	// $ANTLR end "QUOTED_STRING"
 
 	partial void EnterRule_INTEGER();
 	partial void LeaveRule_INTEGER();
@@ -1811,7 +1811,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 
 	public override void mTokens()
 	{
-		// FlashTeaseScript.g:1:8: ( T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | SEC | MIN | NORMAL | HIDDEN | SECRET | STRING | INTEGER | LETTERS | WS )
+		// FlashTeaseScript.g:1:8: ( T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | SEC | MIN | NORMAL | HIDDEN | SECRET | QUOTED_STRING | INTEGER | LETTERS | WS )
 		int alt6=41;
 		try { DebugEnterDecision(6, false);
 		try
@@ -2161,36 +2161,36 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 			break;
 		case 38:
 			DebugEnterAlt(38);
-			// FlashTeaseScript.g:1:231: STRING
+			// FlashTeaseScript.g:1:231: QUOTED_STRING
 			{
 			DebugLocation(1, 231);
-			mSTRING(); 
+			mQUOTED_STRING(); 
 
 			}
 			break;
 		case 39:
 			DebugEnterAlt(39);
-			// FlashTeaseScript.g:1:238: INTEGER
+			// FlashTeaseScript.g:1:245: INTEGER
 			{
-			DebugLocation(1, 238);
+			DebugLocation(1, 245);
 			mINTEGER(); 
 
 			}
 			break;
 		case 40:
 			DebugEnterAlt(40);
-			// FlashTeaseScript.g:1:246: LETTERS
+			// FlashTeaseScript.g:1:253: LETTERS
 			{
-			DebugLocation(1, 246);
+			DebugLocation(1, 253);
 			mLETTERS(); 
 
 			}
 			break;
 		case 41:
 			DebugEnterAlt(41);
-			// FlashTeaseScript.g:1:254: WS
+			// FlashTeaseScript.g:1:261: WS
 			{
-			DebugLocation(1, 254);
+			DebugLocation(1, 261);
 			mWS(); 
 
 			}
@@ -2451,7 +2451,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 			this.transition = DFA6_transition;
 		}
 
-		public override string Description { get { return "1:1: Tokens : ( T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | SEC | MIN | NORMAL | HIDDEN | SECRET | STRING | INTEGER | LETTERS | WS );"; } }
+		public override string Description { get { return "1:1: Tokens : ( T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | SEC | MIN | NORMAL | HIDDEN | SECRET | QUOTED_STRING | INTEGER | LETTERS | WS );"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{

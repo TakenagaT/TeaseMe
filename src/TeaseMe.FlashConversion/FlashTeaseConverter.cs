@@ -30,7 +30,10 @@ namespace TeaseMe.FlashConversion
 
             foreach (var line in scriptLines)
             {
-                result.Pages.Add(CreatePage(line));
+                if (!String.IsNullOrEmpty(line))
+                {
+                    result.Pages.Add(CreatePage(line));
+                }
             }
             
             return result;
@@ -83,7 +86,7 @@ namespace TeaseMe.FlashConversion
 
                 if (parser.HasError)
                 {
-                    result.Errors = "Unable to correctly convert this page. Please correct by hand.";
+                    result.Errors = String.Format("ParserError ({0}): {1}. Please correct by hand.", parser.ErrorPosition, parser.ErrorMessage);
                 }
             }
             catch (Exception)
@@ -155,7 +158,7 @@ namespace TeaseMe.FlashConversion
             if (timeNode != null)
             {
                 int secs = System.Convert.ToInt32(timeNode.GetChild(0).Text);
-                if (timeNode.GetChild(1).Text == "min")
+                if (timeNode.GetChild(1) != null && timeNode.GetChild(1).Text == "min")
                 {
                     secs = secs * 60;
                 }
