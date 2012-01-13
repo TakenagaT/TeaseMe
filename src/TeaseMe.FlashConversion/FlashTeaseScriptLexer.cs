@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.3.1.7705 FlashTeaseScript.g 2012-01-13 01:45:23
+// $ANTLR 3.3.1.7705 FlashTeaseScript.g 2012-01-14 00:46:59
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -92,6 +92,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	public const int T__67=67;
 	public const int T__68=68;
 	public const int T__69=69;
+	public const int T__70=70;
+	public const int T__71=71;
 
     // delegates
     // delegators
@@ -597,12 +599,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__51;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:23:7: ( 'instruc:' )
+			// FlashTeaseScript.g:23:7: ( 'horiz(' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:23:9: 'instruc:'
+			// FlashTeaseScript.g:23:9: 'horiz('
 			{
 			DebugLocation(23, 9);
-			Match("instruc:"); 
+			Match("horiz("); 
 
 
 			}
@@ -633,12 +635,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__52;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:24:7: ( 'media:' )
+			// FlashTeaseScript.g:24:7: ( 'instruc:' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:24:9: 'media:'
+			// FlashTeaseScript.g:24:9: 'instruc:'
 			{
 			DebugLocation(24, 9);
-			Match("media:"); 
+			Match("instruc:"); 
 
 
 			}
@@ -669,12 +671,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__53;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:25:7: ( 'mult(' )
+			// FlashTeaseScript.g:25:7: ( 'media:' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:25:9: 'mult('
+			// FlashTeaseScript.g:25:9: 'media:'
 			{
 			DebugLocation(25, 9);
-			Match("mult("); 
+			Match("media:"); 
 
 
 			}
@@ -705,12 +707,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__54;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:26:7: ( 'no:' )
+			// FlashTeaseScript.g:26:7: ( 'mult(' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:26:9: 'no:'
+			// FlashTeaseScript.g:26:9: 'mult('
 			{
 			DebugLocation(26, 9);
-			Match("no:"); 
+			Match("mult("); 
 
 
 			}
@@ -741,12 +743,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__55;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:27:7: ( 'page(' )
+			// FlashTeaseScript.g:27:7: ( 'no:' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:27:9: 'page('
+			// FlashTeaseScript.g:27:9: 'no:'
 			{
 			DebugLocation(27, 9);
-			Match("page("); 
+			Match("no:"); 
 
 
 			}
@@ -777,12 +779,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__56;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:28:7: ( 'pic(id:' )
+			// FlashTeaseScript.g:28:7: ( 'page(' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:28:9: 'pic(id:'
+			// FlashTeaseScript.g:28:9: 'page('
 			{
 			DebugLocation(28, 9);
-			Match("pic(id:"); 
+			Match("page("); 
 
 
 			}
@@ -813,12 +815,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__57;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:29:7: ( 'range(' )
+			// FlashTeaseScript.g:29:7: ( 'pic(id:' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:29:9: 'range('
+			// FlashTeaseScript.g:29:9: 'pic(id:'
 			{
 			DebugLocation(29, 9);
-			Match("range("); 
+			Match("pic(id:"); 
 
 
 			}
@@ -849,12 +851,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__58;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:30:7: ( 'set(' )
+			// FlashTeaseScript.g:30:7: ( 'prefix' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:30:9: 'set('
+			// FlashTeaseScript.g:30:9: 'prefix'
 			{
 			DebugLocation(30, 9);
-			Match("set("); 
+			Match("prefix"); 
 
 
 			}
@@ -885,12 +887,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__59;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:31:7: ( 'sound(id:' )
+			// FlashTeaseScript.g:31:7: ( 'range(' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:31:9: 'sound(id:'
+			// FlashTeaseScript.g:31:9: 'range('
 			{
 			DebugLocation(31, 9);
-			Match("sound(id:"); 
+			Match("range("); 
 
 
 			}
@@ -921,12 +923,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__60;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:32:7: ( 'style:' )
+			// FlashTeaseScript.g:32:7: ( 'set(' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:32:9: 'style:'
+			// FlashTeaseScript.g:32:9: 'set('
 			{
 			DebugLocation(32, 9);
-			Match("style:"); 
+			Match("set("); 
 
 
 			}
@@ -957,12 +959,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__61;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:33:7: ( 'target' )
+			// FlashTeaseScript.g:33:7: ( 'sound(id:' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:33:9: 'target'
+			// FlashTeaseScript.g:33:9: 'sound(id:'
 			{
 			DebugLocation(33, 9);
-			Match("target"); 
+			Match("sound(id:"); 
 
 
 			}
@@ -993,12 +995,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__62;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:34:7: ( 'target:' )
+			// FlashTeaseScript.g:34:7: ( 'style:' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:34:9: 'target:'
+			// FlashTeaseScript.g:34:9: 'style:'
 			{
 			DebugLocation(34, 9);
-			Match("target:"); 
+			Match("style:"); 
 
 
 			}
@@ -1029,12 +1031,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__63;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:35:7: ( 'text:' )
+			// FlashTeaseScript.g:35:7: ( 'target' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:35:9: 'text:'
+			// FlashTeaseScript.g:35:9: 'target'
 			{
 			DebugLocation(35, 9);
-			Match("text:"); 
+			Match("target"); 
 
 
 			}
@@ -1065,12 +1067,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__64;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:36:7: ( 'time:' )
+			// FlashTeaseScript.g:36:7: ( 'target:' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:36:9: 'time:'
+			// FlashTeaseScript.g:36:9: 'target:'
 			{
 			DebugLocation(36, 9);
-			Match("time:"); 
+			Match("target:"); 
 
 
 			}
@@ -1101,12 +1103,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__65;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:37:7: ( 'to:' )
+			// FlashTeaseScript.g:37:7: ( 'text:' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:37:9: 'to:'
+			// FlashTeaseScript.g:37:9: 'text:'
 			{
 			DebugLocation(37, 9);
-			Match("to:"); 
+			Match("text:"); 
 
 
 			}
@@ -1137,12 +1139,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__66;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:38:7: ( 'unset(' )
+			// FlashTeaseScript.g:38:7: ( 'time:' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:38:9: 'unset('
+			// FlashTeaseScript.g:38:9: 'time:'
 			{
 			DebugLocation(38, 9);
-			Match("unset("); 
+			Match("time:"); 
 
 
 			}
@@ -1173,12 +1175,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__67;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:39:7: ( 'vert(' )
+			// FlashTeaseScript.g:39:7: ( 'to:' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:39:9: 'vert('
+			// FlashTeaseScript.g:39:9: 'to:'
 			{
 			DebugLocation(39, 9);
-			Match("vert("); 
+			Match("to:"); 
 
 
 			}
@@ -1209,12 +1211,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__68;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:40:7: ( 'yes:' )
+			// FlashTeaseScript.g:40:7: ( 'unset(' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:40:9: 'yes:'
+			// FlashTeaseScript.g:40:9: 'unset('
 			{
 			DebugLocation(40, 9);
-			Match("yes:"); 
+			Match("unset("); 
 
 
 			}
@@ -1245,12 +1247,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__69;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:41:7: ( 'yn(' )
+			// FlashTeaseScript.g:41:7: ( 'vert(' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:41:9: 'yn('
+			// FlashTeaseScript.g:41:9: 'vert('
 			{
 			DebugLocation(41, 9);
-			Match("yn("); 
+			Match("vert("); 
 
 
 			}
@@ -1267,6 +1269,78 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	}
 	// $ANTLR end "T__69"
 
+	partial void EnterRule_T__70();
+	partial void LeaveRule_T__70();
+
+	// $ANTLR start "T__70"
+	[GrammarRule("T__70")]
+	private void mT__70()
+	{
+		EnterRule_T__70();
+		EnterRule("T__70", 33);
+		TraceIn("T__70", 33);
+		try
+		{
+			int _type = T__70;
+			int _channel = DefaultTokenChannel;
+			// FlashTeaseScript.g:42:7: ( 'yes:' )
+			DebugEnterAlt(1);
+			// FlashTeaseScript.g:42:9: 'yes:'
+			{
+			DebugLocation(42, 9);
+			Match("yes:"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__70", 33);
+			LeaveRule("T__70", 33);
+			LeaveRule_T__70();
+		}
+	}
+	// $ANTLR end "T__70"
+
+	partial void EnterRule_T__71();
+	partial void LeaveRule_T__71();
+
+	// $ANTLR start "T__71"
+	[GrammarRule("T__71")]
+	private void mT__71()
+	{
+		EnterRule_T__71();
+		EnterRule("T__71", 34);
+		TraceIn("T__71", 34);
+		try
+		{
+			int _type = T__71;
+			int _channel = DefaultTokenChannel;
+			// FlashTeaseScript.g:43:7: ( 'yn(' )
+			DebugEnterAlt(1);
+			// FlashTeaseScript.g:43:9: 'yn('
+			{
+			DebugLocation(43, 9);
+			Match("yn("); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__71", 34);
+			LeaveRule("T__71", 34);
+			LeaveRule_T__71();
+		}
+	}
+	// $ANTLR end "T__71"
+
 	partial void EnterRule_SEC();
 	partial void LeaveRule_SEC();
 
@@ -1275,17 +1349,17 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	private void mSEC()
 	{
 		EnterRule_SEC();
-		EnterRule("SEC", 33);
-		TraceIn("SEC", 33);
+		EnterRule("SEC", 35);
+		TraceIn("SEC", 35);
 		try
 		{
 			int _type = SEC;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:193:6: ( 'sec' )
+			// FlashTeaseScript.g:195:6: ( 'sec' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:193:8: 'sec'
+			// FlashTeaseScript.g:195:8: 'sec'
 			{
-			DebugLocation(193, 8);
+			DebugLocation(195, 8);
 			Match("sec"); 
 
 
@@ -1296,8 +1370,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("SEC", 33);
-			LeaveRule("SEC", 33);
+			TraceOut("SEC", 35);
+			LeaveRule("SEC", 35);
 			LeaveRule_SEC();
 		}
 	}
@@ -1311,17 +1385,17 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	private void mMIN()
 	{
 		EnterRule_MIN();
-		EnterRule("MIN", 34);
-		TraceIn("MIN", 34);
+		EnterRule("MIN", 36);
+		TraceIn("MIN", 36);
 		try
 		{
 			int _type = MIN;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:194:6: ( 'min' )
+			// FlashTeaseScript.g:196:6: ( 'min' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:194:8: 'min'
+			// FlashTeaseScript.g:196:8: 'min'
 			{
-			DebugLocation(194, 8);
+			DebugLocation(196, 8);
 			Match("min"); 
 
 
@@ -1332,8 +1406,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("MIN", 34);
-			LeaveRule("MIN", 34);
+			TraceOut("MIN", 36);
+			LeaveRule("MIN", 36);
 			LeaveRule_MIN();
 		}
 	}
@@ -1347,17 +1421,17 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	private void mNORMAL()
 	{
 		EnterRule_NORMAL();
-		EnterRule("NORMAL", 35);
-		TraceIn("NORMAL", 35);
+		EnterRule("NORMAL", 37);
+		TraceIn("NORMAL", 37);
 		try
 		{
 			int _type = NORMAL;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:200:8: ( 'normal' )
+			// FlashTeaseScript.g:202:8: ( 'normal' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:200:10: 'normal'
+			// FlashTeaseScript.g:202:10: 'normal'
 			{
-			DebugLocation(200, 10);
+			DebugLocation(202, 10);
 			Match("normal"); 
 
 
@@ -1368,8 +1442,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("NORMAL", 35);
-			LeaveRule("NORMAL", 35);
+			TraceOut("NORMAL", 37);
+			LeaveRule("NORMAL", 37);
 			LeaveRule_NORMAL();
 		}
 	}
@@ -1383,17 +1457,17 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	private void mHIDDEN()
 	{
 		EnterRule_HIDDEN();
-		EnterRule("HIDDEN", 36);
-		TraceIn("HIDDEN", 36);
+		EnterRule("HIDDEN", 38);
+		TraceIn("HIDDEN", 38);
 		try
 		{
 			int _type = HIDDEN;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:201:8: ( 'hidden' )
+			// FlashTeaseScript.g:203:8: ( 'hidden' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:201:10: 'hidden'
+			// FlashTeaseScript.g:203:10: 'hidden'
 			{
-			DebugLocation(201, 10);
+			DebugLocation(203, 10);
 			Match("hidden"); 
 
 
@@ -1404,8 +1478,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("HIDDEN", 36);
-			LeaveRule("HIDDEN", 36);
+			TraceOut("HIDDEN", 38);
+			LeaveRule("HIDDEN", 38);
 			LeaveRule_HIDDEN();
 		}
 	}
@@ -1419,17 +1493,17 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	private void mSECRET()
 	{
 		EnterRule_SECRET();
-		EnterRule("SECRET", 37);
-		TraceIn("SECRET", 37);
+		EnterRule("SECRET", 39);
+		TraceIn("SECRET", 39);
 		try
 		{
 			int _type = SECRET;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:202:8: ( 'secret' )
+			// FlashTeaseScript.g:204:8: ( 'secret' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:202:10: 'secret'
+			// FlashTeaseScript.g:204:10: 'secret'
 			{
-			DebugLocation(202, 10);
+			DebugLocation(204, 10);
 			Match("secret"); 
 
 
@@ -1440,8 +1514,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("SECRET", 37);
-			LeaveRule("SECRET", 37);
+			TraceOut("SECRET", 39);
+			LeaveRule("SECRET", 39);
 			LeaveRule_SECRET();
 		}
 	}
@@ -1455,13 +1529,13 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	private void mQUOTED_STRING()
 	{
 		EnterRule_QUOTED_STRING();
-		EnterRule("QUOTED_STRING", 38);
-		TraceIn("QUOTED_STRING", 38);
+		EnterRule("QUOTED_STRING", 40);
+		TraceIn("QUOTED_STRING", 40);
 		try
 		{
 			int _type = QUOTED_STRING;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:223:2: ( '\"' ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )* '\"' | '\\'' ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )* '\\'' )
+			// FlashTeaseScript.g:225:2: ( '\"' ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )* '\"' | '\\'' ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )* '\\'' )
 			int alt3=2;
 			try { DebugEnterDecision(3, false);
 			int LA3_0 = input.LA(1);
@@ -1485,12 +1559,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// FlashTeaseScript.g:223:4: '\"' ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )* '\"'
+				// FlashTeaseScript.g:225:4: '\"' ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )* '\"'
 				{
-				DebugLocation(223, 4);
+				DebugLocation(225, 4);
 				Match('\"'); 
-				DebugLocation(223, 8);
-				// FlashTeaseScript.g:223:8: ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )*
+				DebugLocation(225, 8);
+				// FlashTeaseScript.g:225:8: ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )*
 				try { DebugEnterSubRule(1);
 				while (true)
 				{
@@ -1513,9 +1587,9 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// FlashTeaseScript.g:223:37: ~ ( '\"' | '\\n' | '\\r' )
+						// FlashTeaseScript.g:225:37: ~ ( '\"' | '\\n' | '\\r' )
 						{
-						DebugLocation(223, 37);
+						DebugLocation(225, 37);
 						input.Consume();
 
 
@@ -1532,19 +1606,19 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 
 				} finally { DebugExitSubRule(1); }
 
-				DebugLocation(223, 56);
+				DebugLocation(225, 56);
 				Match('\"'); 
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// FlashTeaseScript.g:224:4: '\\'' ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )* '\\''
+				// FlashTeaseScript.g:226:4: '\\'' ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )* '\\''
 				{
-				DebugLocation(224, 4);
+				DebugLocation(226, 4);
 				Match('\''); 
-				DebugLocation(224, 9);
-				// FlashTeaseScript.g:224:9: ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )*
+				DebugLocation(226, 9);
+				// FlashTeaseScript.g:226:9: ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )*
 				try { DebugEnterSubRule(2);
 				while (true)
 				{
@@ -1567,9 +1641,9 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// FlashTeaseScript.g:224:38: ~ ( '\\'' | '\\n' | '\\r' )
+						// FlashTeaseScript.g:226:38: ~ ( '\\'' | '\\n' | '\\r' )
 						{
-						DebugLocation(224, 38);
+						DebugLocation(226, 38);
 						input.Consume();
 
 
@@ -1586,7 +1660,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 
 				} finally { DebugExitSubRule(2); }
 
-				DebugLocation(224, 58);
+				DebugLocation(226, 58);
 				Match('\''); 
 
 				}
@@ -1598,8 +1672,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("QUOTED_STRING", 38);
-			LeaveRule("QUOTED_STRING", 38);
+			TraceOut("QUOTED_STRING", 40);
+			LeaveRule("QUOTED_STRING", 40);
 			LeaveRule_QUOTED_STRING();
 		}
 	}
@@ -1613,18 +1687,18 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	private void mINTEGER()
 	{
 		EnterRule_INTEGER();
-		EnterRule("INTEGER", 39);
-		TraceIn("INTEGER", 39);
+		EnterRule("INTEGER", 41);
+		TraceIn("INTEGER", 41);
 		try
 		{
 			int _type = INTEGER;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:229:2: ( ( '0' .. '9' )+ )
+			// FlashTeaseScript.g:230:2: ( ( '0' .. '9' )+ )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:229:4: ( '0' .. '9' )+
+			// FlashTeaseScript.g:230:4: ( '0' .. '9' )+
 			{
-			DebugLocation(229, 4);
-			// FlashTeaseScript.g:229:4: ( '0' .. '9' )+
+			DebugLocation(230, 4);
+			// FlashTeaseScript.g:230:4: ( '0' .. '9' )+
 			int cnt4=0;
 			try { DebugEnterSubRule(4);
 			while (true)
@@ -1646,7 +1720,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 					DebugEnterAlt(1);
 					// FlashTeaseScript.g:
 					{
-					DebugLocation(229, 4);
+					DebugLocation(230, 4);
 					input.Consume();
 
 
@@ -1676,8 +1750,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("INTEGER", 39);
-			LeaveRule("INTEGER", 39);
+			TraceOut("INTEGER", 41);
+			LeaveRule("INTEGER", 41);
 			LeaveRule_INTEGER();
 		}
 	}
@@ -1691,18 +1765,18 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	private void mLETTERS()
 	{
 		EnterRule_LETTERS();
-		EnterRule("LETTERS", 40);
-		TraceIn("LETTERS", 40);
+		EnterRule("LETTERS", 42);
+		TraceIn("LETTERS", 42);
 		try
 		{
 			int _type = LETTERS;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:233:2: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
+			// FlashTeaseScript.g:234:2: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:233:4: ( 'a' .. 'z' | 'A' .. 'Z' )+
+			// FlashTeaseScript.g:234:4: ( 'a' .. 'z' | 'A' .. 'Z' )+
 			{
-			DebugLocation(233, 4);
-			// FlashTeaseScript.g:233:4: ( 'a' .. 'z' | 'A' .. 'Z' )+
+			DebugLocation(234, 4);
+			// FlashTeaseScript.g:234:4: ( 'a' .. 'z' | 'A' .. 'Z' )+
 			int cnt5=0;
 			try { DebugEnterSubRule(5);
 			while (true)
@@ -1724,7 +1798,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 					DebugEnterAlt(1);
 					// FlashTeaseScript.g:
 					{
-					DebugLocation(233, 4);
+					DebugLocation(234, 4);
 					input.Consume();
 
 
@@ -1754,8 +1828,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("LETTERS", 40);
-			LeaveRule("LETTERS", 40);
+			TraceOut("LETTERS", 42);
+			LeaveRule("LETTERS", 42);
 			LeaveRule_LETTERS();
 		}
 	}
@@ -1769,17 +1843,17 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	private void mWS()
 	{
 		EnterRule_WS();
-		EnterRule("WS", 41);
-		TraceIn("WS", 41);
+		EnterRule("WS", 43);
+		TraceIn("WS", 43);
 		try
 		{
 			int _type = WS;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:237:2: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
+			// FlashTeaseScript.g:238:2: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:237:4: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+			// FlashTeaseScript.g:238:4: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
 			{
-			DebugLocation(237, 4);
+			DebugLocation(238, 4);
 			if ((input.LA(1)>='\t' && input.LA(1)<='\n')||(input.LA(1)>='\f' && input.LA(1)<='\r')||input.LA(1)==' ')
 			{
 				input.Consume();
@@ -1792,7 +1866,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 				Recover(mse);
 				throw mse;}
 
-			DebugLocation(237, 34);
+			DebugLocation(238, 34);
 			 Skip(); 
 
 			}
@@ -1802,8 +1876,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("WS", 41);
-			LeaveRule("WS", 41);
+			TraceOut("WS", 43);
+			LeaveRule("WS", 43);
 			LeaveRule_WS();
 		}
 	}
@@ -1811,8 +1885,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 
 	public override void mTokens()
 	{
-		// FlashTeaseScript.g:1:8: ( T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | SEC | MIN | NORMAL | HIDDEN | SECRET | QUOTED_STRING | INTEGER | LETTERS | WS )
-		int alt6=41;
+		// FlashTeaseScript.g:1:8: ( T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | SEC | MIN | NORMAL | HIDDEN | SECRET | QUOTED_STRING | INTEGER | LETTERS | WS )
+		int alt6=43;
 		try { DebugEnterDecision(6, false);
 		try
 		{
@@ -2116,81 +2190,99 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 			break;
 		case 33:
 			DebugEnterAlt(33);
-			// FlashTeaseScript.g:1:202: SEC
+			// FlashTeaseScript.g:1:202: T__70
 			{
 			DebugLocation(1, 202);
-			mSEC(); 
+			mT__70(); 
 
 			}
 			break;
 		case 34:
 			DebugEnterAlt(34);
-			// FlashTeaseScript.g:1:206: MIN
+			// FlashTeaseScript.g:1:208: T__71
 			{
-			DebugLocation(1, 206);
-			mMIN(); 
+			DebugLocation(1, 208);
+			mT__71(); 
 
 			}
 			break;
 		case 35:
 			DebugEnterAlt(35);
-			// FlashTeaseScript.g:1:210: NORMAL
+			// FlashTeaseScript.g:1:214: SEC
 			{
-			DebugLocation(1, 210);
-			mNORMAL(); 
+			DebugLocation(1, 214);
+			mSEC(); 
 
 			}
 			break;
 		case 36:
 			DebugEnterAlt(36);
-			// FlashTeaseScript.g:1:217: HIDDEN
+			// FlashTeaseScript.g:1:218: MIN
 			{
-			DebugLocation(1, 217);
-			mHIDDEN(); 
+			DebugLocation(1, 218);
+			mMIN(); 
 
 			}
 			break;
 		case 37:
 			DebugEnterAlt(37);
-			// FlashTeaseScript.g:1:224: SECRET
+			// FlashTeaseScript.g:1:222: NORMAL
 			{
-			DebugLocation(1, 224);
-			mSECRET(); 
+			DebugLocation(1, 222);
+			mNORMAL(); 
 
 			}
 			break;
 		case 38:
 			DebugEnterAlt(38);
-			// FlashTeaseScript.g:1:231: QUOTED_STRING
+			// FlashTeaseScript.g:1:229: HIDDEN
 			{
-			DebugLocation(1, 231);
-			mQUOTED_STRING(); 
+			DebugLocation(1, 229);
+			mHIDDEN(); 
 
 			}
 			break;
 		case 39:
 			DebugEnterAlt(39);
-			// FlashTeaseScript.g:1:245: INTEGER
+			// FlashTeaseScript.g:1:236: SECRET
 			{
-			DebugLocation(1, 245);
-			mINTEGER(); 
+			DebugLocation(1, 236);
+			mSECRET(); 
 
 			}
 			break;
 		case 40:
 			DebugEnterAlt(40);
-			// FlashTeaseScript.g:1:253: LETTERS
+			// FlashTeaseScript.g:1:243: QUOTED_STRING
 			{
-			DebugLocation(1, 253);
-			mLETTERS(); 
+			DebugLocation(1, 243);
+			mQUOTED_STRING(); 
 
 			}
 			break;
 		case 41:
 			DebugEnterAlt(41);
-			// FlashTeaseScript.g:1:261: WS
+			// FlashTeaseScript.g:1:257: INTEGER
 			{
-			DebugLocation(1, 261);
+			DebugLocation(1, 257);
+			mINTEGER(); 
+
+			}
+			break;
+		case 42:
+			DebugEnterAlt(42);
+			// FlashTeaseScript.g:1:265: LETTERS
+			{
+			DebugLocation(1, 265);
+			mLETTERS(); 
+
+			}
+			break;
+		case 43:
+			DebugEnterAlt(43);
+			// FlashTeaseScript.g:1:273: WS
+			{
+			DebugLocation(1, 273);
 			mWS(); 
 
 			}
@@ -2214,55 +2306,57 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	{
 		private const string DFA6_eotS =
 			"\x3\xFFFF\x1\x1B\x1\xFFFF\x3\x18\x1\x1F\xD\x18\x6\xFFFF\x3\x18\x1\xFFFF"+
-			"\x1A\x18\x1\xFFFF\x4\x18\x1\x59\x1\xFFFF\x5\x18\x1\x60\x5\x18\x1\xFFFF"+
-			"\x3\x18\x1\xFFFF\x8\x18\x1\xFFFF\x2\x18\x1\xFFFF\x1\x18\x1\xFFFF\x1\x18"+
-			"\x1\xFFFF\x7\x18\x1\xFFFF\x3\x18\x1\xFFFF\x3\x18\x1\xFFFF\x1\x18\x1\xFFFF"+
-			"\x5\x18\x2\xFFFF\x1\x18\x1\xFFFF\x1\x8A\x1\x18\x1\xFFFF\x1\x8D\x1\x18"+
-			"\x1\xFFFF\x1\x8F\x1\xFFFF\x1\x90\x2\xFFFF\x1\x92\x3\xFFFF\x1\x18\x2\xFFFF"+
-			"\x1\x18\x6\xFFFF";
+			"\x1C\x18\x1\xFFFF\x5\x18\x1\x5E\x1\xFFFF\x6\x18\x1\x66\x5\x18\x1\xFFFF"+
+			"\x3\x18\x1\xFFFF\x9\x18\x1\xFFFF\x2\x18\x1\xFFFF\x2\x18\x1\xFFFF\x1\x18"+
+			"\x1\xFFFF\x7\x18\x1\xFFFF\x3\x18\x1\xFFFF\x4\x18\x1\xFFFF\x1\x18\x1\xFFFF"+
+			"\x6\x18\x2\xFFFF\x1\x18\x1\xFFFF\x1\x94\x1\x18\x1\xFFFF\x1\x97\x1\xFFFF"+
+			"\x1\x18\x1\xFFFF\x1\x99\x1\x9A\x1\xFFFF\x1\x9B\x2\xFFFF\x1\x9D\x3\xFFFF"+
+			"\x1\x18\x2\xFFFF\x1\x18\x7\xFFFF";
 		private const string DFA6_eofS =
-			"\x95\xFFFF";
+			"\xA0\xFFFF";
 		private const string DFA6_minS =
 			"\x1\x9\x2\xFFFF\x1\x63\x1\xFFFF\x1\x63\x1\x75\x1\x65\x1\x41\x1\x72\x1"+
 			"\x6F\x1\x69\x1\x6E\x1\x65\x1\x6F\x2\x61\x1\x65\x1\x61\x1\x6E\x2\x65\x6"+
-			"\xFFFF\x2\x74\x1\x6C\x1\xFFFF\x1\x6F\x1\x28\x1\x64\x1\x73\x1\x64\x1\x6C"+
-			"\x1\x6E\x1\x3A\x1\x67\x1\x63\x1\x6E\x1\x63\x1\x75\x1\x79\x1\x72\x1\x78"+
-			"\x1\x6D\x1\x3A\x1\x73\x1\x72\x1\x73\x1\x28\x1\x69\x1\x74\x1\x61\x1\x6D"+
-			"\x1\xFFFF\x1\x64\x1\x74\x1\x69\x1\x74\x1\x41\x1\xFFFF\x1\x6D\x1\x65\x1"+
-			"\x28\x1\x67\x1\x28\x1\x41\x1\x6E\x1\x6C\x1\x67\x1\x74\x1\x65\x1\xFFFF"+
-			"\x1\x65\x1\x74\x1\x3A\x1\xFFFF\x2\x6F\x1\x79\x1\x3A\x1\x65\x1\x72\x1"+
-			"\x61\x1\x28\x1\xFFFF\x1\x61\x1\x28\x1\xFFFF\x1\x65\x1\xFFFF\x1\x65\x1"+
-			"\xFFFF\x1\x64\x2\x65\x2\x3A\x1\x74\x1\x28\x1\xFFFF\x2\x6E\x1\x28\x1\xFFFF"+
-			"\x1\x6E\x1\x75\x1\x3A\x1\xFFFF\x1\x6C\x1\xFFFF\x1\x28\x1\x74\x1\x28\x1"+
-			"\x3A\x1\x74\x2\xFFFF\x1\x28\x1\xFFFF\x1\x3A\x1\x73\x1\xFFFF\x1\x3A\x1"+
-			"\x63\x1\xFFFF\x1\x41\x1\xFFFF\x1\x41\x2\xFFFF\x1\x3A\x3\xFFFF\x1\x28"+
-			"\x2\xFFFF\x1\x3A\x6\xFFFF";
-		private const string DFA6_maxS =
-			"\x1\x7A\x2\xFFFF\x1\x63\x1\xFFFF\x1\x63\x1\x75\x1\x65\x1\x7A\x1\x72\x1"+
-			"\x6F\x1\x69\x1\x6E\x1\x75\x1\x6F\x1\x69\x1\x61\x1\x74\x1\x6F\x1\x6E\x1"+
-			"\x65\x1\x6E\x6\xFFFF\x2\x74\x1\x6C\x1\xFFFF\x1\x6F\x1\x28\x1\x64\x1\x73"+
-			"\x1\x64\x1\x6C\x1\x6E\x1\x72\x1\x67\x1\x63\x1\x6E\x1\x74\x1\x75\x1\x79"+
+			"\xFFFF\x2\x74\x1\x6C\x1\xFFFF\x1\x6F\x1\x28\x1\x64\x1\x72\x1\x73\x1\x64"+
+			"\x1\x6C\x1\x6E\x1\x3A\x1\x67\x1\x63\x1\x65\x1\x6E\x1\x63\x1\x75\x1\x79"+
 			"\x1\x72\x1\x78\x1\x6D\x1\x3A\x1\x73\x1\x72\x1\x73\x1\x28\x1\x69\x1\x74"+
-			"\x1\x61\x1\x6D\x1\xFFFF\x1\x64\x1\x74\x1\x69\x1\x74\x1\x7A\x1\xFFFF\x1"+
-			"\x6D\x1\x65\x1\x28\x1\x67\x1\x28\x1\x7A\x1\x6E\x1\x6C\x1\x67\x1\x74\x1"+
-			"\x65\x1\xFFFF\x1\x65\x1\x74\x1\x3A\x1\xFFFF\x2\x6F\x1\x79\x1\x3A\x1\x65"+
-			"\x1\x72\x1\x61\x1\x28\x1\xFFFF\x1\x61\x1\x28\x1\xFFFF\x1\x65\x1\xFFFF"+
-			"\x1\x65\x1\xFFFF\x1\x64\x2\x65\x2\x3A\x1\x74\x1\x28\x1\xFFFF\x2\x6E\x1"+
-			"\x28\x1\xFFFF\x1\x6E\x1\x75\x1\x3A\x1\xFFFF\x1\x6C\x1\xFFFF\x1\x28\x1"+
-			"\x74\x1\x28\x1\x3A\x1\x74\x2\xFFFF\x1\x28\x1\xFFFF\x1\x7A\x1\x73\x1\xFFFF"+
-			"\x1\x7A\x1\x63\x1\xFFFF\x1\x7A\x1\xFFFF\x1\x7A\x2\xFFFF\x1\x7A\x3\xFFFF"+
-			"\x1\x28\x2\xFFFF\x1\x3A\x6\xFFFF";
+			"\x1\x61\x1\x6D\x1\xFFFF\x1\x64\x1\x69\x1\x74\x1\x69\x1\x74\x1\x41\x1"+
+			"\xFFFF\x1\x6D\x1\x65\x1\x28\x1\x66\x1\x67\x1\x28\x1\x41\x1\x6E\x1\x6C"+
+			"\x1\x67\x1\x74\x1\x65\x1\xFFFF\x1\x65\x1\x74\x1\x3A\x1\xFFFF\x2\x6F\x1"+
+			"\x79\x1\x3A\x1\x65\x1\x7A\x1\x72\x1\x61\x1\x28\x1\xFFFF\x1\x61\x1\x28"+
+			"\x1\xFFFF\x1\x69\x1\x65\x1\xFFFF\x1\x65\x1\xFFFF\x1\x64\x2\x65\x2\x3A"+
+			"\x1\x74\x1\x28\x1\xFFFF\x2\x6E\x1\x28\x1\xFFFF\x1\x6E\x1\x28\x1\x75\x1"+
+			"\x3A\x1\xFFFF\x1\x6C\x1\xFFFF\x1\x78\x1\x28\x1\x74\x1\x28\x1\x3A\x1\x74"+
+			"\x2\xFFFF\x1\x28\x1\xFFFF\x1\x3A\x1\x73\x1\xFFFF\x1\x3A\x1\xFFFF\x1\x63"+
+			"\x1\xFFFF\x2\x41\x1\xFFFF\x1\x41\x2\xFFFF\x1\x3A\x3\xFFFF\x1\x28\x2\xFFFF"+
+			"\x1\x3A\x7\xFFFF";
+		private const string DFA6_maxS =
+			"\x1\x7A\x2\xFFFF\x1\x63\x1\xFFFF\x1\x63\x1\x75\x1\x65\x1\x7A\x1\x72\x2"+
+			"\x6F\x1\x6E\x1\x75\x1\x6F\x1\x72\x1\x61\x1\x74\x1\x6F\x1\x6E\x1\x65\x1"+
+			"\x6E\x6\xFFFF\x2\x74\x1\x6C\x1\xFFFF\x1\x6F\x1\x28\x1\x64\x1\x72\x1\x73"+
+			"\x1\x64\x1\x6C\x1\x6E\x1\x72\x1\x67\x1\x63\x1\x65\x1\x6E\x1\x74\x1\x75"+
+			"\x1\x79\x1\x72\x1\x78\x1\x6D\x1\x3A\x1\x73\x1\x72\x1\x73\x1\x28\x1\x69"+
+			"\x1\x74\x1\x61\x1\x6D\x1\xFFFF\x1\x64\x1\x69\x1\x74\x1\x69\x1\x74\x1"+
+			"\x7A\x1\xFFFF\x1\x6D\x1\x65\x1\x28\x1\x66\x1\x67\x1\x28\x1\x7A\x1\x6E"+
+			"\x1\x6C\x1\x67\x1\x74\x1\x65\x1\xFFFF\x1\x65\x1\x74\x1\x3A\x1\xFFFF\x2"+
+			"\x6F\x1\x79\x1\x3A\x1\x65\x1\x7A\x1\x72\x1\x61\x1\x28\x1\xFFFF\x1\x61"+
+			"\x1\x28\x1\xFFFF\x1\x69\x1\x65\x1\xFFFF\x1\x65\x1\xFFFF\x1\x64\x2\x65"+
+			"\x2\x3A\x1\x74\x1\x28\x1\xFFFF\x2\x6E\x1\x28\x1\xFFFF\x1\x6E\x1\x28\x1"+
+			"\x75\x1\x3A\x1\xFFFF\x1\x6C\x1\xFFFF\x1\x78\x1\x28\x1\x74\x1\x28\x1\x3A"+
+			"\x1\x74\x2\xFFFF\x1\x28\x1\xFFFF\x1\x7A\x1\x73\x1\xFFFF\x1\x7A\x1\xFFFF"+
+			"\x1\x63\x1\xFFFF\x2\x7A\x1\xFFFF\x1\x7A\x2\xFFFF\x1\x7A\x3\xFFFF\x1\x28"+
+			"\x2\xFFFF\x1\x3A\x7\xFFFF";
 		private const string DFA6_acceptS =
-			"\x1\xFFFF\x1\x1\x1\x2\x1\xFFFF\x1\x5\x11\xFFFF\x1\x26\x1\x27\x1\x28\x1"+
-			"\x29\x1\x4\x1\x3\x3\xFFFF\x1\xA\x1A\xFFFF\x1\xC\x5\xFFFF\x1\x11\xB\xFFFF"+
-			"\x1\x1C\x3\xFFFF\x1\x20\x8\xFFFF\x1\x22\x2\xFFFF\x1\x13\x1\xFFFF\x1\x15"+
-			"\x1\xFFFF\x1\x21\x7\xFFFF\x1\x1F\x3\xFFFF\x1\xB\x3\xFFFF\x1\x10\x1\xFFFF"+
-			"\x1\x12\x5\xFFFF\x1\x1A\x1\x1B\x1\xFFFF\x1\x1E\x2\xFFFF\x1\x9\x2\xFFFF"+
-			"\x1\xF\x1\xFFFF\x1\x14\x1\xFFFF\x1\x16\x1\x17\x1\xFFFF\x1\x1D\x1\x7\x1"+
-			"\x6\x1\xFFFF\x1\xD\x1\x24\x1\xFFFF\x1\x23\x1\x25\x1\x19\x1\x18\x1\x8"+
-			"\x1\xE";
+			"\x1\xFFFF\x1\x1\x1\x2\x1\xFFFF\x1\x5\x11\xFFFF\x1\x28\x1\x29\x1\x2A\x1"+
+			"\x2B\x1\x4\x1\x3\x3\xFFFF\x1\xA\x1C\xFFFF\x1\xC\x6\xFFFF\x1\x12\xC\xFFFF"+
+			"\x1\x1E\x3\xFFFF\x1\x22\x9\xFFFF\x1\x24\x2\xFFFF\x1\x14\x2\xFFFF\x1\x17"+
+			"\x1\xFFFF\x1\x23\x7\xFFFF\x1\x21\x3\xFFFF\x1\xB\x4\xFFFF\x1\x11\x1\xFFFF"+
+			"\x1\x13\x6\xFFFF\x1\x1C\x1\x1D\x1\xFFFF\x1\x20\x2\xFFFF\x1\x9\x1\xFFFF"+
+			"\x1\xE\x1\xFFFF\x1\x10\x2\xFFFF\x1\x16\x1\xFFFF\x1\x18\x1\x19\x1\xFFFF"+
+			"\x1\x1F\x1\x7\x1\x6\x1\xFFFF\x1\xD\x1\x26\x1\xFFFF\x1\x25\x1\x15\x1\x27"+
+			"\x1\x1B\x1\x1A\x1\x8\x1\xF";
 		private const string DFA6_specialS =
-			"\x95\xFFFF}>";
+			"\xA0\xFFFF}>";
 		private static readonly string[] DFA6_transitionS =
 			{
 				"\x2\x19\x1\xFFFF\x2\x19\x12\xFFFF\x1\x19\x1\xFFFF\x1\x16\x1\x1\x3\xFFFF"+
@@ -2280,43 +2374,41 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 				"\x1A\x18\x6\xFFFF\x1A\x18",
 				"\x1\x20",
 				"\x1\x21",
-				"\x1\x22",
-				"\x1\x23",
-				"\x1\x24\x3\xFFFF\x1\x26\xB\xFFFF\x1\x25",
-				"\x1\x27",
-				"\x1\x28\x7\xFFFF\x1\x29",
-				"\x1\x2A",
-				"\x1\x2B\x9\xFFFF\x1\x2C\x4\xFFFF\x1\x2D",
-				"\x1\x2E\x3\xFFFF\x1\x2F\x3\xFFFF\x1\x30\x5\xFFFF\x1\x31",
-				"\x1\x32",
-				"\x1\x33",
-				"\x1\x34\x8\xFFFF\x1\x35",
+				"\x1\x22\x5\xFFFF\x1\x23",
+				"\x1\x24",
+				"\x1\x25\x3\xFFFF\x1\x27\xB\xFFFF\x1\x26",
+				"\x1\x28",
+				"\x1\x29\x7\xFFFF\x1\x2A\x8\xFFFF\x1\x2B",
+				"\x1\x2C",
+				"\x1\x2D\x9\xFFFF\x1\x2E\x4\xFFFF\x1\x2F",
+				"\x1\x30\x3\xFFFF\x1\x31\x3\xFFFF\x1\x32\x5\xFFFF\x1\x33",
+				"\x1\x34",
+				"\x1\x35",
+				"\x1\x36\x8\xFFFF\x1\x37",
 				"",
 				"",
 				"",
 				"",
 				"",
 				"",
-				"\x1\x36",
-				"\x1\x37",
 				"\x1\x38",
-				"",
 				"\x1\x39",
 				"\x1\x3A",
+				"",
 				"\x1\x3B",
 				"\x1\x3C",
 				"\x1\x3D",
 				"\x1\x3E",
 				"\x1\x3F",
-				"\x1\x40\x37\xFFFF\x1\x41",
+				"\x1\x40",
+				"\x1\x41",
 				"\x1\x42",
-				"\x1\x43",
-				"\x1\x44",
-				"\x1\x46\x10\xFFFF\x1\x45",
+				"\x1\x43\x37\xFFFF\x1\x44",
+				"\x1\x45",
+				"\x1\x46",
 				"\x1\x47",
 				"\x1\x48",
-				"\x1\x49",
-				"\x1\x4A",
+				"\x1\x4A\x10\xFFFF\x1\x49",
 				"\x1\x4B",
 				"\x1\x4C",
 				"\x1\x4D",
@@ -2327,91 +2419,104 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 				"\x1\x52",
 				"\x1\x53",
 				"\x1\x54",
-				"",
 				"\x1\x55",
 				"\x1\x56",
 				"\x1\x57",
 				"\x1\x58",
-				"\x1A\x18\x6\xFFFF\x1A\x18",
 				"",
+				"\x1\x59",
 				"\x1\x5A",
 				"\x1\x5B",
 				"\x1\x5C",
 				"\x1\x5D",
-				"\x1\x5E",
-				"\x1A\x18\x6\xFFFF\x11\x18\x1\x5F\x8\x18",
+				"\x1A\x18\x6\xFFFF\x1A\x18",
+				"",
+				"\x1\x5F",
+				"\x1\x60",
 				"\x1\x61",
 				"\x1\x62",
 				"\x1\x63",
 				"\x1\x64",
-				"\x1\x65",
-				"",
-				"\x1\x66",
+				"\x1A\x18\x6\xFFFF\x11\x18\x1\x65\x8\x18",
 				"\x1\x67",
 				"\x1\x68",
-				"",
 				"\x1\x69",
 				"\x1\x6A",
 				"\x1\x6B",
+				"",
 				"\x1\x6C",
 				"\x1\x6D",
 				"\x1\x6E",
+				"",
 				"\x1\x6F",
 				"\x1\x70",
-				"",
 				"\x1\x71",
 				"\x1\x72",
-				"",
 				"\x1\x73",
-				"",
 				"\x1\x74",
-				"",
 				"\x1\x75",
 				"\x1\x76",
 				"\x1\x77",
+				"",
 				"\x1\x78",
 				"\x1\x79",
+				"",
 				"\x1\x7A",
 				"\x1\x7B",
 				"",
 				"\x1\x7C",
+				"",
 				"\x1\x7D",
 				"\x1\x7E",
-				"",
 				"\x1\x7F",
 				"\x1\x80",
 				"\x1\x81",
-				"",
 				"\x1\x82",
-				"",
 				"\x1\x83",
+				"",
 				"\x1\x84",
 				"\x1\x85",
 				"\x1\x86",
+				"",
 				"\x1\x87",
-				"",
-				"",
 				"\x1\x88",
+				"\x1\x89",
+				"\x1\x8A",
 				"",
-				"\x1\x89\x6\xFFFF\x1A\x18\x6\xFFFF\x1A\x18",
 				"\x1\x8B",
 				"",
-				"\x1\x8C\x6\xFFFF\x1A\x18\x6\xFFFF\x1A\x18",
+				"\x1\x8C",
+				"\x1\x8D",
 				"\x1\x8E",
+				"\x1\x8F",
+				"\x1\x90",
+				"\x1\x91",
 				"",
+				"",
+				"\x1\x92",
+				"",
+				"\x1\x93\x6\xFFFF\x1A\x18\x6\xFFFF\x1A\x18",
+				"\x1\x95",
+				"",
+				"\x1\x96\x6\xFFFF\x1A\x18\x6\xFFFF\x1A\x18",
+				"",
+				"\x1\x98",
+				"",
+				"\x1A\x18\x6\xFFFF\x1A\x18",
 				"\x1A\x18\x6\xFFFF\x1A\x18",
 				"",
 				"\x1A\x18\x6\xFFFF\x1A\x18",
 				"",
 				"",
-				"\x1\x91\x6\xFFFF\x1A\x18\x6\xFFFF\x1A\x18",
+				"\x1\x9C\x6\xFFFF\x1A\x18\x6\xFFFF\x1A\x18",
 				"",
 				"",
 				"",
-				"\x1\x93",
+				"\x1\x9E",
 				"",
 				"",
-				"\x1\x94",
+				"\x1\x9F",
+				"",
 				"",
 				"",
 				"",
@@ -2451,7 +2556,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 			this.transition = DFA6_transition;
 		}
 
-		public override string Description { get { return "1:1: Tokens : ( T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | SEC | MIN | NORMAL | HIDDEN | SECRET | QUOTED_STRING | INTEGER | LETTERS | WS );"; } }
+		public override string Description { get { return "1:1: Tokens : ( T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | SEC | MIN | NORMAL | HIDDEN | SECRET | QUOTED_STRING | INTEGER | LETTERS | WS );"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{

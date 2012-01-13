@@ -98,7 +98,7 @@ textDef
 	;
 
 actionDef
-	:	actionPrefix! (actionMult | actionVert | actionPic | actionSound | actionGo | actionYn | actionDelay | actionButtons | actionUnset | actionSet)?
+	:	actionPrefix! (actionMult | actionHorVert | actionPic | actionSound | actionGo | actionYn | actionDelay | actionButtons | actionUnset | actionSet)?
 	;
 
 actionMult
@@ -106,8 +106,10 @@ actionMult
 		-> actionDef+
 	;
 
-actionVert
+actionHorVert
 	:	'vert(' actionDef (',' actionDef)* ')'	
+		-> actionDef+
+	|	'horiz(' actionDef (',' actionDef)* ')'	
 		-> actionDef+
 	;
 
@@ -204,7 +206,7 @@ SECRET	: 'secret';
 rangeDef
 	:	'range(' 'from:' INTEGER ',' 'to:' INTEGER ')'
 		-> ^(RANGE ^(FROM INTEGER) ^(TO INTEGER))	
-	|	'range(' 'from:' INTEGER ',' 'to:' INTEGER ',' ':'? QUOTED_STRING ')'
+	|	'range(' 'from:' INTEGER ',' 'to:' INTEGER ',' 'prefix'? ':'? QUOTED_STRING ')'
 		-> ^(RANGE ^(FROM INTEGER) ^(TO INTEGER) ^(PREFIX QUOTED_STRING))	
 	;
 
@@ -223,7 +225,6 @@ QUOTED_STRING
 	:	'"' ( options {greedy=false;} :  ~('"'|'\n'|'\r'))* '"'
 	|	'\'' ( options {greedy=false;} :  ~('\''|'\n'|'\r'))* '\''
 	;
-
 
 INTEGER
 	:	('0'..'9')+
