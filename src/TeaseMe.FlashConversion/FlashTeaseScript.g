@@ -17,6 +17,7 @@ tokens {
 	FROM;
 	GO;
 	HIDDEN;
+	HRS;
 	ID;
 	MIN;
 	MULT;
@@ -189,11 +190,12 @@ targetDef
 	;
 
 timeDef
-	:	'time:'! INTEGER (SEC|MIN)?
+	:	'time:'! INTEGER (SEC|MIN|HRS)?
 	;
 
 SEC		: 'sec';
 MIN		: 'min';
+HRS		: 'hrs';
 
 styleDef
 	:	'style:'! (NORMAL | HIDDEN | SECRET)

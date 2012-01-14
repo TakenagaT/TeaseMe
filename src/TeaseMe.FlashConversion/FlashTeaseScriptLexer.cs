@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.3.1.7705 FlashTeaseScript.g 2012-01-14 00:46:59
+// $ANTLR 3.3.1.7705 FlashTeaseScript.g 2012-01-14 01:00:56
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -34,33 +34,33 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	public const int FROM=9;
 	public const int GO=10;
 	public const int HIDDEN=11;
-	public const int ID=12;
-	public const int INTEGER=13;
-	public const int LETTERS=14;
-	public const int MIN=15;
-	public const int MULT=16;
-	public const int NO=17;
-	public const int NORMAL=18;
-	public const int PAGE=19;
-	public const int PIC=20;
-	public const int PREFIX=21;
-	public const int PROPERTIES=22;
-	public const int QUOTED_STRING=23;
-	public const int RANGE=24;
-	public const int SEC=25;
-	public const int SECRET=26;
-	public const int SET=27;
-	public const int SOUND=28;
-	public const int STYLE=29;
-	public const int TARGET=30;
-	public const int TEXT=31;
-	public const int TIME=32;
-	public const int TO=33;
-	public const int UNSET=34;
-	public const int WS=35;
-	public const int YES=36;
-	public const int YN=37;
-	public const int T__38=38;
+	public const int HRS=12;
+	public const int ID=13;
+	public const int INTEGER=14;
+	public const int LETTERS=15;
+	public const int MIN=16;
+	public const int MULT=17;
+	public const int NO=18;
+	public const int NORMAL=19;
+	public const int PAGE=20;
+	public const int PIC=21;
+	public const int PREFIX=22;
+	public const int PROPERTIES=23;
+	public const int QUOTED_STRING=24;
+	public const int RANGE=25;
+	public const int SEC=26;
+	public const int SECRET=27;
+	public const int SET=28;
+	public const int SOUND=29;
+	public const int STYLE=30;
+	public const int TARGET=31;
+	public const int TEXT=32;
+	public const int TIME=33;
+	public const int TO=34;
+	public const int UNSET=35;
+	public const int WS=36;
+	public const int YES=37;
+	public const int YN=38;
 	public const int T__39=39;
 	public const int T__40=40;
 	public const int T__41=41;
@@ -94,6 +94,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	public const int T__69=69;
 	public const int T__70=70;
 	public const int T__71=71;
+	public const int T__72=72;
 
     // delegates
     // delegators
@@ -122,19 +123,19 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	partial void EnterRule(string ruleName, int ruleIndex);
 	partial void LeaveRule(string ruleName, int ruleIndex);
 
-	partial void EnterRule_T__38();
-	partial void LeaveRule_T__38();
+	partial void EnterRule_T__39();
+	partial void LeaveRule_T__39();
 
-	// $ANTLR start "T__38"
-	[GrammarRule("T__38")]
-	private void mT__38()
+	// $ANTLR start "T__39"
+	[GrammarRule("T__39")]
+	private void mT__39()
 	{
-		EnterRule_T__38();
-		EnterRule("T__38", 1);
-		TraceIn("T__38", 1);
+		EnterRule_T__39();
+		EnterRule("T__39", 1);
+		TraceIn("T__39", 1);
 		try
 		{
-			int _type = T__38;
+			int _type = T__39;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:10:7: ( '#' )
 			DebugEnterAlt(1);
@@ -150,26 +151,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__38", 1);
-			LeaveRule("T__38", 1);
-			LeaveRule_T__38();
+			TraceOut("T__39", 1);
+			LeaveRule("T__39", 1);
+			LeaveRule_T__39();
 		}
 	}
-	// $ANTLR end "T__38"
+	// $ANTLR end "T__39"
 
-	partial void EnterRule_T__39();
-	partial void LeaveRule_T__39();
+	partial void EnterRule_T__40();
+	partial void LeaveRule_T__40();
 
-	// $ANTLR start "T__39"
-	[GrammarRule("T__39")]
-	private void mT__39()
+	// $ANTLR start "T__40"
+	[GrammarRule("T__40")]
+	private void mT__40()
 	{
-		EnterRule_T__39();
-		EnterRule("T__39", 2);
-		TraceIn("T__39", 2);
+		EnterRule_T__40();
+		EnterRule("T__40", 2);
+		TraceIn("T__40", 2);
 		try
 		{
-			int _type = T__39;
+			int _type = T__40;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:11:7: ( ')' )
 			DebugEnterAlt(1);
@@ -185,26 +186,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__39", 2);
-			LeaveRule("T__39", 2);
-			LeaveRule_T__39();
+			TraceOut("T__40", 2);
+			LeaveRule("T__40", 2);
+			LeaveRule_T__40();
 		}
 	}
-	// $ANTLR end "T__39"
+	// $ANTLR end "T__40"
 
-	partial void EnterRule_T__40();
-	partial void LeaveRule_T__40();
+	partial void EnterRule_T__41();
+	partial void LeaveRule_T__41();
 
-	// $ANTLR start "T__40"
-	[GrammarRule("T__40")]
-	private void mT__40()
+	// $ANTLR start "T__41"
+	[GrammarRule("T__41")]
+	private void mT__41()
 	{
-		EnterRule_T__40();
-		EnterRule("T__40", 3);
-		TraceIn("T__40", 3);
+		EnterRule_T__41();
+		EnterRule("T__41", 3);
+		TraceIn("T__41", 3);
 		try
 		{
-			int _type = T__40;
+			int _type = T__41;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:12:7: ( ',' )
 			DebugEnterAlt(1);
@@ -220,26 +221,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__40", 3);
-			LeaveRule("T__40", 3);
-			LeaveRule_T__40();
+			TraceOut("T__41", 3);
+			LeaveRule("T__41", 3);
+			LeaveRule_T__41();
 		}
 	}
-	// $ANTLR end "T__40"
+	// $ANTLR end "T__41"
 
-	partial void EnterRule_T__41();
-	partial void LeaveRule_T__41();
+	partial void EnterRule_T__42();
+	partial void LeaveRule_T__42();
 
-	// $ANTLR start "T__41"
-	[GrammarRule("T__41")]
-	private void mT__41()
+	// $ANTLR start "T__42"
+	[GrammarRule("T__42")]
+	private void mT__42()
 	{
-		EnterRule_T__41();
-		EnterRule("T__41", 4);
-		TraceIn("T__41", 4);
+		EnterRule_T__42();
+		EnterRule("T__42", 4);
+		TraceIn("T__42", 4);
 		try
 		{
-			int _type = T__41;
+			int _type = T__42;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:13:7: ( ',cap' )
 			DebugEnterAlt(1);
@@ -256,26 +257,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__41", 4);
-			LeaveRule("T__41", 4);
-			LeaveRule_T__41();
+			TraceOut("T__42", 4);
+			LeaveRule("T__42", 4);
+			LeaveRule_T__42();
 		}
 	}
-	// $ANTLR end "T__41"
+	// $ANTLR end "T__42"
 
-	partial void EnterRule_T__42();
-	partial void LeaveRule_T__42();
+	partial void EnterRule_T__43();
+	partial void LeaveRule_T__43();
 
-	// $ANTLR start "T__42"
-	[GrammarRule("T__42")]
-	private void mT__42()
+	// $ANTLR start "T__43"
+	[GrammarRule("T__43")]
+	private void mT__43()
 	{
-		EnterRule_T__42();
-		EnterRule("T__42", 5);
-		TraceIn("T__42", 5);
+		EnterRule_T__43();
+		EnterRule("T__43", 5);
+		TraceIn("T__43", 5);
 		try
 		{
-			int _type = T__42;
+			int _type = T__43;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:14:7: ( ':' )
 			DebugEnterAlt(1);
@@ -291,26 +292,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__42", 5);
-			LeaveRule("T__42", 5);
-			LeaveRule_T__42();
+			TraceOut("T__43", 5);
+			LeaveRule("T__43", 5);
+			LeaveRule_T__43();
 		}
 	}
-	// $ANTLR end "T__42"
+	// $ANTLR end "T__43"
 
-	partial void EnterRule_T__43();
-	partial void LeaveRule_T__43();
+	partial void EnterRule_T__44();
+	partial void LeaveRule_T__44();
 
-	// $ANTLR start "T__43"
-	[GrammarRule("T__43")]
-	private void mT__43()
+	// $ANTLR start "T__44"
+	[GrammarRule("T__44")]
+	private void mT__44()
 	{
-		EnterRule_T__43();
-		EnterRule("T__43", 6);
-		TraceIn("T__43", 6);
+		EnterRule_T__44();
+		EnterRule("T__44", 6);
+		TraceIn("T__44", 6);
 		try
 		{
-			int _type = T__43;
+			int _type = T__44;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:15:7: ( 'action' )
 			DebugEnterAlt(1);
@@ -327,26 +328,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__43", 6);
-			LeaveRule("T__43", 6);
-			LeaveRule_T__43();
+			TraceOut("T__44", 6);
+			LeaveRule("T__44", 6);
+			LeaveRule_T__44();
 		}
 	}
-	// $ANTLR end "T__43"
+	// $ANTLR end "T__44"
 
-	partial void EnterRule_T__44();
-	partial void LeaveRule_T__44();
+	partial void EnterRule_T__45();
+	partial void LeaveRule_T__45();
 
-	// $ANTLR start "T__44"
-	[GrammarRule("T__44")]
-	private void mT__44()
+	// $ANTLR start "T__45"
+	[GrammarRule("T__45")]
+	private void mT__45()
 	{
-		EnterRule_T__44();
-		EnterRule("T__44", 7);
-		TraceIn("T__44", 7);
+		EnterRule_T__45();
+		EnterRule("T__45", 7);
+		TraceIn("T__45", 7);
 		try
 		{
-			int _type = T__44;
+			int _type = T__45;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:16:7: ( 'action:' )
 			DebugEnterAlt(1);
@@ -363,26 +364,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__44", 7);
-			LeaveRule("T__44", 7);
-			LeaveRule_T__44();
+			TraceOut("T__45", 7);
+			LeaveRule("T__45", 7);
+			LeaveRule_T__45();
 		}
 	}
-	// $ANTLR end "T__44"
+	// $ANTLR end "T__45"
 
-	partial void EnterRule_T__45();
-	partial void LeaveRule_T__45();
+	partial void EnterRule_T__46();
+	partial void LeaveRule_T__46();
 
-	// $ANTLR start "T__45"
-	[GrammarRule("T__45")]
-	private void mT__45()
+	// $ANTLR start "T__46"
+	[GrammarRule("T__46")]
+	private void mT__46()
 	{
-		EnterRule_T__45();
-		EnterRule("T__45", 8);
-		TraceIn("T__45", 8);
+		EnterRule_T__46();
+		EnterRule("T__46", 8);
+		TraceIn("T__46", 8);
 		try
 		{
-			int _type = T__45;
+			int _type = T__46;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:17:7: ( 'buttons(' )
 			DebugEnterAlt(1);
@@ -399,26 +400,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__45", 8);
-			LeaveRule("T__45", 8);
-			LeaveRule_T__45();
+			TraceOut("T__46", 8);
+			LeaveRule("T__46", 8);
+			LeaveRule_T__46();
 		}
 	}
-	// $ANTLR end "T__45"
+	// $ANTLR end "T__46"
 
-	partial void EnterRule_T__46();
-	partial void LeaveRule_T__46();
+	partial void EnterRule_T__47();
+	partial void LeaveRule_T__47();
 
-	// $ANTLR start "T__46"
-	[GrammarRule("T__46")]
-	private void mT__46()
+	// $ANTLR start "T__47"
+	[GrammarRule("T__47")]
+	private void mT__47()
 	{
-		EnterRule_T__46();
-		EnterRule("T__46", 9);
-		TraceIn("T__46", 9);
+		EnterRule_T__47();
+		EnterRule("T__47", 9);
+		TraceIn("T__47", 9);
 		try
 		{
-			int _type = T__46;
+			int _type = T__47;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:18:7: ( 'delay(' )
 			DebugEnterAlt(1);
@@ -435,26 +436,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__46", 9);
-			LeaveRule("T__46", 9);
-			LeaveRule_T__46();
+			TraceOut("T__47", 9);
+			LeaveRule("T__47", 9);
+			LeaveRule_T__47();
 		}
 	}
-	// $ANTLR end "T__46"
+	// $ANTLR end "T__47"
 
-	partial void EnterRule_T__47();
-	partial void LeaveRule_T__47();
+	partial void EnterRule_T__48();
+	partial void LeaveRule_T__48();
 
-	// $ANTLR start "T__47"
-	[GrammarRule("T__47")]
-	private void mT__47()
+	// $ANTLR start "T__48"
+	[GrammarRule("T__48")]
+	private void mT__48()
 	{
-		EnterRule_T__47();
-		EnterRule("T__47", 10);
-		TraceIn("T__47", 10);
+		EnterRule_T__48();
+		EnterRule("T__48", 10);
+		TraceIn("T__48", 10);
 		try
 		{
-			int _type = T__47;
+			int _type = T__48;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:19:7: ( 'e' )
 			DebugEnterAlt(1);
@@ -470,26 +471,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__47", 10);
-			LeaveRule("T__47", 10);
-			LeaveRule_T__47();
+			TraceOut("T__48", 10);
+			LeaveRule("T__48", 10);
+			LeaveRule_T__48();
 		}
 	}
-	// $ANTLR end "T__47"
+	// $ANTLR end "T__48"
 
-	partial void EnterRule_T__48();
-	partial void LeaveRule_T__48();
+	partial void EnterRule_T__49();
+	partial void LeaveRule_T__49();
 
-	// $ANTLR start "T__48"
-	[GrammarRule("T__48")]
-	private void mT__48()
+	// $ANTLR start "T__49"
+	[GrammarRule("T__49")]
+	private void mT__49()
 	{
-		EnterRule_T__48();
-		EnterRule("T__48", 11);
-		TraceIn("T__48", 11);
+		EnterRule_T__49();
+		EnterRule("T__49", 11);
+		TraceIn("T__49", 11);
 		try
 		{
-			int _type = T__48;
+			int _type = T__49;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:20:7: ( 'from:' )
 			DebugEnterAlt(1);
@@ -506,26 +507,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__48", 11);
-			LeaveRule("T__48", 11);
-			LeaveRule_T__48();
+			TraceOut("T__49", 11);
+			LeaveRule("T__49", 11);
+			LeaveRule_T__49();
 		}
 	}
-	// $ANTLR end "T__48"
+	// $ANTLR end "T__49"
 
-	partial void EnterRule_T__49();
-	partial void LeaveRule_T__49();
+	partial void EnterRule_T__50();
+	partial void LeaveRule_T__50();
 
-	// $ANTLR start "T__49"
-	[GrammarRule("T__49")]
-	private void mT__49()
+	// $ANTLR start "T__50"
+	[GrammarRule("T__50")]
+	private void mT__50()
 	{
-		EnterRule_T__49();
-		EnterRule("T__49", 12);
-		TraceIn("T__49", 12);
+		EnterRule_T__50();
+		EnterRule("T__50", 12);
+		TraceIn("T__50", 12);
 		try
 		{
-			int _type = T__49;
+			int _type = T__50;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:21:7: ( 'go(' )
 			DebugEnterAlt(1);
@@ -542,26 +543,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__49", 12);
-			LeaveRule("T__49", 12);
-			LeaveRule_T__49();
+			TraceOut("T__50", 12);
+			LeaveRule("T__50", 12);
+			LeaveRule_T__50();
 		}
 	}
-	// $ANTLR end "T__49"
+	// $ANTLR end "T__50"
 
-	partial void EnterRule_T__50();
-	partial void LeaveRule_T__50();
+	partial void EnterRule_T__51();
+	partial void LeaveRule_T__51();
 
-	// $ANTLR start "T__50"
-	[GrammarRule("T__50")]
-	private void mT__50()
+	// $ANTLR start "T__51"
+	[GrammarRule("T__51")]
+	private void mT__51()
 	{
-		EnterRule_T__50();
-		EnterRule("T__50", 13);
-		TraceIn("T__50", 13);
+		EnterRule_T__51();
+		EnterRule("T__51", 13);
+		TraceIn("T__51", 13);
 		try
 		{
-			int _type = T__50;
+			int _type = T__51;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:22:7: ( 'hidden:' )
 			DebugEnterAlt(1);
@@ -578,26 +579,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__50", 13);
-			LeaveRule("T__50", 13);
-			LeaveRule_T__50();
+			TraceOut("T__51", 13);
+			LeaveRule("T__51", 13);
+			LeaveRule_T__51();
 		}
 	}
-	// $ANTLR end "T__50"
+	// $ANTLR end "T__51"
 
-	partial void EnterRule_T__51();
-	partial void LeaveRule_T__51();
+	partial void EnterRule_T__52();
+	partial void LeaveRule_T__52();
 
-	// $ANTLR start "T__51"
-	[GrammarRule("T__51")]
-	private void mT__51()
+	// $ANTLR start "T__52"
+	[GrammarRule("T__52")]
+	private void mT__52()
 	{
-		EnterRule_T__51();
-		EnterRule("T__51", 14);
-		TraceIn("T__51", 14);
+		EnterRule_T__52();
+		EnterRule("T__52", 14);
+		TraceIn("T__52", 14);
 		try
 		{
-			int _type = T__51;
+			int _type = T__52;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:23:7: ( 'horiz(' )
 			DebugEnterAlt(1);
@@ -614,26 +615,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__51", 14);
-			LeaveRule("T__51", 14);
-			LeaveRule_T__51();
+			TraceOut("T__52", 14);
+			LeaveRule("T__52", 14);
+			LeaveRule_T__52();
 		}
 	}
-	// $ANTLR end "T__51"
+	// $ANTLR end "T__52"
 
-	partial void EnterRule_T__52();
-	partial void LeaveRule_T__52();
+	partial void EnterRule_T__53();
+	partial void LeaveRule_T__53();
 
-	// $ANTLR start "T__52"
-	[GrammarRule("T__52")]
-	private void mT__52()
+	// $ANTLR start "T__53"
+	[GrammarRule("T__53")]
+	private void mT__53()
 	{
-		EnterRule_T__52();
-		EnterRule("T__52", 15);
-		TraceIn("T__52", 15);
+		EnterRule_T__53();
+		EnterRule("T__53", 15);
+		TraceIn("T__53", 15);
 		try
 		{
-			int _type = T__52;
+			int _type = T__53;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:24:7: ( 'instruc:' )
 			DebugEnterAlt(1);
@@ -650,26 +651,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__52", 15);
-			LeaveRule("T__52", 15);
-			LeaveRule_T__52();
+			TraceOut("T__53", 15);
+			LeaveRule("T__53", 15);
+			LeaveRule_T__53();
 		}
 	}
-	// $ANTLR end "T__52"
+	// $ANTLR end "T__53"
 
-	partial void EnterRule_T__53();
-	partial void LeaveRule_T__53();
+	partial void EnterRule_T__54();
+	partial void LeaveRule_T__54();
 
-	// $ANTLR start "T__53"
-	[GrammarRule("T__53")]
-	private void mT__53()
+	// $ANTLR start "T__54"
+	[GrammarRule("T__54")]
+	private void mT__54()
 	{
-		EnterRule_T__53();
-		EnterRule("T__53", 16);
-		TraceIn("T__53", 16);
+		EnterRule_T__54();
+		EnterRule("T__54", 16);
+		TraceIn("T__54", 16);
 		try
 		{
-			int _type = T__53;
+			int _type = T__54;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:25:7: ( 'media:' )
 			DebugEnterAlt(1);
@@ -686,26 +687,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__53", 16);
-			LeaveRule("T__53", 16);
-			LeaveRule_T__53();
+			TraceOut("T__54", 16);
+			LeaveRule("T__54", 16);
+			LeaveRule_T__54();
 		}
 	}
-	// $ANTLR end "T__53"
+	// $ANTLR end "T__54"
 
-	partial void EnterRule_T__54();
-	partial void LeaveRule_T__54();
+	partial void EnterRule_T__55();
+	partial void LeaveRule_T__55();
 
-	// $ANTLR start "T__54"
-	[GrammarRule("T__54")]
-	private void mT__54()
+	// $ANTLR start "T__55"
+	[GrammarRule("T__55")]
+	private void mT__55()
 	{
-		EnterRule_T__54();
-		EnterRule("T__54", 17);
-		TraceIn("T__54", 17);
+		EnterRule_T__55();
+		EnterRule("T__55", 17);
+		TraceIn("T__55", 17);
 		try
 		{
-			int _type = T__54;
+			int _type = T__55;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:26:7: ( 'mult(' )
 			DebugEnterAlt(1);
@@ -722,26 +723,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__54", 17);
-			LeaveRule("T__54", 17);
-			LeaveRule_T__54();
+			TraceOut("T__55", 17);
+			LeaveRule("T__55", 17);
+			LeaveRule_T__55();
 		}
 	}
-	// $ANTLR end "T__54"
+	// $ANTLR end "T__55"
 
-	partial void EnterRule_T__55();
-	partial void LeaveRule_T__55();
+	partial void EnterRule_T__56();
+	partial void LeaveRule_T__56();
 
-	// $ANTLR start "T__55"
-	[GrammarRule("T__55")]
-	private void mT__55()
+	// $ANTLR start "T__56"
+	[GrammarRule("T__56")]
+	private void mT__56()
 	{
-		EnterRule_T__55();
-		EnterRule("T__55", 18);
-		TraceIn("T__55", 18);
+		EnterRule_T__56();
+		EnterRule("T__56", 18);
+		TraceIn("T__56", 18);
 		try
 		{
-			int _type = T__55;
+			int _type = T__56;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:27:7: ( 'no:' )
 			DebugEnterAlt(1);
@@ -758,26 +759,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__55", 18);
-			LeaveRule("T__55", 18);
-			LeaveRule_T__55();
+			TraceOut("T__56", 18);
+			LeaveRule("T__56", 18);
+			LeaveRule_T__56();
 		}
 	}
-	// $ANTLR end "T__55"
+	// $ANTLR end "T__56"
 
-	partial void EnterRule_T__56();
-	partial void LeaveRule_T__56();
+	partial void EnterRule_T__57();
+	partial void LeaveRule_T__57();
 
-	// $ANTLR start "T__56"
-	[GrammarRule("T__56")]
-	private void mT__56()
+	// $ANTLR start "T__57"
+	[GrammarRule("T__57")]
+	private void mT__57()
 	{
-		EnterRule_T__56();
-		EnterRule("T__56", 19);
-		TraceIn("T__56", 19);
+		EnterRule_T__57();
+		EnterRule("T__57", 19);
+		TraceIn("T__57", 19);
 		try
 		{
-			int _type = T__56;
+			int _type = T__57;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:28:7: ( 'page(' )
 			DebugEnterAlt(1);
@@ -794,26 +795,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__56", 19);
-			LeaveRule("T__56", 19);
-			LeaveRule_T__56();
+			TraceOut("T__57", 19);
+			LeaveRule("T__57", 19);
+			LeaveRule_T__57();
 		}
 	}
-	// $ANTLR end "T__56"
+	// $ANTLR end "T__57"
 
-	partial void EnterRule_T__57();
-	partial void LeaveRule_T__57();
+	partial void EnterRule_T__58();
+	partial void LeaveRule_T__58();
 
-	// $ANTLR start "T__57"
-	[GrammarRule("T__57")]
-	private void mT__57()
+	// $ANTLR start "T__58"
+	[GrammarRule("T__58")]
+	private void mT__58()
 	{
-		EnterRule_T__57();
-		EnterRule("T__57", 20);
-		TraceIn("T__57", 20);
+		EnterRule_T__58();
+		EnterRule("T__58", 20);
+		TraceIn("T__58", 20);
 		try
 		{
-			int _type = T__57;
+			int _type = T__58;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:29:7: ( 'pic(id:' )
 			DebugEnterAlt(1);
@@ -830,26 +831,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__57", 20);
-			LeaveRule("T__57", 20);
-			LeaveRule_T__57();
+			TraceOut("T__58", 20);
+			LeaveRule("T__58", 20);
+			LeaveRule_T__58();
 		}
 	}
-	// $ANTLR end "T__57"
+	// $ANTLR end "T__58"
 
-	partial void EnterRule_T__58();
-	partial void LeaveRule_T__58();
+	partial void EnterRule_T__59();
+	partial void LeaveRule_T__59();
 
-	// $ANTLR start "T__58"
-	[GrammarRule("T__58")]
-	private void mT__58()
+	// $ANTLR start "T__59"
+	[GrammarRule("T__59")]
+	private void mT__59()
 	{
-		EnterRule_T__58();
-		EnterRule("T__58", 21);
-		TraceIn("T__58", 21);
+		EnterRule_T__59();
+		EnterRule("T__59", 21);
+		TraceIn("T__59", 21);
 		try
 		{
-			int _type = T__58;
+			int _type = T__59;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:30:7: ( 'prefix' )
 			DebugEnterAlt(1);
@@ -866,26 +867,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__58", 21);
-			LeaveRule("T__58", 21);
-			LeaveRule_T__58();
+			TraceOut("T__59", 21);
+			LeaveRule("T__59", 21);
+			LeaveRule_T__59();
 		}
 	}
-	// $ANTLR end "T__58"
+	// $ANTLR end "T__59"
 
-	partial void EnterRule_T__59();
-	partial void LeaveRule_T__59();
+	partial void EnterRule_T__60();
+	partial void LeaveRule_T__60();
 
-	// $ANTLR start "T__59"
-	[GrammarRule("T__59")]
-	private void mT__59()
+	// $ANTLR start "T__60"
+	[GrammarRule("T__60")]
+	private void mT__60()
 	{
-		EnterRule_T__59();
-		EnterRule("T__59", 22);
-		TraceIn("T__59", 22);
+		EnterRule_T__60();
+		EnterRule("T__60", 22);
+		TraceIn("T__60", 22);
 		try
 		{
-			int _type = T__59;
+			int _type = T__60;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:31:7: ( 'range(' )
 			DebugEnterAlt(1);
@@ -902,26 +903,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__59", 22);
-			LeaveRule("T__59", 22);
-			LeaveRule_T__59();
+			TraceOut("T__60", 22);
+			LeaveRule("T__60", 22);
+			LeaveRule_T__60();
 		}
 	}
-	// $ANTLR end "T__59"
+	// $ANTLR end "T__60"
 
-	partial void EnterRule_T__60();
-	partial void LeaveRule_T__60();
+	partial void EnterRule_T__61();
+	partial void LeaveRule_T__61();
 
-	// $ANTLR start "T__60"
-	[GrammarRule("T__60")]
-	private void mT__60()
+	// $ANTLR start "T__61"
+	[GrammarRule("T__61")]
+	private void mT__61()
 	{
-		EnterRule_T__60();
-		EnterRule("T__60", 23);
-		TraceIn("T__60", 23);
+		EnterRule_T__61();
+		EnterRule("T__61", 23);
+		TraceIn("T__61", 23);
 		try
 		{
-			int _type = T__60;
+			int _type = T__61;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:32:7: ( 'set(' )
 			DebugEnterAlt(1);
@@ -938,26 +939,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__60", 23);
-			LeaveRule("T__60", 23);
-			LeaveRule_T__60();
+			TraceOut("T__61", 23);
+			LeaveRule("T__61", 23);
+			LeaveRule_T__61();
 		}
 	}
-	// $ANTLR end "T__60"
+	// $ANTLR end "T__61"
 
-	partial void EnterRule_T__61();
-	partial void LeaveRule_T__61();
+	partial void EnterRule_T__62();
+	partial void LeaveRule_T__62();
 
-	// $ANTLR start "T__61"
-	[GrammarRule("T__61")]
-	private void mT__61()
+	// $ANTLR start "T__62"
+	[GrammarRule("T__62")]
+	private void mT__62()
 	{
-		EnterRule_T__61();
-		EnterRule("T__61", 24);
-		TraceIn("T__61", 24);
+		EnterRule_T__62();
+		EnterRule("T__62", 24);
+		TraceIn("T__62", 24);
 		try
 		{
-			int _type = T__61;
+			int _type = T__62;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:33:7: ( 'sound(id:' )
 			DebugEnterAlt(1);
@@ -974,26 +975,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__61", 24);
-			LeaveRule("T__61", 24);
-			LeaveRule_T__61();
+			TraceOut("T__62", 24);
+			LeaveRule("T__62", 24);
+			LeaveRule_T__62();
 		}
 	}
-	// $ANTLR end "T__61"
+	// $ANTLR end "T__62"
 
-	partial void EnterRule_T__62();
-	partial void LeaveRule_T__62();
+	partial void EnterRule_T__63();
+	partial void LeaveRule_T__63();
 
-	// $ANTLR start "T__62"
-	[GrammarRule("T__62")]
-	private void mT__62()
+	// $ANTLR start "T__63"
+	[GrammarRule("T__63")]
+	private void mT__63()
 	{
-		EnterRule_T__62();
-		EnterRule("T__62", 25);
-		TraceIn("T__62", 25);
+		EnterRule_T__63();
+		EnterRule("T__63", 25);
+		TraceIn("T__63", 25);
 		try
 		{
-			int _type = T__62;
+			int _type = T__63;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:34:7: ( 'style:' )
 			DebugEnterAlt(1);
@@ -1010,26 +1011,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__62", 25);
-			LeaveRule("T__62", 25);
-			LeaveRule_T__62();
+			TraceOut("T__63", 25);
+			LeaveRule("T__63", 25);
+			LeaveRule_T__63();
 		}
 	}
-	// $ANTLR end "T__62"
+	// $ANTLR end "T__63"
 
-	partial void EnterRule_T__63();
-	partial void LeaveRule_T__63();
+	partial void EnterRule_T__64();
+	partial void LeaveRule_T__64();
 
-	// $ANTLR start "T__63"
-	[GrammarRule("T__63")]
-	private void mT__63()
+	// $ANTLR start "T__64"
+	[GrammarRule("T__64")]
+	private void mT__64()
 	{
-		EnterRule_T__63();
-		EnterRule("T__63", 26);
-		TraceIn("T__63", 26);
+		EnterRule_T__64();
+		EnterRule("T__64", 26);
+		TraceIn("T__64", 26);
 		try
 		{
-			int _type = T__63;
+			int _type = T__64;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:35:7: ( 'target' )
 			DebugEnterAlt(1);
@@ -1046,26 +1047,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__63", 26);
-			LeaveRule("T__63", 26);
-			LeaveRule_T__63();
+			TraceOut("T__64", 26);
+			LeaveRule("T__64", 26);
+			LeaveRule_T__64();
 		}
 	}
-	// $ANTLR end "T__63"
+	// $ANTLR end "T__64"
 
-	partial void EnterRule_T__64();
-	partial void LeaveRule_T__64();
+	partial void EnterRule_T__65();
+	partial void LeaveRule_T__65();
 
-	// $ANTLR start "T__64"
-	[GrammarRule("T__64")]
-	private void mT__64()
+	// $ANTLR start "T__65"
+	[GrammarRule("T__65")]
+	private void mT__65()
 	{
-		EnterRule_T__64();
-		EnterRule("T__64", 27);
-		TraceIn("T__64", 27);
+		EnterRule_T__65();
+		EnterRule("T__65", 27);
+		TraceIn("T__65", 27);
 		try
 		{
-			int _type = T__64;
+			int _type = T__65;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:36:7: ( 'target:' )
 			DebugEnterAlt(1);
@@ -1082,26 +1083,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__64", 27);
-			LeaveRule("T__64", 27);
-			LeaveRule_T__64();
+			TraceOut("T__65", 27);
+			LeaveRule("T__65", 27);
+			LeaveRule_T__65();
 		}
 	}
-	// $ANTLR end "T__64"
+	// $ANTLR end "T__65"
 
-	partial void EnterRule_T__65();
-	partial void LeaveRule_T__65();
+	partial void EnterRule_T__66();
+	partial void LeaveRule_T__66();
 
-	// $ANTLR start "T__65"
-	[GrammarRule("T__65")]
-	private void mT__65()
+	// $ANTLR start "T__66"
+	[GrammarRule("T__66")]
+	private void mT__66()
 	{
-		EnterRule_T__65();
-		EnterRule("T__65", 28);
-		TraceIn("T__65", 28);
+		EnterRule_T__66();
+		EnterRule("T__66", 28);
+		TraceIn("T__66", 28);
 		try
 		{
-			int _type = T__65;
+			int _type = T__66;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:37:7: ( 'text:' )
 			DebugEnterAlt(1);
@@ -1118,26 +1119,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__65", 28);
-			LeaveRule("T__65", 28);
-			LeaveRule_T__65();
+			TraceOut("T__66", 28);
+			LeaveRule("T__66", 28);
+			LeaveRule_T__66();
 		}
 	}
-	// $ANTLR end "T__65"
+	// $ANTLR end "T__66"
 
-	partial void EnterRule_T__66();
-	partial void LeaveRule_T__66();
+	partial void EnterRule_T__67();
+	partial void LeaveRule_T__67();
 
-	// $ANTLR start "T__66"
-	[GrammarRule("T__66")]
-	private void mT__66()
+	// $ANTLR start "T__67"
+	[GrammarRule("T__67")]
+	private void mT__67()
 	{
-		EnterRule_T__66();
-		EnterRule("T__66", 29);
-		TraceIn("T__66", 29);
+		EnterRule_T__67();
+		EnterRule("T__67", 29);
+		TraceIn("T__67", 29);
 		try
 		{
-			int _type = T__66;
+			int _type = T__67;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:38:7: ( 'time:' )
 			DebugEnterAlt(1);
@@ -1154,26 +1155,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__66", 29);
-			LeaveRule("T__66", 29);
-			LeaveRule_T__66();
+			TraceOut("T__67", 29);
+			LeaveRule("T__67", 29);
+			LeaveRule_T__67();
 		}
 	}
-	// $ANTLR end "T__66"
+	// $ANTLR end "T__67"
 
-	partial void EnterRule_T__67();
-	partial void LeaveRule_T__67();
+	partial void EnterRule_T__68();
+	partial void LeaveRule_T__68();
 
-	// $ANTLR start "T__67"
-	[GrammarRule("T__67")]
-	private void mT__67()
+	// $ANTLR start "T__68"
+	[GrammarRule("T__68")]
+	private void mT__68()
 	{
-		EnterRule_T__67();
-		EnterRule("T__67", 30);
-		TraceIn("T__67", 30);
+		EnterRule_T__68();
+		EnterRule("T__68", 30);
+		TraceIn("T__68", 30);
 		try
 		{
-			int _type = T__67;
+			int _type = T__68;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:39:7: ( 'to:' )
 			DebugEnterAlt(1);
@@ -1190,26 +1191,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__67", 30);
-			LeaveRule("T__67", 30);
-			LeaveRule_T__67();
+			TraceOut("T__68", 30);
+			LeaveRule("T__68", 30);
+			LeaveRule_T__68();
 		}
 	}
-	// $ANTLR end "T__67"
+	// $ANTLR end "T__68"
 
-	partial void EnterRule_T__68();
-	partial void LeaveRule_T__68();
+	partial void EnterRule_T__69();
+	partial void LeaveRule_T__69();
 
-	// $ANTLR start "T__68"
-	[GrammarRule("T__68")]
-	private void mT__68()
+	// $ANTLR start "T__69"
+	[GrammarRule("T__69")]
+	private void mT__69()
 	{
-		EnterRule_T__68();
-		EnterRule("T__68", 31);
-		TraceIn("T__68", 31);
+		EnterRule_T__69();
+		EnterRule("T__69", 31);
+		TraceIn("T__69", 31);
 		try
 		{
-			int _type = T__68;
+			int _type = T__69;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:40:7: ( 'unset(' )
 			DebugEnterAlt(1);
@@ -1226,26 +1227,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__68", 31);
-			LeaveRule("T__68", 31);
-			LeaveRule_T__68();
+			TraceOut("T__69", 31);
+			LeaveRule("T__69", 31);
+			LeaveRule_T__69();
 		}
 	}
-	// $ANTLR end "T__68"
+	// $ANTLR end "T__69"
 
-	partial void EnterRule_T__69();
-	partial void LeaveRule_T__69();
+	partial void EnterRule_T__70();
+	partial void LeaveRule_T__70();
 
-	// $ANTLR start "T__69"
-	[GrammarRule("T__69")]
-	private void mT__69()
+	// $ANTLR start "T__70"
+	[GrammarRule("T__70")]
+	private void mT__70()
 	{
-		EnterRule_T__69();
-		EnterRule("T__69", 32);
-		TraceIn("T__69", 32);
+		EnterRule_T__70();
+		EnterRule("T__70", 32);
+		TraceIn("T__70", 32);
 		try
 		{
-			int _type = T__69;
+			int _type = T__70;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:41:7: ( 'vert(' )
 			DebugEnterAlt(1);
@@ -1262,26 +1263,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__69", 32);
-			LeaveRule("T__69", 32);
-			LeaveRule_T__69();
+			TraceOut("T__70", 32);
+			LeaveRule("T__70", 32);
+			LeaveRule_T__70();
 		}
 	}
-	// $ANTLR end "T__69"
+	// $ANTLR end "T__70"
 
-	partial void EnterRule_T__70();
-	partial void LeaveRule_T__70();
+	partial void EnterRule_T__71();
+	partial void LeaveRule_T__71();
 
-	// $ANTLR start "T__70"
-	[GrammarRule("T__70")]
-	private void mT__70()
+	// $ANTLR start "T__71"
+	[GrammarRule("T__71")]
+	private void mT__71()
 	{
-		EnterRule_T__70();
-		EnterRule("T__70", 33);
-		TraceIn("T__70", 33);
+		EnterRule_T__71();
+		EnterRule("T__71", 33);
+		TraceIn("T__71", 33);
 		try
 		{
-			int _type = T__70;
+			int _type = T__71;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:42:7: ( 'yes:' )
 			DebugEnterAlt(1);
@@ -1298,26 +1299,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__70", 33);
-			LeaveRule("T__70", 33);
-			LeaveRule_T__70();
+			TraceOut("T__71", 33);
+			LeaveRule("T__71", 33);
+			LeaveRule_T__71();
 		}
 	}
-	// $ANTLR end "T__70"
+	// $ANTLR end "T__71"
 
-	partial void EnterRule_T__71();
-	partial void LeaveRule_T__71();
+	partial void EnterRule_T__72();
+	partial void LeaveRule_T__72();
 
-	// $ANTLR start "T__71"
-	[GrammarRule("T__71")]
-	private void mT__71()
+	// $ANTLR start "T__72"
+	[GrammarRule("T__72")]
+	private void mT__72()
 	{
-		EnterRule_T__71();
-		EnterRule("T__71", 34);
-		TraceIn("T__71", 34);
+		EnterRule_T__72();
+		EnterRule("T__72", 34);
+		TraceIn("T__72", 34);
 		try
 		{
-			int _type = T__71;
+			int _type = T__72;
 			int _channel = DefaultTokenChannel;
 			// FlashTeaseScript.g:43:7: ( 'yn(' )
 			DebugEnterAlt(1);
@@ -1334,12 +1335,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__71", 34);
-			LeaveRule("T__71", 34);
-			LeaveRule_T__71();
+			TraceOut("T__72", 34);
+			LeaveRule("T__72", 34);
+			LeaveRule_T__72();
 		}
 	}
-	// $ANTLR end "T__71"
+	// $ANTLR end "T__72"
 
 	partial void EnterRule_SEC();
 	partial void LeaveRule_SEC();
@@ -1355,11 +1356,11 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = SEC;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:195:6: ( 'sec' )
+			// FlashTeaseScript.g:196:6: ( 'sec' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:195:8: 'sec'
+			// FlashTeaseScript.g:196:8: 'sec'
 			{
-			DebugLocation(195, 8);
+			DebugLocation(196, 8);
 			Match("sec"); 
 
 
@@ -1391,11 +1392,11 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 			int _type = MIN;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:196:6: ( 'min' )
+			// FlashTeaseScript.g:197:6: ( 'min' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:196:8: 'min'
+			// FlashTeaseScript.g:197:8: 'min'
 			{
-			DebugLocation(196, 8);
+			DebugLocation(197, 8);
 			Match("min"); 
 
 
@@ -1413,6 +1414,42 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	}
 	// $ANTLR end "MIN"
 
+	partial void EnterRule_HRS();
+	partial void LeaveRule_HRS();
+
+	// $ANTLR start "HRS"
+	[GrammarRule("HRS")]
+	private void mHRS()
+	{
+		EnterRule_HRS();
+		EnterRule("HRS", 37);
+		TraceIn("HRS", 37);
+		try
+		{
+			int _type = HRS;
+			int _channel = DefaultTokenChannel;
+			// FlashTeaseScript.g:198:6: ( 'hrs' )
+			DebugEnterAlt(1);
+			// FlashTeaseScript.g:198:8: 'hrs'
+			{
+			DebugLocation(198, 8);
+			Match("hrs"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("HRS", 37);
+			LeaveRule("HRS", 37);
+			LeaveRule_HRS();
+		}
+	}
+	// $ANTLR end "HRS"
+
 	partial void EnterRule_NORMAL();
 	partial void LeaveRule_NORMAL();
 
@@ -1421,17 +1458,17 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	private void mNORMAL()
 	{
 		EnterRule_NORMAL();
-		EnterRule("NORMAL", 37);
-		TraceIn("NORMAL", 37);
+		EnterRule("NORMAL", 38);
+		TraceIn("NORMAL", 38);
 		try
 		{
 			int _type = NORMAL;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:202:8: ( 'normal' )
+			// FlashTeaseScript.g:204:8: ( 'normal' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:202:10: 'normal'
+			// FlashTeaseScript.g:204:10: 'normal'
 			{
-			DebugLocation(202, 10);
+			DebugLocation(204, 10);
 			Match("normal"); 
 
 
@@ -1442,8 +1479,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("NORMAL", 37);
-			LeaveRule("NORMAL", 37);
+			TraceOut("NORMAL", 38);
+			LeaveRule("NORMAL", 38);
 			LeaveRule_NORMAL();
 		}
 	}
@@ -1457,17 +1494,17 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	private void mHIDDEN()
 	{
 		EnterRule_HIDDEN();
-		EnterRule("HIDDEN", 38);
-		TraceIn("HIDDEN", 38);
+		EnterRule("HIDDEN", 39);
+		TraceIn("HIDDEN", 39);
 		try
 		{
 			int _type = HIDDEN;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:203:8: ( 'hidden' )
+			// FlashTeaseScript.g:205:8: ( 'hidden' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:203:10: 'hidden'
+			// FlashTeaseScript.g:205:10: 'hidden'
 			{
-			DebugLocation(203, 10);
+			DebugLocation(205, 10);
 			Match("hidden"); 
 
 
@@ -1478,8 +1515,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("HIDDEN", 38);
-			LeaveRule("HIDDEN", 38);
+			TraceOut("HIDDEN", 39);
+			LeaveRule("HIDDEN", 39);
 			LeaveRule_HIDDEN();
 		}
 	}
@@ -1493,17 +1530,17 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	private void mSECRET()
 	{
 		EnterRule_SECRET();
-		EnterRule("SECRET", 39);
-		TraceIn("SECRET", 39);
+		EnterRule("SECRET", 40);
+		TraceIn("SECRET", 40);
 		try
 		{
 			int _type = SECRET;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:204:8: ( 'secret' )
+			// FlashTeaseScript.g:206:8: ( 'secret' )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:204:10: 'secret'
+			// FlashTeaseScript.g:206:10: 'secret'
 			{
-			DebugLocation(204, 10);
+			DebugLocation(206, 10);
 			Match("secret"); 
 
 
@@ -1514,8 +1551,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("SECRET", 39);
-			LeaveRule("SECRET", 39);
+			TraceOut("SECRET", 40);
+			LeaveRule("SECRET", 40);
 			LeaveRule_SECRET();
 		}
 	}
@@ -1529,13 +1566,13 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	private void mQUOTED_STRING()
 	{
 		EnterRule_QUOTED_STRING();
-		EnterRule("QUOTED_STRING", 40);
-		TraceIn("QUOTED_STRING", 40);
+		EnterRule("QUOTED_STRING", 41);
+		TraceIn("QUOTED_STRING", 41);
 		try
 		{
 			int _type = QUOTED_STRING;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:225:2: ( '\"' ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )* '\"' | '\\'' ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )* '\\'' )
+			// FlashTeaseScript.g:227:2: ( '\"' ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )* '\"' | '\\'' ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )* '\\'' )
 			int alt3=2;
 			try { DebugEnterDecision(3, false);
 			int LA3_0 = input.LA(1);
@@ -1559,12 +1596,12 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// FlashTeaseScript.g:225:4: '\"' ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )* '\"'
+				// FlashTeaseScript.g:227:4: '\"' ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )* '\"'
 				{
-				DebugLocation(225, 4);
+				DebugLocation(227, 4);
 				Match('\"'); 
-				DebugLocation(225, 8);
-				// FlashTeaseScript.g:225:8: ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )*
+				DebugLocation(227, 8);
+				// FlashTeaseScript.g:227:8: ( options {greedy=false; } :~ ( '\"' | '\\n' | '\\r' ) )*
 				try { DebugEnterSubRule(1);
 				while (true)
 				{
@@ -1587,9 +1624,9 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// FlashTeaseScript.g:225:37: ~ ( '\"' | '\\n' | '\\r' )
+						// FlashTeaseScript.g:227:37: ~ ( '\"' | '\\n' | '\\r' )
 						{
-						DebugLocation(225, 37);
+						DebugLocation(227, 37);
 						input.Consume();
 
 
@@ -1606,19 +1643,19 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 
 				} finally { DebugExitSubRule(1); }
 
-				DebugLocation(225, 56);
+				DebugLocation(227, 56);
 				Match('\"'); 
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// FlashTeaseScript.g:226:4: '\\'' ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )* '\\''
+				// FlashTeaseScript.g:228:4: '\\'' ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )* '\\''
 				{
-				DebugLocation(226, 4);
+				DebugLocation(228, 4);
 				Match('\''); 
-				DebugLocation(226, 9);
-				// FlashTeaseScript.g:226:9: ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )*
+				DebugLocation(228, 9);
+				// FlashTeaseScript.g:228:9: ( options {greedy=false; } :~ ( '\\'' | '\\n' | '\\r' ) )*
 				try { DebugEnterSubRule(2);
 				while (true)
 				{
@@ -1641,9 +1678,9 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// FlashTeaseScript.g:226:38: ~ ( '\\'' | '\\n' | '\\r' )
+						// FlashTeaseScript.g:228:38: ~ ( '\\'' | '\\n' | '\\r' )
 						{
-						DebugLocation(226, 38);
+						DebugLocation(228, 38);
 						input.Consume();
 
 
@@ -1660,7 +1697,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 
 				} finally { DebugExitSubRule(2); }
 
-				DebugLocation(226, 58);
+				DebugLocation(228, 58);
 				Match('\''); 
 
 				}
@@ -1672,8 +1709,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("QUOTED_STRING", 40);
-			LeaveRule("QUOTED_STRING", 40);
+			TraceOut("QUOTED_STRING", 41);
+			LeaveRule("QUOTED_STRING", 41);
 			LeaveRule_QUOTED_STRING();
 		}
 	}
@@ -1687,18 +1724,18 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	private void mINTEGER()
 	{
 		EnterRule_INTEGER();
-		EnterRule("INTEGER", 41);
-		TraceIn("INTEGER", 41);
+		EnterRule("INTEGER", 42);
+		TraceIn("INTEGER", 42);
 		try
 		{
 			int _type = INTEGER;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:230:2: ( ( '0' .. '9' )+ )
+			// FlashTeaseScript.g:232:2: ( ( '0' .. '9' )+ )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:230:4: ( '0' .. '9' )+
+			// FlashTeaseScript.g:232:4: ( '0' .. '9' )+
 			{
-			DebugLocation(230, 4);
-			// FlashTeaseScript.g:230:4: ( '0' .. '9' )+
+			DebugLocation(232, 4);
+			// FlashTeaseScript.g:232:4: ( '0' .. '9' )+
 			int cnt4=0;
 			try { DebugEnterSubRule(4);
 			while (true)
@@ -1720,7 +1757,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 					DebugEnterAlt(1);
 					// FlashTeaseScript.g:
 					{
-					DebugLocation(230, 4);
+					DebugLocation(232, 4);
 					input.Consume();
 
 
@@ -1750,8 +1787,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("INTEGER", 41);
-			LeaveRule("INTEGER", 41);
+			TraceOut("INTEGER", 42);
+			LeaveRule("INTEGER", 42);
 			LeaveRule_INTEGER();
 		}
 	}
@@ -1765,18 +1802,18 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	private void mLETTERS()
 	{
 		EnterRule_LETTERS();
-		EnterRule("LETTERS", 42);
-		TraceIn("LETTERS", 42);
+		EnterRule("LETTERS", 43);
+		TraceIn("LETTERS", 43);
 		try
 		{
 			int _type = LETTERS;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:234:2: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
+			// FlashTeaseScript.g:236:2: ( ( 'a' .. 'z' | 'A' .. 'Z' )+ )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:234:4: ( 'a' .. 'z' | 'A' .. 'Z' )+
+			// FlashTeaseScript.g:236:4: ( 'a' .. 'z' | 'A' .. 'Z' )+
 			{
-			DebugLocation(234, 4);
-			// FlashTeaseScript.g:234:4: ( 'a' .. 'z' | 'A' .. 'Z' )+
+			DebugLocation(236, 4);
+			// FlashTeaseScript.g:236:4: ( 'a' .. 'z' | 'A' .. 'Z' )+
 			int cnt5=0;
 			try { DebugEnterSubRule(5);
 			while (true)
@@ -1798,7 +1835,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 					DebugEnterAlt(1);
 					// FlashTeaseScript.g:
 					{
-					DebugLocation(234, 4);
+					DebugLocation(236, 4);
 					input.Consume();
 
 
@@ -1828,8 +1865,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("LETTERS", 42);
-			LeaveRule("LETTERS", 42);
+			TraceOut("LETTERS", 43);
+			LeaveRule("LETTERS", 43);
 			LeaveRule_LETTERS();
 		}
 	}
@@ -1843,17 +1880,17 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	private void mWS()
 	{
 		EnterRule_WS();
-		EnterRule("WS", 43);
-		TraceIn("WS", 43);
+		EnterRule("WS", 44);
+		TraceIn("WS", 44);
 		try
 		{
 			int _type = WS;
 			int _channel = DefaultTokenChannel;
-			// FlashTeaseScript.g:238:2: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
+			// FlashTeaseScript.g:240:2: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:238:4: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+			// FlashTeaseScript.g:240:4: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
 			{
-			DebugLocation(238, 4);
+			DebugLocation(240, 4);
 			if ((input.LA(1)>='\t' && input.LA(1)<='\n')||(input.LA(1)>='\f' && input.LA(1)<='\r')||input.LA(1)==' ')
 			{
 				input.Consume();
@@ -1866,7 +1903,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 				Recover(mse);
 				throw mse;}
 
-			DebugLocation(238, 34);
+			DebugLocation(240, 34);
 			 Skip(); 
 
 			}
@@ -1876,8 +1913,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("WS", 43);
-			LeaveRule("WS", 43);
+			TraceOut("WS", 44);
+			LeaveRule("WS", 44);
 			LeaveRule_WS();
 		}
 	}
@@ -1885,8 +1922,8 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 
 	public override void mTokens()
 	{
-		// FlashTeaseScript.g:1:8: ( T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | SEC | MIN | NORMAL | HIDDEN | SECRET | QUOTED_STRING | INTEGER | LETTERS | WS )
-		int alt6=43;
+		// FlashTeaseScript.g:1:8: ( T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | SEC | MIN | HRS | NORMAL | HIDDEN | SECRET | QUOTED_STRING | INTEGER | LETTERS | WS )
+		int alt6=44;
 		try { DebugEnterDecision(6, false);
 		try
 		{
@@ -1902,307 +1939,307 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 		{
 		case 1:
 			DebugEnterAlt(1);
-			// FlashTeaseScript.g:1:10: T__38
+			// FlashTeaseScript.g:1:10: T__39
 			{
 			DebugLocation(1, 10);
-			mT__38(); 
+			mT__39(); 
 
 			}
 			break;
 		case 2:
 			DebugEnterAlt(2);
-			// FlashTeaseScript.g:1:16: T__39
+			// FlashTeaseScript.g:1:16: T__40
 			{
 			DebugLocation(1, 16);
-			mT__39(); 
+			mT__40(); 
 
 			}
 			break;
 		case 3:
 			DebugEnterAlt(3);
-			// FlashTeaseScript.g:1:22: T__40
+			// FlashTeaseScript.g:1:22: T__41
 			{
 			DebugLocation(1, 22);
-			mT__40(); 
+			mT__41(); 
 
 			}
 			break;
 		case 4:
 			DebugEnterAlt(4);
-			// FlashTeaseScript.g:1:28: T__41
+			// FlashTeaseScript.g:1:28: T__42
 			{
 			DebugLocation(1, 28);
-			mT__41(); 
+			mT__42(); 
 
 			}
 			break;
 		case 5:
 			DebugEnterAlt(5);
-			// FlashTeaseScript.g:1:34: T__42
+			// FlashTeaseScript.g:1:34: T__43
 			{
 			DebugLocation(1, 34);
-			mT__42(); 
+			mT__43(); 
 
 			}
 			break;
 		case 6:
 			DebugEnterAlt(6);
-			// FlashTeaseScript.g:1:40: T__43
+			// FlashTeaseScript.g:1:40: T__44
 			{
 			DebugLocation(1, 40);
-			mT__43(); 
+			mT__44(); 
 
 			}
 			break;
 		case 7:
 			DebugEnterAlt(7);
-			// FlashTeaseScript.g:1:46: T__44
+			// FlashTeaseScript.g:1:46: T__45
 			{
 			DebugLocation(1, 46);
-			mT__44(); 
+			mT__45(); 
 
 			}
 			break;
 		case 8:
 			DebugEnterAlt(8);
-			// FlashTeaseScript.g:1:52: T__45
+			// FlashTeaseScript.g:1:52: T__46
 			{
 			DebugLocation(1, 52);
-			mT__45(); 
+			mT__46(); 
 
 			}
 			break;
 		case 9:
 			DebugEnterAlt(9);
-			// FlashTeaseScript.g:1:58: T__46
+			// FlashTeaseScript.g:1:58: T__47
 			{
 			DebugLocation(1, 58);
-			mT__46(); 
+			mT__47(); 
 
 			}
 			break;
 		case 10:
 			DebugEnterAlt(10);
-			// FlashTeaseScript.g:1:64: T__47
+			// FlashTeaseScript.g:1:64: T__48
 			{
 			DebugLocation(1, 64);
-			mT__47(); 
+			mT__48(); 
 
 			}
 			break;
 		case 11:
 			DebugEnterAlt(11);
-			// FlashTeaseScript.g:1:70: T__48
+			// FlashTeaseScript.g:1:70: T__49
 			{
 			DebugLocation(1, 70);
-			mT__48(); 
+			mT__49(); 
 
 			}
 			break;
 		case 12:
 			DebugEnterAlt(12);
-			// FlashTeaseScript.g:1:76: T__49
+			// FlashTeaseScript.g:1:76: T__50
 			{
 			DebugLocation(1, 76);
-			mT__49(); 
+			mT__50(); 
 
 			}
 			break;
 		case 13:
 			DebugEnterAlt(13);
-			// FlashTeaseScript.g:1:82: T__50
+			// FlashTeaseScript.g:1:82: T__51
 			{
 			DebugLocation(1, 82);
-			mT__50(); 
+			mT__51(); 
 
 			}
 			break;
 		case 14:
 			DebugEnterAlt(14);
-			// FlashTeaseScript.g:1:88: T__51
+			// FlashTeaseScript.g:1:88: T__52
 			{
 			DebugLocation(1, 88);
-			mT__51(); 
+			mT__52(); 
 
 			}
 			break;
 		case 15:
 			DebugEnterAlt(15);
-			// FlashTeaseScript.g:1:94: T__52
+			// FlashTeaseScript.g:1:94: T__53
 			{
 			DebugLocation(1, 94);
-			mT__52(); 
+			mT__53(); 
 
 			}
 			break;
 		case 16:
 			DebugEnterAlt(16);
-			// FlashTeaseScript.g:1:100: T__53
+			// FlashTeaseScript.g:1:100: T__54
 			{
 			DebugLocation(1, 100);
-			mT__53(); 
+			mT__54(); 
 
 			}
 			break;
 		case 17:
 			DebugEnterAlt(17);
-			// FlashTeaseScript.g:1:106: T__54
+			// FlashTeaseScript.g:1:106: T__55
 			{
 			DebugLocation(1, 106);
-			mT__54(); 
+			mT__55(); 
 
 			}
 			break;
 		case 18:
 			DebugEnterAlt(18);
-			// FlashTeaseScript.g:1:112: T__55
+			// FlashTeaseScript.g:1:112: T__56
 			{
 			DebugLocation(1, 112);
-			mT__55(); 
+			mT__56(); 
 
 			}
 			break;
 		case 19:
 			DebugEnterAlt(19);
-			// FlashTeaseScript.g:1:118: T__56
+			// FlashTeaseScript.g:1:118: T__57
 			{
 			DebugLocation(1, 118);
-			mT__56(); 
+			mT__57(); 
 
 			}
 			break;
 		case 20:
 			DebugEnterAlt(20);
-			// FlashTeaseScript.g:1:124: T__57
+			// FlashTeaseScript.g:1:124: T__58
 			{
 			DebugLocation(1, 124);
-			mT__57(); 
+			mT__58(); 
 
 			}
 			break;
 		case 21:
 			DebugEnterAlt(21);
-			// FlashTeaseScript.g:1:130: T__58
+			// FlashTeaseScript.g:1:130: T__59
 			{
 			DebugLocation(1, 130);
-			mT__58(); 
+			mT__59(); 
 
 			}
 			break;
 		case 22:
 			DebugEnterAlt(22);
-			// FlashTeaseScript.g:1:136: T__59
+			// FlashTeaseScript.g:1:136: T__60
 			{
 			DebugLocation(1, 136);
-			mT__59(); 
+			mT__60(); 
 
 			}
 			break;
 		case 23:
 			DebugEnterAlt(23);
-			// FlashTeaseScript.g:1:142: T__60
+			// FlashTeaseScript.g:1:142: T__61
 			{
 			DebugLocation(1, 142);
-			mT__60(); 
+			mT__61(); 
 
 			}
 			break;
 		case 24:
 			DebugEnterAlt(24);
-			// FlashTeaseScript.g:1:148: T__61
+			// FlashTeaseScript.g:1:148: T__62
 			{
 			DebugLocation(1, 148);
-			mT__61(); 
+			mT__62(); 
 
 			}
 			break;
 		case 25:
 			DebugEnterAlt(25);
-			// FlashTeaseScript.g:1:154: T__62
+			// FlashTeaseScript.g:1:154: T__63
 			{
 			DebugLocation(1, 154);
-			mT__62(); 
+			mT__63(); 
 
 			}
 			break;
 		case 26:
 			DebugEnterAlt(26);
-			// FlashTeaseScript.g:1:160: T__63
+			// FlashTeaseScript.g:1:160: T__64
 			{
 			DebugLocation(1, 160);
-			mT__63(); 
+			mT__64(); 
 
 			}
 			break;
 		case 27:
 			DebugEnterAlt(27);
-			// FlashTeaseScript.g:1:166: T__64
+			// FlashTeaseScript.g:1:166: T__65
 			{
 			DebugLocation(1, 166);
-			mT__64(); 
+			mT__65(); 
 
 			}
 			break;
 		case 28:
 			DebugEnterAlt(28);
-			// FlashTeaseScript.g:1:172: T__65
+			// FlashTeaseScript.g:1:172: T__66
 			{
 			DebugLocation(1, 172);
-			mT__65(); 
+			mT__66(); 
 
 			}
 			break;
 		case 29:
 			DebugEnterAlt(29);
-			// FlashTeaseScript.g:1:178: T__66
+			// FlashTeaseScript.g:1:178: T__67
 			{
 			DebugLocation(1, 178);
-			mT__66(); 
+			mT__67(); 
 
 			}
 			break;
 		case 30:
 			DebugEnterAlt(30);
-			// FlashTeaseScript.g:1:184: T__67
+			// FlashTeaseScript.g:1:184: T__68
 			{
 			DebugLocation(1, 184);
-			mT__67(); 
+			mT__68(); 
 
 			}
 			break;
 		case 31:
 			DebugEnterAlt(31);
-			// FlashTeaseScript.g:1:190: T__68
+			// FlashTeaseScript.g:1:190: T__69
 			{
 			DebugLocation(1, 190);
-			mT__68(); 
+			mT__69(); 
 
 			}
 			break;
 		case 32:
 			DebugEnterAlt(32);
-			// FlashTeaseScript.g:1:196: T__69
+			// FlashTeaseScript.g:1:196: T__70
 			{
 			DebugLocation(1, 196);
-			mT__69(); 
+			mT__70(); 
 
 			}
 			break;
 		case 33:
 			DebugEnterAlt(33);
-			// FlashTeaseScript.g:1:202: T__70
+			// FlashTeaseScript.g:1:202: T__71
 			{
 			DebugLocation(1, 202);
-			mT__70(); 
+			mT__71(); 
 
 			}
 			break;
 		case 34:
 			DebugEnterAlt(34);
-			// FlashTeaseScript.g:1:208: T__71
+			// FlashTeaseScript.g:1:208: T__72
 			{
 			DebugLocation(1, 208);
-			mT__71(); 
+			mT__72(); 
 
 			}
 			break;
@@ -2226,63 +2263,72 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 			break;
 		case 37:
 			DebugEnterAlt(37);
-			// FlashTeaseScript.g:1:222: NORMAL
+			// FlashTeaseScript.g:1:222: HRS
 			{
 			DebugLocation(1, 222);
-			mNORMAL(); 
+			mHRS(); 
 
 			}
 			break;
 		case 38:
 			DebugEnterAlt(38);
-			// FlashTeaseScript.g:1:229: HIDDEN
+			// FlashTeaseScript.g:1:226: NORMAL
 			{
-			DebugLocation(1, 229);
-			mHIDDEN(); 
+			DebugLocation(1, 226);
+			mNORMAL(); 
 
 			}
 			break;
 		case 39:
 			DebugEnterAlt(39);
-			// FlashTeaseScript.g:1:236: SECRET
+			// FlashTeaseScript.g:1:233: HIDDEN
 			{
-			DebugLocation(1, 236);
-			mSECRET(); 
+			DebugLocation(1, 233);
+			mHIDDEN(); 
 
 			}
 			break;
 		case 40:
 			DebugEnterAlt(40);
-			// FlashTeaseScript.g:1:243: QUOTED_STRING
+			// FlashTeaseScript.g:1:240: SECRET
 			{
-			DebugLocation(1, 243);
-			mQUOTED_STRING(); 
+			DebugLocation(1, 240);
+			mSECRET(); 
 
 			}
 			break;
 		case 41:
 			DebugEnterAlt(41);
-			// FlashTeaseScript.g:1:257: INTEGER
+			// FlashTeaseScript.g:1:247: QUOTED_STRING
 			{
-			DebugLocation(1, 257);
-			mINTEGER(); 
+			DebugLocation(1, 247);
+			mQUOTED_STRING(); 
 
 			}
 			break;
 		case 42:
 			DebugEnterAlt(42);
-			// FlashTeaseScript.g:1:265: LETTERS
+			// FlashTeaseScript.g:1:261: INTEGER
 			{
-			DebugLocation(1, 265);
-			mLETTERS(); 
+			DebugLocation(1, 261);
+			mINTEGER(); 
 
 			}
 			break;
 		case 43:
 			DebugEnterAlt(43);
-			// FlashTeaseScript.g:1:273: WS
+			// FlashTeaseScript.g:1:269: LETTERS
 			{
-			DebugLocation(1, 273);
+			DebugLocation(1, 269);
+			mLETTERS(); 
+
+			}
+			break;
+		case 44:
+			DebugEnterAlt(44);
+			// FlashTeaseScript.g:1:277: WS
+			{
+			DebugLocation(1, 277);
 			mWS(); 
 
 			}
@@ -2306,57 +2352,57 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 	{
 		private const string DFA6_eotS =
 			"\x3\xFFFF\x1\x1B\x1\xFFFF\x3\x18\x1\x1F\xD\x18\x6\xFFFF\x3\x18\x1\xFFFF"+
-			"\x1C\x18\x1\xFFFF\x5\x18\x1\x5E\x1\xFFFF\x6\x18\x1\x66\x5\x18\x1\xFFFF"+
-			"\x3\x18\x1\xFFFF\x9\x18\x1\xFFFF\x2\x18\x1\xFFFF\x2\x18\x1\xFFFF\x1\x18"+
-			"\x1\xFFFF\x7\x18\x1\xFFFF\x3\x18\x1\xFFFF\x4\x18\x1\xFFFF\x1\x18\x1\xFFFF"+
-			"\x6\x18\x2\xFFFF\x1\x18\x1\xFFFF\x1\x94\x1\x18\x1\xFFFF\x1\x97\x1\xFFFF"+
-			"\x1\x18\x1\xFFFF\x1\x99\x1\x9A\x1\xFFFF\x1\x9B\x2\xFFFF\x1\x9D\x3\xFFFF"+
-			"\x1\x18\x2\xFFFF\x1\x18\x7\xFFFF";
+			"\x1D\x18\x1\xFFFF\x2\x18\x1\x5D\x3\x18\x1\x61\x1\xFFFF\x6\x18\x1\x69"+
+			"\x5\x18\x1\xFFFF\x3\x18\x1\xFFFF\x6\x18\x1\xFFFF\x3\x18\x1\xFFFF\x2\x18"+
+			"\x1\xFFFF\x2\x18\x1\xFFFF\x1\x18\x1\xFFFF\x7\x18\x1\xFFFF\x3\x18\x1\xFFFF"+
+			"\x4\x18\x1\xFFFF\x1\x18\x1\xFFFF\x6\x18\x2\xFFFF\x1\x18\x1\xFFFF\x1\x97"+
+			"\x1\x18\x1\xFFFF\x1\x9A\x1\xFFFF\x1\x18\x1\xFFFF\x1\x9C\x1\x9D\x1\xFFFF"+
+			"\x1\x9E\x2\xFFFF\x1\xA0\x3\xFFFF\x1\x18\x2\xFFFF\x1\x18\x7\xFFFF";
 		private const string DFA6_eofS =
-			"\xA0\xFFFF";
+			"\xA3\xFFFF";
 		private const string DFA6_minS =
 			"\x1\x9\x2\xFFFF\x1\x63\x1\xFFFF\x1\x63\x1\x75\x1\x65\x1\x41\x1\x72\x1"+
 			"\x6F\x1\x69\x1\x6E\x1\x65\x1\x6F\x2\x61\x1\x65\x1\x61\x1\x6E\x2\x65\x6"+
-			"\xFFFF\x2\x74\x1\x6C\x1\xFFFF\x1\x6F\x1\x28\x1\x64\x1\x72\x1\x73\x1\x64"+
+			"\xFFFF\x2\x74\x1\x6C\x1\xFFFF\x1\x6F\x1\x28\x1\x64\x1\x72\x2\x73\x1\x64"+
 			"\x1\x6C\x1\x6E\x1\x3A\x1\x67\x1\x63\x1\x65\x1\x6E\x1\x63\x1\x75\x1\x79"+
 			"\x1\x72\x1\x78\x1\x6D\x1\x3A\x1\x73\x1\x72\x1\x73\x1\x28\x1\x69\x1\x74"+
-			"\x1\x61\x1\x6D\x1\xFFFF\x1\x64\x1\x69\x1\x74\x1\x69\x1\x74\x1\x41\x1"+
-			"\xFFFF\x1\x6D\x1\x65\x1\x28\x1\x66\x1\x67\x1\x28\x1\x41\x1\x6E\x1\x6C"+
-			"\x1\x67\x1\x74\x1\x65\x1\xFFFF\x1\x65\x1\x74\x1\x3A\x1\xFFFF\x2\x6F\x1"+
-			"\x79\x1\x3A\x1\x65\x1\x7A\x1\x72\x1\x61\x1\x28\x1\xFFFF\x1\x61\x1\x28"+
-			"\x1\xFFFF\x1\x69\x1\x65\x1\xFFFF\x1\x65\x1\xFFFF\x1\x64\x2\x65\x2\x3A"+
-			"\x1\x74\x1\x28\x1\xFFFF\x2\x6E\x1\x28\x1\xFFFF\x1\x6E\x1\x28\x1\x75\x1"+
-			"\x3A\x1\xFFFF\x1\x6C\x1\xFFFF\x1\x78\x1\x28\x1\x74\x1\x28\x1\x3A\x1\x74"+
-			"\x2\xFFFF\x1\x28\x1\xFFFF\x1\x3A\x1\x73\x1\xFFFF\x1\x3A\x1\xFFFF\x1\x63"+
-			"\x1\xFFFF\x2\x41\x1\xFFFF\x1\x41\x2\xFFFF\x1\x3A\x3\xFFFF\x1\x28\x2\xFFFF"+
-			"\x1\x3A\x7\xFFFF";
-		private const string DFA6_maxS =
-			"\x1\x7A\x2\xFFFF\x1\x63\x1\xFFFF\x1\x63\x1\x75\x1\x65\x1\x7A\x1\x72\x2"+
-			"\x6F\x1\x6E\x1\x75\x1\x6F\x1\x72\x1\x61\x1\x74\x1\x6F\x1\x6E\x1\x65\x1"+
-			"\x6E\x6\xFFFF\x2\x74\x1\x6C\x1\xFFFF\x1\x6F\x1\x28\x1\x64\x1\x72\x1\x73"+
-			"\x1\x64\x1\x6C\x1\x6E\x1\x72\x1\x67\x1\x63\x1\x65\x1\x6E\x1\x74\x1\x75"+
-			"\x1\x79\x1\x72\x1\x78\x1\x6D\x1\x3A\x1\x73\x1\x72\x1\x73\x1\x28\x1\x69"+
-			"\x1\x74\x1\x61\x1\x6D\x1\xFFFF\x1\x64\x1\x69\x1\x74\x1\x69\x1\x74\x1"+
-			"\x7A\x1\xFFFF\x1\x6D\x1\x65\x1\x28\x1\x66\x1\x67\x1\x28\x1\x7A\x1\x6E"+
+			"\x1\x61\x1\x6D\x1\xFFFF\x1\x64\x1\x69\x1\x41\x1\x74\x1\x69\x1\x74\x1"+
+			"\x41\x1\xFFFF\x1\x6D\x1\x65\x1\x28\x1\x66\x1\x67\x1\x28\x1\x41\x1\x6E"+
 			"\x1\x6C\x1\x67\x1\x74\x1\x65\x1\xFFFF\x1\x65\x1\x74\x1\x3A\x1\xFFFF\x2"+
-			"\x6F\x1\x79\x1\x3A\x1\x65\x1\x7A\x1\x72\x1\x61\x1\x28\x1\xFFFF\x1\x61"+
-			"\x1\x28\x1\xFFFF\x1\x69\x1\x65\x1\xFFFF\x1\x65\x1\xFFFF\x1\x64\x2\x65"+
-			"\x2\x3A\x1\x74\x1\x28\x1\xFFFF\x2\x6E\x1\x28\x1\xFFFF\x1\x6E\x1\x28\x1"+
-			"\x75\x1\x3A\x1\xFFFF\x1\x6C\x1\xFFFF\x1\x78\x1\x28\x1\x74\x1\x28\x1\x3A"+
-			"\x1\x74\x2\xFFFF\x1\x28\x1\xFFFF\x1\x7A\x1\x73\x1\xFFFF\x1\x7A\x1\xFFFF"+
-			"\x1\x63\x1\xFFFF\x2\x7A\x1\xFFFF\x1\x7A\x2\xFFFF\x1\x7A\x3\xFFFF\x1\x28"+
-			"\x2\xFFFF\x1\x3A\x7\xFFFF";
+			"\x6F\x1\x79\x1\x3A\x1\x65\x1\x7A\x1\xFFFF\x1\x72\x1\x61\x1\x28\x1\xFFFF"+
+			"\x1\x61\x1\x28\x1\xFFFF\x1\x69\x1\x65\x1\xFFFF\x1\x65\x1\xFFFF\x1\x64"+
+			"\x2\x65\x2\x3A\x1\x74\x1\x28\x1\xFFFF\x2\x6E\x1\x28\x1\xFFFF\x1\x6E\x1"+
+			"\x28\x1\x75\x1\x3A\x1\xFFFF\x1\x6C\x1\xFFFF\x1\x78\x1\x28\x1\x74\x1\x28"+
+			"\x1\x3A\x1\x74\x2\xFFFF\x1\x28\x1\xFFFF\x1\x3A\x1\x73\x1\xFFFF\x1\x3A"+
+			"\x1\xFFFF\x1\x63\x1\xFFFF\x2\x41\x1\xFFFF\x1\x41\x2\xFFFF\x1\x3A\x3\xFFFF"+
+			"\x1\x28\x2\xFFFF\x1\x3A\x7\xFFFF";
+		private const string DFA6_maxS =
+			"\x1\x7A\x2\xFFFF\x1\x63\x1\xFFFF\x1\x63\x1\x75\x1\x65\x1\x7A\x1\x72\x1"+
+			"\x6F\x1\x72\x1\x6E\x1\x75\x1\x6F\x1\x72\x1\x61\x1\x74\x1\x6F\x1\x6E\x1"+
+			"\x65\x1\x6E\x6\xFFFF\x2\x74\x1\x6C\x1\xFFFF\x1\x6F\x1\x28\x1\x64\x1\x72"+
+			"\x2\x73\x1\x64\x1\x6C\x1\x6E\x1\x72\x1\x67\x1\x63\x1\x65\x1\x6E\x1\x74"+
+			"\x1\x75\x1\x79\x1\x72\x1\x78\x1\x6D\x1\x3A\x1\x73\x1\x72\x1\x73\x1\x28"+
+			"\x1\x69\x1\x74\x1\x61\x1\x6D\x1\xFFFF\x1\x64\x1\x69\x1\x7A\x1\x74\x1"+
+			"\x69\x1\x74\x1\x7A\x1\xFFFF\x1\x6D\x1\x65\x1\x28\x1\x66\x1\x67\x1\x28"+
+			"\x1\x7A\x1\x6E\x1\x6C\x1\x67\x1\x74\x1\x65\x1\xFFFF\x1\x65\x1\x74\x1"+
+			"\x3A\x1\xFFFF\x2\x6F\x1\x79\x1\x3A\x1\x65\x1\x7A\x1\xFFFF\x1\x72\x1\x61"+
+			"\x1\x28\x1\xFFFF\x1\x61\x1\x28\x1\xFFFF\x1\x69\x1\x65\x1\xFFFF\x1\x65"+
+			"\x1\xFFFF\x1\x64\x2\x65\x2\x3A\x1\x74\x1\x28\x1\xFFFF\x2\x6E\x1\x28\x1"+
+			"\xFFFF\x1\x6E\x1\x28\x1\x75\x1\x3A\x1\xFFFF\x1\x6C\x1\xFFFF\x1\x78\x1"+
+			"\x28\x1\x74\x1\x28\x1\x3A\x1\x74\x2\xFFFF\x1\x28\x1\xFFFF\x1\x7A\x1\x73"+
+			"\x1\xFFFF\x1\x7A\x1\xFFFF\x1\x63\x1\xFFFF\x2\x7A\x1\xFFFF\x1\x7A\x2\xFFFF"+
+			"\x1\x7A\x3\xFFFF\x1\x28\x2\xFFFF\x1\x3A\x7\xFFFF";
 		private const string DFA6_acceptS =
-			"\x1\xFFFF\x1\x1\x1\x2\x1\xFFFF\x1\x5\x11\xFFFF\x1\x28\x1\x29\x1\x2A\x1"+
-			"\x2B\x1\x4\x1\x3\x3\xFFFF\x1\xA\x1C\xFFFF\x1\xC\x6\xFFFF\x1\x12\xC\xFFFF"+
-			"\x1\x1E\x3\xFFFF\x1\x22\x9\xFFFF\x1\x24\x2\xFFFF\x1\x14\x2\xFFFF\x1\x17"+
-			"\x1\xFFFF\x1\x23\x7\xFFFF\x1\x21\x3\xFFFF\x1\xB\x4\xFFFF\x1\x11\x1\xFFFF"+
-			"\x1\x13\x6\xFFFF\x1\x1C\x1\x1D\x1\xFFFF\x1\x20\x2\xFFFF\x1\x9\x1\xFFFF"+
-			"\x1\xE\x1\xFFFF\x1\x10\x2\xFFFF\x1\x16\x1\xFFFF\x1\x18\x1\x19\x1\xFFFF"+
-			"\x1\x1F\x1\x7\x1\x6\x1\xFFFF\x1\xD\x1\x26\x1\xFFFF\x1\x25\x1\x15\x1\x27"+
-			"\x1\x1B\x1\x1A\x1\x8\x1\xF";
+			"\x1\xFFFF\x1\x1\x1\x2\x1\xFFFF\x1\x5\x11\xFFFF\x1\x29\x1\x2A\x1\x2B\x1"+
+			"\x2C\x1\x4\x1\x3\x3\xFFFF\x1\xA\x1D\xFFFF\x1\xC\x7\xFFFF\x1\x12\xC\xFFFF"+
+			"\x1\x1E\x3\xFFFF\x1\x22\x6\xFFFF\x1\x25\x3\xFFFF\x1\x24\x2\xFFFF\x1\x14"+
+			"\x2\xFFFF\x1\x17\x1\xFFFF\x1\x23\x7\xFFFF\x1\x21\x3\xFFFF\x1\xB\x4\xFFFF"+
+			"\x1\x11\x1\xFFFF\x1\x13\x6\xFFFF\x1\x1C\x1\x1D\x1\xFFFF\x1\x20\x2\xFFFF"+
+			"\x1\x9\x1\xFFFF\x1\xE\x1\xFFFF\x1\x10\x2\xFFFF\x1\x16\x1\xFFFF\x1\x18"+
+			"\x1\x19\x1\xFFFF\x1\x1F\x1\x7\x1\x6\x1\xFFFF\x1\xD\x1\x27\x1\xFFFF\x1"+
+			"\x26\x1\x15\x1\x28\x1\x1B\x1\x1A\x1\x8\x1\xF";
 		private const string DFA6_specialS =
-			"\xA0\xFFFF}>";
+			"\xA3\xFFFF}>";
 		private static readonly string[] DFA6_transitionS =
 			{
 				"\x2\x19\x1\xFFFF\x2\x19\x12\xFFFF\x1\x19\x1\xFFFF\x1\x16\x1\x1\x3\xFFFF"+
@@ -2374,28 +2420,27 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 				"\x1A\x18\x6\xFFFF\x1A\x18",
 				"\x1\x20",
 				"\x1\x21",
-				"\x1\x22\x5\xFFFF\x1\x23",
-				"\x1\x24",
-				"\x1\x25\x3\xFFFF\x1\x27\xB\xFFFF\x1\x26",
-				"\x1\x28",
-				"\x1\x29\x7\xFFFF\x1\x2A\x8\xFFFF\x1\x2B",
-				"\x1\x2C",
-				"\x1\x2D\x9\xFFFF\x1\x2E\x4\xFFFF\x1\x2F",
-				"\x1\x30\x3\xFFFF\x1\x31\x3\xFFFF\x1\x32\x5\xFFFF\x1\x33",
-				"\x1\x34",
+				"\x1\x22\x5\xFFFF\x1\x23\x2\xFFFF\x1\x24",
+				"\x1\x25",
+				"\x1\x26\x3\xFFFF\x1\x28\xB\xFFFF\x1\x27",
+				"\x1\x29",
+				"\x1\x2A\x7\xFFFF\x1\x2B\x8\xFFFF\x1\x2C",
+				"\x1\x2D",
+				"\x1\x2E\x9\xFFFF\x1\x2F\x4\xFFFF\x1\x30",
+				"\x1\x31\x3\xFFFF\x1\x32\x3\xFFFF\x1\x33\x5\xFFFF\x1\x34",
 				"\x1\x35",
-				"\x1\x36\x8\xFFFF\x1\x37",
+				"\x1\x36",
+				"\x1\x37\x8\xFFFF\x1\x38",
 				"",
 				"",
 				"",
 				"",
 				"",
 				"",
-				"\x1\x38",
 				"\x1\x39",
 				"\x1\x3A",
-				"",
 				"\x1\x3B",
+				"",
 				"\x1\x3C",
 				"\x1\x3D",
 				"\x1\x3E",
@@ -2403,14 +2448,14 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 				"\x1\x40",
 				"\x1\x41",
 				"\x1\x42",
-				"\x1\x43\x37\xFFFF\x1\x44",
-				"\x1\x45",
-				"\x1\x46",
+				"\x1\x43",
+				"\x1\x44",
+				"\x1\x45\x37\xFFFF\x1\x46",
 				"\x1\x47",
 				"\x1\x48",
-				"\x1\x4A\x10\xFFFF\x1\x49",
-				"\x1\x4B",
-				"\x1\x4C",
+				"\x1\x49",
+				"\x1\x4A",
+				"\x1\x4C\x10\xFFFF\x1\x4B",
 				"\x1\x4D",
 				"\x1\x4E",
 				"\x1\x4F",
@@ -2423,27 +2468,26 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 				"\x1\x56",
 				"\x1\x57",
 				"\x1\x58",
-				"",
 				"\x1\x59",
 				"\x1\x5A",
+				"",
 				"\x1\x5B",
 				"\x1\x5C",
-				"\x1\x5D",
 				"\x1A\x18\x6\xFFFF\x1A\x18",
-				"",
+				"\x1\x5E",
 				"\x1\x5F",
 				"\x1\x60",
-				"\x1\x61",
+				"\x1A\x18\x6\xFFFF\x1A\x18",
+				"",
 				"\x1\x62",
 				"\x1\x63",
 				"\x1\x64",
-				"\x1A\x18\x6\xFFFF\x11\x18\x1\x65\x8\x18",
+				"\x1\x65",
+				"\x1\x66",
 				"\x1\x67",
-				"\x1\x68",
-				"\x1\x69",
+				"\x1A\x18\x6\xFFFF\x11\x18\x1\x68\x8\x18",
 				"\x1\x6A",
 				"\x1\x6B",
-				"",
 				"\x1\x6C",
 				"\x1\x6D",
 				"\x1\x6E",
@@ -2451,6 +2495,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 				"\x1\x6F",
 				"\x1\x70",
 				"\x1\x71",
+				"",
 				"\x1\x72",
 				"\x1\x73",
 				"\x1\x74",
@@ -2460,20 +2505,20 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 				"",
 				"\x1\x78",
 				"\x1\x79",
-				"",
 				"\x1\x7A",
-				"\x1\x7B",
 				"",
+				"\x1\x7B",
 				"\x1\x7C",
 				"",
 				"\x1\x7D",
 				"\x1\x7E",
+				"",
 				"\x1\x7F",
+				"",
 				"\x1\x80",
 				"\x1\x81",
 				"\x1\x82",
 				"\x1\x83",
-				"",
 				"\x1\x84",
 				"\x1\x85",
 				"\x1\x86",
@@ -2481,41 +2526,45 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 				"\x1\x87",
 				"\x1\x88",
 				"\x1\x89",
+				"",
 				"\x1\x8A",
-				"",
 				"\x1\x8B",
-				"",
 				"\x1\x8C",
 				"\x1\x8D",
+				"",
 				"\x1\x8E",
+				"",
 				"\x1\x8F",
 				"\x1\x90",
 				"\x1\x91",
-				"",
-				"",
 				"\x1\x92",
+				"\x1\x93",
+				"\x1\x94",
 				"",
-				"\x1\x93\x6\xFFFF\x1A\x18\x6\xFFFF\x1A\x18",
+				"",
 				"\x1\x95",
 				"",
 				"\x1\x96\x6\xFFFF\x1A\x18\x6\xFFFF\x1A\x18",
-				"",
 				"\x1\x98",
 				"",
-				"\x1A\x18\x6\xFFFF\x1A\x18",
-				"\x1A\x18\x6\xFFFF\x1A\x18",
+				"\x1\x99\x6\xFFFF\x1A\x18\x6\xFFFF\x1A\x18",
+				"",
+				"\x1\x9B",
 				"",
 				"\x1A\x18\x6\xFFFF\x1A\x18",
+				"\x1A\x18\x6\xFFFF\x1A\x18",
+				"",
+				"\x1A\x18\x6\xFFFF\x1A\x18",
 				"",
 				"",
-				"\x1\x9C\x6\xFFFF\x1A\x18\x6\xFFFF\x1A\x18",
+				"\x1\x9F\x6\xFFFF\x1A\x18\x6\xFFFF\x1A\x18",
 				"",
 				"",
 				"",
-				"\x1\x9E",
+				"\x1\xA1",
 				"",
 				"",
-				"\x1\x9F",
+				"\x1\xA2",
 				"",
 				"",
 				"",
@@ -2556,7 +2605,7 @@ public partial class FlashTeaseScriptLexer : Antlr.Runtime.Lexer
 			this.transition = DFA6_transition;
 		}
 
-		public override string Description { get { return "1:1: Tokens : ( T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | SEC | MIN | NORMAL | HIDDEN | SECRET | QUOTED_STRING | INTEGER | LETTERS | WS );"; } }
+		public override string Description { get { return "1:1: Tokens : ( T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | SEC | MIN | HRS | NORMAL | HIDDEN | SECRET | QUOTED_STRING | INTEGER | LETTERS | WS );"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{

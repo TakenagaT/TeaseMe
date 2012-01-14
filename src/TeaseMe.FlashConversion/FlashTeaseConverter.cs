@@ -158,7 +158,11 @@ namespace TeaseMe.FlashConversion
             if (timeNode != null)
             {
                 int secs = System.Convert.ToInt32(timeNode.GetChild(0).Text);
-                if (timeNode.GetChild(1) != null && timeNode.GetChild(1).Text == "min")
+                if (timeNode.GetChild(1) != null && timeNode.GetChild(1).Text == "hrs")
+                {
+                    secs = secs * 60 * 60;
+                }
+                else if (timeNode.GetChild(1) != null && timeNode.GetChild(1).Text == "min")
                 {
                     secs = secs * 60;
                 }
