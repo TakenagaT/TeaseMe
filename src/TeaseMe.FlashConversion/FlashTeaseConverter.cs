@@ -81,8 +81,11 @@ namespace TeaseMe.FlashConversion
                 }
 
                 // Replace special quotes.
-                line = line.Replace('’', '\'');
+                line = line.Replace(@"\'", "&quot;");
+                line = line.Replace('’', '"');
 
+                // Some scripts have an empty media instruction.
+                line = line.Replace(",media:'',", ",");
 
 
                 result.Add(line);
@@ -209,59 +212,34 @@ namespace TeaseMe.FlashConversion
             var timeNode = delayNode.GetFirstChildWithType(FlashTeaseScriptLexer.TIME) as CommonTree;
             if (timeNode != null)
             {
-                int minSecs = System.Convert.ToInt32(timeNode.GetChild(0).Text);
-                int maxSecs = -1;
-
-                if (timeNode.ChildCount == 1)
+                var minNode = (CommonTree)timeNode.GetFirstChildWithType(FlashTeaseScriptLexer.MIN);
+                int minSecs = System.Convert.ToInt32(minNode.GetChild(0).Text);
+                if (minNode.ChildCount > 1)
                 {
-                    // no units are used, assume seconds.
-                    result.Seconds = String.Format("{0}", minSecs);
-                }
-                else
-                {
-                    var childText = timeNode.GetChild(1).Text;
-                    if (int.TryParse(childText, out maxSecs))
+                    var minUnit = minNode.GetChild(1).Text;
+                    switch (minUnit)
                     {
-                        // no units are used for minSecs, assume seconds.
-
-                        if (timeNode.ChildCount > 2)
-                        {
-                            // maxSecs sec/min/hrs
-                            var maxUnit = timeNode.GetChild(2).Text;
-                            switch (maxUnit)
-                            {
-                                case "hrs": { maxSecs = maxSecs * 60 * 60; break; }
-                                case "min": { maxSecs = maxSecs * 60; break; }
-                                default: break;
-                            }
-                        }
+                        case "hrs": { minSecs = minSecs * 60 * 60; break; }
+                        case "min": { minSecs = minSecs * 60; break; }
+                        default: break;
                     }
-                    else
+                }
+
+                var maxNode = timeNode.GetFirstChildWithType(FlashTeaseScriptLexer.MAX) as CommonTree;
+                int maxSecs = -1;
+                if (maxNode != null)
+                {
+                    maxSecs = System.Convert.ToInt32(maxNode.GetChild(0).Text);
+                    if (maxNode.ChildCount > 1)
                     {
-                        switch (childText)
+                        var maxUnit = maxNode.GetChild(1).Text;
+                        switch (maxUnit)
                         {
-                            case "hrs": { minSecs = minSecs * 60 * 60; break; }
-                            case "min": { minSecs = minSecs * 60; break; }
+                            case "hrs": { maxSecs = maxSecs * 60 * 60; break; }
+                            case "min": { maxSecs = maxSecs * 60; break; }
                             default: break;
                         }
-
-                        if (timeNode.ChildCount > 2)
-                        {
-                            maxSecs = int.Parse(timeNode.GetChild(2).Text);
-
-                            if (timeNode.ChildCount > 3)
-                            {
-                                // maxSecs sec/min/hrs
-                                var maxUnit = timeNode.GetChild(3).Text;
-                                switch (maxUnit)
-                                {
-                                    case "hrs": { maxSecs = maxSecs * 60 * 60; break; }
-                                    case "min": { maxSecs = maxSecs * 60; break; }
-                                    default: break;
-                                }
-                            }
-                        }
-                    } 
+                    }
                 }
 
                 result.Seconds = (maxSecs > minSecs) ? String.Format("({0}..{1})", minSecs, maxSecs) : String.Format("{0}", minSecs);

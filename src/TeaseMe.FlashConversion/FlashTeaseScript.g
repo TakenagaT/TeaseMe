@@ -18,6 +18,8 @@ tokens {
 	GO;
 	HIDDEN;
 	ID;
+	MAX;
+	MIN;
 	MULT;
 	NO;
 	NORMAL;
@@ -199,26 +201,38 @@ targetDef
 	;
 
 timeDef
-//	:	'time:random('! timeRange ')'!
-//	|
-	:	'time:'! INTEGER timeUnit?
+	:	'time:random('! timeRange ')'!
+	|	'time:' timeValue 
+		-> ^(MIN timeValue)
 	;
 
-//timeRange
-//	:	'min:'! INTEGER timeUnit? ','! 'max:'! INTEGER timeUnit?
-//	;
+timeRange
+	:	MIN ':' timeValue ',' MAX ':' timeValue
+		-> ^(MIN timeValue) ^(MAX timeValue) 
+	;
+
+timeValue
+	:	INTEGER timeUnit?
+	;
+
+MAX	:	'max';
+MIN	:	'min';
 
 timeUnit
 	:	'sec' | 'min' | 'hrs'
 	;
 
 styleDef
-	:	'style:'! (NORMAL | HIDDEN | SECRET)
+	:	('style:normal' | 'style:\'normal\'') -> NORMAL
+	|	('style:hidden' | 'style:\'hidden\'') -> HIDDEN
+	|	('style:secret' | 'style:\'secret\'') -> SECRET
 	;
 
 NORMAL	: 'normal';
 HIDDEN	: 'hidden';
 SECRET	: 'secret';
+
+
 
 rangeDef
 	:	'range(' 'from:' INTEGER ',' 'to:' INTEGER ')'
