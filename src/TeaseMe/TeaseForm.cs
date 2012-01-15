@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
+using System.Reflection;
 using System.Windows.Forms;
-using System.Xml;
 using Microsoft.VisualBasic.Devices;
 using TeaseMe.Common;
 
@@ -17,40 +14,67 @@ namespace TeaseMe
     {
         private readonly Audio audio = new Audio();
 
-        static readonly  string DefaultUrl = ConfigurationManager.AppSettings["DefaultUrl"];
+        static readonly string DefaultUrl = ConfigurationManager.AppSettings["DefaultUrl"];
 
-        static readonly  string MetronomeAudio = ConfigurationManager.AppSettings["MetronomeAudio"];
+        static readonly string MetronomeAudio = ConfigurationManager.AppSettings["MetronomeAudio"];
 
         static readonly string HtmlTextTemplate = File.ReadAllText(@"Resources\HtmlTextTemplate.html");
 
+        private readonly DebugForm debugForm;
 
-        private Tease currentTease;
+        public Tease CurrentTease;
 
         private TeaseLibrary teaseLibrary;
 
         private int secondsUntilNextPage;
-        
-        private string ApplicationDirectory
+
+        private static string ApplicationDirectory
         {
             get { return new FileInfo(Application.ExecutablePath).DirectoryName; }
         }
 
+        public static string AssemblyTitle
+        {
+            get
+            {
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
+                if (attributes.Length > 0)
+                {
+                    var titleAttribute = (AssemblyTitleAttribute)attributes[0];
+                    if (titleAttribute.Title != "")
+                    {
+                        return titleAttribute.Title;
+                    }
+                }
+                return Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
+            }
+        }
+
+        public static string AssemblyVersion
+        {
+            get
+            {
+                var version = Assembly.GetExecutingAssembly().GetName().Version;
+                return String.Format("v{0}.{1}.{2}", version.Major, version.Minor, version.Build);
+            }
+        }
 
         public TeaseForm()
         {
             InitializeComponent();
+            debugForm = new DebugForm(this);
         }
 
 
         private void TeaseForm_Load(object sender, EventArgs e)
         {
-            Text = AboutForm.AssemblyTitle + " " + AboutForm.AssemblyVersion;
+            Text = AssemblyTitle + " " + AssemblyVersion;
 
             teaseLibrary = new TeaseLibrary(ApplicationDirectory);
 
             SetCurrentTease(teaseLibrary.EmptyTease());
 
-            DebugPanel.Visible = false;
+
         }
 
 
@@ -58,30 +82,40 @@ namespace TeaseMe
         {
             if (keyData == (Keys.Control | Keys.Shift | Keys.D))
             {
-                DebugPanel.Visible = !DebugPanel.Visible;
+                debugForm.Show();
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
-        
+
         private void SetCurrentTease(Tease tease)
         {
             try
             {
                 PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
 
-                currentTease = tease;
+                CurrentTease = tease;
 
-                TeaseTitleLabel.Text = currentTease.Title;
-                AuthorNameLabel.Text = (currentTease.Author != null) ? currentTease.Author.Name : String.Empty;
+                TeaseTitleLabel.Text = CurrentTease.Title;
+                if (!String.IsNullOrEmpty(CurrentTease.Title))
+                {
+                    TeaseTitleLabel.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Underline, GraphicsUnit.Point, 0);
+                    TeaseTitleLabel.ForeColor = Color.SkyBlue;
+                    ToolTips.SetToolTip(TeaseTitleLabel, String.Format("Open {0} in web browser", CurrentTease.Url));
+                }
+                else
+                {
+                    TeaseTitleLabel.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+                    TeaseTitleLabel.ForeColor = Color.Gainsboro;
+                    ToolTips.SetToolTip(TeaseTitleLabel, null);
+                }
 
-                ToolTips.SetToolTip(OnlineButton, String.Format("Open {0} in web browser", !String.IsNullOrEmpty(currentTease.Url) ? currentTease.Url : DefaultUrl));
-
-                if (currentTease.Author != null && !String.IsNullOrEmpty(currentTease.Author.Url))
+                AuthorNameLabel.Text = (CurrentTease.Author != null) ? CurrentTease.Author.Name : String.Empty;
+                if (CurrentTease.Author != null && !String.IsNullOrEmpty(CurrentTease.Author.Url))
                 {
                     AuthorNameLabel.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Underline, GraphicsUnit.Point, 0);
                     AuthorNameLabel.ForeColor = Color.SkyBlue;
-                    ToolTips.SetToolTip(AuthorNameLabel, String.Format("Open {0} in web browser", currentTease.Author.Url));
+                    ToolTips.SetToolTip(AuthorNameLabel, String.Format("Open {0} in web browser", CurrentTease.Author.Url));
                 }
                 else
                 {
@@ -90,27 +124,27 @@ namespace TeaseMe
                     ToolTips.SetToolTip(AuthorNameLabel, null);
                 }
 
-                PagesComboBox.Sorted = true;
-                PagesComboBox.Items.Clear();
-                currentTease.Pages.ForEach(page => PagesComboBox.Items.Add(page.Id));
+                debugForm.PagesComboBox.Sorted = true;
+                debugForm.PagesComboBox.Items.Clear();
+                CurrentTease.Pages.ForEach(page => debugForm.PagesComboBox.Items.Add(page.Id));
 
-                currentTease.CurrentPageChanged += currentTease_CurrentPageChanged;
+                CurrentTease.CurrentPageChanged += currentTease_CurrentPageChanged;
 
-                currentTease.Start();
+                CurrentTease.Start();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-        } 
+        }
 
-        
+
         void currentTease_CurrentPageChanged(object sender, TeasePageEventArgs e)
         {
-            PagesComboBox.SelectedItem = currentTease.CurrentPage.Id;
-            PagePropertyGrid.SelectedObject = currentTease.CurrentPage;
+            debugForm.PagesComboBox.SelectedItem = CurrentTease.CurrentPage.Id;
+            debugForm.PagePropertyGrid.SelectedObject = CurrentTease.CurrentPage;
 
-            SetText(currentTease.CurrentPage.Text);
+            SetText(CurrentTease.CurrentPage.Text);
             SetMedia();
             SetButtons();
             SetDelay();
@@ -132,9 +166,9 @@ namespace TeaseMe
         private void SetMedia()
         {
             PictureBox1.Visible = false;
-            if (currentTease.CurrentPage.Image != null)
-            {   
-                string fileName = currentTease.GetFileName(currentTease.CurrentPage.Image);
+            if (CurrentTease.CurrentPage.Image != null)
+            {
+                string fileName = CurrentTease.GetFileName(CurrentTease.CurrentPage.Image);
                 if (!String.IsNullOrEmpty(fileName))
                 {
                     PictureBox1.ImageLocation = fileName;
@@ -145,9 +179,9 @@ namespace TeaseMe
             // Audio and Metronome cannot be combined in the same page.
             MediaPlayer.Visible = false;
             MediaPlayer.URL = null;
-            if (currentTease.CurrentPage.Audio != null && currentTease.CurrentPage.Metronome == null)
+            if (CurrentTease.CurrentPage.Audio != null && CurrentTease.CurrentPage.Metronome == null)
             {
-                string fileName = currentTease.GetFileName(currentTease.CurrentPage.Audio);
+                string fileName = CurrentTease.GetFileName(CurrentTease.CurrentPage.Audio);
                 if (!String.IsNullOrEmpty(fileName))
                 {
                     MediaPlayer.uiMode = "none";
@@ -159,9 +193,9 @@ namespace TeaseMe
             }
 
 
-            if (currentTease.CurrentPage.Video != null)
+            if (CurrentTease.CurrentPage.Video != null)
             {
-                string fileName = currentTease.GetFileName(currentTease.CurrentPage.Video);
+                string fileName = CurrentTease.GetFileName(CurrentTease.CurrentPage.Video);
                 if (!String.IsNullOrEmpty(fileName))
                 {
                     MediaPlayer.uiMode = "none";
@@ -177,10 +211,10 @@ namespace TeaseMe
         private void SetButtons()
         {
             ClearButtons();
-            currentTease.CurrentPage.AvailableButtons.ForEach(AddButton);
+            CurrentTease.CurrentPage.AvailableButtons.ForEach(AddButton);
 
             // Set a default button so that you can use the space bar or enter key.
-            if (currentTease.CurrentPage.AvailableButtons.Count > 0)
+            if (CurrentTease.CurrentPage.AvailableButtons.Count > 0)
             {
                 ButtonPanel.Controls[0].Focus();
             }
@@ -189,10 +223,10 @@ namespace TeaseMe
         private void SetDelay()
         {
             CountdownTimer.Stop();
-            CountdownPanel.Visible = currentTease.CurrentPage.AvailableDelay != null && currentTease.CurrentPage.AvailableDelay.Style != DelayStyle.Hidden;
-            if (currentTease.CurrentPage.AvailableDelay != null)
+            CountdownPanel.Visible = CurrentTease.CurrentPage.AvailableDelay != null && CurrentTease.CurrentPage.AvailableDelay.Style != DelayStyle.Hidden;
+            if (CurrentTease.CurrentPage.AvailableDelay != null)
             {
-                secondsUntilNextPage = currentTease.GetInteger(currentTease.CurrentPage.AvailableDelay.Seconds);
+                secondsUntilNextPage = CurrentTease.GetInteger(CurrentTease.CurrentPage.AvailableDelay.Seconds);
                 UpdateCountDownPanel();
                 CountdownTimer.Start();
             }
@@ -201,9 +235,9 @@ namespace TeaseMe
         private void SetMetronome()
         {
             MetronomeTimer.Stop();
-            if (currentTease.CurrentPage.Metronome != null)
+            if (CurrentTease.CurrentPage.Metronome != null)
             {
-                int bpm = currentTease.GetInteger(currentTease.CurrentPage.Metronome.BeatsPerMinute);
+                int bpm = CurrentTease.GetInteger(CurrentTease.CurrentPage.Metronome.BeatsPerMinute);
                 if (1 <= bpm && bpm <= 250)
                 {
                     MetronomeTimer.Interval = Convert.ToInt32(1000f * (60f / bpm));
@@ -220,16 +254,16 @@ namespace TeaseMe
             if (secondsUntilNextPage == 0)
             {
                 CountdownTimer.Stop();
-                ExecuteTeaseAction(currentTease.CurrentPage.AvailableDelay);
+                ExecuteTeaseAction(CurrentTease.CurrentPage.AvailableDelay);
             }
         }
 
         private void UpdateCountDownPanel()
         {
             var left = new TimeSpan(0, 0, secondsUntilNextPage);
-            TimeLeftLabel.Text = (currentTease.CurrentPage.AvailableDelay.Style == DelayStyle.Secret) ?  "??:??" : String.Format("{0:00}:{1:00}", Math.Floor(left.TotalMinutes), left.Seconds); 
+            TimeLeftLabel.Text = (CurrentTease.CurrentPage.AvailableDelay.Style == DelayStyle.Secret) ? "??:??" : String.Format("{0:00}:{1:00}", Math.Floor(left.TotalMinutes), left.Seconds);
         }
-        
+
         private void MetronomeTick(object sender, EventArgs e)
         {
             audio.Play(Path.Combine(ApplicationDirectory, MetronomeAudio));
@@ -268,9 +302,9 @@ namespace TeaseMe
 
         private void ExecuteTeaseAction(TeaseAction teaseAction)
         {
-            try 
+            try
             {
-                currentTease.ExecuteTeaseAction(teaseAction);
+                CurrentTease.ExecuteTeaseAction(teaseAction);
             }
             catch (Exception err)
             {
@@ -279,7 +313,7 @@ namespace TeaseMe
         }
 
 
-        
+
         private Button CloneSampleButton()
         {
             return new Button
@@ -308,33 +342,26 @@ namespace TeaseMe
             }
         }
 
-        private void AboutButton_Click(object sender, EventArgs e)
-        {
-            new AboutForm().ShowDialog();
-        }
 
-        private void OnlineButton_Click(object sender, EventArgs e)
+        private void TeaseTitleLabel_Click(object sender, EventArgs e)
         {
             string url = DefaultUrl;
-            if (currentTease != null && !String.IsNullOrEmpty(currentTease.Url))
+            if (CurrentTease != null && !String.IsNullOrEmpty(CurrentTease.Url))
             {
-                url = currentTease.Url;
+                url = CurrentTease.Url;
             }
             Process.Start(url);
         }
 
         private void AuthorNameLabel_Click(object sender, EventArgs e)
         {
-            if (currentTease != null && currentTease.Author != null && !String.IsNullOrEmpty(currentTease.Author.Url))
+            if (CurrentTease != null && CurrentTease.Author != null && !String.IsNullOrEmpty(CurrentTease.Author.Url))
             {
-                Process.Start(currentTease.Author.Url);
+                Process.Start(CurrentTease.Author.Url);
             }
         }
 
-        private void PagesComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            currentTease.NavigateToPage(PagesComboBox.SelectedItem.ToString());
-        }
+
 
     }
 }
