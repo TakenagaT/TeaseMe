@@ -17,9 +17,7 @@ tokens {
 	FROM;
 	GO;
 	HIDDEN;
-	HRS;
 	ID;
-	MIN;
 	MULT;
 	NO;
 	NORMAL;
@@ -27,8 +25,8 @@ tokens {
 	PIC;
 	PREFIX;
 	PROPERTIES;
+	RANDOM;
 	RANGE;
-	SEC;
 	SECRET;
 	SET;
 	SOUND;
@@ -138,8 +136,18 @@ actionGo
 	;
 
 actionYn
-	:	'yn(' 'yes:' pageRef ','  'no:' pageRef ')'
-		-> ^(YN ^(YES pageRef) ^(NO pageRef))
+	:	'yn(' yesDef ',' noDef ')'
+		-> ^(YN ^(YES yesDef) ^(NO noDef))
+	;
+
+
+yesDef
+	:	'yes:'! ( pageRef | rangeDef )
+	;
+
+
+noDef
+	:	'no:'! ( pageRef | rangeDef )
 	;
 
 actionDelay
@@ -178,7 +186,8 @@ actionList
 	;
 
 actionApply
-	:	actionId! ':'! pageRef
+	:	(actionId ':')? pageRef
+		-> pageRef
 	;
 
 actionId
@@ -190,12 +199,18 @@ targetDef
 	;
 
 timeDef
-	:	'time:'! INTEGER (SEC|MIN|HRS)?
+//	:	'time:random('! timeRange ')'!
+//	|
+	:	'time:'! INTEGER timeUnit?
 	;
 
-SEC		: 'sec';
-MIN		: 'min';
-HRS		: 'hrs';
+//timeRange
+//	:	'min:'! INTEGER timeUnit? ','! 'max:'! INTEGER timeUnit?
+//	;
+
+timeUnit
+	:	'sec' | 'min' | 'hrs'
+	;
 
 styleDef
 	:	'style:'! (NORMAL | HIDDEN | SECRET)

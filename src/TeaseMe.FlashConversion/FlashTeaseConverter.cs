@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Xml;
 using Antlr.Runtime;
@@ -22,33 +23,84 @@ namespace TeaseMe.FlashConversion
                 Url = "http://www.milovana.com/webteases/showflash.php?id=" + teaseId,
                 Author = new Author
                 {
-                    Id = authorId, 
-                    Name = authorName, 
+                    Id = authorId,
+                    Name = authorName,
                     Url = "http://www.milovana.com/forum/memberlist.php?mode=viewprofile&u=" + authorId
                 }
             };
 
-            foreach (var line in scriptLines)
+            // Do minor corrections first so that the parser can stay a bit simpler.
+            foreach (var line in CorrectedLines(scriptLines))
             {
                 if (!String.IsNullOrEmpty(line))
                 {
-                    result.Pages.Add(CreatePage(line));
+                    var page = CreatePage(line);
+                    
+                    if (!String.IsNullOrEmpty(page.Errors) && page.Errors.Contains("mismatched input '<EOF>' expecting ')'"))
+                    {
+                        page = CreatePage(line + ")");
+                    }
+                    if (!String.IsNullOrEmpty(page.Errors) && page.Errors.Contains(" expecting QUOTED_STRING"))
+                    {
+                        // Some scripts don't have quotes when specifying sound, I could make the parser work correctly
+                        // so I have to correct it before parsing.
+                        var match = Regex.Match(line, @":sound\(id:(?<soundId>[^)]*)\)");
+                        if (match.Success)
+                        {
+                            var soundId = match.Groups["soundId"].Value;
+                            page = CreatePage(line.Replace(":sound(id:" + soundId + ")", ":sound(id:'" + soundId + "')"));
+                        }
+                    }
+
+                    result.Pages.Add(page);
                 }
             }
-            
+
+            return result;
+        }
+
+
+        private IEnumerable<string> CorrectedLines(string[] scriptLines)
+        {
+            var result = new List<string>();
+            for (int i = 0; i < scriptLines.Length; i++)
+            {
+                string line = scriptLines[i];
+                
+                // Skip empty lines
+                if (String.IsNullOrEmpty(line.Trim()) || "()".Equals(line.Trim()))
+                {
+                    continue;
+                }
+                
+                // Join pages longer than a single line.
+                while (!line.Trim().EndsWith(")"))
+                {
+                    i++;
+                    line += scriptLines[i];
+                }
+
+                // Replace special quotes.
+                line = line.Replace('’', '\'');
+
+
+
+                result.Add(line);
+            }
             return result;
         }
 
         private TeasePage CreatePage(string line)
         {
             var result = new TeasePage { Comments = line };
+
+            var stream = new ANTLRStringStream(line);
+            var lexer = new FlashTeaseScriptLexer(stream);
+            var tokens = new CommonTokenStream(lexer);
+            var parser = new FlashTeaseScriptParser(tokens);
+            
             try
             {
-                var stream = new ANTLRStringStream(line);
-                var lexer = new FlashTeaseScriptLexer(stream);
-                var tokens = new CommonTokenStream(lexer);
-                var parser = new FlashTeaseScriptParser(tokens);
-
                 IAstRuleReturnScope<CommonTree> teaseReturn = parser.tease();
                 if (teaseReturn.Tree != null)
                 {
@@ -91,7 +143,7 @@ namespace TeaseMe.FlashConversion
             }
             catch (Exception)
             {
-                result.Errors = "Unable to correctly convert this page. Please correct by hand.";
+                result.Errors = String.Format("ParserError ({0}): {1}. Please correct by hand.", parser.ErrorPosition, parser.ErrorMessage);
             }
 
             if (String.IsNullOrEmpty(result.Id))
@@ -105,12 +157,12 @@ namespace TeaseMe.FlashConversion
 
         private TeaseMedia GetImage(CommonTree picNode)
         {
-            return (picNode != null) ? new TeaseMedia { Id =  picNode.GetChild(0).Text.Trim('\'', '"') } : null;
+            return (picNode != null) ? new TeaseMedia { Id = picNode.GetChild(0).Text.Trim('\'', '"') } : null;
         }
 
         private TeaseMedia GetAudio(CommonTree soundNode)
         {
-            return (soundNode != null) ? new TeaseMedia { Id =  soundNode.GetChild(0).Text.Trim('\'', '"') } : null;
+            return (soundNode != null) ? new TeaseMedia { Id = soundNode.GetChild(0).Text.Trim('\'', '"') } : null;
         }
 
         private IEnumerable<TeaseButton> GetButtons(CommonTree propertiesNode)
@@ -120,13 +172,13 @@ namespace TeaseMe.FlashConversion
             var goNode = propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.GO) as CommonTree;
             if (goNode != null)
             {
-                result.Add(new TeaseButton { Text = "Continue", Target = GetPageId(goNode.GetChild(0) as CommonTree)});
+                result.Add(new TeaseButton { Text = "Continue", Target = GetPageId(goNode.GetChild(0) as CommonTree) });
             }
             var ynNode = propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.YN) as CommonTree;
             if (ynNode != null)
             {
-                result.Add(new TeaseButton { Text = "Yes", Target = GetPageId(ynNode.GetFirstChildWithType(FlashTeaseScriptLexer.YES).GetChild(0) as CommonTree)});
-                result.Add(new TeaseButton { Text = "No", Target = GetPageId(ynNode.GetFirstChildWithType(FlashTeaseScriptLexer.NO).GetChild(0) as CommonTree)});
+                result.Add(new TeaseButton { Text = "Yes", Target = GetPageId(ynNode.GetFirstChildWithType(FlashTeaseScriptLexer.YES).GetChild(0) as CommonTree) });
+                result.Add(new TeaseButton { Text = "No", Target = GetPageId(ynNode.GetFirstChildWithType(FlashTeaseScriptLexer.NO).GetChild(0) as CommonTree) });
             }
             var buttonsNode = propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.BUTTONS) as CommonTree;
             if (buttonsNode != null)
@@ -157,16 +209,62 @@ namespace TeaseMe.FlashConversion
             var timeNode = delayNode.GetFirstChildWithType(FlashTeaseScriptLexer.TIME) as CommonTree;
             if (timeNode != null)
             {
-                int secs = System.Convert.ToInt32(timeNode.GetChild(0).Text);
-                if (timeNode.GetChild(1) != null && timeNode.GetChild(1).Text == "hrs")
+                int minSecs = System.Convert.ToInt32(timeNode.GetChild(0).Text);
+                int maxSecs = -1;
+
+                if (timeNode.ChildCount == 1)
                 {
-                    secs = secs * 60 * 60;
+                    // no units are used, assume seconds.
+                    result.Seconds = String.Format("{0}", minSecs);
                 }
-                else if (timeNode.GetChild(1) != null && timeNode.GetChild(1).Text == "min")
+                else
                 {
-                    secs = secs * 60;
+                    var childText = timeNode.GetChild(1).Text;
+                    if (int.TryParse(childText, out maxSecs))
+                    {
+                        // no units are used for minSecs, assume seconds.
+
+                        if (timeNode.ChildCount > 2)
+                        {
+                            // maxSecs sec/min/hrs
+                            var maxUnit = timeNode.GetChild(2).Text;
+                            switch (maxUnit)
+                            {
+                                case "hrs": { maxSecs = maxSecs * 60 * 60; break; }
+                                case "min": { maxSecs = maxSecs * 60; break; }
+                                default: break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        switch (childText)
+                        {
+                            case "hrs": { minSecs = minSecs * 60 * 60; break; }
+                            case "min": { minSecs = minSecs * 60; break; }
+                            default: break;
+                        }
+
+                        if (timeNode.ChildCount > 2)
+                        {
+                            maxSecs = int.Parse(timeNode.GetChild(2).Text);
+
+                            if (timeNode.ChildCount > 3)
+                            {
+                                // maxSecs sec/min/hrs
+                                var maxUnit = timeNode.GetChild(3).Text;
+                                switch (maxUnit)
+                                {
+                                    case "hrs": { maxSecs = maxSecs * 60 * 60; break; }
+                                    case "min": { maxSecs = maxSecs * 60; break; }
+                                    default: break;
+                                }
+                            }
+                        }
+                    } 
                 }
-                result.Seconds = secs.ToString();
+
+                result.Seconds = (maxSecs > minSecs) ? String.Format("({0}..{1})", minSecs, maxSecs) : String.Format("{0}", minSecs);
             }
 
             result.Target = GetPageId(delayNode.GetFirstChildWithType(FlashTeaseScriptLexer.TARGET).GetChild(0) as CommonTree);
@@ -181,7 +279,7 @@ namespace TeaseMe.FlashConversion
                     default: result.Style = DelayStyle.Normal; break;
                 }
             }
-            
+
             return result;
         }
 
@@ -212,7 +310,7 @@ namespace TeaseMe.FlashConversion
                     var toText = String.Concat(toNode.Children.Select(child => child.Text).ToArray());
 
                     var prefix = node.GetFirstChildWithType(FlashTeaseScriptLexer.PREFIX) as CommonTree;
-                    
+
                     string prefixText = (prefix != null) ? prefix.GetChild(0).Text.Trim('\'', '"') : null;
 
                     return String.Format("{0}({1}..{2})", prefixText, fromText, toText);
@@ -252,7 +350,7 @@ namespace TeaseMe.FlashConversion
                 }
                 catch (Exception)
                 {
-                    return HttpUtility.HtmlEncode(originalText);                  
+                    return HttpUtility.HtmlEncode(originalText);
                 }
             }
 
