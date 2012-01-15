@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  
+  <xs:element name="Tease">
+    <xs:complexType>
+      <xs:all minOccurs="0">
+        <xs:element name="Title" type="xs:string" />
+        <xs:element name="Url" type="xs:anyURI" />
+        <xs:element name="MediaDirectory" type="xs:string" />
+        <xs:element ref="Author" />
+        <xs:element ref="Settings" />
+        <xs:element ref="Pages" />
+      </xs:all>
+      <xs:attribute name="id" type="xs:string" />
+      <xs:attribute name="scriptVersion" use="required" type="xs:string" fixed="v0.1" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Author">
+    <xs:complexType>
+      <xs:all minOccurs="0">
+        <xs:element name="Name" type="xs:string" />
+        <xs:element minOccurs="0" name="Url" type="xs:anyURI" />
+      </xs:all>
+      <xs:attribute name="id" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Settings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AutoSetPageWhenSeen" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Pages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Page"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="Page">
+    <xs:complexType>
+        <xs:all minOccurs="0">
+          <xs:element minOccurs="0" ref="Text" />
+          <xs:element minOccurs="0" ref="Audio" />
+          <xs:element minOccurs="0" ref="Button" />
+          <xs:element minOccurs="0" ref="Delay" />
+          <xs:element minOccurs="0" ref="Image" />
+          <xs:element minOccurs="0" ref="Metronome" />
+          <xs:element minOccurs="0" ref="Video" />
+        </xs:all>
+      <xs:attribute name="id" use="required" type="xs:string" />
+      <xs:attribute name="if-not-set" type="xs:string" />
+      <xs:attribute name="if-set" type="xs:string" />
+      <xs:attribute name="set" type="xs:string" />
+      <xs:attribute name="unset" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="Text">
+    <xs:complexType mixed="true" />
+  </xs:element>
+  
+  <xs:element name="Button">
+    <xs:complexType mixed="true">
+      <xs:attribute name="target" use="required" type="xs:string" />
+      <xs:attribute name="if-not-set" type="xs:string" />
+      <xs:attribute name="if-set" type="xs:string" />
+      <xs:attribute name="set" type="xs:string" />
+      <xs:attribute name="unset" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="Delay">
+    <xs:complexType>
+      <xs:attribute name="target" use="required" type="xs:string" />
+      <xs:attribute name="seconds" use="required" type="xs:positiveInteger" />
+      <xs:attribute name="style" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="normal" />
+            <xs:enumeration value="hidden" />
+            <xs:enumeration value="secret" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="if-not-set" type="xs:string" />
+      <xs:attribute name="if-set" type="xs:string" />
+      <xs:attribute name="set" type="xs:string" />
+      <xs:attribute name="unset" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="Video">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="Audio">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="Image">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="Metronome">
+    <xs:complexType>
+      <xs:attribute name="bpm" use="required" type="xs:positiveInteger" />
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

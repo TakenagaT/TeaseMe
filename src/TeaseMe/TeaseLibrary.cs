@@ -16,6 +16,10 @@ namespace TeaseMe
         public TeaseLibrary(string applicationDirectory)
         {
             this.applicationDirectory = applicationDirectory;
+            if (!Directory.Exists(TeasesFolder))
+            {
+                Directory.CreateDirectory(TeasesFolder);
+            }
         }
 
         public string TeasesFolder

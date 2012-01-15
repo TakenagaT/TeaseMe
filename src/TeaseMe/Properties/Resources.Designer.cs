@@ -60,27 +60,6 @@ namespace TeaseMe.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap download_48 {
-            get {
-                object obj = ResourceManager.GetObject("download_48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap help_48 {
-            get {
-                object obj = ResourceManager.GetObject("help_48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap online_48 {
-            get {
-                object obj = ResourceManager.GetObject("online_48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap open_48 {
             get {
                 object obj = ResourceManager.GetObject("open_48", resourceCulture);

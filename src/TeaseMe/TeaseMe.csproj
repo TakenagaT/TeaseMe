@@ -103,12 +103,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Teases\Sample\samplevideo.mkv" />
+    <None Include="Resources\TeaseMe-v0.1.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\48\about.png" />
-    <Content Include="Resources\48\download.png" />
-    <Content Include="Resources\48\online.png" />
     <Content Include="Resources\48\open.png" />
     <Content Include="Resources\HtmlTextTemplate.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -125,39 +125,6 @@
     <Content Include="Resources\welcome.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Teases\Sample.xml" />
-    <Content Include="Teases\Sample\01.jpg" />
-    <Content Include="Teases\Sample\02.jpg" />
-    <Content Include="Teases\Sample\e1_end.jpg" />
-    <Content Include="Teases\Sample\e1_fail.jpg" />
-    <Content Include="Teases\Sample\e1_lindsay.jpg" />
-    <Content Include="Teases\Sample\e1_sleep.jpg" />
-    <Content Include="Teases\Sample\e1_success.jpg" />
-    <Content Include="Teases\Sample\e1_table.jpg" />
-    <Content Include="Teases\Sample\e2_break.jpg" />
-    <Content Include="Teases\Sample\e2_end.jpg" />
-    <Content Include="Teases\Sample\e2_start.jpg" />
-    <Content Include="Teases\Sample\e3_big.jpg" />
-    <Content Include="Teases\Sample\e3_copper.jpg" />
-    <Content Include="Teases\Sample\e3_copper1.jpg" />
-    <Content Include="Teases\Sample\e3_copper2.jpg" />
-    <Content Include="Teases\Sample\e3_end.jpg" />
-    <Content Include="Teases\Sample\e3_gold.jpg" />
-    <Content Include="Teases\Sample\e3_silver.jpg" />
-    <Content Include="Teases\Sample\e3_start.jpg" />
-    <Content Include="Teases\Sample\random\01.jpg" />
-    <Content Include="Teases\Sample\random\02.jpg" />
-    <Content Include="Teases\Sample\random\03.jpg" />
-    <Content Include="Teases\Sample\random\04.jpg" />
-    <Content Include="Teases\Sample\random\05.jpg" />
-    <Content Include="Teases\Sample\random\06.jpg" />
-    <Content Include="Teases\Sample\random\07.jpg" />
-    <Content Include="Teases\Sample\random\08.jpg" />
-    <Content Include="Teases\Sample\random\09.jpg" />
-    <Content Include="Teases\Sample\random\10.jpg" />
-    <Content Include="Teases\Sample\sampleaudio.mp3" />
-    <Content Include="Teases\Sample\silver.jpg" />
-    <Content Include="Teases\Sample\start.jpg" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxWMPLib">
