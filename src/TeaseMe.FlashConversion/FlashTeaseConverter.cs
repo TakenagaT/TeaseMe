@@ -29,13 +29,21 @@ namespace TeaseMe.FlashConversion
                 }
             };
 
+
+            var mustCommands = new List<string>();
+
             // Do minor corrections first so that the parser can stay a bit simpler.
             foreach (var line in CorrectedLines(scriptLines))
             {
-                if (!String.IsNullOrEmpty(line))
+                // The must/mustnot commands will be parsed separately.
+                if (line.StartsWith("must(") || line.StartsWith("mustnot("))
+                {
+                    mustCommands.Add(line);
+                }
+                else
                 {
                     var page = CreatePage(line);
-                    
+
                     if (!String.IsNullOrEmpty(page.Errors) && page.Errors.Contains("mismatched input '<EOF>' expecting ')'"))
                     {
                         page = CreatePage(line + ")");
@@ -56,8 +64,44 @@ namespace TeaseMe.FlashConversion
                 }
             }
 
+            foreach (var mustCommand in mustCommands)
+            {
+                var match = Regex.Match(mustCommand, @"(?<cmd>(must|mustnot))\(self:(?<self>(self:|:)?.*?)#,(?<actions>.*)\)");
+                if (match.Success)
+                {
+                    var self = match.Groups["self"].Value;
+                    var actions = match.Groups["actions"].Value;
+
+                    var flags = new List<string>();
+                    string[] actionArray = actions.Split(',');
+                    foreach (var action in actionArray)
+                    {
+                        string id = action.AfterFirst(":").TrimEnd('#');
+                        if (!String.IsNullOrEmpty(id))
+                        {
+                            flags.Add(id);
+                        }
+                    }
+
+                    var page = result.Pages.Find(p => p.Id.Equals(self));
+                    if (page != null)
+                    {
+                        if (match.Groups["cmd"].Value.Equals("must"))
+                        {
+                            page.IfSetCondition = String.Format("{0},{1}", page.IfSetCondition, String.Join(",", flags.ToArray())).Trim(',');
+                        }
+                        if (match.Groups["cmd"].Value.Equals("mustnot"))
+                        {
+                            page.IfNotSetCondition = String.Format("{0},{1}", page.IfNotSetCondition, String.Join(",", flags.ToArray())).Trim(',');
+                        }
+                    }
+                }
+
+            }
+
             return result;
         }
+
 
 
         private IEnumerable<string> CorrectedLines(string[] scriptLines)
@@ -66,13 +110,13 @@ namespace TeaseMe.FlashConversion
             for (int i = 0; i < scriptLines.Length; i++)
             {
                 string line = scriptLines[i];
-                
+
                 // Skip empty lines
                 if (String.IsNullOrEmpty(line.Trim()) || "()".Equals(line.Trim()))
                 {
                     continue;
                 }
-                
+
                 // Join pages longer than a single line.
                 while (!line.Trim().EndsWith(")"))
                 {
@@ -101,7 +145,7 @@ namespace TeaseMe.FlashConversion
             var lexer = new FlashTeaseScriptLexer(stream);
             var tokens = new CommonTokenStream(lexer);
             var parser = new FlashTeaseScriptParser(tokens);
-            
+
             try
             {
                 IAstRuleReturnScope<CommonTree> teaseReturn = parser.tease();
