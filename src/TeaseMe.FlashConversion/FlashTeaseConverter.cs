@@ -35,29 +35,73 @@ namespace TeaseMe.FlashConversion
             // Do minor corrections first so that the parser can stay a bit simpler.
             foreach (var line in CorrectedLines(scriptLines))
             {
+                var correctedLine = line;
+
                 // The must/mustnot commands will be parsed separately.
-                if (line.StartsWith("must(") || line.StartsWith("mustnot("))
+                if (correctedLine.StartsWith("must(") || correctedLine.StartsWith("mustnot("))
                 {
-                    mustCommands.Add(line);
+                    mustCommands.Add(correctedLine);
                 }
                 else
                 {
-                    var page = CreatePage(line);
+                    var page = CreatePage(correctedLine);
 
                     if (!String.IsNullOrEmpty(page.Errors) && page.Errors.Contains("mismatched input '<EOF>' expecting ')'"))
-                    {
-                        page = CreatePage(line + ")");
+                    {   
+                        correctedLine = correctedLine + ")";
+                        page = CreatePage(correctedLine);
                     }
+
                     if (!String.IsNullOrEmpty(page.Errors) && page.Errors.Contains(" expecting QUOTED_STRING"))
                     {
                         // Some scripts don't have quotes when specifying sound, I could make the parser work correctly
                         // so I have to correct it before parsing.
-                        var match = Regex.Match(line, @":sound\(id:(?<soundId>[^)]*)\)");
+                        var match = Regex.Match(correctedLine, @":sound\(id:(?<soundId>[^)]*)\)");
                         if (match.Success)
                         {
                             var soundId = match.Groups["soundId"].Value;
-                            page = CreatePage(line.Replace(":sound(id:" + soundId + ")", ":sound(id:'" + soundId + "')"));
+                            correctedLine = correctedLine.Replace(":sound(id:" + soundId + ")", ":sound(id:'" + soundId + "')");
+                            page = CreatePage(correctedLine);
                         }
+                    }
+
+                    if (!String.IsNullOrEmpty(page.Errors) && correctedLine.Contains("text:'<") && correctedLine.Contains(">',"))
+                    {
+                        // Correct the unescaped quotes in the instruction text.
+                        correctedLine = 
+                            correctedLine.BeforeFirst("text:'<") + "text:'<" 
+                            + correctedLine.AfterFirst("text:'<").BeforeFirst(">',").Replace("'", "&quot;")
+                            + ">'," + correctedLine.AfterFirst("text:'<").AfterFirst(">',");
+                        page = CreatePage(correctedLine);
+                    }
+
+                    if (!String.IsNullOrEmpty(page.Errors) && page.Errors.Contains("mismatched input '#' expecting ')'") && correctedLine.Contains("buttons("))
+                    {
+                        // There might be HTML in the button captions
+                        int i = 0;
+                        //e1:buttons(target0:rating1#,cap0:"<FONT COLOR="#B30033" SIZE="14"><b>1</b></FONT>",target1:rating2#,cap1:"<FONT COLOR="#B30033" SIZE="14"><b>2</b></FONT>",target2:rating3#,cap2:"<FONT COLOR="#B30033" SIZE="14"><b>3</b></FONT>",target3:rating4#,cap3:"<FONT COLOR="#B30033" SIZE="14"><b>4</b></FONT>
+                        var tmp = correctedLine.BeforeFirst("buttons(") + "buttons(";
+                        var rest = correctedLine.AfterFirst("buttons(");
+                        var cap = String.Format("cap{0}:\"", i);
+                        while (rest.Contains(cap))
+                        {
+                            tmp += rest.BeforeFirst(cap) + cap;
+                            rest = rest.AfterFirst(cap);
+                            if (rest.Contains("\",target" + (i+1)))
+                            {
+                                var caption = rest.BeforeFirst("\",target" + (i+1));
+                                tmp += StripHtml(caption) + "\",target" + (i+1) + rest.AfterFirst("\",target" + (i+1));
+                            }
+                            else if (rest.Contains("\")"))
+                            {
+                                var caption = rest.BeforeFirst("\")");
+                                tmp += StripHtml(caption) + "\")" + rest.AfterFirst("\")");
+                                break;
+                            }
+                            i++;   
+                        }
+                        correctedLine = tmp;
+                        page = CreatePage(correctedLine);
                     }
 
                     result.Pages.Add(page);
@@ -102,7 +146,19 @@ namespace TeaseMe.FlashConversion
             return result;
         }
 
-
+        private string StripHtml(string text)
+        {
+            try
+                {
+                    var xmldoc = new XmlDocument();
+                    xmldoc.LoadXml("<dummy>" + text + "</dummy>");
+                    return xmldoc.InnerText;
+                }
+                catch (Exception)
+                {
+                    return HttpUtility.HtmlEncode(text);
+                }
+        }
 
         private IEnumerable<string> CorrectedLines(string[] scriptLines)
         {
