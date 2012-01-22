@@ -131,8 +131,7 @@ namespace TeaseMe
 
                 CurrentTease.CurrentPageChanged += currentTease_CurrentPageChanged;
 
-                // Preferences.
-                CurrentTease.SetFlags(Settings.Default.UserGender);
+                SetPreferenceFlags();
 
                 CurrentTease.Start();
             }
@@ -142,6 +141,10 @@ namespace TeaseMe
             }
         }
 
+        void SetPreferenceFlags()
+        {
+            CurrentTease.SetFlags("user_" + Settings.Default.UserGender);
+        }
 
         void currentTease_CurrentPageChanged(object sender, TeasePageEventArgs e)
         {
