@@ -36,6 +36,7 @@
             this.LoadButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ConverionErrorTextBox = new System.Windows.Forms.TextBox();
@@ -50,7 +51,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.SaveNewScriptDialog = new System.Windows.Forms.SaveFileDialog();
             this.OpenScriptDialog = new System.Windows.Forms.OpenFileDialog();
-            this.label4 = new System.Windows.Forms.Label();
+            this.preferencesButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -159,6 +160,15 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Download tease";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(79, 235);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(309, 13);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "A messagebox will appear as soon as the download is complete.";
             // 
             // label3
             // 
@@ -292,20 +302,22 @@
             this.OpenScriptDialog.FileName = "Select your tease";
             this.OpenScriptDialog.Filter = "Tease Me Script|*.xml";
             // 
-            // label4
+            // preferencesButton
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(79, 235);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(309, 13);
-            this.label4.TabIndex = 40;
-            this.label4.Text = "A messagebox will appear as soon as the download is complete.";
+            this.preferencesButton.Location = new System.Drawing.Point(13, 650);
+            this.preferencesButton.Name = "preferencesButton";
+            this.preferencesButton.Size = new System.Drawing.Size(96, 23);
+            this.preferencesButton.TabIndex = 9;
+            this.preferencesButton.Text = "Preferences...";
+            this.preferencesButton.UseVisualStyleBackColor = true;
+            this.preferencesButton.Click += new System.EventHandler(this.preferencesButton_Click);
             // 
             // OpenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 635);
+            this.ClientSize = new System.Drawing.Size(511, 685);
+            this.Controls.Add(this.preferencesButton);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -347,5 +359,6 @@
         private System.Windows.Forms.Label label2;
         internal System.Windows.Forms.OpenFileDialog OpenScriptDialog;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button preferencesButton;
     }
 }

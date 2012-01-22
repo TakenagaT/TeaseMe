@@ -209,6 +209,11 @@ namespace TeaseMe
             }
         }
 
+        private void preferencesButton_Click(object sender, EventArgs e)
+        {
+            new PreferencesForm().ShowDialog();
+        }
+
 
 
     }

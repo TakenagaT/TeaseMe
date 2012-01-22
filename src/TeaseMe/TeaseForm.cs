@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.Devices;
 using TeaseMe.Common;
+using TeaseMe.Properties;
 
 namespace TeaseMe
 {
@@ -130,6 +131,9 @@ namespace TeaseMe
 
                 CurrentTease.CurrentPageChanged += currentTease_CurrentPageChanged;
 
+                // Preferences.
+                CurrentTease.SetFlags(Settings.Default.UserGender);
+
                 CurrentTease.Start();
             }
             catch (Exception ex)
@@ -153,6 +157,9 @@ namespace TeaseMe
 
         private void SetText(string text)
         {
+            // Replace the username if set in the preferences.
+            text = text.Replace("$UserName$", Settings.Default.UserName);
+
             // The extra steps are necessary because of strange/wrong behaviour of the webbrowser control.
             TeaseTextWebBrowser.Navigate("about:blank");
             if (TeaseTextWebBrowser.Document != null)
