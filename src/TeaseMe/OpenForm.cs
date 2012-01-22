@@ -133,7 +133,7 @@ namespace TeaseMe
                                     string imageName = page.Image.Id;
                                     if (page.Image.Id.Contains("*"))
                                     {
-                                        imageName = page.Image.Id.Replace("*", Guid.NewGuid().ToString());
+                                        imageName = page.Image.Id.Replace("*", String.Format("[{0}]", Guid.NewGuid()));
                                     }
                                     string fileName = Path.Combine(downloadDirectory, imageName);
                                     if (!File.Exists(fileName))
@@ -155,7 +155,7 @@ namespace TeaseMe
                                     string audioName = page.Audio.Id;
                                     if (page.Audio.Id.Contains("*"))
                                     {
-                                        audioName = page.Audio.Id.Replace("*", Guid.NewGuid().ToString());
+                                        audioName = page.Audio.Id.Replace("*", String.Format("[{0}]", Guid.NewGuid()));
                                     }
                                     string fileName = Path.Combine(downloadDirectory, audioName);
                                     if (!File.Exists(fileName))
