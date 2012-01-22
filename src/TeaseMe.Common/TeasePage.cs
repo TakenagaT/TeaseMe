@@ -68,14 +68,14 @@ namespace TeaseMe.Common
                 {
                     if (!String.IsNullOrEmpty(Delay.IfSetCondition))
                     {
-                        if (Tease.Flags.Contains(Delay.IfSetCondition))
+                        if (Tease.MatchesIfSetCondition(Delay.IfSetCondition))
                         {
                             return Delay;
                         }
                     }
                     else if (!String.IsNullOrEmpty(Delay.IfNotSetCondition))
                     {
-                        if (!Tease.Flags.Contains(Delay.IfNotSetCondition))
+                        if (Tease.MatchesIfNotSetCondition(Delay.IfNotSetCondition))
                         {
                             return Delay;
                         }
@@ -99,14 +99,14 @@ namespace TeaseMe.Common
                 {
                     if (!String.IsNullOrEmpty(button.IfSetCondition))
                     {
-                        if (Tease.Flags.Contains(button.IfSetCondition))
+                        if (Tease.MatchesIfSetCondition(button.IfSetCondition))
                         {
                             result.Add(button);
                         }
                     }
                     else if (!String.IsNullOrEmpty(button.IfNotSetCondition))
                     {
-                        if (!Tease.Flags.Contains(button.IfNotSetCondition))
+                        if (Tease.MatchesIfNotSetCondition(button.IfNotSetCondition))
                         {
                             result.Add(button);    
                         }

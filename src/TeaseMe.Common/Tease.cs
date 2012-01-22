@@ -75,11 +75,8 @@ namespace TeaseMe.Common
             get { return currentPage; }
             set
             {
-                if (currentPage != value)
-                {
-                    currentPage = value;
-                    OnCurrentPageChanged();
-                }
+                currentPage = value;
+                OnCurrentPageChanged();
             }
         }
 
@@ -135,6 +132,33 @@ namespace TeaseMe.Common
             }
         }
 
+        public bool MatchesIfSetCondition(string condition)
+        {
+            if (condition.Contains("+"))
+            {
+                return condition.Split(new[] {'+'}, StringSplitOptions.RemoveEmptyEntries).All(x => Flags.Contains(x));
+            }
+            if (condition.Contains("|"))
+            {
+                return condition.Split(new[] {'|'}, StringSplitOptions.RemoveEmptyEntries).Any(x => Flags.Contains(x));
+            }
+            return Flags.Contains(condition);
+        }
+
+        public bool MatchesIfNotSetCondition(string condition)
+        {
+            if (condition.Contains("+"))
+            {
+                return !(condition.Split(new[] {'+'}, StringSplitOptions.RemoveEmptyEntries).Any(x => Flags.Contains(x)));
+            }
+            if (condition.Contains("|"))
+            {
+                return condition.Split(new[] {'|'}, StringSplitOptions.RemoveEmptyEntries).Any(x => !Flags.Contains(x));
+            }
+            return !Flags.Contains(condition);
+        }
+
+
         public void NavigateToPage(string pageId)
         {
             CurrentPage = Pages.Find(page => page.Id.Equals(pageId, StringComparison.InvariantCultureIgnoreCase));
@@ -152,7 +176,7 @@ namespace TeaseMe.Common
                 return FullMediaDirectoryPath + media.Id;
             }
             var matchingFiles = new DirectoryInfo(FullMediaDirectoryPath).GetFiles(media.Id);
-            if (matchingFiles.Count() > 0)
+            if (matchingFiles.Any())
             {
                 return matchingFiles[random.Next(matchingFiles.Length)].FullName;
             }
@@ -215,13 +239,13 @@ namespace TeaseMe.Common
             {
                 if (!String.IsNullOrEmpty(page.IfSetCondition))
                 {
-                    return Flags.Contains(page.IfSetCondition);
+                    return MatchesIfSetCondition(page.IfSetCondition);
                 }
                 if (!String.IsNullOrEmpty(page.IfNotSetCondition))
                 {
-                    return !Flags.Contains(page.IfNotSetCondition);
+                    return MatchesIfNotSetCondition(page.IfNotSetCondition);
                 }
-                return !Flags.Contains(page.Id);
+                return MatchesIfNotSetCondition(page.Id);
             }
             return false;
         }
