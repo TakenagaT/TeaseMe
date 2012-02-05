@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using TeaseMe.Common;
@@ -77,7 +78,8 @@ namespace TeaseMe
                     AuthorNameTextBox.Text = match.Groups["authorname"].Value;
                     AuthorIdTextBox.Text = match.Groups["authorid"].Value;
 
-                    string[] scriptLines = webClient.DownloadString("http://www.milovana.com/webteases/getscript.php?id=" + TeaseIdTextBox.Text).Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+                    var data = webClient.DownloadData("http://www.milovana.com/webteases/getscript.php?id=" + TeaseIdTextBox.Text);
+                    string[] scriptLines = Encoding.UTF8.GetString(data).Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
 
                     SelectedTease = new FlashTeaseConverter().Convert(TeaseIdTextBox.Text, TeaseTitleTextBox.Text, AuthorIdTextBox.Text, AuthorNameTextBox.Text, scriptLines);
 
