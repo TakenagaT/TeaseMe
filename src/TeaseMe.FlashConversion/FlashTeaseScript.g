@@ -255,6 +255,7 @@ pageId
 QUOTED_STRING
 	:	'"' ( options {greedy=false;} :  ~('"'|'\n'|'\r'))* '"'
 	|	'\'' ( options {greedy=false;} :  ~('\''|'\n'|'\r'))* '\''
+	|	'’' ( options {greedy=false;} :  ~('’'|'\n'|'\r'))* '’'
 	;
 
 INTEGER

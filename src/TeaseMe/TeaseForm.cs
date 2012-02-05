@@ -28,6 +28,8 @@ namespace TeaseMe
         private TeaseLibrary teaseLibrary;
 
         private int secondsUntilNextPage;
+        // There might be a difference between the remaining time shown to the user and the actual time.
+        private int secondsShownUntilNextPage;
 
         private static string ApplicationDirectory
         {
@@ -237,6 +239,14 @@ namespace TeaseMe
             if (CurrentTease.CurrentPage.AvailableDelay != null)
             {
                 secondsUntilNextPage = CurrentTease.GetInteger(CurrentTease.CurrentPage.AvailableDelay.Seconds);
+
+                secondsShownUntilNextPage = secondsUntilNextPage;
+                if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableDelay.StartWithSeconds))
+                {
+                    secondsShownUntilNextPage = CurrentTease.GetInteger(CurrentTease.CurrentPage.AvailableDelay.StartWithSeconds);
+                }
+                
+
                 UpdateCountDownPanel();
                 CountdownTimer.Start();
             }
@@ -260,6 +270,7 @@ namespace TeaseMe
         private void CountdownTick(object sender, EventArgs e)
         {
             secondsUntilNextPage--;
+            secondsShownUntilNextPage--;
             UpdateCountDownPanel();
             if (secondsUntilNextPage == 0)
             {
@@ -270,7 +281,7 @@ namespace TeaseMe
 
         private void UpdateCountDownPanel()
         {
-            var left = new TimeSpan(0, 0, secondsUntilNextPage);
+            var left = new TimeSpan(0, 0, secondsShownUntilNextPage);
             TimeLeftLabel.Text = (CurrentTease.CurrentPage.AvailableDelay.Style == DelayStyle.Secret) ? "??:??" : String.Format("{0:00}:{1:00}", Math.Floor(left.TotalMinutes), left.Seconds);
         }
 

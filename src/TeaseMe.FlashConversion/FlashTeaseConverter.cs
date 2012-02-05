@@ -182,7 +182,7 @@ namespace TeaseMe.FlashConversion
 
                 // Replace special quotes.
                 line = line.Replace(@"\'", "&quot;");
-                line = line.Replace('’', '"');
+//                line = line.Replace("’", "\"");
 
                 // Some scripts have an empty media instruction.
                 line = line.Replace(",media:'',", ",");
