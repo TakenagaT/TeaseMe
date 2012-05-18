@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.3.1.7705 FlashTeaseScript.g 2012-02-05 10:08:56
+// $ANTLR 3.3.1.7705 FlashTeaseScript.g 2012-05-18 09:14:21
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -27,7 +27,7 @@ using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 using RewriteRuleITokenStream = Antlr.Runtime.Tree.RewriteRuleTokenStream;
 
-namespace TeaseMe.FlashConversion
+namespace TeaseMe.MilovanaDownload
 {
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "3.3.1.7705")]
 [System.CLSCompliant(false)]
@@ -5730,4 +5730,4 @@ public partial class FlashTeaseScriptParser : Antlr.Runtime.Parser
 	#endregion Follow sets
 }
 
-} // namespace TeaseMe.FlashConversion
+} // namespace TeaseMe.MilovanaDownload

@@ -270,10 +270,9 @@ namespace TeaseMe.Common
             }
             else
             {
-                string pageId = action.Target;
-                if (Pages.Exists(p => p.Id.Equals(pageId)) && AllowedToShowPage(pageId))
+                if (Pages.Exists(p => p.Id.Equals(action.Target)))
                 {
-                    possibilities.Add(pageId);
+                    return action.Target;
                 }
             }
             if (possibilities.Count == 0)

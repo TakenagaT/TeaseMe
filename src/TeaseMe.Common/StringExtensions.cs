@@ -4,6 +4,11 @@ namespace TeaseMe.Common
 {
     public static class StringExtensions
     {
+        public static string Remove(this string originalText, params char[] charsToRemove)
+        {
+            return String.Concat(originalText.Split(charsToRemove));
+        }
+
         /// <summary>
         /// Returns the part of the string before the first occurence of the given string,
         /// or null when the original text does not contain the text to find. 
@@ -15,7 +20,7 @@ namespace TeaseMe.Common
                 return null;
             }
 
-            return originalText.Substring(0, originalText.IndexOf(textToFind));
+            return originalText.Substring(0, originalText.IndexOf(textToFind, StringComparison.Ordinal));
         }
 
         /// <summary>
@@ -29,7 +34,7 @@ namespace TeaseMe.Common
                 return null;
             }
 
-            return originalText.Substring(0, originalText.LastIndexOf(textToFind));
+            return originalText.Substring(0, originalText.LastIndexOf(textToFind, StringComparison.Ordinal));
         }
 
         /// <summary>
@@ -43,7 +48,7 @@ namespace TeaseMe.Common
                 return null;
             }
             
-            return originalText.Substring(originalText.IndexOf(textToFind) + textToFind.Length);
+            return originalText.Substring(originalText.IndexOf(textToFind, StringComparison.Ordinal) + textToFind.Length);
         }
 
         /// <summary>
@@ -57,7 +62,7 @@ namespace TeaseMe.Common
                 return null;
             }
             
-            return originalText.Substring(originalText.LastIndexOf(textToFind) + textToFind.Length);
+            return originalText.Substring(originalText.LastIndexOf(textToFind, StringComparison.Ordinal) + textToFind.Length);
         }
 
         /// <summary>

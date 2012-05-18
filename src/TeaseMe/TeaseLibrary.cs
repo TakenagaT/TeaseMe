@@ -1,11 +1,10 @@
-﻿using System;
+using System;
 using System.Configuration;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-using TeaseMe.Common;
 
-namespace TeaseMe
+namespace TeaseMe.Common
 {
     public class TeaseLibrary
     {

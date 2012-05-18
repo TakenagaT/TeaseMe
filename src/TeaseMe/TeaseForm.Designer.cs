@@ -51,6 +51,7 @@ namespace TeaseMe
             this.TextPanel = new System.Windows.Forms.Panel();
             this.TeaseTextWebBrowser = new System.Windows.Forms.WebBrowser();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.FullscreenButton = new System.Windows.Forms.Button();
             this.CountdownPanel.SuspendLayout();
             this.ButtonPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer)).BeginInit();
@@ -269,6 +270,7 @@ namespace TeaseMe
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.FullscreenButton);
             this.panel1.Controls.Add(this.AuthorNameLabel);
             this.panel1.Controls.Add(this.OpenButton);
             this.panel1.Controls.Add(this.TeaseTitleLabel);
@@ -278,6 +280,19 @@ namespace TeaseMe
             this.panel1.Size = new System.Drawing.Size(503, 58);
             this.panel1.TabIndex = 1;
             // 
+            // FullscreenButton
+            // 
+            this.FullscreenButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FullscreenButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.FullscreenButton.Image = global::TeaseMe.Properties.Resources.up_right;
+            this.FullscreenButton.Location = new System.Drawing.Point(476, 3);
+            this.FullscreenButton.Name = "FullscreenButton";
+            this.FullscreenButton.Size = new System.Drawing.Size(24, 24);
+            this.FullscreenButton.TabIndex = 48;
+            this.ToolTips.SetToolTip(this.FullscreenButton, "Fullscreen");
+            this.FullscreenButton.UseVisualStyleBackColor = true;
+            this.FullscreenButton.Click += new System.EventHandler(this.FullscreenButton_Click);
+            // 
             // TeaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,9 +301,11 @@ namespace TeaseMe
             this.ClientSize = new System.Drawing.Size(1229, 755);
             this.Controls.Add(this.VerticalSplitContainer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "TeaseForm";
             this.Text = "[ApplicationTitle]";
             this.Load += new System.EventHandler(this.TeaseForm_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TeaseForm_KeyUp);
             this.CountdownPanel.ResumeLayout(false);
             this.CountdownPanel.PerformLayout();
             this.ButtonPanel.ResumeLayout(false);
@@ -325,6 +342,7 @@ namespace TeaseMe
         private Panel TextPanel;
         private Panel panel1;
         private WebBrowser TeaseTextWebBrowser;
+        private Button FullscreenButton;
 
     }
 }

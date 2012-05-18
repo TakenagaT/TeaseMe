@@ -31,6 +31,14 @@ namespace TeaseMe
         // There might be a difference between the remaining time shown to the user and the actual time.
         private int secondsShownUntilNextPage;
 
+
+        private FormWindowState windowState;
+        private FormBorderStyle borderStyle;
+        private bool topMost;
+        private Rectangle bounds;
+        private bool isFullscreen;
+
+
         private static string ApplicationDirectory
         {
             get { return new FileInfo(Application.ExecutablePath).DirectoryName; }
@@ -133,19 +141,12 @@ namespace TeaseMe
 
                 CurrentTease.CurrentPageChanged += currentTease_CurrentPageChanged;
 
-                SetPreferenceFlags();
-
                 CurrentTease.Start();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-        }
-
-        void SetPreferenceFlags()
-        {
-            CurrentTease.SetFlags("user_" + Settings.Default.UserGender);
         }
 
         void currentTease_CurrentPageChanged(object sender, TeasePageEventArgs e)
@@ -162,9 +163,6 @@ namespace TeaseMe
 
         private void SetText(string text)
         {
-            // Replace the username if set in the preferences.
-            text = text.Replace("$UserName$", Settings.Default.UserName);
-
             // The extra steps are necessary because of strange/wrong behaviour of the webbrowser control.
             TeaseTextWebBrowser.Navigate("about:blank");
             if (TeaseTextWebBrowser.Document != null)
@@ -382,7 +380,61 @@ namespace TeaseMe
             }
         }
 
+        private void FullscreenButton_Click(object sender, EventArgs e)
+        {
+            if (isFullscreen)
+            {
+                RestoreScreen();
+            }
+            else
+            {
+                Fullscreen();
+            }
+        }
 
+        private void TeaseForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                if (isFullscreen)
+                {
+                    RestoreScreen();
+                }
+            }
+        }
+
+
+        private void Fullscreen()
+        {
+            if (!isFullscreen)
+            {
+                windowState = WindowState;
+                borderStyle = FormBorderStyle;
+                topMost = TopMost;
+                bounds = Bounds; 
+                
+                WindowState = FormWindowState.Maximized;
+                FormBorderStyle = FormBorderStyle.None;
+                TopMost = true;
+                WinApi.SetWinFullScreen(Handle);
+                
+                FullscreenButton.Image = Resources.down_left;
+                ToolTips.SetToolTip(FullscreenButton, "Exit fullscreen (ESC)");
+                isFullscreen = true;
+            }
+        }
+
+        private void RestoreScreen()
+        {
+            WindowState = windowState;
+            FormBorderStyle = borderStyle;
+            TopMost = topMost;
+            Bounds = bounds;
+            
+            FullscreenButton.Image = Resources.up_right;
+            ToolTips.SetToolTip(FullscreenButton, "Fullscreen");
+            isFullscreen = false;
+        }
 
     }
 }

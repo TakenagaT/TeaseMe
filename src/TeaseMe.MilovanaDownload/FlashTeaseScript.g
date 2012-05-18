@@ -42,8 +42,8 @@ tokens {
 	YN;
 }
 
-@lexer::namespace{TeaseMe.FlashConversion}
-@parser::namespace{TeaseMe.FlashConversion}
+@lexer::namespace{TeaseMe.MilovanaDownload}
+@parser::namespace{TeaseMe.MilovanaDownload}
 
 @members {
 ArrayList exceptions = new ArrayList();

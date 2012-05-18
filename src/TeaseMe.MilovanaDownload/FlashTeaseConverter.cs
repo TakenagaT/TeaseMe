@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -10,30 +9,16 @@ using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 using TeaseMe.Common;
 
-namespace TeaseMe.FlashConversion
+namespace TeaseMe.MilovanaDownload
 {
     public class FlashTeaseConverter
     {
-        public Tease Convert(string teaseId, string teaseTitle, string authorId, string authorName, string[] scriptLines)
+        public void AddPages(Tease tease, string script)
         {
-            var result = new Tease
-            {
-                Id = teaseId,
-                Title = teaseTitle,
-                Url = "http://www.milovana.com/webteases/showflash.php?id=" + teaseId,
-                Author = new Author
-                {
-                    Id = authorId,
-                    Name = authorName,
-                    Url = "http://www.milovana.com/forum/memberlist.php?mode=viewprofile&u=" + authorId
-                }
-            };
-
-
             var mustCommands = new List<string>();
 
             // Do minor corrections first so that the parser can stay a bit simpler.
-            foreach (var line in CorrectedLines(scriptLines))
+            foreach (var line in CorrectedLines(script))
             {
                 var correctedLine = line;
 
@@ -104,7 +89,7 @@ namespace TeaseMe.FlashConversion
                         page = CreatePage(correctedLine);
                     }
 
-                    result.Pages.Add(page);
+                    tease.Pages.Add(page);
                 }
             }
 
@@ -127,7 +112,7 @@ namespace TeaseMe.FlashConversion
                         }
                     }
 
-                    var page = result.Pages.Find(p => p.Id.Equals(self));
+                    var page = tease.Pages.Find(p => p.Id.Equals(self));
                     if (page != null)
                     {
                         if (match.Groups["cmd"].Value.Equals("must"))
@@ -140,10 +125,7 @@ namespace TeaseMe.FlashConversion
                         }
                     }
                 }
-
             }
-
-            return result;
         }
 
         private string StripHtml(string text)
@@ -160,8 +142,10 @@ namespace TeaseMe.FlashConversion
                 }
         }
 
-        private IEnumerable<string> CorrectedLines(string[] scriptLines)
+        private IEnumerable<string> CorrectedLines(string script)
         {
+            string[] scriptLines = script.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+
             var result = new List<string>();
             for (int i = 0; i < scriptLines.Length; i++)
             {
@@ -182,7 +166,6 @@ namespace TeaseMe.FlashConversion
 
                 // Replace special quotes.
                 line = line.Replace(@"\'", "&quot;");
-//                line = line.Replace("’", "\"");
 
                 // Some scripts have an empty media instruction.
                 line = line.Replace(",media:'',", ",");
@@ -313,7 +296,7 @@ namespace TeaseMe.FlashConversion
             if (timeNode != null)
             {
                 var minNode = (CommonTree)timeNode.GetFirstChildWithType(FlashTeaseScriptLexer.MIN);
-                int minSecs = System.Convert.ToInt32(minNode.GetChild(0).Text);
+                int minSecs = Convert.ToInt32(minNode.GetChild(0).Text);
                 if (minNode.ChildCount > 1)
                 {
                     var minUnit = minNode.GetChild(1).Text;
@@ -329,7 +312,7 @@ namespace TeaseMe.FlashConversion
                 int maxSecs = -1;
                 if (maxNode != null)
                 {
-                    maxSecs = System.Convert.ToInt32(maxNode.GetChild(0).Text);
+                    maxSecs = Convert.ToInt32(maxNode.GetChild(0).Text);
                     if (maxNode.ChildCount > 1)
                     {
                         var maxUnit = maxNode.GetChild(1).Text;
