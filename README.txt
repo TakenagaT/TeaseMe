@@ -1,5 +1,5 @@
 
-TeaseMe v0.0.9 (January 2012)
+TeaseMe v0.1.2 (May 2012)
 
 
 
@@ -20,6 +20,7 @@ Features
 ---------------
 - play offline and enjoy short loadtimes
 - sizable window with large imageframe
+- fullscreen mode *NEW*
 - create your own offline teases
 - sort your tease into pages and add instructions
 - support for html in instructiontext (including hyperlinks)
@@ -34,6 +35,7 @@ Features
 - debug mode (Ctrl+Shift+D) for better testing
 - play a detailed tutorial (tutorial.xml) and learn how it works
 - import milovana flashteases
+- import milovana htmlteases *NEW*
 - download more optional teases at official thread
 
 
@@ -56,6 +58,23 @@ http://www.milovana.com/forum/viewtopic.php?f=2&t=6993
 
 Update History
 -------------------------
+v0.1.2 (by Takenaga)
+- Added Milovana HTML tease download
+- Added fullscreen mode
+- Added use of multiple flags (and/or)
+- Hotfix: you should always go to an explicit (non-random) target (thanks to meson1).
+- Minor tweaks, fixes, changes.
+
+v0.1.1 (by Takenaga)
+- Hotfix: Fixed more errors for importing flashteases (button captions with html, single quotes in text should now be converted without errors)
+- Added XML-Sheme (TeaseMe-v0.1.xsd) for easier editing XML-Scripts
+
+v0.1.0 (by Takenaga)
+- New version of Importer should convert 90% of the flashteases without any error.The few remaining errors (e.g. if original contains button captions with html, multiple text elements on one page, invalid syntax or commands repeat, repeatset, numactionsfrom) will be marked in script and must be corrected by hand
+- Usability: Changed Layout to maximize media panel
+- Added some explanations about user interface into Tutorial
+- Program and Tutorial splitted into two seperate downloads
+
 v0.0.9 (by d3vi0n)
 - Hotfix: Fixed an Error in Randomizer    
 
