@@ -62,7 +62,9 @@ v0.1.2 (by Takenaga)
 - Added Milovana HTML tease download
 - Added fullscreen mode
 - Added use of multiple flags (and/or)
-- Hotfix: you should always go to an explicit (non-random) target (thanks to meson1).
+- Timer can show different time left than the actual (eg. on screen it shows 60sec while in reality only 20secs until next page).
+- Fix: you should always go to an explicit (non-random) target (thanks to meson1).
+- Fix: error when delay was set to zero (thanks to meson1).
 - Minor tweaks, fixes, changes.
 
 v0.1.1 (by Takenaga)
