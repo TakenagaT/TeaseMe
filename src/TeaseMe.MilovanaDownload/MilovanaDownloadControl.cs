@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Forms;
 
 using TeaseMe.Common;
@@ -185,6 +186,9 @@ namespace TeaseMe.MilovanaDownload
                                 backgroundWorker.ReportProgress(0, "Ok");
                                 page = HtmlTeaseConverter.CreatePage(page.ButtonList[0].Target, nextPageHtml);
                                 tease.Pages.Add(page);
+
+                                // Be nice to the Milovana webserver and wait a bit before the next request...
+                                Thread.Sleep(800);
                             }
                             catch (Exception err)
                             {
@@ -214,6 +218,9 @@ namespace TeaseMe.MilovanaDownload
                     {
                         DownloadMedia(task, page, page.Audio);
                     }
+
+                    // Be nice to the Milovana webserver and wait a bit before the next request...
+                    Thread.Sleep(800);
                 }
 
                 e.Result = tease;
@@ -293,6 +300,7 @@ namespace TeaseMe.MilovanaDownload
                 }
             }
 
+            cancelButton.Enabled = false;
             loadButton.Enabled = true;
         }
 
