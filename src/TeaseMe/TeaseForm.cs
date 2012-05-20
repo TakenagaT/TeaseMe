@@ -237,16 +237,22 @@ namespace TeaseMe
             if (CurrentTease.CurrentPage.AvailableDelay != null)
             {
                 secondsUntilNextPage = CurrentTease.GetInteger(CurrentTease.CurrentPage.AvailableDelay.Seconds);
-
-                secondsShownUntilNextPage = secondsUntilNextPage;
-                if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableDelay.StartWithSeconds))
+                if (secondsUntilNextPage > 0)
                 {
-                    secondsShownUntilNextPage = CurrentTease.GetInteger(CurrentTease.CurrentPage.AvailableDelay.StartWithSeconds);
+                    // If there are seconds to countdown, start the timer.
+                    secondsShownUntilNextPage = secondsUntilNextPage;
+                    if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableDelay.StartWithSeconds))
+                    {
+                        secondsShownUntilNextPage = CurrentTease.GetInteger(CurrentTease.CurrentPage.AvailableDelay.StartWithSeconds);
+                    }
+                    UpdateCountDownPanel();
+                    CountdownTimer.Start();
                 }
-                
-
-                UpdateCountDownPanel();
-                CountdownTimer.Start();
+                else
+                {
+                    // Otherwise execute the delay actions straight away.
+                    ExecuteTeaseAction(CurrentTease.CurrentPage.AvailableDelay);
+                }
             }
         }
 
