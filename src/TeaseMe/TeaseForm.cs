@@ -360,9 +360,17 @@ namespace TeaseMe
         {
             using (var popup = new OpenForm(teaseLibrary))
             {
+                if (isFullscreen)
+                {
+                    TopMost = false;
+                }
                 if (DialogResult.OK == popup.ShowDialog())
                 {
                     SetCurrentTease(popup.SelectedTease);
+                }
+                if (isFullscreen)
+                {
+                    TopMost = true;
                 }
             }
         }
