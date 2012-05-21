@@ -333,7 +333,7 @@ namespace TeaseMe.MilovanaDownload
             var styleNode = delayNode.GetFirstChildWithType(FlashTeaseScriptLexer.STYLE) as CommonTree;
             if (styleNode != null && styleNode.ChildCount > 0)
             {
-                switch (styleNode.GetChild(0).Text)
+                switch (styleNode.GetChild(0).Text.ToLowerInvariant())
                 {
                     case "hidden": result.Style = DelayStyle.Hidden; break;
                     case "secret": result.Style = DelayStyle.Secret; break;
