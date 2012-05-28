@@ -2,8 +2,10 @@
 using System.Configuration;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Text;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.Devices;
 using TeaseMe.Common;
@@ -208,14 +210,53 @@ namespace TeaseMe
                 string fileName = CurrentTease.GetFileName(CurrentTease.CurrentPage.Video);
                 if (!String.IsNullOrEmpty(fileName))
                 {
+
                     MediaPlayer.uiMode = "none";
                     MediaPlayer.stretchToFit = true;
                     MediaPlayer.enableContextMenu = false;
                     MediaPlayer.Ctlenabled = false;
-                    MediaPlayer.URL = fileName;
+
+                    if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.Video.StartAt))
+                    {
+                        MediaPlayer.URL = WriteAsxFile(fileName, CurrentTease.CurrentPage.Video.StartAt, CurrentTease.CurrentPage.Video.StopAt);
+                    }
+                    else
+                    {
+                        MediaPlayer.URL = fileName;
+                    }
                     MediaPlayer.Visible = true;
                 }
             }
+        }
+
+        private string WriteAsxFile(string videoFile, string startAt, string stopAt)
+        {
+            TimeSpan? duration = null;
+            if (!String.IsNullOrEmpty(stopAt))
+            {
+                duration = ParseTime(stopAt).Subtract(ParseTime(startAt));
+            }
+
+            string result = videoFile + ".asx";
+            var contents = new StringBuilder();
+            contents.AppendLine("<Asx Version=\"3.0\">");
+            contents.AppendLine("<Entry>");
+            contents.AppendFormat("<StartTime value=\"{0}\" />", startAt).AppendLine();
+            if (duration.HasValue)
+            {
+                contents.AppendFormat("<Duration value=\"{0}:{1}:{2}\" />", duration.Value.Hours, duration.Value.Minutes, duration.Value.Seconds).AppendLine();
+            }
+            contents.AppendFormat("<Ref href=\"{0}\" />", videoFile).AppendLine();
+            contents.AppendLine("</Entry>");
+            contents.AppendLine("</Asx>");
+            File.WriteAllText(result, contents.ToString());
+            return result;
+        }
+
+        DateTime ParseTime(string value)
+        {
+            string[] tmp = value.Split(':');
+            return new DateTime(2000, 1, 1, int.Parse(tmp[0]), int.Parse(tmp[1]), int.Parse(tmp[2]));
         }
 
         private void SetButtons()
