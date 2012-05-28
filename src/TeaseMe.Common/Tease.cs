@@ -27,6 +27,10 @@ namespace TeaseMe.Common
         [XmlElement("Description")]
         public string Description { get; set; }
 
+        [XmlArray("Tags")]
+        [XmlArrayItem("Tag")]
+        public List<string> Tags { get; set; }
+
         [XmlElement("Url")]
         public string Url { get; set; }
 
@@ -96,6 +100,7 @@ namespace TeaseMe.Common
         {
             ScriptVersion = CurrentScriptVersion;
             Author = new Author();
+            Tags = new List<string>();
             Pages = new List<TeasePage>();
             Flags = new List<string>();
             Settings = new TeaseSettings();
