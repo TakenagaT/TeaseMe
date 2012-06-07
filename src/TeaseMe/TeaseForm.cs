@@ -225,7 +225,45 @@ namespace TeaseMe
                         MediaPlayer.URL = fileName;
                     }
                     MediaPlayer.Visible = true;
+
+                    videoPlaying = false;
+                    MediaPlayer.PlayStateChange += MediaPlayer_PlayStateChange;
                 }
+            }
+        }
+
+        bool videoPlaying = false;
+
+        void MediaPlayer_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            switch (e.newState)
+            {
+                case 3:    // Playing
+                    videoPlaying = true;
+                    break;
+                case 10:   // Ready
+                    if (videoPlaying)
+                    {
+                        MediaPlayer.PlayStateChange -= MediaPlayer_PlayStateChange;
+                        if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.Video.Target))
+                        {
+                            ExecuteTeaseAction(CurrentTease.CurrentPage.Video);
+                        }
+                    }
+                    break;
+                case 0:    // Undefined
+                case 1:    // Stopped
+                case 2:    // Paused
+                case 4:    // ScanForward
+                case 5:    // ScanReverse
+                case 6:    // Buffering
+                case 7:    // Waiting
+                case 8:    // MediaEnded
+                case 9:    // Transitioning
+                case 11:   // Reconnecting
+                case 12:   // Last
+                default:
+                    break;
             }
         }
 

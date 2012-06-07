@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 namespace TeaseMe.Common
 {
     [TypeConverter(typeof(ExpandableObjectConverter))]
-    public class TeaseMedia
+    public class TeaseMedia : TeaseAction
     {
         [XmlAttribute("id")]
         public string Id { get; set; }
