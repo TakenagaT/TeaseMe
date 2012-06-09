@@ -216,7 +216,7 @@ namespace TeaseMe
                     MediaPlayer.enableContextMenu = false;
                     MediaPlayer.Ctlenabled = false;
 
-                    if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.Video.StartAt))
+                    if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.Video.StartAt) || !String.IsNullOrEmpty(CurrentTease.CurrentPage.Video.StopAt))
                     {
                         MediaPlayer.URL = WriteAsxFile(fileName, CurrentTease.CurrentPage.Video.StartAt, CurrentTease.CurrentPage.Video.StopAt);
                     }
@@ -241,6 +241,7 @@ namespace TeaseMe
                 case 3:    // Playing
                     videoPlaying = true;
                     break;
+                case 1:    // Stopped
                 case 10:   // Ready
                     if (videoPlaying)
                     {
@@ -252,7 +253,6 @@ namespace TeaseMe
                     }
                     break;
                 case 0:    // Undefined
-                case 1:    // Stopped
                 case 2:    // Paused
                 case 4:    // ScanForward
                 case 5:    // ScanReverse
@@ -270,6 +270,12 @@ namespace TeaseMe
         private string WriteAsxFile(string videoFile, string startAt, string stopAt)
         {
             TimeSpan? duration = null;
+
+            if (String.IsNullOrEmpty(startAt))
+            {
+                startAt = "00:00:00";
+            }
+
             if (!String.IsNullOrEmpty(stopAt))
             {
                 duration = ParseTime(stopAt).Subtract(ParseTime(startAt));
