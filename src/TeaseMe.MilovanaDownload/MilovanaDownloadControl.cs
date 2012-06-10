@@ -210,13 +210,13 @@ namespace TeaseMe.MilovanaDownload
                         return;
                     }
 
-                    if (page.Image != null)
+                    if (page.ImageList.Count > 0)
                     {
-                        DownloadMedia(task, page, page.Image);
+                        DownloadMedia(task, page, page.ImageList[0]);
                     }
-                    if (page.Audio != null)
+                    if (page.AudioList.Count > 0)
                     {
-                        DownloadMedia(task, page, page.Audio);
+                        DownloadMedia(task, page, page.AudioList[0]);
                     }
 
                     // Be nice to the Milovana webserver and wait a bit before the next request...

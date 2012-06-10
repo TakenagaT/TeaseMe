@@ -77,11 +77,26 @@ namespace TeaseMe
                     {
                         page.Text = textNode.InnerText;
                     }
-
-                    page.Image = CreateImage(pageNode);
-                    page.Video = CreateVideo(pageNode);
-                    page.Delay = CreateDelay(pageNode);
-                    page.Metronome = CreateMetronome(pageNode);
+                    var image = CreateImage(pageNode);
+                    if (image != null)
+                    {
+                        page.ImageList.Add(image);
+                    }
+                    var video = CreateVideo(pageNode);
+                    if (video != null)
+                    {
+                        page.VideoList.Add(video);
+                    }
+                    var delay =  CreateDelay(pageNode);
+                    if (delay != null)
+                    {
+                        page.DelayList.Add(delay);
+                    }
+                    var metronome = CreateMetronome(pageNode);
+                    if (metronome != null)
+                    {
+                        page.MetronomeList.Add(metronome);
+                    }
                     page.ButtonList.AddRange(CreateButtons(pageNode));
 
                     result.Pages.Add(page);

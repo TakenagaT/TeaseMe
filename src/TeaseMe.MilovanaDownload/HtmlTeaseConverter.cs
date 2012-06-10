@@ -53,7 +53,7 @@ namespace TeaseMe.MilovanaDownload
 
             if (!String.IsNullOrEmpty(imageUrl))
             {
-                result.Image = new TeaseMedia { Id = imageUrl };
+                result.ImageList.Add(new TeaseMedia { Id = imageUrl });
             }
             if (!String.IsNullOrEmpty(nextPage))
             {

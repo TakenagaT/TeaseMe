@@ -178,9 +178,9 @@ namespace TeaseMe
         private void SetMedia()
         {
             PictureBox1.Visible = false;
-            if (CurrentTease.CurrentPage.Image != null)
+            if (CurrentTease.CurrentPage.AvailableImage != null)
             {
-                string fileName = CurrentTease.GetFileName(CurrentTease.CurrentPage.Image);
+                string fileName = CurrentTease.GetFileName(CurrentTease.CurrentPage.AvailableImage);
                 if (!String.IsNullOrEmpty(fileName))
                 {
                     PictureBox1.ImageLocation = fileName;
@@ -191,9 +191,9 @@ namespace TeaseMe
             // Audio and Metronome cannot be combined in the same page.
             MediaPlayer.Visible = false;
             MediaPlayer.URL = null;
-            if (CurrentTease.CurrentPage.Audio != null && CurrentTease.CurrentPage.Metronome == null)
+            if (CurrentTease.CurrentPage.AvailableAudio != null && CurrentTease.CurrentPage.AvailableMetronome == null)
             {
-                string fileName = CurrentTease.GetFileName(CurrentTease.CurrentPage.Audio);
+                string fileName = CurrentTease.GetFileName(CurrentTease.CurrentPage.AvailableAudio);
                 if (!String.IsNullOrEmpty(fileName))
                 {
                     MediaPlayer.uiMode = "none";
@@ -205,9 +205,9 @@ namespace TeaseMe
             }
 
 
-            if (CurrentTease.CurrentPage.Video != null)
+            if (CurrentTease.CurrentPage.AvailableVideo != null)
             {
-                string fileName = CurrentTease.GetFileName(CurrentTease.CurrentPage.Video);
+                string fileName = CurrentTease.GetFileName(CurrentTease.CurrentPage.AvailableVideo);
                 if (!String.IsNullOrEmpty(fileName))
                 {
 
@@ -216,9 +216,9 @@ namespace TeaseMe
                     MediaPlayer.enableContextMenu = false;
                     MediaPlayer.Ctlenabled = false;
 
-                    if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.Video.StartAt) || !String.IsNullOrEmpty(CurrentTease.CurrentPage.Video.StopAt))
+                    if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableVideo.StartAt) || !String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableVideo.StopAt))
                     {
-                        MediaPlayer.URL = WriteAsxFile(fileName, CurrentTease.CurrentPage.Video.StartAt, CurrentTease.CurrentPage.Video.StopAt);
+                        MediaPlayer.URL = WriteAsxFile(fileName, CurrentTease.CurrentPage.AvailableVideo.StartAt, CurrentTease.CurrentPage.AvailableVideo.StopAt);
                     }
                     else
                     {
@@ -246,9 +246,9 @@ namespace TeaseMe
                     if (videoPlaying)
                     {
                         MediaPlayer.PlayStateChange -= MediaPlayer_PlayStateChange;
-                        if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.Video.Target))
+                        if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableVideo.Target))
                         {
-                            ExecuteTeaseAction(CurrentTease.CurrentPage.Video);
+                            ExecuteTeaseAction(CurrentTease.CurrentPage.AvailableVideo);
                         }
                     }
                     break;
@@ -344,9 +344,9 @@ namespace TeaseMe
         private void SetMetronome()
         {
             MetronomeTimer.Stop();
-            if (CurrentTease.CurrentPage.Metronome != null)
+            if (CurrentTease.CurrentPage.AvailableMetronome != null)
             {
-                int bpm = CurrentTease.GetInteger(CurrentTease.CurrentPage.Metronome.BeatsPerMinute);
+                int bpm = CurrentTease.GetInteger(CurrentTease.CurrentPage.AvailableMetronome.BeatsPerMinute);
                 if (1 <= bpm && bpm <= 250)
                 {
                     MetronomeTimer.Interval = Convert.ToInt32(1000f * (60f / bpm));

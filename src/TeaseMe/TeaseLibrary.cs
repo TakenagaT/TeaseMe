@@ -33,13 +33,12 @@ namespace TeaseMe.Common
             {
                 ScriptDirectory = applicationDirectory
             };
-            tease.Pages.Add(new TeasePage
-            {
-                Id = "start",
-                Text = "Welcome. Please open a tease.",
-                Audio = new TeaseMedia { Id = ConfigurationManager.AppSettings["WelcomeAudio"] },
-                Image = new TeaseMedia { Id = ConfigurationManager.AppSettings["WelcomeImage"] }
-            });
+            var welcomePage = new TeasePage();
+            welcomePage.Id = "start";
+            welcomePage.Text = "Welcome. Please open a tease.";
+            welcomePage.AudioList.Add(new TeaseMedia { Id = ConfigurationManager.AppSettings["WelcomeAudio"] });
+            welcomePage.ImageList.Add(new TeaseMedia { Id = ConfigurationManager.AppSettings["WelcomeImage"] });
+            tease.Pages.Add(welcomePage);
             return tease;
         }
 

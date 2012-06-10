@@ -209,12 +209,23 @@ namespace TeaseMe.MilovanaDownload
                         {
                             result.Text = GetText(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.TEXT) as CommonTree);
 
-                            result.Image = GetImage(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.PIC) as CommonTree);
-                            result.Audio = GetAudio(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.SOUND) as CommonTree);
-
+                            var image = GetImage(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.PIC) as CommonTree);
+                            if (image != null)
+                            {
+                                result.ImageList.Add(image);
+                            }
+                            var audio = GetAudio(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.SOUND) as CommonTree);
+                            if (audio != null)
+                            {
+                                result.AudioList.Add(audio);
+                            }
+                            var delay =  GetDelay(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.DELAY) as CommonTree);
+                            if (delay != null)
+                            {
+                                result.DelayList.Add(delay);
+                            }
+                        
                             result.ButtonList.AddRange(GetButtons(propertiesNode));
-
-                            result.Delay = GetDelay(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.DELAY) as CommonTree);
 
                             result.SetFlags = GetFlags(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.SET) as CommonTree);
                             result.UnsetFlags = GetFlags(propertiesNode.GetFirstChildWithType(FlashTeaseScriptLexer.UNSET) as CommonTree);

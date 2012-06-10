@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 namespace TeaseMe.Common
 {
     [TypeConverter(typeof(ExpandableObjectConverter))]
-    public class TeaseMetronome
+    public class TeaseMetronome : TeaseAction
     {
         [XmlAttribute("bpm")]
         public string BeatsPerMinute { get; set; }

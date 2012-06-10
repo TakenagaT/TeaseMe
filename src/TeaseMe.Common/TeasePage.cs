@@ -18,23 +18,23 @@ namespace TeaseMe.Common
         public HtmlText Text { get; set; }
 
         [XmlElement("Image")]
-        public TeaseMedia Image { get; set; }
+        public List<TeaseMedia> ImageList { get; set; }
 
         [XmlElement("Audio")]
-        public TeaseMedia Audio { get; set; }
+        public List<TeaseMedia> AudioList { get; set; }
 
         [XmlElement("Video")]
-        public TeaseMedia Video { get; set; }
+        public List<TeaseMedia> VideoList { get; set; }
 
         [XmlElement("Delay")]
-        public TeaseDelay Delay { get; set; }
+        public List<TeaseDelay> DelayList { get; set; }
 
         [XmlElement("Metronome")]
-        public TeaseMetronome Metronome { get; set; }
+        public List<TeaseMetronome> MetronomeList { get; set; }
 
         [XmlElement("Button")]
         public List<TeaseButton> ButtonList { get; set; }
-        
+
         [XmlAttribute("set")]
         public string SetFlags { get; set; }
 
@@ -56,34 +56,184 @@ namespace TeaseMe.Common
         public TeasePage()
         {
             ButtonList = new List<TeaseButton>();
+            ImageList = new List<TeaseMedia>();
+            AudioList = new List<TeaseMedia>();
+            VideoList = new List<TeaseMedia>();
+            MetronomeList = new List<TeaseMetronome>();
+            DelayList = new List<TeaseDelay>();
         }
 
+
+        [XmlIgnore]
+        public TeaseMedia AvailableImage
+        {
+            get
+            {
+                if (ImageList.Count > 0)
+                {
+                    var result = new List<TeaseMedia>();
+                    foreach (var media in ImageList)
+                    {
+                        if (!String.IsNullOrEmpty(media.IfSetCondition))
+                        {
+                            if (Tease.MatchesIfSetCondition(media.IfSetCondition))
+                            {
+                                result.Add(media);
+                            }
+                        }
+                        else if (!String.IsNullOrEmpty(media.IfNotSetCondition))
+                        {
+                            if (Tease.MatchesIfNotSetCondition(media.IfNotSetCondition))
+                            {
+                                result.Add(media);
+                            }
+                        }
+                        else
+                        {
+                            result.Add(media);
+                        }
+                    }
+                    return result.Count > 0 ? result[0] : null;
+                }
+                return null;
+            }
+        }
+
+        [XmlIgnore]
+        public TeaseMedia AvailableAudio
+        {
+            get
+            {
+                if (AudioList.Count > 0)
+                {
+                    var result = new List<TeaseMedia>();
+                    foreach (var media in AudioList)
+                    {
+                        if (!String.IsNullOrEmpty(media.IfSetCondition))
+                        {
+                            if (Tease.MatchesIfSetCondition(media.IfSetCondition))
+                            {
+                                result.Add(media);
+                            }
+                        }
+                        else if (!String.IsNullOrEmpty(media.IfNotSetCondition))
+                        {
+                            if (Tease.MatchesIfNotSetCondition(media.IfNotSetCondition))
+                            {
+                                result.Add(media);
+                            }
+                        }
+                        else
+                        {
+                            result.Add(media);
+                        }
+                    }
+                    return result.Count > 0 ? result[0] : null;
+                }
+                return null;
+            }
+        }
+
+        [XmlIgnore]
+        public TeaseMedia AvailableVideo
+        {
+            get
+            {
+                if (VideoList.Count > 0)
+                {
+                    var result = new List<TeaseMedia>();
+                    foreach (var media in VideoList)
+                    {
+                        if (!String.IsNullOrEmpty(media.IfSetCondition))
+                        {
+                            if (Tease.MatchesIfSetCondition(media.IfSetCondition))
+                            {
+                                result.Add(media);
+                            }
+                        }
+                        else if (!String.IsNullOrEmpty(media.IfNotSetCondition))
+                        {
+                            if (Tease.MatchesIfNotSetCondition(media.IfNotSetCondition))
+                            {
+                                result.Add(media);
+                            }
+                        }
+                        else
+                        {
+                            result.Add(media);
+                        }
+                    }
+                    return result.Count > 0 ? result[0] : null;
+                }
+                return null;
+            }
+        }
+
+        [XmlIgnore]
+        public TeaseMetronome AvailableMetronome
+        {
+            get
+            {
+                if (MetronomeList.Count > 0)
+                {
+                    var result = new List<TeaseMetronome>();
+                    foreach (var media in MetronomeList)
+                    {
+                        if (!String.IsNullOrEmpty(media.IfSetCondition))
+                        {
+                            if (Tease.MatchesIfSetCondition(media.IfSetCondition))
+                            {
+                                result.Add(media);
+                            }
+                        }
+                        else if (!String.IsNullOrEmpty(media.IfNotSetCondition))
+                        {
+                            if (Tease.MatchesIfNotSetCondition(media.IfNotSetCondition))
+                            {
+                                result.Add(media);
+                            }
+                        }
+                        else
+                        {
+                            result.Add(media);
+                        }
+                    }
+                    return result.Count > 0 ? result[0] : null;
+                }
+                return null;
+            }
+        }
 
         [XmlIgnore]
         public TeaseDelay AvailableDelay
         {
             get
             {
-                if (Delay != null)
+                if (DelayList.Count > 0)
                 {
-                    if (!String.IsNullOrEmpty(Delay.IfSetCondition))
+                    var result = new List<TeaseDelay>();
+                    foreach (var delay in DelayList)
                     {
-                        if (Tease.MatchesIfSetCondition(Delay.IfSetCondition))
+                        if (!String.IsNullOrEmpty(delay.IfSetCondition))
                         {
-                            return Delay;
+                            if (Tease.MatchesIfSetCondition(delay.IfSetCondition))
+                            {
+                                result.Add(delay);
+                            }
+                        }
+                        else if (!String.IsNullOrEmpty(delay.IfNotSetCondition))
+                        {
+                            if (Tease.MatchesIfNotSetCondition(delay.IfNotSetCondition))
+                            {
+                                result.Add(delay);
+                            }
+                        }
+                        else
+                        {
+                            result.Add(delay);
                         }
                     }
-                    else if (!String.IsNullOrEmpty(Delay.IfNotSetCondition))
-                    {
-                        if (Tease.MatchesIfNotSetCondition(Delay.IfNotSetCondition))
-                        {
-                            return Delay;
-                        }
-                    }
-                    else
-                    {
-                        return Delay;
-                    }
+                    return result.Count > 0 ? result[0] : null;
                 }
                 return null;
             }
@@ -108,7 +258,7 @@ namespace TeaseMe.Common
                     {
                         if (Tease.MatchesIfNotSetCondition(button.IfNotSetCondition))
                         {
-                            result.Add(button);    
+                            result.Add(button);
                         }
                     }
                     else
@@ -119,7 +269,7 @@ namespace TeaseMe.Common
                 return result;
             }
         }
-        
+
 
         [XmlIgnore]
         public Tease Tease { get; set; }
