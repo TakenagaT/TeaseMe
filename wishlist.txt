@@ -4,19 +4,10 @@ Bring on the next evolutionary step for TeaseMe! :-D TeaseMe needs variables (at
  later statistics or achievements).
 
 Then there is a ton of "little" things (sorted according to my priority):
--    automatic page switch after video finished playing
--    possibility to stop/start a delay or video on a specific time code
--    multiple delays on one page with different if-set/if-not-set conditions
--    multiple flags in if-set/if-not-set conditions
 -    use of video and audio on the same page
 -    using <img>-HTML-Tags
 
 
-And finally: There are some problems in the importer: The importer screws every delay (ignores the style and sets all delays to "normal").
- Imports with "must/must-not" are still a mess. There are much fewer "marked errors" after import now. But thats part of the problem,
- because even without errors: the translation into "if-set/if-not-set" and the placement of the "set/unset" is most of the time wrong.
- A "new" user doesn't know that and but believes his import worked until he actually plays the tease later on. Without the marked errors
- the search for the problem is then a pain in the ass. ;-)
  
 It would be nice if you could make the program all-ages friendly. If you think about it, there is really nothing about the program 
  that is adults-only. You could look at it as a a tool for building customized slideshows. Adult-only teases are one use (obviously,
@@ -44,7 +35,6 @@ Using strings:
     if = "name != 'x'"
 
 
-1) Allow a full screen mode.
 2) See if you can make it clearer which button is highlighted - it's a Windows thing I know.. but when I use the keyboard rather than the
  mouse there's not much distinction between the highlighted and default, and I worry I'll hit the wrong one.
 3) When downloading images and the internet is at a busy time the program will generate errors when it can't grab a file. Is it possible
@@ -58,16 +48,9 @@ Using strings:
 7) Sometimes the buttons lose focus (if I click anywhere other than a button) and I can't seem to find a way for the buttons to regain focus
  other than clicking one with a mouse. If I'm doing a tease it's easier (and quicker if the tease depends on me being quick) using the keyboard.	
  
-1) make an option to view not the whole video but the set period of it by defining timeframe.
+1) [DONE] make an option to view not the whole video but the set period of it by defining timeframe.
 - Make an option to set the timeframe to be repeated
 2) introduce variables (at least integer)
 3) re-arrange buttons disposition - they are too far away and if there are a few they sometimes look weird. It would be better to arrange
  them in columns like in original nyx.
 4) add advanced coding. It would be best if we could actually use java or c# 
-
-For TeaseMe to function identically to FlashTease, pages should be set automatically when you visit them. So, one would think that setting
- <AutoSetPageWhenSeen> to true would accomplish this, and it does. Except (here comes the flaw) the decision of whether or not you should
- or shouldn't goto a page should only occur if the target clause specifies a range of pages (i.e. when you use the syntax target="(from..to)" ).
- But if you specify a page as an explicit target (e.g. target="pagex") the program should goto said page regardless of whether it is set or not.
- This would then make TeaseMe work exactly the same as FlashTease and would make far more imported teases function as they should without having
- to go in and modify the xml code.
