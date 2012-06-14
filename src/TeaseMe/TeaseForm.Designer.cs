@@ -163,6 +163,7 @@ namespace TeaseMe
             this.MediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("MediaPlayer.OcxState")));
             this.MediaPlayer.Size = new System.Drawing.Size(725, 755);
             this.MediaPlayer.TabIndex = 1;
+            this.MediaPlayer.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.MediaPlayer_PlayStateChange);
             // 
             // MetronomeTimer
             // 

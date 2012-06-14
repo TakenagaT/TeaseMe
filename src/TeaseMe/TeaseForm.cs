@@ -86,8 +86,6 @@ namespace TeaseMe
             teaseLibrary = new TeaseLibrary(ApplicationDirectory);
 
             SetCurrentTease(teaseLibrary.EmptyTease());
-
-
         }
 
 
@@ -200,7 +198,16 @@ namespace TeaseMe
                     MediaPlayer.stretchToFit = true;
                     MediaPlayer.enableContextMenu = false;
                     MediaPlayer.Ctlenabled = false;
-                    MediaPlayer.URL = fileName;
+                    if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableAudio.StartAt) || !String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableAudio.StopAt))
+                    {
+                        MediaPlayer.URL = WriteAsxFile(fileName, CurrentTease.CurrentPage.AvailableAudio.StartAt, CurrentTease.CurrentPage.AvailableAudio.StopAt);
+                    }
+                    else
+                    {
+                        MediaPlayer.URL = fileName;
+                    }
+                    MediaPlayer.Visible = true;
+                    mediaPlaying = false;
                 }
             }
 
@@ -225,30 +232,31 @@ namespace TeaseMe
                         MediaPlayer.URL = fileName;
                     }
                     MediaPlayer.Visible = true;
-
-                    videoPlaying = false;
-                    MediaPlayer.PlayStateChange += MediaPlayer_PlayStateChange;
+                    mediaPlaying = false;
                 }
             }
         }
 
-        bool videoPlaying = false;
+        bool mediaPlaying = false;
 
         void MediaPlayer_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
             switch (e.newState)
             {
                 case 3:    // Playing
-                    videoPlaying = true;
+                    mediaPlaying = true;
                     break;
                 case 1:    // Stopped
-                case 10:   // Ready
-                    if (videoPlaying)
+                case 8:    // MediaEnded
+                    if (mediaPlaying)
                     {
-                        MediaPlayer.PlayStateChange -= MediaPlayer_PlayStateChange;
+                        if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableAudio.Target))
+                        {
+                           ExecuteTeaseAction(CurrentTease.CurrentPage.AvailableAudio);
+                        }
                         if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableVideo.Target))
                         {
-                            ExecuteTeaseAction(CurrentTease.CurrentPage.AvailableVideo);
+                           ExecuteTeaseAction(CurrentTease.CurrentPage.AvailableVideo);
                         }
                     }
                     break;
@@ -258,8 +266,8 @@ namespace TeaseMe
                 case 5:    // ScanReverse
                 case 6:    // Buffering
                 case 7:    // Waiting
-                case 8:    // MediaEnded
                 case 9:    // Transitioning
+                case 10:   // Ready
                 case 11:   // Reconnecting
                 case 12:   // Last
                 default:
