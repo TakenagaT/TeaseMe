@@ -58,7 +58,6 @@
     <Compile Include="DebugForm.Designer.cs">
       <DependentUpon>DebugForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OldScriptConverter.cs" />
     <Compile Include="OpenForm.cs">
       <SubType>Form</SubType>
     </Compile>

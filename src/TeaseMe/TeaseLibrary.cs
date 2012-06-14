@@ -65,28 +65,6 @@ namespace TeaseMe.Common
                             }
                         }
                     }
-                    if (xmldoc.DocumentElement.LocalName == "pages")
-                    {
-                        // Previous file format.
-                        var converter = new OldScriptConverter(fileContents);
-                        if (converter.CanConvert())
-                        {
-                            result = converter.ConvertToTease();
-
-                            var sourceFileName = new FileInfo(scriptFileName);
-                            var destFileName = sourceFileName.Name.BeforeLast(sourceFileName.Extension) + "-v0_0_5" + sourceFileName.Extension;
-
-                            string message = "The tease you selected is made for a previous version of this application. "
-                                            + "Do you want to convert it to the current file format?\n"
-                                            + "\n"
-                                            + "Your old file will be renamed to " + destFileName;
-                            if (DialogResult.Yes == MessageBox.Show(message, "Save tease in new file format?", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-                            {
-                                File.Move(scriptFileName, Path.Combine(sourceFileName.DirectoryName, destFileName));
-                                SaveTease(result, sourceFileName.FullName);
-                            }
-                        }
-                    }
                 }
             }
 
