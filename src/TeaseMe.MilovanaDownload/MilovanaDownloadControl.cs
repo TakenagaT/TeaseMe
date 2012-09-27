@@ -218,9 +218,6 @@ namespace TeaseMe.MilovanaDownload
                     {
                         DownloadMedia(task, page, page.AudioList[0]);
                     }
-
-                    // Be nice to the Milovana webserver and wait a bit before the next request...
-                    Thread.Sleep(800);
                 }
 
                 e.Result = tease;
@@ -251,6 +248,10 @@ namespace TeaseMe.MilovanaDownload
                     using (var client = new WebClient())
                     {
                         backgroundWorker.ReportProgress(0, "Downloading " + url);
+                        
+                        // Be nice to the Milovana webserver and wait a bit before the next request...
+                        Thread.Sleep(800);
+
                         client.DownloadFile(url, fileName);
                         backgroundWorker.ReportProgress(0, "Ok");
                     }
