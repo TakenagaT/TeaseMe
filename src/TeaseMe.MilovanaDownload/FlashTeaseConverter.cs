@@ -275,7 +275,7 @@ namespace TeaseMe.MilovanaDownload
             var loopsNode = soundNode.GetFirstChildWithType(FlashTeaseScriptLexer.LOOPS) as CommonTree;
             if (loopsNode != null && loopsNode.ChildCount > 0)
             {
-                result.Loops = loopsNode.GetChild(0).Text;
+                result.Repeat = loopsNode.GetChild(0).Text;
             }
             return result;
         }

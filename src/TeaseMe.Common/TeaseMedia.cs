@@ -15,8 +15,8 @@ namespace TeaseMe.Common
         [XmlAttribute("stop-at")]
         public string StopAt { get; set; }
 
-        [XmlAttribute("loops")]
-        public string Loops { get; set; }
+        [XmlAttribute("repeat")]
+        public string Repeat { get; set; }
 
         public override string ToString()
         {

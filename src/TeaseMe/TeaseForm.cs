@@ -198,9 +198,9 @@ namespace TeaseMe
                     MediaPlayer.stretchToFit = true;
                     MediaPlayer.enableContextMenu = false;
                     MediaPlayer.Ctlenabled = false;
-                    if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableAudio.StartAt) || !String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableAudio.StopAt))
+                    if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableAudio.StartAt) || !String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableAudio.StopAt) || !String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableAudio.Repeat))
                     {
-                        MediaPlayer.URL = WriteAsxFile(fileName, CurrentTease.CurrentPage.AvailableAudio.StartAt, CurrentTease.CurrentPage.AvailableAudio.StopAt);
+                        MediaPlayer.URL = WriteAsxFile(fileName, CurrentTease.CurrentPage.AvailableAudio);
                     }
                     else
                     {
@@ -223,9 +223,9 @@ namespace TeaseMe
                     MediaPlayer.enableContextMenu = false;
                     MediaPlayer.Ctlenabled = false;
 
-                    if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableVideo.StartAt) || !String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableVideo.StopAt))
+                    if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableVideo.StartAt) || !String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableVideo.StopAt) || !String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableVideo.Repeat))
                     {
-                        MediaPlayer.URL = WriteAsxFile(fileName, CurrentTease.CurrentPage.AvailableVideo.StartAt, CurrentTease.CurrentPage.AvailableVideo.StopAt);
+                        MediaPlayer.URL = WriteAsxFile(fileName, CurrentTease.CurrentPage.AvailableVideo);
                     }
                     else
                     {
@@ -275,31 +275,33 @@ namespace TeaseMe
             }
         }
 
-        private string WriteAsxFile(string videoFile, string startAt, string stopAt)
+        private string WriteAsxFile(string videoFile, TeaseMedia media)
         {
             TimeSpan? duration = null;
 
-            if (String.IsNullOrEmpty(startAt))
+            if (String.IsNullOrEmpty(media.StartAt))
             {
-                startAt = "00:00:00";
+                media.StartAt = "00:00:00";
             }
 
-            if (!String.IsNullOrEmpty(stopAt))
+            if (!String.IsNullOrEmpty(media.StopAt))
             {
-                duration = ParseTime(stopAt).Subtract(ParseTime(startAt));
+                duration = ParseTime(media.StopAt).Subtract(ParseTime(media.StartAt));
             }
 
             string result = videoFile + ".asx";
             var contents = new StringBuilder();
             contents.AppendLine("<Asx Version=\"3.0\">");
+            contents.AppendFormat("<Repeat count=\"{0}\">", String.IsNullOrEmpty(media.Repeat) ? "1" : media.Repeat).AppendLine();
             contents.AppendLine("<Entry>");
-            contents.AppendFormat("<StartTime value=\"{0}\" />", startAt).AppendLine();
+            contents.AppendFormat("<StartTime value=\"{0}\" />", media.StartAt).AppendLine();
             if (duration.HasValue)
             {
                 contents.AppendFormat("<Duration value=\"{0}:{1}:{2}\" />", duration.Value.Hours, duration.Value.Minutes, duration.Value.Seconds).AppendLine();
             }
             contents.AppendFormat("<Ref href=\"{0}\" />", videoFile).AppendLine();
             contents.AppendLine("</Entry>");
+            contents.AppendLine("</Repeat>");
             contents.AppendLine("</Asx>");
             File.WriteAllText(result, contents.ToString());
             return result;
