@@ -18,6 +18,7 @@ tokens {
 	GO;
 	HIDDEN;
 	ID;
+	LOOPS;
 	MAX;
 	MIN;
 	MULT;
@@ -128,8 +129,8 @@ actionPic
 	;
 
 actionSound
-	:	'sound(id:' QUOTED_STRING ')'
-		-> ^(SOUND QUOTED_STRING)
+	:	'sound(id:' QUOTED_STRING (',' 'loops' ':' INTEGER)? ')'
+		-> ^(SOUND ^(ID QUOTED_STRING) ^(LOOPS INTEGER?))
 	;
 
 actionGo

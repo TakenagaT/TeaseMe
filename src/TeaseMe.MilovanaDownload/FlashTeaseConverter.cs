@@ -259,7 +259,25 @@ namespace TeaseMe.MilovanaDownload
 
         private TeaseMedia GetAudio(CommonTree soundNode)
         {
-            return (soundNode != null) ? new TeaseMedia { Id = soundNode.GetChild(0).Text.Trim('\'', '"') } : null;
+            if (soundNode == null)
+            {
+                return null;
+            }
+
+            var result = new  TeaseMedia();
+            
+            var idNode = soundNode.GetFirstChildWithType(FlashTeaseScriptLexer.ID) as CommonTree;
+            if (idNode != null)
+            {
+                result.Id = idNode.GetChild(0).Text.Trim('\'', '"');
+            }
+
+            var loopsNode = soundNode.GetFirstChildWithType(FlashTeaseScriptLexer.LOOPS) as CommonTree;
+            if (loopsNode != null && loopsNode.ChildCount > 0)
+            {
+                result.Loops = loopsNode.GetChild(0).Text;
+            }
+            return result;
         }
 
         private IEnumerable<TeaseButton> GetButtons(CommonTree propertiesNode)
