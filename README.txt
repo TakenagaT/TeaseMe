@@ -1,5 +1,5 @@
 
-TeaseMe v0.1.3 (June 2012)
+TeaseMe v0.1.3 (September 2012)
 
 
 
@@ -36,7 +36,8 @@ Features
 - play a detailed tutorial (tutorial.xml) and learn how it works
 - import milovana flashteases
 - import milovana htmlteases *NEW*
-- download more optional teases at official threa
+- download more optional teases at official thread
+
 Optional Sample Teases  
 ----------------------
 A detailed tutorial tease is included into the main archive.
@@ -58,8 +59,11 @@ Update History
 -------------------------
 v0.1.3 (by Takenaga)
 - Added use of conditionals (if-set/if-not-set) on Audio, Delay, Image, Metronome and Video (eg. you can define multiple Images on a page, it will show the one where conditions are met).
-- Added start-at/stop-at attributes on Video and Audio to support playing only a certain part.
-- Added target attribute on Video and Audio to move to the next page as soon as the audio/video is played (no need to define a delay on the page anymore).
+- Fixed download of teases with sound-loops-attribute.
+- Fixed: buttons not responding correctly to if-set/if-not-set (contributed by coday).
+- (Experimental) Added start-at/stop-at attributes on Video and Audio to support playing only a certain part.
+- (Experimental) Added target attribute on Video and Audio to move to the next page as soon as the audio/video is played (no need to define a delay on the page anymore).
+
 
 v0.1.2 (by Takenaga)
 - Added Milovana HTML tease download
