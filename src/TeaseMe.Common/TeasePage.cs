@@ -74,21 +74,22 @@ namespace TeaseMe.Common
                     var result = new List<TeaseMedia>();
                     foreach (var media in ImageList)
                     {
+                        var addImage = true;
                         if (!String.IsNullOrEmpty(media.IfSetCondition))
                         {
-                            if (Tease.MatchesIfSetCondition(media.IfSetCondition))
+                            if (!Tease.MatchesIfSetCondition(media.IfSetCondition))
                             {
-                                result.Add(media);
+                                addImage = false;
                             }
                         }
-                        else if (!String.IsNullOrEmpty(media.IfNotSetCondition))
+                        if (!String.IsNullOrEmpty(media.IfNotSetCondition))
                         {
-                            if (Tease.MatchesIfNotSetCondition(media.IfNotSetCondition))
+                            if (!Tease.MatchesIfNotSetCondition(media.IfNotSetCondition))
                             {
-                                result.Add(media);
+                                addImage = false;
                             }
                         }
-                        else
+                        if (addImage)
                         {
                             result.Add(media);
                         }
@@ -109,21 +110,22 @@ namespace TeaseMe.Common
                     var result = new List<TeaseMedia>();
                     foreach (var media in AudioList)
                     {
+                        var addAudio = true;
                         if (!String.IsNullOrEmpty(media.IfSetCondition))
                         {
-                            if (Tease.MatchesIfSetCondition(media.IfSetCondition))
+                            if (!Tease.MatchesIfSetCondition(media.IfSetCondition))
                             {
-                                result.Add(media);
+                                addAudio = false;
                             }
                         }
-                        else if (!String.IsNullOrEmpty(media.IfNotSetCondition))
+                        if (!String.IsNullOrEmpty(media.IfNotSetCondition))
                         {
-                            if (Tease.MatchesIfNotSetCondition(media.IfNotSetCondition))
+                            if (!Tease.MatchesIfNotSetCondition(media.IfNotSetCondition))
                             {
-                                result.Add(media);
+                                addAudio = false;
                             }
                         }
-                        else
+                        if (addAudio)
                         {
                             result.Add(media);
                         }
@@ -144,21 +146,22 @@ namespace TeaseMe.Common
                     var result = new List<TeaseMedia>();
                     foreach (var media in VideoList)
                     {
+                        var addVideo = true;
                         if (!String.IsNullOrEmpty(media.IfSetCondition))
                         {
-                            if (Tease.MatchesIfSetCondition(media.IfSetCondition))
+                            if (!Tease.MatchesIfSetCondition(media.IfSetCondition))
                             {
-                                result.Add(media);
+                                addVideo = false;
                             }
                         }
-                        else if (!String.IsNullOrEmpty(media.IfNotSetCondition))
+                        if (!String.IsNullOrEmpty(media.IfNotSetCondition))
                         {
-                            if (Tease.MatchesIfNotSetCondition(media.IfNotSetCondition))
+                            if (!Tease.MatchesIfNotSetCondition(media.IfNotSetCondition))
                             {
-                                result.Add(media);
+                                addVideo = false;
                             }
                         }
-                        else
+                        if (addVideo)
                         {
                             result.Add(media);
                         }
@@ -179,21 +182,22 @@ namespace TeaseMe.Common
                     var result = new List<TeaseMetronome>();
                     foreach (var media in MetronomeList)
                     {
+                        var addMetronome = true;
                         if (!String.IsNullOrEmpty(media.IfSetCondition))
                         {
-                            if (Tease.MatchesIfSetCondition(media.IfSetCondition))
+                            if (!Tease.MatchesIfSetCondition(media.IfSetCondition))
                             {
-                                result.Add(media);
+                                addMetronome = false;
                             }
                         }
-                        else if (!String.IsNullOrEmpty(media.IfNotSetCondition))
+                        if (!String.IsNullOrEmpty(media.IfNotSetCondition))
                         {
-                            if (Tease.MatchesIfNotSetCondition(media.IfNotSetCondition))
+                            if (!Tease.MatchesIfNotSetCondition(media.IfNotSetCondition))
                             {
-                                result.Add(media);
+                                addMetronome = false;
                             }
                         }
-                        else
+                        if (addMetronome)
                         {
                             result.Add(media);
                         }
@@ -214,21 +218,22 @@ namespace TeaseMe.Common
                     var result = new List<TeaseDelay>();
                     foreach (var delay in DelayList)
                     {
+                        var addDelay = true;
                         if (!String.IsNullOrEmpty(delay.IfSetCondition))
                         {
-                            if (Tease.MatchesIfSetCondition(delay.IfSetCondition))
+                            if (!Tease.MatchesIfSetCondition(delay.IfSetCondition))
                             {
-                                result.Add(delay);
+                                addDelay = false;
                             }
                         }
-                        else if (!String.IsNullOrEmpty(delay.IfNotSetCondition))
+                        if (!String.IsNullOrEmpty(delay.IfNotSetCondition))
                         {
-                            if (Tease.MatchesIfNotSetCondition(delay.IfNotSetCondition))
+                            if (!Tease.MatchesIfNotSetCondition(delay.IfNotSetCondition))
                             {
-                                result.Add(delay);
+                                addDelay = false;
                             }
                         }
-                        else
+                        if (addDelay)
                         {
                             result.Add(delay);
                         }
@@ -247,24 +252,22 @@ namespace TeaseMe.Common
                 var result = new List<TeaseButton>();
                 foreach (var button in ButtonList)
                 {
+                    var addButton = true;
                     if (!String.IsNullOrEmpty(button.IfSetCondition))
                     {
-                        if (Tease.MatchesIfSetCondition(button.IfSetCondition))
+                        if (!Tease.MatchesIfSetCondition(button.IfSetCondition))
                         {
-                            result.Add(button);
+                            addButton = false;
                         }
                     }
-                    else if (!String.IsNullOrEmpty(button.IfNotSetCondition))
+                    if (!String.IsNullOrEmpty(button.IfNotSetCondition))
                     {
-                        if (Tease.MatchesIfNotSetCondition(button.IfNotSetCondition))
+                        if (!Tease.MatchesIfNotSetCondition(button.IfNotSetCondition))
                         {
-                            result.Add(button);
+                            addButton = false;
                         }
                     }
-                    else
-                    {
-                        result.Add(button);
-                    }
+                    if (addButton) { result.Add(button); }
                 }
                 return result;
             }
