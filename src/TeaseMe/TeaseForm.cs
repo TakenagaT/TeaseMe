@@ -250,11 +250,11 @@ namespace TeaseMe
                 case 8:    // MediaEnded
                     if (mediaPlaying)
                     {
-                        if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableAudio.Target))
+                        if (CurrentTease.CurrentPage.AvailableAudio != null && !String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableAudio.Target))
                         {
                            ExecuteTeaseAction(CurrentTease.CurrentPage.AvailableAudio);
                         }
-                        if (!String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableVideo.Target))
+                        if (CurrentTease.CurrentPage.AvailableVideo != null && !String.IsNullOrEmpty(CurrentTease.CurrentPage.AvailableVideo.Target))
                         {
                            ExecuteTeaseAction(CurrentTease.CurrentPage.AvailableVideo);
                         }

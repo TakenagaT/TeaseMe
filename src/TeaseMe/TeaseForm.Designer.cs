@@ -46,15 +46,16 @@ namespace TeaseMe
             this.TeaseTitleLabel = new System.Windows.Forms.Label();
             this.ToolTips = new System.Windows.Forms.ToolTip(this.components);
             this.OpenButton = new System.Windows.Forms.Button();
+            this.FullscreenButton = new System.Windows.Forms.Button();
             this.VerticalSplitContainer = new System.Windows.Forms.SplitContainer();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.TextPanel = new System.Windows.Forms.Panel();
             this.TeaseTextWebBrowser = new System.Windows.Forms.WebBrowser();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.FullscreenButton = new System.Windows.Forms.Button();
             this.CountdownPanel.SuspendLayout();
             this.ButtonPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VerticalSplitContainer)).BeginInit();
             this.VerticalSplitContainer.Panel1.SuspendLayout();
             this.VerticalSplitContainer.Panel2.SuspendLayout();
             this.VerticalSplitContainer.SuspendLayout();
@@ -206,6 +207,19 @@ namespace TeaseMe
             this.OpenButton.UseVisualStyleBackColor = true;
             this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
             // 
+            // FullscreenButton
+            // 
+            this.FullscreenButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FullscreenButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.FullscreenButton.Image = global::TeaseMe.Properties.Resources.up_right;
+            this.FullscreenButton.Location = new System.Drawing.Point(476, 3);
+            this.FullscreenButton.Name = "FullscreenButton";
+            this.FullscreenButton.Size = new System.Drawing.Size(24, 24);
+            this.FullscreenButton.TabIndex = 48;
+            this.ToolTips.SetToolTip(this.FullscreenButton, "Fullscreen");
+            this.FullscreenButton.UseVisualStyleBackColor = true;
+            this.FullscreenButton.Click += new System.EventHandler(this.FullscreenButton_Click);
+            // 
             // VerticalSplitContainer
             // 
             this.VerticalSplitContainer.BackColor = System.Drawing.Color.DimGray;
@@ -281,19 +295,6 @@ namespace TeaseMe
             this.panel1.Size = new System.Drawing.Size(503, 58);
             this.panel1.TabIndex = 1;
             // 
-            // FullscreenButton
-            // 
-            this.FullscreenButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FullscreenButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.FullscreenButton.Image = global::TeaseMe.Properties.Resources.up_right;
-            this.FullscreenButton.Location = new System.Drawing.Point(476, 3);
-            this.FullscreenButton.Name = "FullscreenButton";
-            this.FullscreenButton.Size = new System.Drawing.Size(24, 24);
-            this.FullscreenButton.TabIndex = 48;
-            this.ToolTips.SetToolTip(this.FullscreenButton, "Fullscreen");
-            this.FullscreenButton.UseVisualStyleBackColor = true;
-            this.FullscreenButton.Click += new System.EventHandler(this.FullscreenButton_Click);
-            // 
             // TeaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,6 +315,7 @@ namespace TeaseMe
             this.VerticalSplitContainer.Panel1.ResumeLayout(false);
             this.VerticalSplitContainer.Panel2.ResumeLayout(false);
             this.VerticalSplitContainer.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VerticalSplitContainer)).EndInit();
             this.VerticalSplitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.TextPanel.ResumeLayout(false);

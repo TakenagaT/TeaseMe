@@ -8,9 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("TeaseMe.MilovanaDownload")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Gemeentewerken Rotterdam")]
 [assembly: AssemblyProduct("TeaseMe.MilovanaDownload")]
-[assembly: AssemblyCopyright("Copyright © Gemeentewerken Rotterdam 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
