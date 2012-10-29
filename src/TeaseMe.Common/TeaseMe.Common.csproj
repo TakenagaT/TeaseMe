@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
@@ -49,6 +50,7 @@
     <Compile Include="TeaseAction.cs" />
     <Compile Include="TeaseButton.cs" />
     <Compile Include="TeaseDelay.cs" />
+    <Compile Include="TeaseLibrary.cs" />
     <Compile Include="TeaseMedia.cs" />
     <Compile Include="TeaseMetronome.cs" />
     <Compile Include="TeasePage.cs" />

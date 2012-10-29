@@ -306,7 +306,6 @@ namespace TeaseMe
             this.KeyPreview = true;
             this.Name = "TeaseForm";
             this.Text = "[ApplicationTitle]";
-            this.Load += new System.EventHandler(this.TeaseForm_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TeaseForm_KeyUp);
             this.CountdownPanel.ResumeLayout(false);
             this.CountdownPanel.PerformLayout();

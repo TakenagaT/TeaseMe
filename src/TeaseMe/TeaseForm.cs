@@ -27,7 +27,7 @@ namespace TeaseMe
 
         public Tease CurrentTease;
 
-        private TeaseLibrary teaseLibrary;
+        private readonly TeaseLibrary teaseLibrary;
 
         private int secondsUntilNextPage;
         // There might be a difference between the remaining time shown to the user and the actual time.
@@ -72,20 +72,41 @@ namespace TeaseMe
             }
         }
 
-        public TeaseForm()
+        public TeaseForm(string[] args)
         {
             InitializeComponent();
-            debugForm = new DebugForm(this);
-        }
 
-
-        private void TeaseForm_Load(object sender, EventArgs e)
-        {
             Text = AssemblyTitle + " " + AssemblyVersion;
+
+            debugForm = new DebugForm(this);
 
             teaseLibrary = new TeaseLibrary(ApplicationDirectory);
 
-            SetCurrentTease(teaseLibrary.EmptyTease());
+
+            if (args.Length > 0)
+            {
+                if (File.Exists(args[0]))
+                {
+                    SetCurrentTease(teaseLibrary.LoadTease(args[0]));
+                }
+                else
+                {
+                    string fileName = Path.Combine(teaseLibrary.TeasesFolder, args[0]);
+                    if (File.Exists(fileName))
+                    {
+                        SetCurrentTease(teaseLibrary.LoadTease(fileName));
+                    }
+                    else
+                    {
+                        SetCurrentTease(teaseLibrary.EmptyTease());    
+                    }
+                }
+            }
+            else
+            {
+                SetCurrentTease(teaseLibrary.EmptyTease());    
+            }
+            
         }
 
 
