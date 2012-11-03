@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
@@ -82,16 +84,24 @@ namespace TeaseMe
 
             teaseLibrary = new TeaseLibrary(ApplicationDirectory);
 
-
-            if (args.Length > 0)
+            var arguments = new List<string>(args);
+            var fullscreenArg = arguments.FirstOrDefault(x => x.Equals("/full", StringComparison.OrdinalIgnoreCase));
+            if (fullscreenArg != null)
             {
-                if (File.Exists(args[0]))
+                Fullscreen();
+                arguments.Remove(fullscreenArg);                
+            }
+            var fileArg =  arguments.FirstOrDefault(x => x.StartsWith("/tease:", StringComparison.OrdinalIgnoreCase));
+            if (fileArg != null)
+            {
+                string fileName = fileArg.Remove(0, "/tease:".Length);
+                if (File.Exists(fileName))
                 {
-                    SetCurrentTease(teaseLibrary.LoadTease(args[0]));
+                    SetCurrentTease(teaseLibrary.LoadTease(fileName));
                 }
                 else
                 {
-                    string fileName = Path.Combine(teaseLibrary.TeasesFolder, args[0]);
+                    fileName = Path.Combine(teaseLibrary.TeasesFolder, fileName);
                     if (File.Exists(fileName))
                     {
                         SetCurrentTease(teaseLibrary.LoadTease(fileName));
