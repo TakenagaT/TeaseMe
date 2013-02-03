@@ -185,7 +185,7 @@ namespace TeaseMe
             debugForm.PagesComboBox.SelectedItem = CurrentTease.CurrentPage.Id;
             debugForm.PagePropertyGrid.SelectedObject = CurrentTease.CurrentPage;
 
-            SetText(CurrentTease.CurrentPage.Text);
+            SetText(CurrentTease.CurrentPage.GetFormattedText());
             SetMedia();
             SetButtons();
             SetDelay();

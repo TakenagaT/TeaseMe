@@ -43,6 +43,9 @@ namespace TeaseMe.Common
         [XmlElement("Settings")]
         public TeaseSettings Settings { get; set; }
 
+        [XmlArrayItem("Variable")]
+        public List<Variable> Variables { get; set; }
+
         [XmlArrayItem("Page")]
         public List<TeasePage> Pages { get; set; }
 
@@ -104,6 +107,7 @@ namespace TeaseMe.Common
             Pages = new List<TeasePage>();
             Flags = new List<string>();
             Settings = new TeaseSettings();
+            Variables = new List<Variable>();
         }
 
         public void Start()

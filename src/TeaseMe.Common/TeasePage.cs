@@ -281,5 +281,15 @@ namespace TeaseMe.Common
         {
             return String.Format("{0}", Id);
         }
+
+        public string GetFormattedText()
+        {
+            string result = Text;
+            foreach (var variable in Tease.Variables)
+            {
+                result = result.Replace("#" + variable.Name + "#", variable.Value);
+            }
+            return result;
+        }
     }
 }

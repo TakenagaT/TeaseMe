@@ -1,5 +1,5 @@
 
-TeaseMe v0.1.3 (September 2012)
+TeaseMe v0.1.5 (February 2013)
 
 
 
@@ -57,6 +57,9 @@ http://www.milovana.com/forum/viewtopic.php?f=2&t=6993
 
 Update History
 -------------------------
+v0.1.5 (by Takenaga)
+- Added use of simple string variables (replaced in tease texts).
+
 v0.1.3 (by Takenaga)
 - Added use of conditionals (if-set/if-not-set) on Audio, Delay, Image, Metronome and Video (eg. you can define multiple Images on a page, it will show the one where conditions are met).
 - Fixed download of teases with sound-loops-attribute.
