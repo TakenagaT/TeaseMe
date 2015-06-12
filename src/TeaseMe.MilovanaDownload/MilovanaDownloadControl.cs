@@ -15,6 +15,8 @@ namespace TeaseMe.MilovanaDownload
 {
     public partial class MilovanaDownloadControl : UserControl
     {
+        private const string MilovanaRootUrl = "https://milovana.com";
+
         private bool isFlashTease;
         private string teaseId;
         private string teaseUrl;
@@ -52,7 +54,7 @@ namespace TeaseMe.MilovanaDownload
             ClearInputFields();
 
             teaseUrl = teaseUrlTextBox.Text.Trim();
-            var urlMatch = Regex.Match(teaseUrl, "http://www.milovana.com/webteases/show(?<teaseType>flash|tease).php\\?id=(?<teaseId>\\d+)", RegexOptions.IgnoreCase);
+            var urlMatch = Regex.Match(teaseUrl, "(http|https)://(www.)?milovana.com/webteases/show(?<teaseType>flash|tease).php\\?id=(?<teaseId>\\d+)", RegexOptions.IgnoreCase);
             if (urlMatch.Success)
             {
                 isFlashTease = "flash".Equals(urlMatch.Groups["teaseType"].Value, StringComparison.OrdinalIgnoreCase);
@@ -85,7 +87,7 @@ namespace TeaseMe.MilovanaDownload
             }
             else
             {
-                AppendProgress(Color.Crimson, "Invalid format for the tease url. The following format is expected:\n\nFor Flash teases:\nhttp://www.milovana.com/webteases/showflash.php?id=9999\n\nFor HTML teases:\nhttp://www.milovana.com/webteases/showtease.php?id=9999");
+                AppendProgress(Color.Crimson, "Invalid format for the tease url. The following format is expected:\n\nFor Flash teases:\n{0}/webteases/showflash.php?id=9999\n\nFor HTML teases:\n{0}/webteases/showtease.php?id=9999", MilovanaRootUrl);
             }
         }
 
@@ -147,10 +149,11 @@ namespace TeaseMe.MilovanaDownload
                 if (task.IsFlashTease)
                 {
                     string script;
-                    backgroundWorker.ReportProgress(0, "Downloading http://www.milovana.com/webteases/getscript.php?id=" + task.TeaseId);
+                    string downloadUrl = String.Format("{0}/webteases/getscript.php?id={1}", MilovanaRootUrl, task.TeaseId);
+                    backgroundWorker.ReportProgress(0, "Downloading " + downloadUrl);
                     try
                     {
-                        script = Encoding.UTF8.GetString(new WebClient().DownloadData("http://www.milovana.com/webteases/getscript.php?id=" + task.TeaseId));
+                        script = Encoding.UTF8.GetString(new WebClient().DownloadData(downloadUrl));
                         backgroundWorker.ReportProgress(0, "Ok");
                         new FlashTeaseConverter().AddPages(tease, script);
                     }
@@ -163,10 +166,11 @@ namespace TeaseMe.MilovanaDownload
                 else
                 {
                     string firstPageHtml;
-                    backgroundWorker.ReportProgress(0, "Downloading http://www.milovana.com/webteases/getscript.php?id=" + task.TeaseId);
+                    string downloadUrl = String.Format("{0}/webteases/getscript.php?id={1}", MilovanaRootUrl, task.TeaseId);
+                    backgroundWorker.ReportProgress(0, "Downloading " + downloadUrl);
                     try
                     {
-                        firstPageHtml = Encoding.UTF8.GetString(new WebClient().DownloadData("http://www.milovana.com/webteases/showtease.php?id=" + task.TeaseId));
+                        firstPageHtml = Encoding.UTF8.GetString(new WebClient().DownloadData(downloadUrl));
                         backgroundWorker.ReportProgress(0, "Ok");
 
                         var page = HtmlTeaseConverter.CreatePage("start", firstPageHtml);
@@ -178,7 +182,7 @@ namespace TeaseMe.MilovanaDownload
                                 return;
                             }
 
-                            string url = String.Format("http://www.milovana.com/webteases/showtease.php?id={0}&p={1}#t", tease.Id, page.ButtonList[0].Target);
+                            string url = String.Format("{0}/webteases/showtease.php?id={1}&p={2}#t", MilovanaRootUrl, tease.Id, page.ButtonList[0].Target);
                             backgroundWorker.ReportProgress(0, "Downloading " + url);
                             try
                             {
@@ -231,15 +235,15 @@ namespace TeaseMe.MilovanaDownload
             {
                 mediaName = teaseMedia.Id.Replace("*", String.Format("[{0}]", Guid.NewGuid()));
             }
-            if (teaseMedia.Id.StartsWith("http://"))
+            if (teaseMedia.Id.StartsWith("http://") || teaseMedia.Id.StartsWith("https://"))
             {
                 mediaName = new Uri(teaseMedia.Id).Segments.Last();
             }
             string fileName = Path.Combine(task.MediaDirectory.FullName, mediaName);
             if (!File.Exists(fileName))
             {
-                string url = String.Format("http://www.milovana.com/media/get.php?folder={0}/{1}&name={2}", task.AuthorId, task.TeaseId, teaseMedia.Id);
-                if (teaseMedia.Id.StartsWith("http://"))
+                string url = String.Format("{0}/media/get.php?folder={1}/{2}&name={3}", MilovanaRootUrl, task.AuthorId, task.TeaseId, teaseMedia.Id);
+                if (teaseMedia.Id.StartsWith("http://") || teaseMedia.Id.StartsWith("https://"))
                 {
                     url = teaseMedia.Id;
                 }
@@ -262,7 +266,7 @@ namespace TeaseMe.MilovanaDownload
                     page.Errors = String.Format("Error while downloading file '{0}'. {1}.", url, page.Errors);
                 }
             }
-            if (teaseMedia.Id.StartsWith("http://"))
+            if (teaseMedia.Id.StartsWith("http://") || teaseMedia.Id.StartsWith("https://"))
             {
                 teaseMedia.Id = mediaName;
             }
@@ -374,7 +378,7 @@ namespace TeaseMe.MilovanaDownload
                     {
                         Id = AuthorId,
                         Name = AuthorName,
-                        Url = "http://www.milovana.com/forum/memberlist.php?mode=viewprofile&u=" + AuthorId
+                        Url = MilovanaRootUrl + "/forum/memberlist.php?mode=viewprofile&u=" + AuthorId
                     },
                     MediaDirectory = MediaDirectory.Name
                 };

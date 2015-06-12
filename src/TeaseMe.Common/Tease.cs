@@ -60,7 +60,7 @@ namespace TeaseMe.Common
             {
                 if (!String.IsNullOrEmpty(MediaDirectory))
                 {
-                    return MediaDirectory.StartsWith("http://") ? MediaDirectory : new DirectoryInfo(MediaDirectory).FullName;
+                    return (MediaDirectory.StartsWith("http://") || MediaDirectory.StartsWith("https://")) ? MediaDirectory : new DirectoryInfo(MediaDirectory).FullName;
                 }
                 if (!String.IsNullOrEmpty(ScriptDirectory))
                 {
@@ -176,11 +176,11 @@ namespace TeaseMe.Common
 
         public string GetFileName(TeaseMedia media)
         {
-            if (media.Id.StartsWith("http://"))
+            if (media.Id.StartsWith("http://") || media.Id.StartsWith("https://"))
             {
                 return media.Id;
             }
-            if (FullMediaDirectoryPath.StartsWith("http://"))
+            if (FullMediaDirectoryPath.StartsWith("http://") || FullMediaDirectoryPath.StartsWith("https://"))
             {
                 return FullMediaDirectoryPath + media.Id;
             }
