@@ -166,7 +166,7 @@ namespace TeaseMe.MilovanaDownload
                 else
                 {
                     string firstPageHtml;
-                    string downloadUrl = String.Format("{0}/webteases/getscript.php?id={1}", MilovanaRootUrl, task.TeaseId);
+                    string downloadUrl = String.Format("{0}/webteases/showtease.php?id={1}", MilovanaRootUrl, task.TeaseId);
                     backgroundWorker.ReportProgress(0, "Downloading " + downloadUrl);
                     try
                     {
